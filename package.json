@@ -1,0 +1,19 @@
+{
+  "name": "mbsampson.github.io",
+  "version": "1.0.0",
+  "description": "Personal webspace",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MBSampson/mbsampson.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MBSampson/mbsampson.github.io/issues"
+  },
+  "homepage": "https://github.com/MBSampson/mbsampson.github.io#readme"
+}
