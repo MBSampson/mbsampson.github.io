@@ -1,69 +1,545 @@
-// ========== RESETS
-body {
-    font-family: Roboto, Arial, sans-serif;
-    font-size: 0;
-    color: #666666;
-    background-color: #ffffff;
-    padding: 0;
-    margin: 0 auto;
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
+/* ---------------------------- NAV BAR SELECTORS ---------------------------- */
+.dropdown-menu>li>a{
+	cursor: default;
+	font-size: 1.2em;
+}
+.navbar{
+	background-color: rgb(250,250,250);
+	font-family: 'Alegreya', serif;
+	box-shadow: 0 9px 16px 0 rgba(0, 0, 0, 0.1);
+	
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-nav.mobile {
+  display: none;
+}
+
+.navbar .navbar-collapse{
+	text-align: center;
+}
+
+.navbar>.container{
+	width: 95%;
+	margin: 0 auto;
+}
+
+.nav>li>a{
+	padding: 12.5px 45px;
+}
+
+
+/* NAV LINKS */
+.nav>li>a{
+	color: #936c22;
+
+	font-size: 1.1em;
+	font-weight: 600;
+	letter-spacing: 1.5px;
+	
+	text-transform: uppercase;
+}
+
+.nav>li>a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 5px;
+  left: 0;
+  background-color: #936c22;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav>li>a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(0.8);
+  transform: scaleX(0.8);
+}
+
+.nav>li>a:hover{
+	color: #936c22;
+	background-color: white;
+}
+
+a, a:visited {
+    color: #936c22;
+    font-style: normal;
+    -webkit-transition: all 0.15s linear;
+    -moz-transition: all 0.15s linear;
+    -ms-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+/* Eliminate transition when navbar collapses */
+@media only screen and (max-width: 976px) {
+    .nav>li>a:hover:before {
+        visibility: hidden;
+    }
+}
+
+/* ---------------------------- END NAV BAR SELECTORS ---------------------------- */
+
+
+
+/* ---------------------------- HOME SELECTORS ---------------------------- */
+#home-img-main{
+	height: 788px;
+	
+	background-image: url("../assets/home_splash2.jpg");
+	background-repeat: repeat-x;
+	/* Covers the container and allows for a background that 'stretches' to the screen's width */
+	background-size: cover;
+	
+	margin: 0 50px;
+}
+
+#home-info-container{
+	background-color: rgb(250,250,250);
+	
+	width: 60%;
+	height: 302px;
+	
+	margin: -170px auto 50px;
+	padding: 5px 0 25px;
+	
+	box-shadow: 7.5px 7.5px;
+}
+
+#home-info-container>p{
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 10px;
+}
+
+#home-info-container>hr{
+	width: 65%;
+	box-shadow: 1px 1px 1px 1px black;
+}
+
+#home-bg-img{
+	width: 100%;
+	height: 430px;
+	margin-top: -450px;
+	background-image: url(../assets/bg_2.png);
+	z-index: -1;
+	position: absolute;
+}
+
+/* Adapts the home info container to hide its text */
+@media only screen and (max-width: 976px) {
+    #home-info-container>p {
+        display: none;
+    }
+	
+}
+/* Provides spacing for h1 when screen size is reduced */
+@media only screen and (max-width: 976px) {
+    #home-info-container>h1{
+		padding: 35px 15px 25px;
+	}	
+}
+
+/* Adjust Home Info Container to show properly on 1366 x 768 resolutions */
+@media only screen and (max-width: 1366px) {
+    #home-info-container {
+        margin: -300px auto 50px;
+    }
+	
+}
+@media only screen and (max-width: 800px){
+	#home-img-main{
+		background-position: top;
+	}
+}
+/* ---------------------------- END HOME SELECTORS ---------------------------- */
+
+
+
+/* ---------------------------- PHOTO SELECTORS ---------------------------- */
+.photo-header{
+	padding: 40px 0 15px;
+}
+
+.location-item{
+	width: 100%;
+	height: 100%;
+	margin: 2% 0 0 8%;
+}
+
+.information-item{
+	width: 100%;
+	margin: 2% 0 0 8%;
+}
+
+.row{
+	width: 93.5%;
+}
+
+.row>img{
+	width: 50%;
+	height: 50%;
+}
+/* ---------------------------- END PHOTOS SELECTORS ---------------------------- */
+
+
+
+/* ---------------------------- LOCATION SELECTORS ---------------------------- */
+#location-card{
+	margin: 0 auto;
+	padding-left: 12%;
+}
+
+.information-item>h3, #location-card>h3{
+	text-align: center;
+	
+	font-family: 'Alegreya', serif;
+	letter-spacing: 1px;
+}
+
+#map_canvas{
+	width: 85%;
+	height: 600px;
+	margin: 5% 0 0 12%;
+}
+
+#map-content{
+	width: 350px;
+	height: 80px;
+	padding: 10px;
+}
+
+#map-content>h4{
+	text-align: center;
+	padding-top: 8px;
+}
+
+#map-content>h1{
+	margin: 0; 
+	font-size: 2.5em;
+}
+
+#map-content>h4{
+	margin: 0; 
+	font-size: 1.25em;
+}
+/* ---------------------------- END LOCATION SELECTORS ---------------------------- */
+
+
+
+/* ---------------------------- RENTALS SELECTORS ---------------------------- */
+#rental-about-us{
+	margin: 2.5% 4.5%;
+	background-color: white;
+	color: #66635E;
+}
+
+#rental-about-us h3{
+	text-align: center;	
+}
+
+
+#rental-content{
+	padding: 40px;
+	min-height: 100%;
+}
+
+#rental-content>h1{
+	padding-bottom: 40px;
+}
+
+.rental-item{
+	padding: 25px 25px;
+	margin: 1% 4.5%;
+	background-color: white;
+	color: #66635E;
+}
+
+.rental-item hr.sun-hr:after{
+	background-color: white;
+}
+
+.rental-img{
+	width: 100%;
+	height: 100%;
+}
+
+.rental-about-us-header{
+	text-align: center;
+}
+
+.slide-btn-left{
+	background-color: white;
+	color: #8c8b8b;
+	font-size: 1.5em;
+	font-weight: 800;
+	outline: none;
+	transform: translateY(-35px);
+	position: relative;
+	width: 35px;
+	height: 35px;
+	
+	
+    -webkit-transition: all 0.15s linear;
+    -moz-transition: all 0.15s linear;
+    -ms-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.slide-btn-right{
+	background-color: white;
+	color: #8c8b8b;
+	font-size: 1.55em;
+	font-weight: 800;
+	outline: none;
+	transform: translateY(-35px);
+	position: relative;
+	width: 35px;
+	height: 35px;
+	
+	float: right;
+	
+	
+    -webkit-transition: all 0.15s linear;
+    -moz-transition: all 0.15s linear;
+    -ms-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.slide-btn-left:hover{
+	color: black;
+}
+
+.slide-btn-right:hover{
+	color: black;
+}
+
+.bed-bath-header{
+	font-size: 3.0em; 
+	color: black; 
+	margin-top: 5%;
+}
+
+.unit-rent-element{
+	font-size: 1.5em;
+}
+
+.unit-header{
+	text-align: center;
+}
+
+.property-details-header{
+	font-size: 1.5em; 
+	text-align: center;
+	padding-top: 2.5%;
+}
+
+.unit-details-header{
+	font-size: 24px;
+	text-align: center;
+	padding-top: 2.5%;
+}
+
+.requirements-table{
+	padding-top: 2.5%;
+}
+
+.requirements-row{
+	float: left;
+	width: 50%;
+	text-align: center;
+	padding-bottom: 12.5px;
+	color: black;
+}
+
+.rental-footer{
+	padding-top: 2.5%;
+	text-align: center;
+	font-size: 1.10em;
+	font-weight: 600;
+}
+
+@media only screen and (max-width: 1376px) {
+    .requirements-row {
+        width: 100%;;
+    }
+	
+}
+/* ---------------------------- END RENTALS SELECTORS ---------------------------- */
+
+
+
+/* ---------------------------- NO VACANCIES SELECTORS ---------------------------- */
+
+#vacancies-container{
+	text-align: center;
+	color: #66635E;
+}
+
+#vacancies-img{
+	width: 500px; 
+	margin: 2.5% 0 1%;
+}
+
+#vacancies-header-main{
+	margin-top: 5%; 
+	letter-spacing: 0px; 
+	font-size: 3em; 
+	text-transform: uppercase;
+}
+
+#vacancies-header-secondary{
+	letter-spacing: 0px; 
+	font-size: 2.2em;
+}
+/* ---------------------------- NO VACANCIES SELECTORS ---------------------------- */
+
+
+
+/* ---------------------------- GENERIC SELECTORS ---------------------------- */
+.content-main{
+	background-image: url(../assets/bg_2.png);
+}
+
+.content-container{
+	width: 90%;
+	margin: 50px auto 0;
+	padding-bottom: 50px;
+	
+	background-color: rgb(250,250,250);
+}
+
+hr{
+	width: 60%;
+	box-shadow: 1px 1px 1px 1px black;
+}
+
+hr.sun-hr {
+	border-top: 4px single #8c8b8b;
+	text-align: center;
+}
+hr.sun-hr:after {
+	content: '\f185';
+	font-family: FontAwesome;
+	display: inline-block;
+	position: relative;
+	top: -15px;
+	padding: 0 10px;
+	background-color: rgb(250,250,250);
+	color: #8c8b8b;
+	font-size: 18px;
+}
+
+body{
+	font-family: 'Nunito', sans-serif;
+	background-color: rgb(250,250,250);
+}
+
+h1{
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Alegreya', serif;
+	font-size: 3.2em;
+	letter-spacing: 5.5px;
+	word-spacing: 5px;
+}
+
+h2{
+	font-family: 'Alegreya', serif;
+	font-size: 2.2em;
+	padding: 15px;
+	letter-spacing: 5.5px;
+	word-spacing: 5px;
+}
+
+h4{
+	font-family: 'Alegreya', serif;
+	font-size: 1.2em;
+	letter-spacing: 1.0px;
+	word-spacing: 1px;
 }
 
 table {
-    margin: 0 auto;
-    border-collapse: collapse;
+	margin: 0 auto;
 }
 
-img {
-    border: none; 
-    outline: none; 
-    display: block;
+td {
+	padding: 10px 20px;
+}
+/* ---------------------------- END GENERIC SELECTORS ---------------------------- */
+
+
+
+/* ---------------------------- FOOTER SELECTORS ---------------------------- */
+footer{
+	background-color: rgb(250,250,250);
+	
+	width: 100%;
+	height: 50px;
+	
+	text-align: center;
+	padding: 18px;
 }
 
-p, h1, h2, h3, h4, h5, h6  {
-    font-weight: normal;
-    margin: 0;
+footer>a:hover{
+	color: #936c22;
 }
 
-// ========== PAGE DIMENSIONS
-.container { 
-    margin: 0 auto; 
-    width: 720px; 
+.footer-item{
+	padding: 0 15px;
 }
-.desktop-size {
-    padding: 0; 
-    margin: 0 auto;
-    width: 720px;
-}
-.mobile-size {
-    padding: 0;
-    margin: 0 auto;
-    width: 360px; 
-    max-width: 360px;
-}
-
-// ========== HELPERS
-table.center, img.center, div.center {
-    margin: 0 auto;
-}
-
-// ========== SEMANTIC ELEMS
-p {
-    font-size: 12px;
-    line-height: 18px;
-    color: #666666;
-}
+/* ---------------------------- END FOOTER SELECTORS ---------------------------- */
 
 
 
-
-/* Mobile query for fixed width email
+/* ---------------------------- MOBILE STYLES ---------------------------- */
+/* Mobile query for rendering fixed-width mobile view at 375px
    Desktop: 720px
-   Mobile 360px */
-@media only screen and (max-width: 621px),
-only screen and (min-width: 360px) and (max-width: 767px) {
-    .email-container {
-        background-color: black !important;
+   Mobile 360px 
+*/
+
+.mobile-view {
+	max-width: 375px;
+}
+
+#home {
+    height: 200px;
+    background: black;
+}
+
+#rentals {
+    height: 200px;
+    background-color: yellow;
+}
+
+#photos {
+    height: 200px;
+    background-color: red;
+}
+
+#location {
+    height: 200px;
+    background-color: blue;
+}
+
+@media only screen and (max-width: 900px) {
+    .mobile {
+        display: block !important;
+    }
+    .desktop {
+        display: none !important;
     }
 }
