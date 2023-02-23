@@ -14,7 +14,7 @@ p {
   font-family: 'Nunito', Arial, sans-serif;
 }
 
-div.mobile {
+.mobile {
   display: none;
 }
  
@@ -32,7 +32,7 @@ div.mobile {
     text-transform: uppercase;
     font-size: 16px;
     line-height: 24px;
-    font-weight: 600;
+    font-weight: 600; 
   } 
   .fa.fa-sun-o {
     position: fixed;
@@ -119,6 +119,7 @@ main {
 footer {
   background-color: rgb(4, 4, 4, 0.1);
   background-image: url(./assets/img/bg_nami.png);
+  padding-bottom: 25px;
   .address-mod {
     padding: 25px 0;
     text-align: center;
@@ -161,12 +162,15 @@ footer {
 
 // Mobile device styles
 @media only screen and (max-width: 600px) {
-  main {
-    display: none;
+  main, .desktop {
+    display: none !important;
   }  
 
   div.mobile {
     display: block !important;
+  }
+  td.mobile {
+    display: table-cell !important;
   }
 } 
 

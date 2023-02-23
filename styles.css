@@ -8,12 +8,12 @@ p {
   color: #333333;
   font-family: 'Nunito', Arial, sans-serif;
 }
-div.mobile {
+.mobile {
   display: none;
 }
 /* ========== NAVBAR ========== */
 .navbar {
-  width: calc(100vw);
+  width: 100%;
   background-color: #fafafa;
   font-family: 'Alegreya', Arial, sans-serif;
   box-shadow: 0 9px 20px 0 rgba(0, 0, 0, 0.2), 0 9px 20px 0 rgba(0, 0, 0, 0.2);
@@ -104,6 +104,7 @@ main .hero-mod hr.sun-hr {
 footer {
   background-color: #040404;
   background-image: url(./assets/img/bg_nami.png);
+  padding-bottom: 25px;
 }
 footer .address-mod {
   padding: 25px 0;
@@ -144,11 +145,15 @@ footer td p {
   font-weight: 500;
 }
 @media only screen and (max-width: 600px) {
-  main {
-    display: none;
+  main,
+  .desktop {
+    display: none !important;
   }
   div.mobile {
     display: block !important;
+  }
+  td.mobile {
+    display: table-cell !important;
   }
 }
 @media only screen and (max-width: 992px) {
