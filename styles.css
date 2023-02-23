@@ -251,6 +251,7 @@ footer td a.unstyle-link {
 @media only screen and (max-width: 821px) {
   #mobile-wrapper,
   .navbar,
+  .slider,
   footer,
   html {
     min-width: 400px;
