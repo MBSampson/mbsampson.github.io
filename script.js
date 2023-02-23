@@ -10,6 +10,21 @@ function loadScript(src,callback){
 
 loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBzO-kFoyPTj9B6TpYNhsMMxb49bi6LPXg&callback=initialize');
 
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+
 // Google Map 
 function initialize() {
 	
@@ -80,8 +95,7 @@ function createSliderObjects() {
   });
 }
 
-function showDivs(divObject, n) {
-  debugger;
+function showDivs(divObject, n) { 
   var i;
   if (n > divObject.slideContents.length) {
     divObject.slideIndex = 1

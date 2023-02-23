@@ -100,7 +100,7 @@ main .hero-mod p {
 hr.sun-hr {
   width: 80%;
   margin: 0 auto;
-  border: 2px solid black;
+  border: 2px solid #DAA520;
 }
 /* ========== MAIN MOBILE CONTENT ========== */
 div.mobile .hero-img {
@@ -194,7 +194,67 @@ footer td a.unstyle-link {
   font-family: 'Nunito', Arial, sans-serif;
 }
 /* ---------------------------- END LOCATION SELECTORS ---------------------------- */
-@media only screen and (max-width: 600px) {
+/* ---------------------------- RENTAL SELECTORS ---------------------------- */
+#rentals {
+  margin-top: 25px;
+}
+#rentals h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 10px;
+}
+#rentals .rental-info {
+  padding: 25px 15px 20px;
+}
+#rentals .rental-info h2 {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #333333;
+  font-size: 28px;
+  line-height: 36px;
+}
+#rentals .rental-info h3 {
+  font-size: 24px;
+  line-height: 30px;
+}
+#rentals .rental-info p {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 20px;
+}
+#rentals .slide-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #DAA520;
+  border: 2px solid #DAA520;
+  font-size: 1.5em;
+  font-weight: 800;
+  outline: none;
+  width: 48px;
+  height: 48px;
+  transform: translateY(-49px);
+  position: relative;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -ms-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+#rentals .slide-btn-right {
+  float: right;
+}
+#rentals .slide-btn-left:hover,
+#rentals .slide-btn-right:hover {
+  color: #DAA520;
+  border: 2px solid #DAA520;
+}
+@media only screen and (max-width: 821px) {
+  #mobile-wrapper,
+  .navbar,
+  footer,
+  html {
+    min-width: 400px;
+  }
   main,
   .desktop {
     display: none !important;
