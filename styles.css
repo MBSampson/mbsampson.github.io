@@ -64,7 +64,7 @@ main {
 .hero-mod {
   background-color: #ffffff;
   width: 50%;
-  min-width: 400px;
+  min-width: 360px;
   box-shadow: 7.5px 7.5px;
   margin: 0 auto;
   text-align: center;
@@ -90,9 +90,8 @@ main {
   margin: 0 auto;
 }
 @media only screen and (max-width: 600px) {
-  .wrapper-main {
-    width: 100%;
-    min-width: 375px;
+  .hero-spacer {
+    height: 200px;
   }
 }
 @media only screen and (max-width: 992px) {
