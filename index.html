@@ -33,31 +33,31 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="mobile-nav-title">Casa del Sol</span>&nbsp;&nbsp;<i class="fa fa-sun-o" aria-hidden="true"></i>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" data-toggle="collapse" data-target=".navbar-collapse" >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <!-- ========== DESKTOP NAV ========== -->
               <li class="nav-item">
                 <a class="desktop nav-link" href="#">HOME</a>
-                <a class="mobile nav-link" href="#home">HOME</a>
+                <a class="mobile nav-link" href="#home" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">HOME</a>
               </li>
               <li class="nav-item">
                 <a class="desktop nav-link" href="#">RENTALS</a>
-                <a class="mobile nav-link" href="#">RENTALS</a>
+                <a class="mobile nav-link" href="#rentals" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">RENTALS</a>
               </li>
               <li class="nav-item">
                 <a class="desktop nav-link" href="#">PHOTOS</a>
-                <a class="mobile nav-link" href="#">PHOTOS</a>
+                <a class="mobile nav-link" href="#photos" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">PHOTOS</a>
               </li>
               <li class="nav-item">
                 <a class="desktop nav-link" href="#">LOCATION</a>
-                <a class="mobile nav-link" href="#">LOCATION</a>
+                <a class="mobile nav-link" href="#location" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">LOCATION</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   CONTACT
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><i class="fa fa-phone" aria-hidden="true"></i>(650) 965 - 1671</li>
+                  <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;(650) 965 - 1671</li>
                   <li>FelixPropertiesCDS@gmail.com</li>
                   <li>135 Acalanes Drive, Sunnyvale CA 94086</li>
                 </ul>
@@ -131,8 +131,7 @@
           </td>
         </tr>
       </table>
-    </footer>
-
+    </footer> 
 </body>
 
 </html>
