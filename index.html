@@ -9,9 +9,25 @@
   <title>Casa Del Sol</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+    $(function() {
+      $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    });
+  </script>
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <!-- Favicons --> 
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
@@ -37,24 +53,24 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <!-- ========== DESKTOP NAV ========== -->
               <li class="nav-item">
-                <a class="desktop nav-link" href="#">HOME</a>
-                <a class="mobile nav-link" href="#home" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">HOME</a>
+                <a href="#" class="desktop nav-link">HOME</a>
+                <a href="#home" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">HOMEM</a> 
               </li>
               <li class="nav-item">
-                <a class="desktop nav-link" href="#">RENTALS</a>
-                <a class="mobile nav-link" href="#rentals" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">RENTALS</a>
+                <a href="#" class="desktop nav-link">LOCATION</a>
+                <a href="#location" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">LOCATIONM</a>
               </li>
               <li class="nav-item">
-                <a class="desktop nav-link" href="#">PHOTOS</a>
-                <a class="mobile nav-link" href="#photos" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">PHOTOS</a>
+                <a href="#" class="desktop nav-link">RENTALS</a>
+                <a href="#rentals" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">RENTALS</a>
               </li>
               <li class="nav-item">
-                <a class="desktop nav-link" href="#">LOCATION</a>
-                <a class="mobile nav-link" href="#location" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">LOCATION</a>
+                <a href="#" class="desktop nav-link">PHOTOS</a>
+                <a href="#photos" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">PHOTOS</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  CONTACT
+                  CONTACT 
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;(650) 965 - 1671</li>
@@ -65,7 +81,7 @@
               <!-- ========== END DESKTOP NAV ========== -->
             </ul>
           </div>
-        </div>
+        </div> 
       </nav>
     </nav>
 
@@ -81,7 +97,7 @@
     <!-- ========== END DESKTOP CONTENT ========== -->
 
 
-    <!-- ========== MOBILE CONTENT ========== -->
+    <!-- ========== MOBILE CONTENT ========== --> 
     <div id="home" class="mobile">  
       <img class="hero-img" src="./assets/img/04.jpg" />
       <div class="hero-mod"> 
@@ -89,7 +105,12 @@
         <hr class="sun-hr">
         <p>Casa Del Sol Apartments is a quiet, 18 unit garden-community located on the Sunnyvale/Mountain View border. Our ideal location is minutes from Downtown Sunnyvale and Mountain&nbsp;View, Caltrain, and many great shops and restaurants along El&nbsp;Camino&nbsp;Real.</p>
       </div> 
+ 
     </div>
+
+    <div id="location" class="location-mod mobile">
+      <div id="map_canvas"></div>
+    </div>  
     <!-- ========== END MOBILE CONTENT ========== -->
 
 
@@ -132,6 +153,8 @@
         </tr>
       </table>
     </footer> 
+
+    <script src="script.js"></script>
 </body>
 
 </html>

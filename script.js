@@ -10,17 +10,18 @@ function loadScript(src,callback){
 
 loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBzO-kFoyPTj9B6TpYNhsMMxb49bi6LPXg&callback=initialize');
 
-
+// Google Map 
 function initialize() {
 	
 	var contentString = '<div id="map-content">'+
-      '<h1>Casa Del Sol</h1>'+
+      '<h1>CASA DEL SOL</h1>'+
 	    '<h4>135 Acalanes Drive, Sunnyvale CA 94086</h4>' +
 	    '</div>';
 		
     var mapOptions = {
           zoom: 13,
           center: new google.maps.LatLng(37.384558, -122.056735),
+          mapTypeControl: false,
           mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 	
@@ -49,7 +50,7 @@ function log(str){
   document.getElementsByTagName('pre')[0].appendChild(document.createTextNode('['+new Date().getTime()+']\n'+str+'\n\n'));
 }
 
-// TEST
+// Slideshow 
 var sliderObjects = [];
 createSliderObjects();
 
