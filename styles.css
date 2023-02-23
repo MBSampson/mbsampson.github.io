@@ -1,6 +1,19 @@
+h1,
+h2,
+h3 {
+  color: #333333;
+  font-family: 'Alegreya', Arial, sans-serif;
+}
+p {
+  color: #333333;
+  font-family: 'Nunito', Arial, sans-serif;
+}
+div.mobile {
+  display: none;
+}
 /* ========== NAVBAR ========== */
 .navbar {
-  width: 100%;
+  width: calc(100vw);
   background-color: #fafafa;
   font-family: 'Alegreya', Arial, sans-serif;
   box-shadow: 0 9px 20px 0 rgba(0, 0, 0, 0.2), 0 9px 20px 0 rgba(0, 0, 0, 0.2);
@@ -56,12 +69,12 @@ main {
   background-repeat: no-repeat;
   background-position: center;
 }
-.hero-spacer {
+main .hero-spacer {
   font-size: 490px;
   line-height: 490px;
   height: 490px;
 }
-.hero-mod {
+main .hero-mod {
   background-color: #ffffff;
   width: 50%;
   min-width: 360px;
@@ -69,29 +82,73 @@ main {
   margin: 0 auto;
   text-align: center;
 }
-.hero-mod h1 {
-  padding: 30px 0 15px;
+main .hero-mod h1 {
+  padding: 30px 15px 15px;
   text-align: center;
   text-transform: uppercase;
-  font-family: 'Alegreya', serif;
   font-size: 44px;
   line-height: 52px;
   letter-spacing: 5.5px;
   word-spacing: 5px;
 }
-.hero-mod p {
-  font-family: 'Nunito', sans-serif;
+main .hero-mod p {
+  font-family: 'Nunito', Arial, sans-serif;
   font-size: 14px;
   line-height: 22px;
   padding: 25px 45px 30px;
 }
-.hero-mod hr.sun-hr {
+main .hero-mod hr.sun-hr {
   width: 80%;
   margin: 0 auto;
 }
+footer {
+  background-color: #040404;
+  background-image: url(./assets/img/bg_nami.png);
+}
+footer .address-mod {
+  padding: 25px 0;
+  text-align: center;
+  background-color: #040404;
+}
+footer .address-mod h2 {
+  font-size: 20px;
+  line-height: 30px;
+  font-family: 'Nunito', Arial, sans-serif;
+  color: #936c22;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-weight: 800;
+}
+footer .address-mod a {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border: 1px solid #936c22;
+  color: #936c22;
+}
+footer td {
+  vertical-align: top;
+  padding: 25px 35px 0;
+}
+footer td h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 32px;
+  color: #936c22;
+}
+footer td p {
+  font-size: 12px;
+  line-height: 18px;
+  color: #fafafa;
+  font-weight: 500;
+}
 @media only screen and (max-width: 600px) {
-  .hero-spacer {
-    height: 200px;
+  main {
+    display: none;
+  }
+  div.mobile {
+    display: block !important;
   }
 }
 @media only screen and (max-width: 992px) {
