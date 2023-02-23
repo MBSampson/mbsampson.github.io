@@ -71,7 +71,7 @@ p {
   }
 }
 
-/* ========== MAIN CONTENT ========== */ 
+/* ========== MAIN DESKTOP CONTENT ========== */ 
 main {
   width: 100%;
   height: calc(100vh);
@@ -109,9 +109,36 @@ main {
       line-height: 22px;
       padding: 25px 45px 30px;
     }
-    hr.sun-hr {
-      width: 80%;
-      margin: 0 auto;
+  }
+}
+
+hr.sun-hr {
+  width: 80%;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+
+/* ========== MAIN MOBILE CONTENT ========== */ 
+div.mobile {
+  .hero-img {
+    width: 100%;
+  }
+  .hero-mod {
+    text-align: center;
+    h1 {
+      padding: 30px 15px 15px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 44px;
+      line-height: 52px;
+      letter-spacing: 5.5px;
+      word-spacing: 5px;
+    }
+    p { 
+      font-family: 'Nunito', Arial, sans-serif;
+      font-size: 14px;
+      line-height: 22px;
+      padding: 25px 45px 30px;
     }
   }
 }
@@ -132,6 +159,7 @@ footer {
       text-transform: uppercase;
       margin-bottom: 18px;
       font-weight: 800;
+      padding: 0 10px;
     }
     a {
       text-decoration: none;
@@ -157,6 +185,10 @@ footer {
       color: @secondary-p-color;
       font-weight: 500;
     }
+    a.unstyle-link {
+      color: @secondary-p-color;
+      text-decoration: none;
+    }
   }
 }
 
@@ -169,6 +201,9 @@ footer {
   div.mobile {
     display: block !important;
   }
+  a.mobile {
+    display: inline !important;
+  }
   td.mobile {
     display: table-cell !important;
   }
@@ -178,6 +213,9 @@ footer {
   .navbar {
     li.nav-item {
       padding-left: 55px;
+      a {
+        line-height: 56px;
+      } 
     }
     .mobile-nav-title {
       display: inline-block !important;

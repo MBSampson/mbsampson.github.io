@@ -36,10 +36,22 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <!-- ========== DESKTOP NAV ========== -->
-              <li class="nav-item"><a class="nav-link" aria-current="page" href="#">HOME</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">RENTALS</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">PHOTOS</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">LOCATION</a></li>
+              <li class="nav-item">
+                <a class="desktop nav-link" href="#">HOME</a>
+                <a class="mobile nav-link" href="#home">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="desktop nav-link" href="#">RENTALS</a>
+                <a class="mobile nav-link" href="#">RENTALS</a>
+              </li>
+              <li class="nav-item">
+                <a class="desktop nav-link" href="#">PHOTOS</a>
+                <a class="mobile nav-link" href="#">PHOTOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="desktop nav-link" href="#">LOCATION</a>
+                <a class="mobile nav-link" href="#">LOCATION</a>
+              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   CONTACT
@@ -50,10 +62,7 @@
                   <li>135 Acalanes Drive, Sunnyvale CA 94086</li>
                 </ul>
               </li>
-              <!-- ========== END DESKTOP NAV ========== --> 
-
-              <!-- ========== MOBILE NAV ========== -->
-              <!-- ========== END MOBILE NAV ========== -->
+              <!-- ========== END DESKTOP NAV ========== -->
             </ul>
           </div>
         </div>
@@ -73,8 +82,13 @@
 
 
     <!-- ========== MOBILE CONTENT ========== -->
-    <div class="mobile" style="border: 1px solid red;">  
-      test
+    <div id="home" class="mobile">  
+      <img class="hero-img" src="./assets/img/04.jpg" />
+      <div class="hero-mod"> 
+        <h1>CASA DEL&nbsp;SOL</h1>
+        <hr class="sun-hr">
+        <p>Casa Del Sol Apartments is a quiet, 18 unit garden-community located on the Sunnyvale/Mountain View border. Our ideal location is minutes from Downtown Sunnyvale and Mountain&nbsp;View, Caltrain, and many great shops and restaurants along El&nbsp;Camino&nbsp;Real.</p>
+      </div> 
     </div>
     <!-- ========== END MOBILE CONTENT ========== -->
 
@@ -104,15 +118,15 @@
             </div> 
           </td>
           <td class="desktop"> 
-            <img src="./assets/img/yelp_light_logo.svg" /> 
+            <a href="https://www.yelp.com/biz/casa-del-sol-apartments-sunnyvale"><img alt="Hear what people are saying about us on Yelp!" src="./assets/img/yelp_light_logo.svg" width="80" height="40" /></a> 
           </td>
         </tr>
         <tr>
           <td class="mobile">
             <div class="contact">
               <h3>Contact</h3>
-              <p><i class="fa fa-phone" aria-hidden="true"></i> (650) 965 - 1671</p>
-              <p><i class="fa fa-envelope" aria-hidden="true"></i> FelixPropertiesCDS@gmail.com</p> 
+              <p><i class="fa fa-phone" aria-hidden="true"></i> <a class="unstyle-link" href="" aria-hidden="true">(650) 965 - 1671</a></p>
+              <p><i class="fa fa-envelope" aria-hidden="true"></i> <a class="unstyle-link" href="" aria-hidden="true">FelixPropertiesCDS@gmail.com</a></p> 
             </div> 
           </td>
         </tr>
