@@ -114,6 +114,8 @@ function showDivs(divObject, n) {
 function showImage(imgName) {
   document.getElementById('largeImg').src = imgName;
   showLargeImagePanel();
+  // Disable scrolling
+  document.querySelector("body").style.overflow = "hidden";
   unselectAll();
 }
 function showLargeImagePanel() {
@@ -125,4 +127,6 @@ function unselectAll() {
 }
 function hideMe(obj) {
   obj.style.visibility = 'hidden';
+  // Enable scrolling
+  document.querySelector("body").style.overflow = "auto";
 }
