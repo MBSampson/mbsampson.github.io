@@ -263,7 +263,9 @@ footer td a.unstyle-link {
   .slider,
   .mySlides,
   footer,
-  html {
+  html,
+  .rental-amenities,
+  .rental-info {
     min-width: 360px;
   }
   main,
