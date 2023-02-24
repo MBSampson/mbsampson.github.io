@@ -174,7 +174,6 @@ footer td a.unstyle-link {
 }
 /* ---------------------------- LOCATION SELECTORS ---------------------------- */
 #location #map_canvas {
-  width: 100%;
   height: 400px;
 }
 #location #map_canvas #map-content > h1 {
@@ -250,6 +249,7 @@ footer td a.unstyle-link {
 }
 @media only screen and (max-width: 821px) {
   #mobile-wrapper,
+  #location,
   .navbar,
   .slider,
   footer,
