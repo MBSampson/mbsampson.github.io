@@ -173,6 +173,9 @@ footer td a.unstyle-link {
   text-decoration: none;
 }
 /* ---------------------------- LOCATION SELECTORS ---------------------------- */
+#location #map_canvas {
+  height: 400px;
+}
 #location #map_canvas #map-content > h1 {
   text-align: center;
   margin: 0;
