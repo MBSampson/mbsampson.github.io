@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Casa Del Sol: garden-style apartment complex located in Sunnyvale, CA">
 
-  <title>Casa Del Sol</title>
+  <title>Casa Del Sol Apartments</title>
+  <link rel="icon" type="image/png" href="./assets/img/sun-regular-inverted.png"> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -32,7 +33,7 @@
       <nav class="navbar navbar-expand-lg ">
         <div class="inner-nav container-fluid"> 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="mobile-nav-title">Casa del Sol</span>&nbsp;&nbsp;<i class="fa fa-sun-o" aria-hidden="true"></i>
+            <span class="mobile-nav-title"><i class="fa fa-sun-o" aria-hidden="true"></i>&nbsp;&nbsp;Casa del Sol</span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent" data-toggle="collapse" data-target=".navbar-collapse" >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
@@ -132,14 +133,47 @@
           <p>Double-Paned Windows</p> 
           <p>Energy Star Central Heat</p> 
         </div>
-
-        <hr class="sun-hr">
       </div>
 
-      <div id="photos">
-        <h1>Exterior</h1>
+      <table class="divider" role="presentation" align="center" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td>
+            <hr class="sun-hr">
+          </td>
+          <td class="icon">
+            <i class="fa fa-sun-o" aria-hidden="true"></i>
+          </td>
+          <td>
+            <hr class="sun-hr">
+          </td>
+        </tr>
+      </table> 
 
-        <h1>Interior</h1>
+      <div id="photos">
+        <h1>Photos</h1> 
+        <div class="photo-gallery">
+          <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td>
+                <img src="./assets/img/48.jpg" class="gallery-img" alt="" /> 
+              </td>
+              <td>
+                <img src="./assets/img/49.jpg" class="gallery-img" alt="" /> 
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="./assets/img/46.jpg" class="gallery-img" alt="" /> 
+              </td>
+              <td> 
+                <img src="./assets/img/45.jpg" class="gallery-img" alt="1.jpeg" style="cursor:pointer" 
+                      onclick="showImage('./assets/img/45.jpg');">
+                <div id="largeImgPanel" onclick="hideMe(this);">
+                <img id="largeImg" style="height: 100%; margin: 0; padding: 0;">
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
     <!-- ========== END MOBILE CONTENT ========== -->

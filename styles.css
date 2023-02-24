@@ -8,6 +8,20 @@ p {
   color: #333333;
   font-family: 'Nunito', Arial, sans-serif;
 }
+hr.sun-hr {
+  width: 80%;
+  margin: 0 auto;
+  border: 3px solid #DAA520;
+}
+.divider {
+  color: #936c22;
+  transform: translateY(-12px);
+}
+.divider td.icon {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+}
 .mobile {
   display: none;
 }
@@ -29,8 +43,7 @@ p {
   font-weight: 600;
 }
 .navbar .fa.fa-sun-o {
-  position: fixed;
-  top: 23px;
+  transform: translateY(1px);
 }
 .navbar .navbar-toggler {
   color: #936c22;
@@ -46,6 +59,9 @@ p {
   font-size: 1.1em;
   font-weight: 600;
   letter-spacing: 1.5px;
+}
+.navbar .nav-link {
+  padding: 0;
 }
 .navbar .dropdown-menu li {
   display: block;
@@ -96,11 +112,6 @@ main .hero-mod p {
   font-size: 14px;
   line-height: 22px;
   padding: 25px 45px 30px;
-}
-hr.sun-hr {
-  width: 80%;
-  margin: 0 auto;
-  border: 2px solid #DAA520;
 }
 /* ========== MAIN MOBILE CONTENT ========== */
 div.mobile .hero-img {
@@ -195,7 +206,8 @@ footer td a.unstyle-link {
 /* ---------------------------- END LOCATION SELECTORS ---------------------------- */
 /* ---------------------------- RENTAL SELECTORS ---------------------------- */
 #rentals {
-  margin: 60px 0;
+  padding: 60px 0;
+  background-color: #fafafa;
 }
 #rentals h1 {
   text-transform: uppercase;
@@ -204,7 +216,7 @@ footer td a.unstyle-link {
   letter-spacing: 10px;
 }
 #rentals .rental-info {
-  padding: 20px 15px 20px;
+  padding: 20px 25px 20px;
 }
 #rentals .rental-info h2 {
   text-transform: uppercase;
@@ -233,15 +245,32 @@ footer td a.unstyle-link {
   transform: translate3d(10px, -44px, 0);
 }
 #rentals .rental-amenities {
-  padding: 0 15px 20px;
+  padding: 0 25px 20px;
 }
 /* ---------------------------- END RENTAL SELECTORS ---------------------------- */
 /* ---------------------------- PHOTOS SELECTORS ---------------------------- */
+#photos {
+  padding: 80px 0;
+}
 #photos h1 {
   text-transform: uppercase;
   text-align: center;
   font-weight: 800;
   letter-spacing: 10px;
+}
+#photos .photo-gallery .gallery-img {
+  max-width: 100%;
+}
+#photos #largeImgPanel {
+  text-align: center;
+  visibility: hidden;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 100, 100, 0.5);
 }
 /* ---------------------------- END PHOTOS SELECTORS ---------------------------- */
 @media only screen and (max-width: 821px) {
