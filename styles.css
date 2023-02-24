@@ -226,16 +226,17 @@ footer td a.unstyle-link {
   padding: 0 15px 20px;
 }
 #rentals .slide-btn {
-  background-color: rgba(0, 0, 0, 0.5);
   color: #DAA520;
-  border: 2px solid #DAA520;
   font-size: 1.5em;
   font-weight: 800;
   outline: none;
+  border: none;
+  background: none;
   width: 48px;
   height: 48px;
   transform: translateY(-49px);
   position: relative;
+  display: inline-block;
   -webkit-transition: all 0.15s linear;
   -moz-transition: all 0.15s linear;
   -ms-transition: all 0.15s linear;
