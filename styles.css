@@ -195,7 +195,7 @@ footer td a.unstyle-link {
 /* ---------------------------- END LOCATION SELECTORS ---------------------------- */
 /* ---------------------------- RENTAL SELECTORS ---------------------------- */
 #rentals {
-  margin: 25px 0 25px;
+  margin: 60px 0;
 }
 #rentals h1 {
   text-transform: uppercase;
@@ -224,14 +224,26 @@ footer td a.unstyle-link {
 }
 #rentals .slider .slide-arrow {
   position: relative;
-  transform: translateY(-38px);
 }
 #rentals .slider .slide-arrow.right {
   float: right;
+  transform: translate3d(-10px, -44px, 0);
+}
+#rentals .slider .slide-arrow.left {
+  transform: translate3d(10px, -44px, 0);
 }
 #rentals .rental-amenities {
   padding: 0 15px 20px;
 }
+/* ---------------------------- END RENTAL SELECTORS ---------------------------- */
+/* ---------------------------- PHOTOS SELECTORS ---------------------------- */
+#photos h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 10px;
+}
+/* ---------------------------- END PHOTOS SELECTORS ---------------------------- */
 @media only screen and (max-width: 821px) {
   #mobile-wrapper,
   #location,
@@ -242,7 +254,8 @@ footer td a.unstyle-link {
   footer,
   html,
   .rental-amenities,
-  .rental-info {
+  .rental-info,
+  #photos {
     min-width: 360px;
   }
   main,
