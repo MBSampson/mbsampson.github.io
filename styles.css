@@ -195,7 +195,7 @@ footer td a.unstyle-link {
 /* ---------------------------- END LOCATION SELECTORS ---------------------------- */
 /* ---------------------------- RENTAL SELECTORS ---------------------------- */
 #rentals {
-  margin-top: 25px;
+  margin: 25px 0 25px;
 }
 #rentals h1 {
   text-transform: uppercase;
@@ -204,7 +204,7 @@ footer td a.unstyle-link {
   letter-spacing: 10px;
 }
 #rentals .rental-info {
-  padding: 25px 15px 20px;
+  padding: 20px 15px 20px;
 }
 #rentals .rental-info h2 {
   text-transform: uppercase;
@@ -221,6 +221,9 @@ footer td a.unstyle-link {
   margin: 0 0 8px;
   font-size: 14px;
   line-height: 20px;
+}
+#rentals .rental-amenities {
+  padding: 0 15px 20px;
 }
 #rentals .slide-btn {
   background-color: rgba(0, 0, 0, 0.5);
@@ -241,6 +244,8 @@ footer td a.unstyle-link {
 }
 #rentals .slide-btn i {
   border: 1px solid red;
+  text-align: center;
+  margin: 0 auto;
 }
 #rentals .slide-btn-right {
   float: right;
