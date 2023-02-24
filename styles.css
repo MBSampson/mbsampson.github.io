@@ -222,39 +222,17 @@ footer td a.unstyle-link {
   font-size: 14px;
   line-height: 20px;
 }
-#rentals .rental-amenities {
-  padding: 0 15px 20px;
+#rentals .slider {
+  background-color: #040404;
 }
-#rentals .slide-btn {
-  color: #DAA520;
-  font-size: 1.5em;
-  font-weight: 800;
-  outline: none;
-  border: none;
-  background: none;
-  width: 48px;
-  height: 48px;
-  transform: translateY(-49px);
-  position: relative;
-  display: inline-block;
-  -webkit-transition: all 0.15s linear;
-  -moz-transition: all 0.15s linear;
-  -ms-transition: all 0.15s linear;
-  -o-transition: all 0.15s linear;
-  transition: all 0.15s linear;
+#rentals .slider .slide-arrow {
+  margin: 10px 0;
 }
-#rentals .slide-btn i {
-  border: 1px solid red;
-  text-align: center;
-  margin: 0 auto;
-}
-#rentals .slide-btn-right {
+#rentals .slider .slide-arrow.right {
   float: right;
 }
-#rentals .slide-btn-left:hover,
-#rentals .slide-btn-right:hover {
-  color: #DAA520;
-  border: 2px solid #DAA520;
+#rentals .rental-amenities {
+  padding: 0 15px 20px;
 }
 @media only screen and (max-width: 821px) {
   #mobile-wrapper,
