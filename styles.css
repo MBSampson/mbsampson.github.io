@@ -239,6 +239,9 @@ footer td a.unstyle-link {
   -o-transition: all 0.15s linear;
   transition: all 0.15s linear;
 }
+#rentals .slide-btn i {
+  border: 1px solid red;
+}
 #rentals .slide-btn-right {
   float: right;
 }
