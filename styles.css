@@ -13,6 +13,9 @@ hr.sun-hr {
   margin: 0 auto;
   border: 3px solid #DAA520;
 }
+hr.sun-hr.full {
+  width: 100%;
+}
 .divider {
   color: #936c22;
   transform: translateY(-12px);
@@ -62,6 +65,9 @@ hr.sun-hr {
 }
 .navbar .nav-link {
   padding: 0;
+}
+.navbar .dropdown-menu {
+  transform: translateX(-50px);
 }
 .navbar .dropdown-menu li {
   display: block;
@@ -206,7 +212,7 @@ footer td a.unstyle-link {
 /* ---------------------------- END LOCATION SELECTORS ---------------------------- */
 /* ---------------------------- RENTAL SELECTORS ---------------------------- */
 #rentals {
-  padding: 60px 0;
+  padding: 60px 0 40px;
   background-color: #fafafa;
 }
 #rentals h1 {
@@ -257,6 +263,9 @@ footer td a.unstyle-link {
   text-align: center;
   font-weight: 800;
   letter-spacing: 10px;
+}
+#photos .photo-gallery {
+  padding-top: 20px;
 }
 #photos .photo-gallery .gallery-img {
   max-width: 100%;

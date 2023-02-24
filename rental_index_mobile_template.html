@@ -1,0 +1,44 @@
+<!-- msam: 
+  
+     Place code block in the index.html file. 
+     --------- DO NOT USE THIS CODE IN THE rentals.html file. --------- 
+
+     This template will act as an instruction manual for adding in new rentals to the index.html page. 
+     Note that this template is for MOBILE ONLY therefore you will still need to update the rentals.html page and its HTML content.
+
+     Instructions:
+     1. Navigate to the 'Rental Info' section and replace: UNIT_NAME, BEDROOM_NUM, BATH_NUM, RENT_NUM, DATE_AVAILABLE, DEPOSIT_NUM .. be sure to keep $ in front of costs.
+     2. Navigate to the 'Slideshow' section and..
+        2a. Update the .slider div ID if needed.. see comment for more info.
+        2b. Place rental images into the assets/img/rentals folder and then reference them in the order you want users to see them. 
+            Copy the entire <img class="mySlides" ....> if you want to add images.
+     3. Navigate to the 'Rental Amenities' section and replace: AMENITY_ONE, AMENITY_TWO, AMENITY_THREE.
+        3a. Duplicate the <p>AMENITY_#</p> if you want to display more amenities
+-->
+<!-- ==================== RENTAL #RENTAL_NUM ==================== -->
+<!-- Rental Info -->
+<div class="rental-info">
+  <h2>UNIT_NAME</h2>
+  <h3>BEDROOM_NUM Bedroom | BATH_NUM Bath</h3>
+  <p><strong>Rent:</strong> $RENT_NUM</p>
+  <p><strong>Available Date:</strong> DATE_AVAILABLE</p>
+  <p><strong>Deposit:</strong> $DEPOSIT_NUM</p>
+</div>
+
+<!-- Slideshow -->
+<div class="slider" id="div1"> <!-- Update to match your rental's number, for example: if this is the FIRST rental on the page then use id="div1" .... if this is the SECOND rental on the page then use id="div2" -->
+  <img class="mySlides" alt="" src="./assets/img/rentals/47.jpg" onclick="plusDivs(this,1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+  <img class="mySlides" alt="" src="./assets/img/rentals/48.jpg" onclick="plusDivs(this,1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+  <img class="mySlides" alt="" src="./assets/img/rentals/49.jpg" onclick="plusDivs(this,1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+  <!-- Add more image(s) here-->
+
+  <img src="./assets/img/left_arrow_icon.png" class="slide-arrow left" onclick="plusDivs(this,-1)" width="32" height="32" alt="" />
+  <img src="./assets/img/right_arrow_icon.png" class="slide-arrow right" onclick="plusDivs(this,1)" width="32" height="32" alt="" /> 
+</div> 
+
+<div class="rental-amenities">
+  <p>AMENITY_ONE</p> 
+  <p>AMENITY_TWO</p> 
+  <p>AMENITY_THREE</p>   
+</div>
+<!-- ==================== END RENTAL #1 ==================== -->

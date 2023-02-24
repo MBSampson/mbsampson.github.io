@@ -20,7 +20,10 @@ hr.sun-hr {
   width: 80%;
   margin: 0 auto;
   border: 3px solid @hr-color;
-}
+  &.full {
+    width: 100%;
+  }
+} 
 
 .divider {
   color: @secondary-h-color;
@@ -76,6 +79,7 @@ hr.sun-hr {
     padding: 0;
   }
   .dropdown-menu {
+    transform: translateX(-50px);
     li {
       display: block;
       padding: 3px 20px;
@@ -235,7 +239,7 @@ footer {
 
 /* ---------------------------- RENTAL SELECTORS ---------------------------- */
 #rentals {
-  padding: 60px 0;
+  padding: 60px 0 40px;
   background-color: #fafafa;
   h1 {
     text-transform: uppercase;
@@ -295,6 +299,7 @@ footer {
       letter-spacing: 10px;
   }
   .photo-gallery {
+    padding-top: 20px;
     .gallery-img {
       max-width: 100%; 
     }
@@ -341,7 +346,7 @@ footer {
   }
   td.mobile {
     display: table-cell !important;
-  }
+  } 
 } 
 
 @media only screen and (max-width: 992px) {
