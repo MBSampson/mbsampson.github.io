@@ -1,5 +1,15 @@
 h1,
 h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
 h3 {
   color: #333333;
   font-family: 'Alegreya', Arial, sans-serif;
@@ -7,6 +17,12 @@ h3 {
 p {
   color: #333333;
   font-family: 'Nunito', Arial, sans-serif;
+}
+.custom-sun-hr {
+  width: 80%;
+}
+.custom-sun-hr .sun-hr-col {
+  width: 24px;
 }
 hr.sun-hr {
   width: 80%;
@@ -127,7 +143,7 @@ div.mobile .hero-mod {
   text-align: center;
 }
 div.mobile .hero-mod h1 {
-  padding: 30px 15px 15px;
+  padding: 30px 55px 15px;
   text-align: center;
   text-transform: uppercase;
   font-size: 44px;
@@ -141,6 +157,124 @@ div.mobile .hero-mod p {
   line-height: 22px;
   padding: 25px 45px 30px;
 }
+/* ---------------------------- LOCATION SELECTORS ---------------------------- */
+#location #map_canvas {
+  height: 400px;
+}
+#location #map_canvas #map-content > h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  font-family: 'Alegreya', Arial, serif;
+}
+#location #map_canvas #map-content > h4 {
+  text-align: center;
+  padding-top: 8px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 20px;
+  font-family: 'Nunito', Arial, sans-serif;
+}
+/* ---------------------------- END LOCATION SELECTORS ---------------------------- */
+/* ---------------------------- RENTAL SELECTORS ---------------------------- */
+#rentals {
+  padding: 60px 0 40px;
+  background-color: #f5f5f5;
+}
+#rentals h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 10px;
+  margin-bottom: 10px;
+}
+#rentals .rental-info {
+  padding: 20px 25px 20px;
+}
+#rentals .rental-info h2 {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #333333;
+  font-size: 28px;
+  line-height: 36px;
+}
+#rentals .rental-info h3 {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+#rentals .rental-info p {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 20px;
+}
+#rentals .slider .slide-arrow {
+  position: relative;
+}
+#rentals .slider .slide-arrow.right {
+  float: right;
+  transform: translate3d(-10px, -44px, 0);
+}
+#rentals .slider .slide-arrow.left {
+  transform: translate3d(10px, -44px, 0);
+}
+#rentals .rental-amenities {
+  padding: 0 15px 20px;
+}
+#rentals .rental-amenities td {
+  vertical-align: top;
+}
+#rentals .rental-amenities td p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 21px;
+}
+#rentals .rental-amenities td.c1 {
+  padding-right: 5px;
+}
+#rentals .rental-amenities td.c2 {
+  padding-left: 5px;
+}
+/* ---------------------------- END RENTAL SELECTORS ---------------------------- */
+/* ---------------------------- PHOTOS SELECTORS ---------------------------- */
+#photos {
+  padding: 80px 0;
+}
+#photos h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 10px;
+  margin-bottom: 10px;
+}
+#photos .photo-gallery {
+  padding-top: 20px;
+}
+#photos .photo-gallery .gallery-img {
+  max-width: 100%;
+}
+#photos #largeImgPanel {
+  text-align: center;
+  visibility: hidden;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#photos #largeImgPanel #largeImg {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 30vh;
+  left: 0;
+  position: absolute;
+}
+/* ---------------------------- END PHOTOS SELECTORS ---------------------------- */
 footer {
   background-color: #040404;
   background-image: url(./assets/img/bg_nami.png);
@@ -173,6 +307,7 @@ footer td {
   padding: 25px 35px 0;
 }
 footer td h3 {
+  margin-bottom: 10px;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 24px;
@@ -180,6 +315,7 @@ footer td h3 {
   color: #DAA520;
 }
 footer td p {
+  margin-bottom: 8px;
   font-size: 12px;
   line-height: 18px;
   color: #fafafa;
@@ -189,107 +325,6 @@ footer td a.unstyle-link {
   color: #fafafa;
   text-decoration: none;
 }
-/* ---------------------------- LOCATION SELECTORS ---------------------------- */
-#location #map_canvas {
-  height: 400px;
-}
-#location #map_canvas #map-content > h1 {
-  text-align: center;
-  margin: 0;
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 700;
-  font-family: 'Alegreya', Arial, serif;
-}
-#location #map_canvas #map-content > h4 {
-  text-align: center;
-  padding-top: 8px;
-  margin: 0;
-  font-size: 12px;
-  line-height: 20px;
-  font-family: 'Nunito', Arial, sans-serif;
-}
-/* ---------------------------- END LOCATION SELECTORS ---------------------------- */
-/* ---------------------------- RENTAL SELECTORS ---------------------------- */
-#rentals {
-  padding: 60px 0 40px;
-  background-color: #fafafa;
-}
-#rentals h1 {
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: 800;
-  letter-spacing: 10px;
-}
-#rentals .rental-info {
-  padding: 20px 25px 20px;
-}
-#rentals .rental-info h2 {
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #333333;
-  font-size: 28px;
-  line-height: 36px;
-}
-#rentals .rental-info h3 {
-  font-size: 24px;
-  line-height: 30px;
-}
-#rentals .rental-info p {
-  margin: 0 0 8px;
-  font-size: 14px;
-  line-height: 20px;
-}
-#rentals .slider .slide-arrow {
-  position: relative;
-}
-#rentals .slider .slide-arrow.right {
-  float: right;
-  transform: translate3d(-10px, -44px, 0);
-}
-#rentals .slider .slide-arrow.left {
-  transform: translate3d(10px, -44px, 0);
-}
-#rentals .rental-amenities {
-  padding: 0 25px 20px;
-}
-/* ---------------------------- END RENTAL SELECTORS ---------------------------- */
-/* ---------------------------- PHOTOS SELECTORS ---------------------------- */
-#photos {
-  padding: 80px 0;
-}
-#photos h1 {
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: 800;
-  letter-spacing: 10px;
-}
-#photos .photo-gallery {
-  padding-top: 20px;
-}
-#photos .photo-gallery .gallery-img {
-  max-width: 100%;
-}
-#photos #largeImgPanel {
-  text-align: center;
-  visibility: hidden;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-#photos #largeImgPanel #largeImg {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  top: 30vh;
-  left: 0;
-  position: absolute;
-}
-/* ---------------------------- END PHOTOS SELECTORS ---------------------------- */
 @media only screen and (max-width: 821px) {
   #mobile-wrapper,
   #location,
