@@ -22,12 +22,24 @@ p {
   font-family: 'Nunito', Arial, sans-serif;
 }
 
-.custom-sun-hr {
-  width: 80%;
-  .sun-hr-col {
-    width: 24px;
+main {
+  .custom-sun-hr {
+    width: 80%;
+    .sun-hr-col {
+      width: 24px;
+    }
   }
 }
+
+.mobile {
+  .custom-sun-hr {
+    width: 80%;
+    .sun-hr-col {
+      width: 24px;
+    }
+  }
+}
+
 
 hr.sun-hr {
   width: 80%;
@@ -196,7 +208,50 @@ div.mobile {
     }
   }
    
-}  
+} 
+
+#desktop-location {
+  max-width: 1420px;
+  margin: 0 auto;
+  h1.welcome-banner { 
+    font-size: 50px;
+    line-height: 60px;
+    padding: 50px 0;
+    color: @tertiary-text-color;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 10px;
+    margin-bottom: 10px; 
+  }
+  .showcase {
+    margin-bottom: 25px;
+    .showcase-content {
+      padding: 25px;
+      background-color: #ffffff;
+      h2 {
+        font-family: 'Nunito', Arial, sans-serif;
+        text-transform: uppercase;
+        font-size: 36px; 
+        line-height: 48px;
+      }
+      p {
+        padding: 0 10px 25px;
+      }
+      .direction-icons {
+        td {
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+}
+
+.desktop-body {
+  background-image: url(./assets/img/bg_nami.png); 
+  background-color: rgb(4, 4, 4, 0.1);
+}
 
 /* ---------------------------- END LOCATION SELECTORS ---------------------------- */
 

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Casa Del Sol: garden-style apartment complex located in Sunnyvale, CA">
+
+  <title>Casa Del Sol Apartments</title>
+  <link rel="icon" type="image/png" href="./assets/img/sun-regular-inverted.png"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/4c12f61d71.js" crossorigin="anonymous"></script>
+
+  <!-- Favicons --> 
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya:400,700|Nunito:400,600" rel="stylesheet"> 
+
+  <!-- Template Main CSS File -->
+  <link href="styles.css" rel="stylesheet"> 
+</head>
+
+<body class="desktop-body">
+    <!-- ========== NAVBAR MAIN ========== -->
+    <nav class="navbar sticky-top navbar-expand-lg ">
+      <nav class="navbar navbar-expand-lg ">
+        <div class="inner-nav container-fluid"> 
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="mobile-nav-title"><i class="fa fa-sun-o" aria-hidden="true"></i>&nbsp;&nbsp;Casa del Sol</span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" data-toggle="collapse" data-target=".navbar-collapse" >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
+              <!-- msam 2-22-2023: Use nested <a> instead of appending the mobile class to the <ul>. This resolves an bug with <ul> mobile rendering. -->
+              <li class="nav-item">
+                <a href="index.html" class="desktop nav-link">HOME</a>
+                <a href="#home" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">HOME</a> 
+              </li>
+              <li class="nav-item">
+                <a href="location.html" class="desktop nav-link">LOCATION</a>
+                <a href="#location" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">LOCATION</a>
+              </li>
+              <li class="nav-item"> 
+                <a href="rentals.html" class="nav-link">RENTALS</a>
+                <a href="#rentals" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">RENTALS</a>
+              </li> 
+              <li class="nav-item mobile"> 
+                <a href="#photos" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">PHOTOS</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  CONTACT 
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;(650) 965 - 1671</li>
+                  <li>FelixPropertiesCDS@gmail.com</li>
+                  <li>135 Acalanes Drive, Sunnyvale CA 94086</li>
+                </ul>
+              </li> 
+            </ul>
+          </div>
+        </div> 
+      </nav>
+    </nav>
+
+    <div id="desktop-location"> 
+      <h1 class="welcome-banner">Welcome Home</h1>  
+      <div class="showcase">
+        <table role="presentation" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td class="showcase-content">
+              <div>
+                <h2>Living here</h2>
+                <p>Welcome to this ###-unit apartment complex of one, two, and three-bedroom units. 
+                Located in the heart of Silicon Valley, Casa Del Sol is a quiet community 
+                that's just steps away from Apple's Infinity Loop, Googleplex, and Downtown Mountain&nbsp;View.</p>
+                
+                <h2>Near us</h2>
+                <p><em>Explore what's nearby! Click for directions to these notable companies:</em></p>
+                
+                <table class="direction-icons" role="presentation" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td> <!-- Apple -->
+                      <a href="https://www.google.com/maps/dir/Casa+del+Sol,+135+Acalanes+Dr,+Sunnyvale,+CA+94086/Apple+Infinite+Loop,+Infinite+Loop,+Cupertino,+CA/@37.3607736,-122.0846288,13z/data=!4m14!4m13!1m5!1m1!1s0x808fb6e1dcd84cdd:0x8a8ed91290942d9c!2m2!1d-122.0570889!2d37.38435!1m5!1m1!1s0x808fb5b6c4951d0f:0xb651414deb31e9fb!2m2!1d-122.030189!2d37.3316756!3e0">
+                        <img src="./assets/img/apple_logo_50x50px.png" width="48" height="48" />
+                      </a>
+                    </td>
+                    <td> <!-- Starbucks -->
+                      <a href="https://www.google.com/maps/dir/Casa+del+Sol,+135+Acalanes+Dr,+Sunnyvale,+CA+94086/Starbucks,+East+El+Camino+Real,+Mountain+View,+CA/@37.3814567,-122.0715069,15z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x808fb6e1dcd84cdd:0x8a8ed91290942d9c!2m2!1d-122.0570889!2d37.38435!1m5!1m1!1s0x808fb6d84a41eb51:0xc275d3556c405a39!2m2!1d-122.0707156!2d37.3787261!3e0">
+                        <img src="./assets/img/starbucks_icon_50x50px.png" width="48" height="48" />
+                      </a>
+                    </td>
+                    <td> <!-- AMD -->
+                      <a href="https://www.google.com/maps/dir/Casa+del+Sol,+135+Acalanes+Dr,+Sunnyvale,+CA+94086/AMD+Inc.,+Augustine+Drive,+Santa+Clara,+CA/@37.3878709,-122.0326351,14z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x808fb6e1dcd84cdd:0x8a8ed91290942d9c!2m2!1d-122.0570889!2d37.38435!1m5!1m1!1s0x808fb623aaaaaaab:0x524a9bec0bc52a5d!2m2!1d-121.9703842!2d37.3829254!3e0">
+                        <img src="./assets/img/amd_icon_50x50px.png" width="48" height="48" />
+                      </a>
+                    </td>
+                    <td> <!-- Dropbox -->
+                      <a href="https://www.google.com/maps/dir/Casa+del+Sol,+135+Acalanes+Dr,+Sunnyvale,+CA+94086/Dropbox+Mountain+View,+West+Evelyn+Avenue,+Mountain+View,+CA/@37.3885811,-122.0673123,16z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x808fb6e1dcd84cdd:0x8a8ed91290942d9c!2m2!1d-122.0570889!2d37.38435!1m5!1m1!1s0x808fb73f13043ae9:0x1564c7cee4ec4981!2m2!1d-122.0728238!2d37.3927094!3e0">
+                        <img src="./assets/img/dropbox_icon_50x50px.png" width="48" height="48" />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td> <!-- Google -->
+                      <a href="https://www.google.com/maps/dir/Casa+del+Sol,+135+Acalanes+Dr,+Sunnyvale,+CA+94086/Googleplex,+Amphitheatre+Parkway,+Mountain+View,+CA/@37.3988846,-122.0896322,14z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x808fb6e1dcd84cdd:0x8a8ed91290942d9c!2m2!1d-122.0570889!2d37.38435!1m5!1m1!1s0x808fba02425dad8f:0x6c296c66619367e0!2m2!1d-122.0840897!2d37.4220656!3e0">
+                        <img src="./assets/img/google_icon_50x50px.png" width="48" height="48" />
+                      </a>
+                    </td>
+                    <td> <!-- Microsoft -->
+                      <a href="https://www.google.com/maps/place/Microsoft/@37.3947897,-122.0781991,14z/data=!4m23!1m16!4m15!1m6!1m2!1s0x808fb6e1dcd84cdd:0x8a8ed91290942d9c!2sCasa+del+Sol,+135+Acalanes+Dr,+Sunnyvale,+CA+94086!2m2!1d-122.0570889!2d37.38435!1m6!1m2!1s0x808fb75a7c38f3b9:0x63cdfa80de8dc760!2sMicrosoft,+La+Avenida+Street,+Mountain+View,+CA!2m2!1d-122.072063!2d37.4129074!3e0!3m5!1s0x808fb75a7c38f3b9:0x63cdfa80de8dc760!8m2!3d37.4129074!4d-122.072063!16s%2Fg%2F1tdx4c8h">
+                        <img src="./assets/img/microsoft_50x50px.png" width="48" height="48" />
+                      </a>
+                    </td>
+                    <td> <!-- Safeway -->
+                      <a href="https://www.google.com/maps/dir/Casa+del+Sol,+135+Acalanes+Dr,+Sunnyvale,+CA+94086/Safeway,+East+El+Camino+Real,+Sunnyvale,+CA/@37.3751139,-122.0518819,15z/data=!3m2!4b1!5s0x808fb664b666704b:0x663c92cc087bca2b!4m14!4m13!1m5!1m1!1s0x808fb6e1dcd84cdd:0x8a8ed91290942d9c!2m2!1d-122.0570889!2d37.38435!1m5!1m1!1s0x808fb664f6d9797f:0xf24f0789002e2097!2m2!1d-122.0307124!2d37.3646576!3e0">
+                        <img src="./assets/img/grocery_icon_50x50px.png" width="48" height="48" />
+                      </a>
+                    </td>
+                    <td>
+                      <a href="">
+                        <img src="" width="48" height="48" />
+                      </a>
+                    </td>
+                  </tr>
+                </table> 
+              </div>
+            </td>
+            <td class="showcase-gallery">
+              <table role="presentation" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>
+                    <img src="./assets/img/showcase_tile_1_350x680px.jpg" width="325" />
+                  </td>
+                  <td>
+                    <img src="./assets/img/showcase_tile_2_350x680px.jpg" width="325" />
+                  </td>
+                  <td>
+                    <img src="./assets/img/showcase_tile_3_350x680px.jpg" width="325" />
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!-- ================== LOCATION SECTION ================== -->
+      <div id="location" class="location-mod">
+        <div id="map_canvas"></div>
+      </div>  
+      <!-- ================== END LOCATION SECTION ================== -->
+    </div>
+  
+
+  
+    <!-- ================== FOOTER SECTION ================== -->
+    <footer>
+      <div class="address-mod">
+        <h2>135 Acalanes Drive, Sunnyvale&nbsp;CA&nbsp;94086</h2> 
+        <a class="direction-btn" href="https://goo.gl/maps/XVCnPj9ukSLPVJNN7">Get Directions</a>
+      </div>
+      <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td>
+            <h3>Office Hours</h3>
+            <p>Monday: 9:00AM to 6:00PM</p>
+            <p>Tuesday: 9:00AM to 6:00PM</p>
+            <p>Wednesday: 9:00AM to 6:00PM</p>
+            <p>Thursday: 9:00AM to 6:00PM</p>
+            <p>Friday: 9:00AM to 6:00PM</p>
+            <p>Saturday: Closed</p>
+            <p>Sunday: Closed</p>
+          </td>
+          <td class="desktop">
+            <div class="contact">
+              <h3>Contact</h3>
+              <p><i class="fa fa-phone" aria-hidden="true"></i> (650) 965 - 1671</p>
+              <p><i class="fa fa-envelope" aria-hidden="true"></i> FelixPropertiesCDS@gmail.com</p> 
+            </div> 
+          </td>
+          <td class="desktop"> 
+            <a href="https://www.yelp.com/biz/casa-del-sol-apartments-sunnyvale"><img alt="Hear what people are saying about us on Yelp!" src="./assets/img/yelp_light_logo.svg" width="80" height="40" /></a> 
+          </td>
+        </tr>
+        <tr>
+          <td class="mobile">
+            <div class="contact">
+              <h3>Contact</h3>
+              <p><i class="fa fa-phone" aria-hidden="true"></i> <a class="unstyle-link" href="" aria-hidden="true">(650) 965 - 1671</a></p>
+              <p><i class="fa fa-envelope" aria-hidden="true"></i> <a class="unstyle-link" href="" aria-hidden="true">FelixPropertiesCDS@gmail.com</a></p> 
+            </div> 
+          </td>
+        </tr>
+      </table>
+      <p>Company icons provided by: <a href="https://icons8.com">icons8.com</a></p>
+    </footer> 
+    <!-- ================== END FOOTER SECTION ================== -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>

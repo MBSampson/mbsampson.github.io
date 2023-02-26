@@ -18,10 +18,16 @@ p {
   color: #333333;
   font-family: 'Nunito', Arial, sans-serif;
 }
-.custom-sun-hr {
+main .custom-sun-hr {
   width: 80%;
 }
-.custom-sun-hr .sun-hr-col {
+main .custom-sun-hr .sun-hr-col {
+  width: 24px;
+}
+.mobile .custom-sun-hr {
+  width: 80%;
+}
+.mobile .custom-sun-hr .sun-hr-col {
   width: 24px;
 }
 hr.sun-hr {
@@ -176,6 +182,44 @@ div.mobile .hero-mod p {
   font-size: 12px;
   line-height: 20px;
   font-family: 'Nunito', Arial, sans-serif;
+}
+#desktop-location {
+  max-width: 1420px;
+  margin: 0 auto;
+}
+#desktop-location h1.welcome-banner {
+  font-size: 50px;
+  line-height: 60px;
+  padding: 50px 0;
+  color: #DAA520;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 10px;
+  margin-bottom: 10px;
+}
+#desktop-location .showcase {
+  margin-bottom: 25px;
+}
+#desktop-location .showcase .showcase-content {
+  padding: 25px;
+  background-color: #ffffff;
+}
+#desktop-location .showcase .showcase-content h2 {
+  font-family: 'Nunito', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 48px;
+}
+#desktop-location .showcase .showcase-content p {
+  padding: 0 10px 25px;
+}
+#desktop-location .showcase .showcase-content .direction-icons td {
+  padding: 10px;
+}
+.desktop-body {
+  background-image: url(./assets/img/bg_nami.png);
+  background-color: #040404;
 }
 /* ---------------------------- END LOCATION SELECTORS ---------------------------- */
 /* ---------------------------- RENTAL SELECTORS ---------------------------- */
