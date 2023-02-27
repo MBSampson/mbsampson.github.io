@@ -50,7 +50,7 @@ hr.sun-hr.full {
 .mobile {
   display: none;
 }
-/* ========== NAVBAR ========== */
+/* ====================== NAVBAR SELECTORS ====================== */
 .navbar {
   width: 100%;
   background-color: #fafafa;
@@ -60,12 +60,20 @@ hr.sun-hr.full {
 .navbar .inner-nav {
   padding-left: 30px;
 }
-.navbar .mobile-nav-title {
-  display: none;
+.navbar button.mobile {
+  width: 100%;
+}
+.navbar button.mobile .nav-title {
   text-transform: uppercase;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
+  width: 100%;
+}
+.navbar button.mobile .nav-title .fa-sun-o {
+  left: 25px;
+  top: 15px;
+  position: absolute;
 }
 .navbar .fa.fa-sun-o {
   transform: translateY(1px);
@@ -103,7 +111,7 @@ hr.sun-hr.full {
 .navbar .dropdown-toggle::after {
   display: none;
 }
-/* ========== MAIN DESKTOP CONTENT ========== */
+/* ====================== DESKTOP index.html SELECTORS ====================== */
 main {
   width: 100%;
   height: calc(100vh);
@@ -118,7 +126,7 @@ main .hero-spacer {
   line-height: 490px;
   height: 490px;
 }
-main .hero-mod {
+main #hero-mod {
   background-color: #ffffff;
   width: 50%;
   min-width: 360px;
@@ -126,7 +134,7 @@ main .hero-mod {
   margin: 0 auto;
   text-align: center;
 }
-main .hero-mod h1 {
+main #hero-mod h1 {
   padding: 30px 15px 15px;
   text-align: center;
   text-transform: uppercase;
@@ -135,47 +143,79 @@ main .hero-mod h1 {
   letter-spacing: 5.5px;
   word-spacing: 5px;
 }
-main .hero-mod p {
+main #hero-mod p {
   font-family: 'Nunito', Arial, sans-serif;
   font-size: 14px;
   line-height: 22px;
   padding: 25px 45px 30px;
 }
-/* ========== MAIN MOBILE CONTENT ========== */
-div.mobile .hero-img {
+/* ====================== MOBILE index.html SELECTORS ====================== */
+#mobile-wrapper {
+  /* ---------------------------- MOBILE HERO SELECTORS ---------------------------- */
+  /* ---------------------------- END MOBILE HERO SELECTORS ---------------------------- */
+  /* ---------------------------- MOBILE LOCATION SELECTORS ---------------------------- */
+  /* ---------------------------- END MOBILE LOCATION SELECTORS ---------------------------- */
+  /* ---------------------------- RENTAL SELECTORS ---------------------------- */
+  /* ---------------------------- END RENTAL SELECTORS ---------------------------- */
+  /* ---------------------------- MOBILE PHOTOS SELECTORS ---------------------------- */
+  /* ---------------------------- END MOBILE PHOTOS SELECTORS ---------------------------- */
+}
+#mobile-wrapper #m-hero-mod #hero-img {
   width: 100%;
 }
-div.mobile .hero-mod {
+#mobile-wrapper #m-hero-mod #hero-content {
   text-align: center;
 }
-div.mobile .hero-mod h1 {
-  padding: 30px 55px 15px;
+#mobile-wrapper #m-hero-mod #hero-content h1 {
+  padding: 30px 15px 15px;
   text-align: center;
   text-transform: uppercase;
-  font-size: 44px;
-  line-height: 52px;
-  letter-spacing: 5.5px;
-  word-spacing: 5px;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 4px;
+  word-spacing: 2px;
 }
-div.mobile .hero-mod p {
+#mobile-wrapper #m-hero-mod #hero-content p {
   font-family: 'Nunito', Arial, sans-serif;
   font-size: 14px;
   line-height: 22px;
   padding: 25px 45px 30px;
 }
-/* ---------------------------- LOCATION SELECTORS ---------------------------- */
-#location #map_canvas {
-  height: 400px;
+#mobile-wrapper #m-location {
+  background-color: #0e0e0e;
+  background-image: url(./assets/img/bg_nami.png);
 }
-#location #map_canvas #map-content > h1 {
+#mobile-wrapper #m-location #map-wrapper {
+  padding: 55px 0 90px;
+}
+#mobile-wrapper #m-location #map-wrapper h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 10px;
+  margin-bottom: 10px;
+  color: #DAA520;
+}
+#mobile-wrapper #m-location #map-wrapper .sun-hr.full {
+  border: 3px solid #DAA520;
+  opacity: 100%;
+}
+#mobile-wrapper #m-location #map-wrapper #map_canvas {
+  height: 400px;
+  border-top: 3px solid #DAA520;
+  border-bottom: 3px solid #DAA520;
+}
+#mobile-wrapper #m-location #map-wrapper #map_canvas #map-content > h1 {
   text-align: center;
   margin: 0;
   font-size: 18px;
   line-height: 28px;
   font-weight: 700;
   font-family: 'Alegreya', Arial, serif;
+  color: #333333;
+  letter-spacing: 1px;
 }
-#location #map_canvas #map-content > h4 {
+#mobile-wrapper #m-location #map-wrapper #map_canvas #map-content > h4 {
   text-align: center;
   padding-top: 8px;
   margin: 0;
@@ -183,123 +223,75 @@ div.mobile .hero-mod p {
   line-height: 20px;
   font-family: 'Nunito', Arial, sans-serif;
 }
-#desktop-location {
-  max-width: 1420px;
-  margin: 0 auto;
-}
-#desktop-location h1.welcome-banner {
-  font-size: 50px;
-  line-height: 60px;
-  padding: 50px 0;
-  color: #DAA520;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: 800;
-  letter-spacing: 10px;
-  margin-bottom: 10px;
-}
-#desktop-location .showcase {
-  margin-bottom: 25px;
-}
-#desktop-location .showcase .showcase-content {
-  padding: 25px;
-  background-color: #ffffff;
-}
-#desktop-location .showcase .showcase-content h2 {
-  font-family: 'Nunito', Arial, sans-serif;
-  text-transform: uppercase;
-  font-size: 36px;
-  line-height: 48px;
-}
-#desktop-location .showcase .showcase-content p {
-  padding: 0 10px 25px;
-}
-#desktop-location .showcase .showcase-content .direction-icons td {
-  padding: 10px;
-}
-.desktop-body {
-  background-image: url(./assets/img/bg_nami.png);
-  background-color: #040404;
-}
-/* ---------------------------- END LOCATION SELECTORS ---------------------------- */
-/* ---------------------------- RENTAL SELECTORS ---------------------------- */
-#rentals {
-  padding: 60px 0 40px;
+#mobile-wrapper #m-rentals {
+  padding: 55px 0 90px;
   background-color: #f5f5f5;
 }
-#rentals h1 {
+#mobile-wrapper #m-rentals h1 {
   text-transform: uppercase;
   text-align: center;
   font-weight: 800;
   letter-spacing: 10px;
   margin-bottom: 10px;
 }
-#rentals .rental-info {
+#mobile-wrapper #m-rentals .rental-info {
   padding: 20px 25px 20px;
 }
-#rentals .rental-info h2 {
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #333333;
-  font-size: 28px;
-  line-height: 36px;
-}
-#rentals .rental-info h3 {
+#mobile-wrapper #m-rentals .rental-info h3 {
   font-size: 24px;
   line-height: 30px;
   margin-bottom: 10px;
 }
-#rentals .rental-info p {
+#mobile-wrapper #m-rentals .rental-info p {
   margin: 0 0 8px;
   font-size: 14px;
   line-height: 20px;
 }
-#rentals .slider .slide-arrow {
+#mobile-wrapper #m-rentals .slider .slide-arrow {
   position: relative;
 }
-#rentals .slider .slide-arrow.right {
+#mobile-wrapper #m-rentals .slider .slide-arrow.right {
   float: right;
   transform: translate3d(-10px, -44px, 0);
 }
-#rentals .slider .slide-arrow.left {
+#mobile-wrapper #m-rentals .slider .slide-arrow.left {
   transform: translate3d(10px, -44px, 0);
 }
-#rentals .rental-amenities {
-  padding: 0 15px 20px;
+#mobile-wrapper #m-rentals .rental-amenities {
+  padding: 0 15px;
 }
-#rentals .rental-amenities td {
+#mobile-wrapper #m-rentals .rental-amenities td {
   vertical-align: top;
 }
-#rentals .rental-amenities td p {
-  margin-bottom: 10px;
-  font-size: 14px;
+#mobile-wrapper #m-rentals .rental-amenities td p {
+  margin-top: 10px;
+  font-size: 13px;
   line-height: 21px;
 }
-#rentals .rental-amenities td.c1 {
-  padding-right: 5px;
+#mobile-wrapper #m-rentals .rental-amenities td.c1 {
+  padding-right: 10px;
 }
-#rentals .rental-amenities td.c2 {
-  padding-left: 5px;
+#mobile-wrapper #m-rentals .rental-amenities td.c2 {
+  padding-left: 10px;
 }
-/* ---------------------------- END RENTAL SELECTORS ---------------------------- */
-/* ---------------------------- PHOTOS SELECTORS ---------------------------- */
-#photos {
-  padding: 80px 0;
+#mobile-wrapper #m-photos {
+  padding: 55px 0 90px;
 }
-#photos h1 {
+#mobile-wrapper #m-photos h1 {
   text-transform: uppercase;
   text-align: center;
   font-weight: 800;
   letter-spacing: 10px;
   margin-bottom: 10px;
 }
-#photos .photo-gallery {
-  padding-top: 20px;
+#mobile-wrapper #m-photos .photo-gallery {
+  border-top: 3px solid #DAA520;
+  border-bottom: 3px solid #DAA520;
 }
-#photos .photo-gallery .gallery-img {
+#mobile-wrapper #m-photos .photo-gallery .gallery-img {
   max-width: 100%;
 }
-#photos #largeImgPanel {
+#mobile-wrapper #m-photos #largeImgPanel {
   text-align: center;
   visibility: hidden;
   position: fixed;
@@ -310,7 +302,7 @@ div.mobile .hero-mod p {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
 }
-#photos #largeImgPanel #largeImg {
+#mobile-wrapper #m-photos #largeImgPanel #largeImg {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -318,18 +310,104 @@ div.mobile .hero-mod p {
   left: 0;
   position: absolute;
 }
-/* ---------------------------- END PHOTOS SELECTORS ---------------------------- */
+/* ====================== DESKTOP location.html SELECTORS ====================== */
+#d-body {
+  background-color: #040404;
+  background-image: url(./assets/img/bg_nami.png);
+}
+#d-location {
+  max-width: 1420px;
+  margin: 0 auto;
+}
+#d-location h1.welcome-banner {
+  font-size: 50px;
+  line-height: 60px;
+  padding: 50px 0;
+  color: #DAA520;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 10px;
+  margin-bottom: 10px;
+}
+#d-location .showcase {
+  margin-bottom: 25px;
+}
+#d-location .showcase .showcase-content {
+  padding: 25px;
+  background-color: #ffffff;
+}
+#d-location .showcase .showcase-content h2 {
+  font-family: 'Nunito', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 48px;
+}
+#d-location .showcase .showcase-content p {
+  padding: 0 10px 25px;
+}
+#d-location .showcase .showcase-content .direction-icons td {
+  padding: 10px;
+}
+#d-location #map-wrapper #map_canvas {
+  height: 400px;
+}
+#d-location #map-wrapper #map_canvas #map-content > h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  font-family: 'Alegreya', Arial, serif;
+  color: #333333;
+  letter-spacing: 1px;
+}
+#d-location #map-wrapper #map_canvas #map-content > h4 {
+  text-align: center;
+  padding-top: 8px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 20px;
+  font-family: 'Nunito', Arial, sans-serif;
+}
+/* ====================== FOOTER SELECTORS ====================== */
 footer {
   background-color: #040404;
   background-image: url(./assets/img/bg_nami.png);
   padding-bottom: 25px;
 }
-footer .address-mod {
+footer #contact-wrapper {
+  padding: 25px 0;
+}
+footer #contact-wrapper td {
+  vertical-align: top;
+  padding: 0 35px 0;
+}
+footer #contact-wrapper td h3 {
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 32px;
+  color: #DAA520;
+}
+footer #contact-wrapper td p {
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #fafafa;
+  font-weight: 500;
+}
+footer #contact-wrapper td a.unstyle-link {
+  color: #fafafa;
+  text-decoration: none;
+}
+footer #address-mod {
   padding: 25px 0;
   text-align: center;
   background-color: #040404;
 }
-footer .address-mod h2 {
+footer #address-mod h2 {
   font-size: 20px;
   line-height: 30px;
   font-family: 'Nunito', Arial, sans-serif;
@@ -339,40 +417,17 @@ footer .address-mod h2 {
   font-weight: 800;
   padding: 0 10px;
 }
-footer .address-mod a {
+footer #address-mod a {
   text-decoration: none;
   text-transform: uppercase;
   padding: 8px 14px;
   border: 1px solid #DAA520;
   color: #DAA520;
 }
-footer td {
-  vertical-align: top;
-  padding: 25px 35px 0;
-}
-footer td h3 {
-  margin-bottom: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 24px;
-  line-height: 32px;
-  color: #DAA520;
-}
-footer td p {
-  margin-bottom: 8px;
-  font-size: 12px;
-  line-height: 18px;
-  color: #fafafa;
-  font-weight: 500;
-}
-footer td a.unstyle-link {
-  color: #fafafa;
-  text-decoration: none;
-}
 @media only screen and (max-width: 821px) {
   #mobile-wrapper,
-  #location,
-  #rentals,
+  #m-location,
+  #m-rentals,
   .navbar,
   .slider,
   .mySlides,
@@ -380,7 +435,7 @@ footer td a.unstyle-link {
   html,
   .rental-amenities,
   .rental-info,
-  #photos {
+  #m-photos {
     min-width: 360px;
   }
   main,
@@ -398,13 +453,10 @@ footer td a.unstyle-link {
   }
 }
 @media only screen and (max-width: 992px) {
-  .navbar li.nav-item {
-    padding-left: 55px;
-  }
   .navbar li.nav-item a {
     line-height: 56px;
   }
-  .navbar .mobile-nav-title {
-    display: inline-block !important;
+  .navbar button.mobile {
+    display: block !important;
   }
 }

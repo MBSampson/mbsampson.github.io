@@ -32,9 +32,11 @@
     <nav class="navbar sticky-top navbar-expand-lg ">
       <nav class="navbar navbar-expand-lg ">
         <div class="inner-nav container-fluid"> 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="mobile-nav-title"><i class="fa fa-sun-o" aria-hidden="true"></i>&nbsp;&nbsp;Casa del Sol</span>
-          </button>
+          <button class="mobile navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="nav-title">
+              <i class="fa fa-sun-o" aria-hidden="true"></i>&nbsp;&nbsp;Casa del Sol
+            </div>
+          </button> 
           <div class="collapse navbar-collapse" id="navbarSupportedContent" data-toggle="collapse" data-target=".navbar-collapse" >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
               <!-- msam 2-22-2023: Use nested <a> instead of appending the mobile class to the <ul>. This resolves an bug with <ul> mobile rendering. -->
@@ -71,8 +73,9 @@
 
     <!-- ========== DESKTOP CONTENT ========== -->
     <main> 
+      <!-- ================== D- HERO SECTION ================== -->
       <div class="hero-spacer">&nbsp;</div>
-      <div class="hero-mod"> 
+      <div id="hero-mod"> 
         <h1>CASA DEL&nbsp;SOL</h1>
         <table class="custom-sun-hr" role="presentation" align="center" cellpadding="0" cellspacing="0">
           <tr>
@@ -95,11 +98,11 @@
 
     <!-- ========== MOBILE CONTENT ========== --> 
     <div id="mobile-wrapper" class="mobile">
-      <!-- ================== HOME SECTION ================== -->
-      <div id="home">
-        <img class="hero-img" src="./assets/img/04.jpg" />
-        <div class="hero-mod"> 
-          <h1>CASA DEL&nbsp;SOL</h1>
+      <!-- ================== MOBILE - HERO SECTION ================== -->
+      <div id="m-hero-mod">
+        <img id="hero-img" src="./assets/img/home_splash2.jpg" />
+        <div id="hero-content"> 
+          <h1>CASA DEL&nbsp;SOL</h1> 
           <table class="custom-sun-hr" role="presentation" align="center" cellpadding="0" cellspacing="0">
             <tr>
               <td>
@@ -116,21 +119,24 @@
           <p>Casa Del Sol Apartments is a quiet, 18 unit garden-community located on the Sunnyvale/Mountain View border. Our ideal location is minutes from Downtown Sunnyvale and Mountain&nbsp;View, Caltrain, and many great shops and restaurants along El&nbsp;Camino&nbsp;Real.</p>
         </div> 
       </div>
-      <!-- ================== END HOME SECTION ================== -->
+      <!-- ================== END - MOBILE - HOME SECTION ================== -->
 
-      <!-- ================== LOCATION SECTION ================== -->
-      <div id="location" class="location-mod">
-        <div id="map_canvas"></div>
+      <!-- ================== MOBILE - LOCATION SECTION ================== -->
+      <div id="m-location">
+        <div id="map-wrapper">
+          <h1>Our location</h1> 
+          <div id="map_canvas"></div>
+        </div>
       </div>  
-      <!-- ================== END LOCATION SECTION ================== -->
+      <!-- ================== END - MOBILE - LOCATION SECTION ================== -->
 
-      <!-- ================== RENTAL SECTION ================== -->
-      <div id="rentals">
+      <!-- ================== MOBILE - RENTAL SECTION ================== -->
+      <div id="m-rentals">
         <h1>Rentals</h1>
         <hr class="sun-hr full">
+        
         <!-- ==================== RENTAL #1 ==================== -->
-        <div class="rental-info">
-          <h2>Whispering Cove</h2>
+        <div class="rental-info"> 
           <h3>3 Bedroom | 2 Bath</h3>
           <p><strong>Rent:</strong> $4,000</p>
           <p><strong>Available Date:</strong> Feb. 1st, 2023</p>
@@ -151,44 +157,47 @@
           <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
             <tr>
               <td class="c1">
-                <p>1,100 Square Feet</p>
+                <p>&#8226;&nbsp;1,100 Square Feet</p>
               </td>
               <td class="c2">
-                <p>2 Assigned Parking Spaces</p> 
+                <p>&#8226;&nbsp;2 Assigned Parking Spaces</p> 
               </td>
             </tr>
             <tr>
               <td class="c1">
-                <p>Large Private Balcony, Pool View</p>  
+                <p>&#8226;&nbsp;Large Private Balcony, Pool View</p>  
               </td>
               <td class="c2">
-                <p>Oversized Bedrooms, Big Closets</p>
+                <p>&#8226;&nbsp;Oversized Bedrooms, Big Closets</p>
               </td>
             </tr>
             <tr>
               <td class="c1">
-                <p>Gorgeous Vaulted Ceilings</p> 
+                <p>&#8226;&nbsp;Gorgeous Vaulted Ceilings</p> 
               </td>
               <td class="c2">
-                <p>Stainless Steel Appliances</p> 
+                <p>&#8226;&nbsp;Stainless Steel Appliances</p> 
               </td>
             </tr>
             <tr>
               <td class="c1">
-                <p>Double-Paned Windows</p> 
+                <p>&#8226;&nbsp;Double-Paned Windows</p> 
               </td>
               <td class="c2">
-                <p>Energy Star Central Heat</p> 
+                <p>&#8226;&nbsp;Energy Star Central Heat</p> 
               </td>
             </tr>
           </table>   
         </div>
-        <!-- ==================== END RENTAL #1 ==================== -->
-      </div>
+        <!-- ==================== END - RENTAL #1 ==================== -->
 
-      <div id="photos">
-        <h1>Photos</h1> 
-        <hr class="sun-hr full">
+        <!-- msam: Additional rental_index_mobile_template.html code blocks go above this comment. -->
+      </div>
+      <!-- ================== END - MOBILE - RENTAL SECTION ================== -->
+
+      <!-- ================== MOBILE - PHOTOS SECTION ================== -->
+      <div id="m-photos">
+        <h1>Photos</h1>  
         <div class="photo-gallery">
           <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
             <tr>
@@ -217,48 +226,43 @@
           <img id="largeImg" style="width: 100%; margin: 0; padding: 0;">
         </div>
       </div>
+      <!-- ================== END - MOBILE - PHOTOS SECTION ================== -->
+
     </div>
     <!-- ========== END MOBILE CONTENT ========== -->
 
 
     <footer>
-      <div class="address-mod">
-        <h2>135 Acalanes Drive, Sunnyvale&nbsp;CA&nbsp;94086</h2> 
+      <div id="contact-wrapper">
+        <table role="presentation" align="center" cellpadding="0" cellspacing="0">
+          <tr>   
+            <td class="desktop">
+              <div class="contact">
+                <h3>Contact</h3>
+                <p><i class="fa fa-phone" aria-hidden="true"></i> (650) 965 - 1671</p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> FelixPropertiesCDS@gmail.com</p> 
+              </div> 
+            </td>
+            <td class="desktop"> 
+              <a href="https://www.yelp.com/biz/casa-del-sol-apartments-sunnyvale"><img alt="Hear what people are saying about us on Yelp!" src="./assets/img/yelp_light_logo.svg" width="80" height="40" /></a> 
+            </td>
+          </tr>
+          <tr>
+            <td class="mobile">
+              <div class="contact">
+                <h3>Contact</h3>
+                <p><i class="fa fa-phone" aria-hidden="true"></i> <a class="unstyle-link" href="" aria-hidden="true">(650) 965 - 1671</a></p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> <a class="unstyle-link" href="" aria-hidden="true">FelixPropertiesCDS@gmail.com</a></p> 
+              </div> 
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+      <div id="address-mod">
+        <h2>135 Acalanes Drive, Sunnyvale,&nbsp;CA&nbsp;94086</h2> 
         <a class="direction-btn" href="https://goo.gl/maps/XVCnPj9ukSLPVJNN7">Get Directions</a>
       </div>
-      <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
-        <tr> 
-          <td>
-            <h3>Office Hours</h3>
-            <p>Monday: 9:00AM to 6:00PM</p>
-            <p>Tuesday: 9:00AM to 6:00PM</p>
-            <p>Wednesday: 9:00AM to 6:00PM</p>
-            <p>Thursday: 9:00AM to 6:00PM</p>
-            <p>Friday: 9:00AM to 6:00PM</p>
-            <p>Saturday: Closed</p>
-            <p>Sunday: Closed</p>
-          </td>
-          <td class="desktop">
-            <div class="contact">
-              <h3>Contact</h3>
-              <p><i class="fa fa-phone" aria-hidden="true"></i> (650) 965 - 1671</p>
-              <p><i class="fa fa-envelope" aria-hidden="true"></i> FelixPropertiesCDS@gmail.com</p> 
-            </div> 
-          </td>
-          <td class="desktop"> 
-            <a href="https://www.yelp.com/biz/casa-del-sol-apartments-sunnyvale"><img alt="Hear what people are saying about us on Yelp!" src="./assets/img/yelp_light_logo.svg" width="80" height="40" /></a> 
-          </td>
-        </tr>
-        <tr>
-          <td class="mobile">
-            <div class="contact">
-              <h3>Contact</h3>
-              <p><i class="fa fa-phone" aria-hidden="true"></i> <a class="unstyle-link" href="" aria-hidden="true">(650) 965 - 1671</a></p>
-              <p><i class="fa fa-envelope" aria-hidden="true"></i> <a class="unstyle-link" href="" aria-hidden="true">FelixPropertiesCDS@gmail.com</a></p> 
-            </div> 
-          </td>
-        </tr>
-      </table>
     </footer> 
 
     <script src="script.js"></script>
