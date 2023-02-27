@@ -365,7 +365,7 @@ main #hero-mod p {
 #d-location .showcase .showcase-content .direction-icons td {
   padding: 10px;
 }
-#d-location .showcase .showcase-content .rental-btn {
+#d-location .showcase .showcase-content #rental-btn {
   background-color: #040404;
   background-image: url(./assets/img/bg_nami.png);
   color: #DAA520;

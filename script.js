@@ -132,3 +132,8 @@ function hideMe(obj) {
   // Enable scrolling
   document.querySelector("body").style.overflow = "auto";
 }
+
+// Navigational button support
+document.getElementById("rental-btn").onclick = function () {
+  location.href = "rentals.html";
+};
