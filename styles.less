@@ -6,6 +6,7 @@
 @secondary-p-color: #fafafa;
 @tertiary-text-color: #DAA520;
 @d-max-width: 1420px;
+@d-min-width: 1000px;
 @mobile-alt-bg: #f5f5f5; 
 
 h1, h2, h3, h4, h5, h6, p {
@@ -245,8 +246,11 @@ main {
 
   /* ---------------------------- RENTAL SELECTORS ---------------------------- */
   #m-rentals {
-    padding: 55px 0 90px;
+    padding: 90px 0;
     background-color: @mobile-alt-bg;
+    .rental-2, .rental-3, .rental-4, .rental-5, .rental-6 {
+      margin-top: 90px;
+    }
     h1 {
       text-transform: uppercase;
       text-align: center;
@@ -272,6 +276,7 @@ main {
     .slider { 
       .slide-arrow { 
         position: relative; 
+        cursor: pointer;
       }
       .slide-arrow.right {
         float: right;
@@ -286,6 +291,7 @@ main {
       padding: 0 15px;
       td {
         vertical-align: top;
+        min-width: 154px;
         p {
           margin-top: 10px;
           font-size: 13px;
@@ -350,6 +356,7 @@ main {
 
 #d-location {
   max-width: @d-max-width;
+  min-width: @d-min-width;
   margin: 0 auto;
   h1.welcome-banner { 
     font-size: 50px;
@@ -365,21 +372,40 @@ main {
   .showcase {
     margin-bottom: 25px;
     .showcase-content {
+      min-width: 275px;
       padding: 25px;
       background-color: #ffffff;
       h2 {
         font-family: 'Nunito', Arial, sans-serif;
         text-transform: uppercase;
-        font-size: 36px; 
-        line-height: 48px;
+        font-size: 32px; 
+        line-height: 40px;
       }
       p {
         padding: 0 10px 25px;
+        font-size: 14px;
+        line-height: 21px;
       }
       .direction-icons {
+        margin-bottom: 20px; 
         td {
           padding: 10px;
         }
+      }
+      .rental-btn {
+        background-color: rgb(4, 4, 4, 0.1);
+        background-image: url(./assets/img/bg_nami.png);
+        color: @tertiary-text-color;
+        border: 3px solid @tertiary-text-color;
+        text-transform: uppercase;
+        padding: 8px 25px; 
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+        font-weight: 600;
+        font-size: 18px;
+        letter-spacing: 2px;
+        line-height: 28px;
       }
     }
   }

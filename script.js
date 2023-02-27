@@ -71,11 +71,13 @@ createSliderObjects();
 
 function plusDivs(obj, n) {
   var parentDiv = $(obj).parent();
-  var matchedDiv;
+  var matchedDiv; 
+
   $.each(sliderObjects, function(i, item) {
     if ($(parentDiv[0]).attr('id') == $(item).attr('id')) {
-      matchedDiv = item;
-      return false;
+      matchedDiv = item;  
+      // Insert obj testing here - find a func that returns an object
+      return false; 
     }
   });
   matchedDiv.slideIndex=matchedDiv.slideIndex+n;

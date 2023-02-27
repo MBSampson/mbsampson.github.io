@@ -12,63 +12,68 @@
         2a. Update the .slider div ID if needed.. see comment for more info.
         2b. Place rental images into the assets/img/rentals folder and then reference them in the order you want users to see them. 
             Copy the entire <img class="mySlides" ....> if you want to add images.
-     3. Navigate to the 'Rental Amenities' section and replace: AMENITY_ONE, AMENITY_TWO, AMENITY_THREE.
-        3a. Duplicate the <p>AMENITY_#</p> if you want to display more amenities
+     3. Navigate to the 'Rental Amenities' section and replace: AMENITY_1, AMENITY_2, AMENITY_3.
+        3a. If you need to remove an entire row 
 -->
 <!-- ==================== RENTAL #RENTAL_NUM ==================== -->
-<!-- Rental Info -->
-<div class="rental-info"> 
-  <h3>BEDROOM_NUM Bedroom | BATH_NUM Bath</h3>
-  <p><strong>Rent:</strong> $RENT_NUM</p>
-  <p><strong>Available Date:</strong> DATE_AVAILABLE</p>
-  <p><strong>Deposit:</strong> $DEPOSIT_NUM</p>
+<div class="rental-#">
+  <!-- Rental Info -->
+  <div class="rental-info"> 
+    <h3>BEDROOM_NUM Bedroom | BATH_NUM Bath</h3>
+    <p><strong>Rent:</strong> $RENT_NUM</p>
+    <p><strong>Available Date:</strong> DATE_AVAILABLE</p>
+    <p><strong>Deposit:</strong> $DEPOSIT_NUM</p>
+  </div>
+
+  <!-- ========== Slideshow ========== -->
+  <div class="slider" id="div1"> <!-- Update to match your rental's number, for example: if this is the FIRST rental on the page then use id="div1" .... if this is the SECOND rental on the page then use id="div2" -->
+    <img class="mySlides" alt="" src="./assets/img/rentals/47.jpg" onclick="plusDivs(this,1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+    <img class="mySlides" alt="" src="./assets/img/rentals/48.jpg" onclick="plusDivs(this,1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+    <img class="mySlides" alt="" src="./assets/img/rentals/49.jpg" onclick="plusDivs(this,1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+    <!-- Add more image(s) here-->
+
+    <img src="./assets/img/left_arrow_icon.png" class="slide-arrow left" onclick="plusDivs(this,-1)" width="32" height="32" alt="" />
+    <img src="./assets/img/right_arrow_icon.png" class="slide-arrow right" onclick="plusDivs(this,1)" width="32" height="32" alt="" /> 
+  </div> 
+
+  <div class="rental-amenities">
+    <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
+      <tr> <!-- ========== ROW 1 ========== -->
+        <td class="c1">
+          <p>&#8226;&nbsp;AMENITY_1</p>
+        </td>
+        <td class="c2">
+          <p>&#8226;&nbsp;AMENITY_2</p> 
+        </td>
+      </tr> <!-- ========== END ROW 1 ========== -->
+      
+      <tr> <!-- ========== ROW 2 ========== -->
+        <td class="c1">
+          <p>&#8226;&nbsp;AMENITY_3</p>  
+        </td>
+        <td class="c2">
+          <p>&#8226;&nbsp;AMENITY_4</p>
+        </td>
+      </tr> <!-- ========== END ROW 2 ========== -->
+
+      <tr> <!-- ========== ROW 3 ========== -->
+        <td class="c1">
+          <p>&#8226;&nbsp;AMENITY_5</p> 
+        </td>
+        <td class="c2">
+          <p>&#8226;&nbsp;AMENITY_6</p> 
+        </td>
+      </tr> <!-- ========== END ROW 3 ========== -->
+
+      <tr> <!-- ========== ROW 4 ========== -->
+        <td class="c1">
+          <p>&#8226;&nbsp;AMENITY_7</p> 
+        </td>
+        <td class="c2">
+          <p>&#8226;&nbsp;AMENITY_8</p> 
+        </td>
+      </tr> <!-- ========== END ROW 4 ========== -->
+    </table>    
+  </div>
 </div>
-
-<!-- Slideshow -->
-<div class="slider" id="div1"> <!-- Update to match your rental's number, for example: if this is the FIRST rental on the page then use id="div1" .... if this is the SECOND rental on the page then use id="div2" -->
-  <img class="mySlides" alt="" src="./assets/img/rentals/47.jpg" onclick="plusDivs(this,1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
-  <img class="mySlides" alt="" src="./assets/img/rentals/48.jpg" onclick="plusDivs(this,1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
-  <img class="mySlides" alt="" src="./assets/img/rentals/49.jpg" onclick="plusDivs(this,1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
-  <!-- Add more image(s) here-->
-
-  <img src="./assets/img/left_arrow_icon.png" class="slide-arrow left" onclick="plusDivs(this,-1)" width="32" height="32" alt="" />
-  <img src="./assets/img/right_arrow_icon.png" class="slide-arrow right" onclick="plusDivs(this,1)" width="32" height="32" alt="" /> 
-</div> 
-
-<div class="rental-amenities">
-  <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
-    <tr>
-      <td class="c1">
-        <p>&#8226;&nbsp;1,100 Square Feet</p>
-      </td>
-      <td class="c2">
-        <p>&#8226;&nbsp;2 Assigned Parking Spaces</p> 
-      </td>
-    </tr>
-    <tr>
-      <td class="c1">
-        <p>&#8226;&nbsp;Large Private Balcony, Pool View</p>  
-      </td>
-      <td class="c2">
-        <p>&#8226;&nbsp;Oversized Bedrooms, Big Closets</p>
-      </td>
-    </tr>
-    <tr>
-      <td class="c1">
-        <p>&#8226;&nbsp;Gorgeous Vaulted Ceilings</p> 
-      </td>
-      <td class="c2">
-        <p>&#8226;&nbsp;Stainless Steel Appliances</p> 
-      </td>
-    </tr>
-    <tr>
-      <td class="c1">
-        <p>&#8226;&nbsp;Double-Paned Windows</p> 
-      </td>
-      <td class="c2">
-        <p>&#8226;&nbsp;Energy Star Central Heat</p> 
-      </td>
-    </tr>
-  </table>    
-</div>
-<!-- ==================== END RENTAL #1 ==================== -->
+<!-- ==================== END RENTAL #RENTAL_NUM ==================== -->
