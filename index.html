@@ -247,29 +247,34 @@
           <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
             <tr>
               <td>
-                <img src="./assets/img/48.jpg" class="gallery-img" alt="1.jpeg" style="cursor:pointer" 
-                      onclick="showImage('./assets/img/48.jpg');">
+                <img src="./assets/img/48.jpg" class="gallery-img" alt="" />
               </td>
               <td>
-                <img src="./assets/img/49.jpg" class="gallery-img" alt="1.jpeg" style="cursor:pointer" 
-                      onclick="showImage('./assets/img/49.jpg');">
+                <img src="./assets/img/49.jpg" class="gallery-img" alt="" />
               </td>
             </tr>
+          </table>   
+          <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
             <tr>
               <td>
-                <img src="./assets/img/46.jpg" class="gallery-img" alt="1.jpeg" style="cursor:pointer" 
-                onclick="showImage('./assets/img/46.jpg');">
+                <img src="./assets/img/45.jpg" class="gallery-img" aalt="" />
               </td>
               <td> 
-                <img src="./assets/img/45.jpg" class="gallery-img" alt="1.jpeg" style="cursor:pointer" 
-                      onclick="showImage('./assets/img/45.jpg');">
+                <img src="./assets/img/47.jpg" class="gallery-img" alt="" />
               </td>
             </tr>
-          </table>
+          </table> 
         </div>
-        <div id="largeImgPanel" onclick="hideMe(this);">
-          <img id="largeImg" style="width: 100%; margin: 0; padding: 0;">
-        </div>
+        <!-- ========== Slideshow ========== --> 
+        <div class="slider" id="photo-ss">   
+          <img class="mySlides" alt="" src="./assets/img/rentals/48.jpg" onclick="plusDivs(this, 1)" style="width:100%">  
+          <img class="mySlides" alt="" src="./assets/img/rentals/49.jpg" onclick="plusDivs(this, 1)" style="width:100%">   
+          <img class="mySlides" alt="" src="./assets/img/rentals/45.jpg" onclick="plusDivs(this, 1)" style="width:100%"> 
+          <img class="mySlides" alt="" src="./assets/img/rentals/47.jpg" onclick="plusDivs(this, 1)" style="width:100%">      
+
+          <img src="./assets/img/left_arrow_icon.png" class="slide-arrow left" onclick="plusDivs(this,-1)" width="32" height="32" alt="" />
+          <img src="./assets/img/right_arrow_icon.png" class="slide-arrow right" onclick="plusDivs(this,1)" width="32" height="32" alt="" /> 
+        </div> 
       </div>
       <!-- ================== END - MOBILE - PHOTOS SECTION ================== -->
 

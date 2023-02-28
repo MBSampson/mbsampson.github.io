@@ -323,24 +323,20 @@ main {
         max-width: 100%; 
       }
     }
-    #largeImgPanel {
-      text-align: center;
-      visibility: hidden;
-      position: fixed;
-      z-index: 100;
-      top: 0; left: 0; 
-      width:100%;
-      height:100%; 
-      background-color: rgba(0, 0, 0, 0.8);
-      #largeImg {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        top: 30vh;
-        left: 0;
-        position: absolute;
+    #photo-ss.slider { 
+      margin-bottom: -32px;
+      .slide-arrow { 
+        position: relative; 
+        cursor: pointer;
       }
-    }
+      .slide-arrow.right {
+        float: right;
+        transform: translate3d(-10px, -44px, 0);
+      }
+      .slide-arrow.left {
+        transform: translate3d(10px, -44px, 0);
+      } 
+    } 
   }
   /* ---------------------------- END MOBILE PHOTOS SELECTORS ---------------------------- */
 }
@@ -432,6 +428,96 @@ main {
   } 
 }
 
+#d-rentals {
+  max-width: @d-max-width;
+  min-width: @d-min-width;
+  margin: 0 auto;
+  h1 {
+    font-size: 50px;
+    line-height: 60px;
+    padding: 50px 0;
+    color: #DAA520;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 21px;
+    vertical-align: top;
+  }
+  .rental-item {
+    margin-bottom: 30px;
+    .rental-info {
+      background: #fafafa;
+      padding: 15px 25px;
+      width: 50%;
+      vertical-align: middle;
+      text-align: center;
+      td {
+        vertical-align: top;
+      }
+      h3 {
+        font-size: 30px;
+        line-height: 42px; 
+        margin-bottom: 10px;
+      }
+      p {
+        margin: 8px 0 0;
+      }
+      .amenities {
+        margin-top: 20px;
+        .col {
+          width: 50%;
+          padding: 0 5px;
+        }
+      }
+    }
+    .slider { 
+      margin-bottom: -32px;
+      .slide-arrow { 
+        position: relative; 
+        cursor: pointer;
+      }
+      .slide-arrow.right {
+        float: right;
+        transform: translate3d(-10px, -44px, 0);
+      }
+      .slide-arrow.left {
+        transform: translate3d(10px, -44px, 0);
+      } 
+    } 
+  }
+}
+
+#about-us {
+  background-color: #fafafa;
+  text-align: center;
+  h3 {
+    margin-bottom: 20px; 
+  }
+  .col {
+    width: 50%;
+    padding: 25px;
+    vertical-align: top;
+    .application-info {
+      .info-item {
+        padding: 0 10px 10px;
+        vertical-align: top;
+      }
+    }
+  }
+  .appointment-text { 
+    padding: 25px 0;
+    text-decoration: underline;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+}
+
 /* ====================== FOOTER SELECTORS ====================== */
 footer {
   background-color: rgb(4, 4, 4, 0.1);
@@ -470,6 +556,9 @@ footer {
           line-height: 21px; 
         }
       }
+    }
+    .license, .unstyle-link {
+      color: @secondary-p-color;
     }
   }
 }

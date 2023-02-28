@@ -75,8 +75,7 @@ function plusDivs(obj, n) {
 
   $.each(sliderObjects, function(i, item) {
     if ($(parentDiv[0]).attr('id') == $(item).attr('id')) {
-      matchedDiv = item;  
-      // Insert obj testing here - find a func that returns an object
+      matchedDiv = item;   
       return false; 
     }
   });

@@ -34,27 +34,21 @@
         <div class="inner-nav container-fluid"> 
           <button class="mobile navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="nav-title">
-              <i class="fa fa-sun-o" aria-hidden="true"></i>Casa del Sol
+              <i class="fa fa-sun-o" aria-hidden="true"></i><i class="fa-solid fa-bars"></i><div>Casa del Sol</div>
             </div>
           </button> 
           <div class="collapse navbar-collapse" id="navbarSupportedContent" data-toggle="collapse" data-target=".navbar-collapse" >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
               <!-- msam 2-22-2023: Use nested <a> instead of appending the mobile class to the <ul>. This resolves an bug with <ul> mobile rendering. -->
               <li class="nav-item">
-                <a href="index.html" class="desktop nav-link">HOME</a>
-                <a href="#home" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">HOME</a> 
+                <a href="index.html" class="desktop nav-link">HOME</a>  
               </li>
               <li class="nav-item">
-                <a href="location.html" class="desktop nav-link">LOCATION</a>
-                <a href="#location" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">LOCATION</a>
+                <a href="location.html" class="desktop nav-link">LOCATION</a> 
               </li>
               <li class="nav-item">
-                <a href="rentals.html" class="nav-link">RENTALS</a>
-                <a href="#rentals" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">RENTALS</a>
-              </li>
-              <li class="nav-item mobile"> 
-                <a href="#photos" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">PHOTOS</a>
-              </li>
+                <a href="rentals.html" class="desktop nav-link">RENTALS</a> 
+              </li>  
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   CONTACT 
@@ -64,13 +58,14 @@
                   <li>FelixPropertiesCDS@gmail.com</li>
                   <li>135 Acalanes Drive, Sunnyvale CA 94086</li>
                 </ul>
-              </li> 
+              </li>  
             </ul>
           </div>
         </div> 
       </nav>
     </nav>
 
+    <!-- ================== LOCATION SECTION ================== -->
     <div id="d-location"> 
       <h1 class="welcome-banner">Welcome Home</h1>  
       <div class="showcase">
@@ -153,43 +148,31 @@
       </div>  
       <!-- ================== END GMAP SECTION ================== -->
     </div>
+    <!-- ================== END LOCATION SECTION ================== -->
   
 
   
     <!-- ================== FOOTER SECTION ================== -->
-    <footer>
+    <footer id="footer">
       <div id="contact-wrapper">
         <table role="presentation" align="center" cellpadding="0" cellspacing="0">
           <tr>   
-            <td class="desktop">
+            <td>
               <div class="contact">
                 <h3>Contact</h3>
-                <p><i class="fa fa-phone" aria-hidden="true"></i> (650) 965 - 1671</p>
-                <p><i class="fa fa-envelope" aria-hidden="true"></i> FelixPropertiesCDS@gmail.com</p> 
+                <p><i class="fa fa-phone" aria-hidden="true"></i> <a class="unstyle-link" href="tel:6509651671" aria-hidden="true">&nbsp;(650) 965 - 1671</a></p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> <a class="unstyle-link" href="mailto:FelixPropertiesCDS@gmail.com" aria-hidden="true">&nbsp;FelixPropertiesCDS@gmail.com</a></p> 
+                <p><i class="fa fa-map-pin" aria-hidden="true"></i><a class="unstyle-link" href="https://goo.gl/maps/XVCnPj9ukSLPVJNN7" aria-hidden="true">&nbsp;135 Acalanes Drive, Sunnyvale,&nbsp;CA&nbsp;94086</a></p>
               </div> 
             </td>
-            <td class="desktop"> 
+            <td> 
               <a href="https://www.yelp.com/biz/casa-del-sol-apartments-sunnyvale"><img alt="Hear what people are saying about us on Yelp!" src="./assets/img/yelp_light_logo.svg" width="80" height="40" /></a> 
             </td>
           </tr>
-          <tr>
-            <td class="mobile">
-              <div class="contact">
-                <h3>Contact</h3>
-                <p><i class="fa fa-phone" aria-hidden="true"></i> <a class="unstyle-link" href="" aria-hidden="true">(650) 965 - 1671</a></p>
-                <p><i class="fa fa-envelope" aria-hidden="true"></i> <a class="unstyle-link" href="" aria-hidden="true">FelixPropertiesCDS@gmail.com</a></p> 
-              </div> 
-            </td>
-          </tr>
         </table>
+        <p class="license">Company icons provided by: <a href="https://icons8.com" class="unstyle-link">icons8.com</a></p>
       </div>
-      
-      <div id="address-mod">
-        <h2>135 Acalanes Drive, Sunnyvale,&nbsp;CA&nbsp;94086</h2> 
-        <a class="direction-btn" href="https://goo.gl/maps/XVCnPj9ukSLPVJNN7">Get Directions</a>
-      </div>
-      <p>Company icons provided by: <a href="https://icons8.com">icons8.com</a></p>
-    </footer> 
+    </footer>  
     <!-- ================== END FOOTER SECTION ================== -->
 
     <script src="script.js"></script> 
