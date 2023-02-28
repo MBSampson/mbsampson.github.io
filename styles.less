@@ -23,6 +23,10 @@ p {
   color: @primary-p-color;
   font-family: 'Nunito', Arial, sans-serif;
 }
+ 
+.dark-gray {
+  color: @primary-p-color;
+}
 
 main {
   .custom-sun-hr {
@@ -89,8 +93,9 @@ hr.sun-hr {
       }
       .fa-bars {
         left: 44px;
-        top: 16px;
+        top: 18px;
         position: absolute;
+        font-size: 12px;
       }
       div {
         transform: translateX(-13px);
@@ -218,7 +223,7 @@ main {
         text-align: center;
         font-weight: 800;
         letter-spacing: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
         color: @tertiary-text-color;
       }
       .sun-hr.full {
@@ -308,13 +313,16 @@ main {
 
   /* ---------------------------- MOBILE PHOTOS SELECTORS ---------------------------- */
   #m-photos {
-    padding: 55px 0 90px;
+    padding: 90px 0 120px;
+    background-color: #0e0e0e;
+    background-image: url(./assets/img/bg_nami.png);
     h1 {
         text-transform: uppercase;
         text-align: center;
         font-weight: 800;
         letter-spacing: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
+        color: @tertiary-text-color;
     }
     .photo-gallery { 
       border-top: 3px solid #DAA520;
@@ -519,12 +527,11 @@ main {
 }
 
 /* ====================== FOOTER SELECTORS ====================== */
-footer {
-  background-color: rgb(4, 4, 4, 0.1);
-  background-image: url(./assets/img/bg_nami.png);
-  padding: 25px 0;
+footer {  
+  background-color: #0e0e0e;
+  background-image: url(./assets/img/bg_nami.png); 
   #contact-wrapper {
-    padding: 25px 0;
+    padding: 90px 0;
     td {
       vertical-align: top;
       padding: 0 35px 0;
@@ -547,6 +554,11 @@ footer {
         color: @secondary-p-color;
         text-decoration: none;
       }
+      a.m-unstyle-link {
+        color: @primary-p-color;
+        text-decoration: none;
+        font-weight: 700;
+      }
     }
     .mobile {
       .contact {
@@ -564,7 +576,7 @@ footer {
 }
 
 #address-mod {
-  padding: 25px 0;
+  padding: 30px 0;
   text-align: center;
   background-color: #040404;
   h2 {
@@ -609,6 +621,9 @@ footer {
   } 
   li.mobile {
     display: list-item !important;
+  }
+  #footer {
+    background: #fafafa;
   }
 } 
 

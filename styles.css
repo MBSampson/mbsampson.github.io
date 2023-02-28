@@ -18,6 +18,9 @@ p {
   color: #333333;
   font-family: 'Nunito', Arial, sans-serif;
 }
+.dark-gray {
+  color: #333333;
+}
 main .custom-sun-hr {
   width: 80%;
 }
@@ -77,8 +80,9 @@ hr.sun-hr.full {
 }
 .navbar button.mobile .nav-title .fa-bars {
   left: 44px;
-  top: 16px;
+  top: 18px;
   position: absolute;
+  font-size: 12px;
 }
 .navbar button.mobile .nav-title div {
   transform: translateX(-13px);
@@ -201,7 +205,7 @@ main #hero-mod p {
   text-align: center;
   font-weight: 800;
   letter-spacing: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   color: #DAA520;
 }
 #mobile-wrapper #m-location #map-wrapper .sun-hr.full {
@@ -282,14 +286,17 @@ main #hero-mod p {
   line-height: 24px;
 }
 #mobile-wrapper #m-photos {
-  padding: 55px 0 90px;
+  padding: 90px 0 120px;
+  background-color: #0e0e0e;
+  background-image: url(./assets/img/bg_nami.png);
 }
 #mobile-wrapper #m-photos h1 {
   text-transform: uppercase;
   text-align: center;
   font-weight: 800;
   letter-spacing: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  color: #DAA520;
 }
 #mobile-wrapper #m-photos .photo-gallery {
   border-top: 3px solid #DAA520;
@@ -482,12 +489,11 @@ main #hero-mod p {
 }
 /* ====================== FOOTER SELECTORS ====================== */
 footer {
-  background-color: #040404;
+  background-color: #0e0e0e;
   background-image: url(./assets/img/bg_nami.png);
-  padding: 25px 0;
 }
 footer #contact-wrapper {
-  padding: 25px 0;
+  padding: 90px 0;
 }
 footer #contact-wrapper td {
   vertical-align: top;
@@ -512,6 +518,11 @@ footer #contact-wrapper td a.unstyle-link {
   color: #fafafa;
   text-decoration: none;
 }
+footer #contact-wrapper td a.m-unstyle-link {
+  color: #333333;
+  text-decoration: none;
+  font-weight: 700;
+}
 footer #contact-wrapper .mobile .contact {
   text-align: center;
 }
@@ -524,7 +535,7 @@ footer #contact-wrapper .unstyle-link {
   color: #fafafa;
 }
 #address-mod {
-  padding: 25px 0;
+  padding: 30px 0;
   text-align: center;
   background-color: #040404;
 }
@@ -574,6 +585,9 @@ footer #contact-wrapper .unstyle-link {
   }
   li.mobile {
     display: list-item !important;
+  }
+  #footer {
+    background: #fafafa;
   }
 }
 @media only screen and (max-width: 992px) {
