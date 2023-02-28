@@ -530,6 +530,9 @@ footer #contact-wrapper .mobile .contact p {
   font-size: 14px;
   line-height: 21px;
 }
+footer #contact-wrapper .mobile .contact i {
+  color: #333333;
+}
 footer #contact-wrapper .license,
 footer #contact-wrapper .unstyle-link {
   color: #fafafa;
