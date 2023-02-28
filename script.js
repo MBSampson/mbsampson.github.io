@@ -133,7 +133,8 @@ function hideMe(obj) {
   document.querySelector("body").style.overflow = "auto";
 }
  
-// Navigational button support
-document.getElementById("rental-btn").onclick = function () {
-  location.href = "rentals.html";
-};
+// Navigational btn to bring user to rentals.html
+function navToRentals () {
+  location.href = "rentals.html"; 
+}
+ 

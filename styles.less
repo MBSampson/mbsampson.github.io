@@ -87,6 +87,14 @@ hr.sun-hr {
         top: 15px; 
         position: absolute;
       }
+      .fa-bars {
+        left: 44px;
+        top: 16px;
+        position: absolute;
+      }
+      div {
+        transform: translateX(-13px);
+      }
     } 
   }
   .fa.fa-sun-o {
@@ -193,7 +201,7 @@ main {
         font-family: 'Nunito', Arial, sans-serif;
         font-size: 14px;
         line-height: 22px;
-        padding: 25px 45px 30px;
+        padding: 25px 45px 90px;
       }
     }
   }
@@ -204,7 +212,7 @@ main {
     background-color: rgb(14, 14, 14, 0.1); 
     background-image: url(./assets/img/bg_nami.png);
     #map-wrapper {
-      padding: 55px 0 90px;
+      padding: 90px 0;
       h1 {
         text-transform: uppercase;
         text-align: center;
@@ -262,14 +270,14 @@ main {
     .rental-info {
       padding: 20px 25px 20px; 
       h3 {
-        font-size: 24px;
-        line-height: 30px; 
+        font-size: 30px;
+        line-height: 42px; 
         margin-bottom: 10px;
       }
       p {
         margin: 0 0 8px;
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 18px;
+        line-height: 24px;
       }
     }
 
@@ -288,22 +296,12 @@ main {
     }
 
     .rental-amenities {
-      padding: 0 15px;
-      td {
-        vertical-align: top;
-        min-width: 154px;
-        p {
-          margin-top: 10px;
-          font-size: 13px;
-          line-height: 21px;
-        }
-        &.c1 {
-          padding-right: 10px;
-        }
-        &.c2 {
-          padding-left: 10px;
-        }
-      }
+      padding: 0 15px; 
+      p {
+        margin-top: 10px;
+        font-size: 18px;
+        line-height: 24px;
+      }  
     }
   }
   /* ---------------------------- END RENTAL SELECTORS ---------------------------- */
@@ -392,22 +390,22 @@ main {
           padding: 10px;
         }
       }
-      #rental-btn { 
-        background-color: rgb(4, 4, 4, 0.1);
-        background-image: url(./assets/img/bg_nami.png);
-        color: @tertiary-text-color;
-        border: 3px solid @tertiary-text-color;
-        text-transform: uppercase;
-        padding: 8px 25px; 
-        width: 80%;
-        margin: 0 auto;
-        display: block;
-        font-weight: 600;
-        font-size: 18px;
-        letter-spacing: 2px;
-        line-height: 28px;
-      }
     }
+  }
+  #rental-btn { 
+    background-color: rgb(4, 4, 4, 0.1);
+    background-image: url(./assets/img/bg_nami.png);
+    color: @tertiary-text-color;
+    border: 3px solid @tertiary-text-color;
+    text-transform: uppercase;
+    padding: 8px 25px; 
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 28px;
   }
   #map-wrapper {
     #map_canvas{   
@@ -434,17 +432,11 @@ main {
   } 
 }
 
- 
-
-
-
-
-
 /* ====================== FOOTER SELECTORS ====================== */
 footer {
   background-color: rgb(4, 4, 4, 0.1);
   background-image: url(./assets/img/bg_nami.png);
-  padding-bottom: 25px;
+  padding: 25px 0;
   #contact-wrapper {
     padding: 25px 0;
     td {
@@ -470,28 +462,38 @@ footer {
         text-decoration: none;
       }
     }
+    .mobile {
+      .contact {
+        text-align: center;
+        p {
+          font-size: 14px;
+          line-height: 21px; 
+        }
+      }
+    }
   }
-  #address-mod {
-    padding: 25px 0;
-    text-align: center;
-    background-color: #040404;
-    h2 {
-      font-size: 20px;
-      line-height: 30px;
-      font-family: 'Nunito', Arial, sans-serif;
-      color: @tertiary-text-color; 
-      text-transform: uppercase;
-      margin-bottom: 18px;
-      font-weight: 800;
-      padding: 0 10px;
-    }
-    a {
-      text-decoration: none;
-      text-transform: uppercase;
-      padding: 8px 14px;
-      border: 1px solid @tertiary-text-color;
-      color: @tertiary-text-color;
-    }
+}
+
+#address-mod {
+  padding: 25px 0;
+  text-align: center;
+  background-color: #040404;
+  h2 {
+    font-size: 20px;
+    line-height: 30px;
+    font-family: 'Nunito', Arial, sans-serif;
+    color: @tertiary-text-color; 
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    font-weight: 800;
+    padding: 0 10px;
+  }
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border: 1px solid @tertiary-text-color;
+    color: @tertiary-text-color;
   }
 }
 
@@ -516,6 +518,9 @@ footer {
   td.mobile {
     display: table-cell !important;
   } 
+  li.mobile {
+    display: list-item !important;
+  }
 } 
 
 // Tablet-specific

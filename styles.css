@@ -75,6 +75,14 @@ hr.sun-hr.full {
   top: 15px;
   position: absolute;
 }
+.navbar button.mobile .nav-title .fa-bars {
+  left: 44px;
+  top: 16px;
+  position: absolute;
+}
+.navbar button.mobile .nav-title div {
+  transform: translateX(-13px);
+}
 .navbar .fa.fa-sun-o {
   transform: translateY(1px);
 }
@@ -179,14 +187,14 @@ main #hero-mod p {
   font-family: 'Nunito', Arial, sans-serif;
   font-size: 14px;
   line-height: 22px;
-  padding: 25px 45px 30px;
+  padding: 25px 45px 90px;
 }
 #mobile-wrapper #m-location {
   background-color: #0e0e0e;
   background-image: url(./assets/img/bg_nami.png);
 }
 #mobile-wrapper #m-location #map-wrapper {
-  padding: 55px 0 90px;
+  padding: 90px 0;
 }
 #mobile-wrapper #m-location #map-wrapper h1 {
   text-transform: uppercase;
@@ -245,14 +253,14 @@ main #hero-mod p {
   padding: 20px 25px 20px;
 }
 #mobile-wrapper #m-rentals .rental-info h3 {
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 30px;
+  line-height: 42px;
   margin-bottom: 10px;
 }
 #mobile-wrapper #m-rentals .rental-info p {
   margin: 0 0 8px;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 24px;
 }
 #mobile-wrapper #m-rentals .slider .slide-arrow {
   position: relative;
@@ -268,20 +276,10 @@ main #hero-mod p {
 #mobile-wrapper #m-rentals .rental-amenities {
   padding: 0 15px;
 }
-#mobile-wrapper #m-rentals .rental-amenities td {
-  vertical-align: top;
-  min-width: 154px;
-}
-#mobile-wrapper #m-rentals .rental-amenities td p {
+#mobile-wrapper #m-rentals .rental-amenities p {
   margin-top: 10px;
-  font-size: 13px;
-  line-height: 21px;
-}
-#mobile-wrapper #m-rentals .rental-amenities td.c1 {
-  padding-right: 10px;
-}
-#mobile-wrapper #m-rentals .rental-amenities td.c2 {
-  padding-left: 10px;
+  font-size: 18px;
+  line-height: 24px;
 }
 #mobile-wrapper #m-photos {
   padding: 55px 0 90px;
@@ -365,7 +363,7 @@ main #hero-mod p {
 #d-location .showcase .showcase-content .direction-icons td {
   padding: 10px;
 }
-#d-location .showcase .showcase-content #rental-btn {
+#d-location #rental-btn {
   background-color: #040404;
   background-image: url(./assets/img/bg_nami.png);
   color: #DAA520;
@@ -405,7 +403,7 @@ main #hero-mod p {
 footer {
   background-color: #040404;
   background-image: url(./assets/img/bg_nami.png);
-  padding-bottom: 25px;
+  padding: 25px 0;
 }
 footer #contact-wrapper {
   padding: 25px 0;
@@ -433,12 +431,19 @@ footer #contact-wrapper td a.unstyle-link {
   color: #fafafa;
   text-decoration: none;
 }
-footer #address-mod {
+footer #contact-wrapper .mobile .contact {
+  text-align: center;
+}
+footer #contact-wrapper .mobile .contact p {
+  font-size: 14px;
+  line-height: 21px;
+}
+#address-mod {
   padding: 25px 0;
   text-align: center;
   background-color: #040404;
 }
-footer #address-mod h2 {
+#address-mod h2 {
   font-size: 20px;
   line-height: 30px;
   font-family: 'Nunito', Arial, sans-serif;
@@ -448,7 +453,7 @@ footer #address-mod h2 {
   font-weight: 800;
   padding: 0 10px;
 }
-footer #address-mod a {
+#address-mod a {
   text-decoration: none;
   text-transform: uppercase;
   padding: 8px 14px;
@@ -481,6 +486,9 @@ footer #address-mod a {
   }
   td.mobile {
     display: table-cell !important;
+  }
+  li.mobile {
+    display: list-item !important;
   }
 }
 @media only screen and (max-width: 992px) {

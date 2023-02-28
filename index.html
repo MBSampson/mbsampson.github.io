@@ -34,7 +34,7 @@
         <div class="inner-nav container-fluid"> 
           <button class="mobile navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="nav-title">
-              <i class="fa fa-sun-o" aria-hidden="true"></i>&nbsp;&nbsp;Casa del Sol
+              <i class="fa fa-sun-o" aria-hidden="true"></i><i class="fa-solid fa-bars"></i><div>Casa del Sol</div>
             </div>
           </button> 
           <div class="collapse navbar-collapse" id="navbarSupportedContent" data-toggle="collapse" data-target=".navbar-collapse" >
@@ -55,7 +55,10 @@
               <li class="nav-item mobile">   
                 <a href="#m-photos" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">PHOTOS</a>
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item mobile">
+                <a href="#footer" class="mobile nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">CONTACT</a>
+              </li>
+              <li class="nav-item dropdown desktop">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   CONTACT 
                 </a>
@@ -64,7 +67,7 @@
                   <li>FelixPropertiesCDS@gmail.com</li>
                   <li>135 Acalanes Drive, Sunnyvale CA 94086</li>
                 </ul>
-              </li> 
+              </li>  
             </ul>
           </div>
         </div> 
@@ -99,7 +102,7 @@
     <!-- ========== MOBILE CONTENT ========== --> 
     <div id="mobile-wrapper" class="mobile">
       <!-- ================== MOBILE - HERO SECTION ================== -->
-      <div id="m-hero-mod">
+      <div id="m-hero-mod"> 
         <img id="hero-img" src="./assets/img/home_splash2.jpg" />
         <div id="hero-content"> 
           <h1>CASA DEL&nbsp;SOL</h1> 
@@ -126,7 +129,11 @@
         <div id="map-wrapper">
           <h1>Our location</h1> 
           <div id="map_canvas"></div>
-        </div>
+          <div id="address-mod">
+            <h2>135 Acalanes Drive, Sunnyvale,&nbsp;CA&nbsp;94086</h2> 
+            <a class="direction-btn" href="https://goo.gl/maps/XVCnPj9ukSLPVJNN7">Get Directions</a>
+          </div>
+        </div> 
       </div>  
       <!-- ================== END - MOBILE - LOCATION SECTION ================== -->
 
@@ -146,51 +153,52 @@
           </div>
           
           <!-- ========== Slideshow ========== -->
-          <div class="slider" id="div1"> <!--match div number to match ad number. Can have only 1 id. Must make second, unique id number for second ad. Otherwise, slideshow will not work.-->
-            <img class="mySlides" alt="" src="./assets/img/rentals/47.jpg" onclick="plusDivs(this, 1)" style="width:100%">
-            <img class="mySlides" alt="" src="./assets/img/rentals/48.jpg" onclick="plusDivs(this, 1)" style="width:100%">
-            <img class="mySlides" alt="" src="./assets/img/rentals/49.jpg" onclick="plusDivs(this, 1)" style="width:100%"> 
-            <!-- Add more image(s) here-->
-  
-            <img src="./assets/img/left_arrow_icon.png" class="slide-arrow left" onclick="plusDivs(this,-1)" width="32" height="32" alt="" />
-            <img src="./assets/img/right_arrow_icon.png" class="slide-arrow right" onclick="plusDivs(this,1)" width="32" height="32" alt="" /> 
-          </div> 
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./assets/img/rentals/45.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/img/rentals/48.jpg"  class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/img/rentals/47.jpg"  class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/img/rentals/49.jpg"  class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
   
           <div class="rental-amenities">
-            <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
-              <tr>
-                <td class="c1">
-                  <p>&#8226;&nbsp;1,100 Square Feet</p>
-                </td>
-                <td class="c2">
-                  <p>&#8226;&nbsp;2 Assigned Parking Spaces</p> 
-                </td>
-              </tr>
-              <tr>
-                <td class="c1">
-                  <p>&#8226;&nbsp;Large Private Balcony, Pool View</p>  
-                </td>
-                <td class="c2">
-                  <p>&#8226;&nbsp;Oversized Bedrooms, Big Closets</p>
-                </td>
-              </tr>
-              <tr>
-                <td class="c1">
-                  <p>&#8226;&nbsp;Gorgeous Vaulted Ceilings</p> 
-                </td>
-                <td class="c2">
-                  <p>&#8226;&nbsp;Stainless Steel Appliances</p> 
-                </td>
-              </tr>
-              <tr>
-                <td class="c1">
-                  <p>&#8226;&nbsp;Double-Paned Windows</p> 
-                </td>
-                <td class="c2">
-                  <p>&#8226;&nbsp;Energy Star Central Heat</p> 
-                </td>
-              </tr>
-            </table>   
+            <ul>
+              <li>
+                <p>1,100 Square Feet</p>
+              </li>
+              <li>
+                <p>2 Assigned Parking Spaces</p> 
+              </li>
+              <li>
+                <p>Large Private Balcony, Pool View</p>   
+              </li>
+              <li>
+                <p>Oversized Bedrooms, Big Closets</p> 
+              </li>
+              <li>
+                <p>Gorgeous Vaulted Ceilings</p> 
+              </li>
+              <li>
+                <p>Stainless Steel Appliances</p> 
+              </li>
+            </ul>   
           </div>
         </div>
         <!-- ==================== END - RENTAL #1 ==================== -->
@@ -206,17 +214,31 @@
             <p><strong>Deposit:</strong> $DEPOSIT_NUM</p>
           </div>
 
-          <!-- ========== Slideshow ========== -->
-          <div class="slider" id="div2"> <!-- Update to match your rental's number, for example: if this is the FIRST rental on the page then use id="div1" .... if this is the SECOND rental on the page then use id="div2" -->
-            <img class="mySlides" alt="" src="./assets/img/rentals/45.jpg" onclick="plusDivs(this, 1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
-            <img class="mySlides" alt="" src="./assets/img/rentals/49.jpg" onclick="plusDivs(this, 1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
-            <img class="mySlides" alt="" src="./assets/img/rentals/48.jpg" onclick="plusDivs(this, 1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
-            <img class="mySlides" alt="" src="./assets/img/rentals/47.jpg" onclick="plusDivs(this, 1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
-            <!-- Add more image(s) here--> 
-
-            <img src="./assets/img/left_arrow_icon.png" class="slide-arrow left" onclick="plusDivs(this,-1)" width="32" height="32" alt="" />
-            <img src="./assets/img/right_arrow_icon.png" class="slide-arrow right" onclick="plusDivs(this,1)" width="32" height="32" alt="" /> 
-          </div> 
+          <!-- ========== Slideshow ========== --> 
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./assets/img/rentals/45.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/img/rentals/48.jpg"  class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/img/rentals/47.jpg"  class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/img/rentals/49.jpg"  class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
 
           <div class="rental-amenities">
             <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
@@ -267,29 +289,26 @@
       <!-- ================== MOBILE - PHOTOS SECTION ================== -->
       <div id="m-photos">
         <h1>Photos</h1>  
-        <div class="photo-gallery">
-          <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
-            <tr>
-              <td>
-                <img src="./assets/img/48.jpg" class="gallery-img" alt="1.jpeg" style="cursor:pointer" 
-                      onclick="showImage('./assets/img/48.jpg');">
-              </td>
-              <td>
-                <img src="./assets/img/49.jpg" class="gallery-img" alt="1.jpeg" style="cursor:pointer" 
-                      onclick="showImage('./assets/img/49.jpg');">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="./assets/img/46.jpg" class="gallery-img" alt="1.jpeg" style="cursor:pointer" 
-                onclick="showImage('./assets/img/46.jpg');">
-              </td>
-              <td> 
-                <img src="./assets/img/45.jpg" class="gallery-img" alt="1.jpeg" style="cursor:pointer" 
-                      onclick="showImage('./assets/img/45.jpg');">
-              </td>
-            </tr>
-          </table>
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./assets/img/rentals/49.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/img/rentals/48.jpg"  class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/img/rentals/47.jpg"  class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
         <div id="largeImgPanel" onclick="hideMe(this);">
           <img id="largeImg" style="width: 100%; margin: 0; padding: 0;">
@@ -301,7 +320,7 @@
     <!-- ========== END MOBILE CONTENT ========== -->
 
 
-    <footer>
+    <footer id="footer">
       <div id="contact-wrapper">
         <table role="presentation" align="center" cellpadding="0" cellspacing="0">
           <tr>   
@@ -320,17 +339,13 @@
             <td class="mobile">
               <div class="contact">
                 <h3>Contact</h3>
-                <p><i class="fa fa-phone" aria-hidden="true"></i> <a class="unstyle-link" href="" aria-hidden="true">(650) 965 - 1671</a></p>
-                <p><i class="fa fa-envelope" aria-hidden="true"></i> <a class="unstyle-link" href="" aria-hidden="true">FelixPropertiesCDS@gmail.com</a></p> 
-              </div> 
+                <p><i class="fa fa-phone" aria-hidden="true"></i> <a class="unstyle-link" href="tel:6509651671" aria-hidden="true">&nbsp;(650) 965 - 1671</a></p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> <a class="unstyle-link" href="mailto:FelixPropertiesCDS@gmail.com" aria-hidden="true">&nbsp;FelixPropertiesCDS@gmail.com</a></p> 
+                <p><i class="fa fa-map-pin" aria-hidden="true"></i><a class="unstyle-link" href="https://goo.gl/maps/XVCnPj9ukSLPVJNN7" aria-hidden="true">&nbsp;135 Acalanes Drive, Sunnyvale,&nbsp;CA&nbsp;94086</a></p>
+              </div>  
             </td>
           </tr>
         </table>
-      </div>
-      
-      <div id="address-mod">
-        <h2>135 Acalanes Drive, Sunnyvale,&nbsp;CA&nbsp;94086</h2> 
-        <a class="direction-btn" href="https://goo.gl/maps/XVCnPj9ukSLPVJNN7">Get Directions</a>
       </div>
     </footer> 
 
