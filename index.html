@@ -153,30 +153,15 @@
           </div>
           
           <!-- ========== Slideshow ========== -->
-          <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./assets/img/rentals/45.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/img/rentals/48.jpg"  class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/img/rentals/47.jpg"  class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/img/rentals/49.jpg"  class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+          <div class="slider" id="div1"> <!--match div number to match ad number. Can have only 1 id. Must make second, unique id number for second ad. Otherwise, slideshow will not work.-->
+            <img class="mySlides" alt="" src="./assets/img/rentals/47.jpg" onclick="plusDivs(this, 1)" style="width:100%">
+            <img class="mySlides" alt="" src="./assets/img/rentals/48.jpg" onclick="plusDivs(this, 1)" style="width:100%">
+            <img class="mySlides" alt="" src="./assets/img/rentals/49.jpg" onclick="plusDivs(this, 1)" style="width:100%"> 
+            <!-- Add more image(s) here-->
+  
+            <img src="./assets/img/left_arrow_icon.png" class="slide-arrow left" onclick="plusDivs(this,-1)" width="32" height="32" alt="" />
+            <img src="./assets/img/right_arrow_icon.png" class="slide-arrow right" onclick="plusDivs(this,1)" width="32" height="32" alt="" /> 
+          </div> 
   
           <div class="rental-amenities">
             <ul>
@@ -214,31 +199,17 @@
             <p><strong>Deposit:</strong> $DEPOSIT_NUM</p>
           </div>
 
-          <!-- ========== Slideshow ========== --> 
-          <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./assets/img/rentals/45.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/img/rentals/48.jpg"  class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/img/rentals/47.jpg"  class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/img/rentals/49.jpg"  class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+          <!-- ========== Slideshow ========== -->
+          <div class="slider" id="div2"> <!-- Update to match your rental's number, for example: if this is the FIRST rental on the page then use id="div1" .... if this is the SECOND rental on the page then use id="div2" -->
+            <img class="mySlides" alt="" src="./assets/img/rentals/45.jpg" onclick="plusDivs(this, 1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+            <img class="mySlides" alt="" src="./assets/img/rentals/49.jpg" onclick="plusDivs(this, 1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+            <img class="mySlides" alt="" src="./assets/img/rentals/48.jpg" onclick="plusDivs(this, 1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+            <img class="mySlides" alt="" src="./assets/img/rentals/47.jpg" onclick="plusDivs(this, 1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+            <!-- Add more image(s) here--> 
+
+            <img src="./assets/img/left_arrow_icon.png" class="slide-arrow left" onclick="plusDivs(this,-1)" width="32" height="32" alt="" />
+            <img src="./assets/img/right_arrow_icon.png" class="slide-arrow right" onclick="plusDivs(this,1)" width="32" height="32" alt="" /> 
+          </div> 
 
           <div class="rental-amenities">
             <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
@@ -287,28 +258,31 @@
       <!-- ================== END - MOBILE - RENTAL SECTION ================== -->
 
       <!-- ================== MOBILE - PHOTOS SECTION ================== -->
-      <div id="m-photos">
+      <div id="m-photos"> 
         <h1>Photos</h1>  
-        <div id="carouselExample" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="./assets/img/rentals/49.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="./assets/img/rentals/48.jpg"  class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="./assets/img/rentals/47.jpg"  class="d-block w-100" alt="...">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+        <div class="photo-gallery">
+          <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td>
+                <img src="./assets/img/48.jpg" class="gallery-img" alt="1.jpeg" style="cursor:pointer" 
+                      onclick="showImage('./assets/img/48.jpg');">
+              </td>
+              <td>
+                <img src="./assets/img/49.jpg" class="gallery-img" alt="1.jpeg" style="cursor:pointer" 
+                      onclick="showImage('./assets/img/49.jpg');">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="./assets/img/46.jpg" class="gallery-img" alt="1.jpeg" style="cursor:pointer" 
+                onclick="showImage('./assets/img/46.jpg');">
+              </td>
+              <td> 
+                <img src="./assets/img/45.jpg" class="gallery-img" alt="1.jpeg" style="cursor:pointer" 
+                      onclick="showImage('./assets/img/45.jpg');">
+              </td>
+            </tr>
+          </table>
         </div>
         <div id="largeImgPanel" onclick="hideMe(this);">
           <img id="largeImg" style="width: 100%; margin: 0; padding: 0;">
