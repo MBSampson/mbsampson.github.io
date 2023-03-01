@@ -135,5 +135,4 @@ function hideMe(obj) {
 // Navigational btn to bring user to rentals.html
 function navToRentals () {
   location.href = "rentals.html"; 
-}
- 
+} 

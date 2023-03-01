@@ -141,6 +141,7 @@
       <div id="m-rentals">
         <h1>Rentals</h1>
         <hr class="sun-hr full">
+        <!-- MOBILE_RENTAL_TEMPLATE_LOCATION msam: Additional rental_index_mobile_template.html code blocks go BELOW this comment. -->
         
         <!-- ==================== RENTAL #1 ==================== -->
         <div class="rental-1">
@@ -234,9 +235,9 @@
             </ul>   
           </div>
         </div>
-        <!-- ==================== END RENTAL #1 ==================== -->
+        <!-- ==================== END RENTAL #2 ==================== -->
 
-        <!-- msam: Additional rental_index_mobile_template.html code blocks go above this comment. -->
+        <!-- msam: Additional rental_index_mobile_template.html code blocks go ABOVE this comment. -->
       </div>
       <!-- ================== END - MOBILE - RENTAL SECTION ================== -->
 
@@ -247,36 +248,51 @@
           <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
             <tr>
               <td>
-                <img src="./assets/img/48.jpg" class="gallery-img" alt="" />
-              </td>
-              <td>
-                <img src="./assets/img/49.jpg" class="gallery-img" alt="" />
-              </td>
-            </tr>
-          </table>   
-          <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
-            <tr>
-              <td>
-                <img src="./assets/img/45.jpg" class="gallery-img" aalt="" />
+                <img src="./assets/img/45.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/45.jpg');" />
               </td>
               <td> 
-                <img src="./assets/img/47.jpg" class="gallery-img" alt="" />
+                <img src="./assets/img/47.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/47.jpg');" />
               </td>
             </tr>
+            <tr>
+              <td> 
+                <img src="./assets/img/48.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/48.jpg');" />
+              </td>
+              <td>
+                <img src="./assets/img/49.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/49.jpg');" />
+              </td>
+            </tr> 
+            <tr>
+              <td>
+                <img src="./assets/img/45.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/45.jpg');" />
+              </td>
+              <td> 
+                <img src="./assets/img/47.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/47.jpg');" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="./assets/img/48.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/48.jpg');" />
+              </td>
+              <td>
+                <img src="./assets/img/49.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/49.jpg');" />
+              </td>
+            </tr> 
           </table> 
-        </div>
-        <!-- ========== Slideshow ========== --> 
-        <div class="slider" id="photo-ss">   
-          <img class="mySlides" alt="" src="./assets/img/rentals/48.jpg" onclick="plusDivs(this, 1)" style="width:100%">  
-          <img class="mySlides" alt="" src="./assets/img/rentals/49.jpg" onclick="plusDivs(this, 1)" style="width:100%">   
-          <img class="mySlides" alt="" src="./assets/img/rentals/45.jpg" onclick="plusDivs(this, 1)" style="width:100%"> 
-          <img class="mySlides" alt="" src="./assets/img/rentals/47.jpg" onclick="plusDivs(this, 1)" style="width:100%">      
-
-          <img src="./assets/img/left_arrow_icon.png" class="slide-arrow left" onclick="plusDivs(this,-1)" width="32" height="32" alt="" />
-          <img src="./assets/img/right_arrow_icon.png" class="slide-arrow right" onclick="plusDivs(this,1)" width="32" height="32" alt="" /> 
         </div> 
+        <div id="largeImgPanel" onclick="hideMe(this);">
+          <img id="largeImg" style="width: 100%; margin: 0; padding: 0;">
+        </div>
       </div>
-      <!-- ================== END - MOBILE - PHOTOS SECTION ================== -->
+      <!-- ================== END - MOBILE - PHOTOS SECTION ================== --> 
 
     </div>
     <!-- ========== END MOBILE CONTENT ========== -->
@@ -301,9 +317,9 @@
             <td class="mobile"> 
               <div class="contact">
                 <h3>Contact</h3>
-                <p><i class="fa fa-phone" aria-hidden="true"></i> <a class="dark-gray m-unstyle-link" href="tel:6509651671" aria-hidden="true">&nbsp;(650) 965 - 1671</a></p>
-                <p><i class="fa fa-envelope" aria-hidden="true"></i> <a class="dark-gray m-unstyle-link" href="mailto:FelixPropertiesCDS@gmail.com" aria-hidden="true">&nbsp;FelixPropertiesCDS@gmail.com</a></p> 
-                <p><i class="fa fa-map-pin" aria-hidden="true"></i><a class="dark-gray m-unstyle-link" href="https://goo.gl/maps/XVCnPj9ukSLPVJNN7" aria-hidden="true">&nbsp;135 Acalanes Drive, Sunnyvale,&nbsp;CA&nbsp;94086</a></p>
+                <p><i class="fa fa-phone" aria-hidden="true"></i> <a class="unstyle-link" href="tel:6509651671" aria-hidden="true">&nbsp;(650) 965 - 1671</a></p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> <a class="unstyle-link" href="mailto:FelixPropertiesCDS@gmail.com" aria-hidden="true">&nbsp;FelixPropertiesCDS@gmail.com</a></p> 
+                <p><i class="fa fa-map-pin" aria-hidden="true"></i><a class="unstyle-link" href="https://goo.gl/maps/XVCnPj9ukSLPVJNN7" aria-hidden="true">&nbsp;135 Acalanes Drive, Sunnyvale,&nbsp;CA&nbsp;94086</a></p>
               </div>  
             </td>
           </tr>

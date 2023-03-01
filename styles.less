@@ -206,7 +206,7 @@ main {
         font-family: 'Nunito', Arial, sans-serif;
         font-size: 14px;
         line-height: 22px;
-        padding: 25px 45px 90px;
+        padding: 25px 45px 80px;
       }
     }
   }
@@ -217,7 +217,7 @@ main {
     background-color: rgb(14, 14, 14, 0.1); 
     background-image: url(./assets/img/bg_nami.png);
     #map-wrapper {
-      padding: 90px 0;
+      padding: 80px 0;
       h1 {
         text-transform: uppercase;
         text-align: center;
@@ -259,10 +259,10 @@ main {
 
   /* ---------------------------- RENTAL SELECTORS ---------------------------- */
   #m-rentals {
-    padding: 90px 0;
+    padding: 80px 0;
     background-color: @mobile-alt-bg;
     .rental-2, .rental-3, .rental-4, .rental-5, .rental-6 {
-      margin-top: 90px;
+      margin-top: 80px;
     }
     h1 {
       text-transform: uppercase;
@@ -313,8 +313,8 @@ main {
 
   /* ---------------------------- MOBILE PHOTOS SELECTORS ---------------------------- */
   #m-photos {
-    padding: 90px 0 120px;
-    background-color: #0e0e0e;
+    padding: 80px 0; 
+    background-color: #040404;
     background-image: url(./assets/img/bg_nami.png);
     h1 {
         text-transform: uppercase;
@@ -374,7 +374,7 @@ main {
   .showcase {
     margin-bottom: 25px;
     .showcase-content {
-      min-width: 275px;
+      min-width: 325px;
       padding: 25px;
       background-color: #ffffff;
       h2 {
@@ -382,11 +382,19 @@ main {
         text-transform: uppercase;
         font-size: 32px; 
         line-height: 40px;
+        padding-bottom: 12px;
       }
       p {
-        padding: 0 10px 25px;
         font-size: 14px;
         line-height: 21px;
+        padding: 0 0 8px 10px; 
+      }
+      p.showcase-text {
+        padding: 0 25px 25px 10px;
+      }
+      a {
+        color: #936c22;
+        font-weight: 700; 
       }
       .direction-icons {
         margin-bottom: 20px; 
@@ -394,6 +402,22 @@ main {
           padding: 10px;
         }
       }
+    }
+  }
+  #exterior-photos, #interior-photos {
+    margin-bottom: 50px;
+    h3 {
+      font-size: 50px;
+      line-height: 60px;
+      padding: 50px 0 25px;
+      color: #DAA520;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: 10px;
+    }
+    .col {
+      padding: 10px;
     }
   }
   #rental-btn { 
@@ -527,11 +551,11 @@ main {
 }
 
 /* ====================== FOOTER SELECTORS ====================== */
-footer {  
-  background-color: #0e0e0e;
+footer {   
+  background-color: #040404;
   background-image: url(./assets/img/bg_nami.png); 
   #contact-wrapper {
-    padding: 90px 0;
+    padding: 45px 0;
     td {
       vertical-align: top;
       padding: 0 35px 0;
@@ -601,6 +625,25 @@ footer {
   }
 }
 
+#largeImgPanel {
+  text-align: center;
+  visibility: hidden;
+  position: fixed;
+  z-index: 100;
+  top: 0; left: 0; 
+  width:100%;
+  height:100%; 
+  background-color: rgba(0, 0, 0, 0.8);
+  #largeImg {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 25vh;
+    left: 0;
+    position: absolute;
+  }
+}
+
 // Mobile & tablet device styles
 @media only screen and (max-width: 821px) {
   #mobile-wrapper, #m-location, #m-rentals, 
@@ -624,10 +667,7 @@ footer {
   } 
   li.mobile {
     display: list-item !important;
-  }
-  #footer {
-    background: #fafafa;
-  }
+  } 
 } 
 
 // Tablet-specific
