@@ -51,68 +51,64 @@ hr.sun-hr.full {
   text-align: center;
 }
 /* ====================== NAVBAR SELECTORS ====================== */
-#m-nav {
-  position: fixed;
-  z-index: 10;
-}
-#m-nav .navbar {
+.navbar {
   width: 100%;
   background-color: #fafafa;
   font-family: 'Alegreya', Arial, sans-serif;
   box-shadow: 0 9px 20px 0 rgba(0, 0, 0, 0.2), 0 9px 20px 0 rgba(0, 0, 0, 0.2);
 }
-#m-nav .navbar .inner-nav {
+.navbar .inner-nav {
   padding-left: 30px;
 }
-#m-nav .navbar button.mobile {
+.navbar button.mobile {
   width: 100%;
 }
-#m-nav .navbar button.mobile .nav-title {
+.navbar button.mobile .nav-title {
   text-transform: uppercase;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
   width: 100%;
 }
-#m-nav .navbar button.mobile .nav-title .fa-sun-o {
+.navbar button.mobile .nav-title .fa-sun-o {
   left: 25px;
   top: 15px;
   position: absolute;
 }
-#m-nav .navbar button.mobile .nav-title .fa-bars {
+.navbar button.mobile .nav-title .fa-bars {
   left: 44px;
   top: 18px;
   position: absolute;
   font-size: 12px;
 }
-#m-nav .navbar button.mobile .nav-title div {
+.navbar button.mobile .nav-title div {
   transform: translateX(-13px);
 }
-#m-nav .navbar .fa.fa-sun-o {
+.navbar .fa.fa-sun-o {
   transform: translateY(1px);
 }
-#m-nav .navbar .navbar-toggler {
+.navbar .navbar-toggler {
   color: #936c22;
 }
-#m-nav .navbar .navbar-toggler:focus {
+.navbar .navbar-toggler:focus {
   box-shadow: none;
 }
-#m-nav .navbar .navbar-nav li {
+.navbar .navbar-nav li {
   padding: 0 15px;
 }
-#m-nav .navbar .navbar-nav li > a {
+.navbar .navbar-nav li > a {
   color: #936c22;
   font-size: 1.1em;
   font-weight: 600;
   letter-spacing: 1.5px;
 }
-#m-nav .navbar .nav-link {
+.navbar .nav-link {
   padding: 0;
 }
-#m-nav .navbar .dropdown-menu {
+.navbar .dropdown-menu {
   transform: translateX(-50px);
 }
-#m-nav .navbar .dropdown-menu li {
+.navbar .dropdown-menu li {
   display: block;
   padding: 3px 20px;
   clear: both;
@@ -121,7 +117,7 @@ hr.sun-hr.full {
   color: #333;
   white-space: nowrap;
 }
-#m-nav .navbar .dropdown-toggle::after {
+.navbar .dropdown-toggle::after {
   display: none;
 }
 /* ====================== MOBILE index.html SELECTORS ====================== */
