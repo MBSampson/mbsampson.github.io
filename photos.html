@@ -27,28 +27,28 @@
   <link href="d_styles.css" rel="stylesheet"> 
 </head>
 
-<body>
+<body id="d-body">
     <!-- ========== NAVBAR MAIN ========== -->
     <nav class="navbar sticky-top navbar-expand-lg ">
       <nav class="navbar navbar-expand-lg ">
         <div class="inner-nav container-fluid"> 
           <button class="mobile navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="nav-title">
-              <i class="fa fa-sun-o" aria-hidden="true"></i><i class="fa-solid fa-bars"></i><div>Casa del Sol Apartments</div>
+              <i class="fa fa-sun-o" aria-hidden="true"></i><i class="fa-solid fa-bars"></i><div>Casa del Sol</div>
             </div>
           </button> 
           <div class="collapse navbar-collapse" id="navbarSupportedContent" data-toggle="collapse" data-target=".navbar-collapse" >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
               <!-- msam 2-22-2023: Use nested <a> instead of appending the mobile class to the <ul>. This resolves an bug with <ul> mobile rendering. -->
-              <li class="nav-item"> 
-                <a href="#hero-mod" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">HOME</a> 
+              <li class="nav-item">
+                <a href="index.html" class="desktop nav-link">HOME</a>  
               </li>
               <li class="nav-item">
-                <a href="location.html" class="nav-link">LOCATION</a>
+                <a href="location.html" class="desktop nav-link">LOCATION</a> 
               </li>
               <li class="nav-item">
-                <a href="rentals.html" class="nav-link">RENTALS</a>  
-              </li>
+                <a href="rentals.html" class="desktop nav-link">RENTALS</a> 
+              </li>  
               <li class="nav-item">   
                 <a href="photos.html" class="nav-link">PHOTOS</a>
               </li> 
@@ -58,8 +58,8 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;(650) 965 - 1671</li>
-                  <li><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;FelixPropertiesCDS@gmail.com</li>
-                  <li><i class="fa fa-map-pin" aria-hidden="true"></i>&nbsp;135 Acalanes Drive, Sunnyvale CA 94086</li>
+                  <li>FelixPropertiesCDS@gmail.com</li>
+                  <li>135 Acalanes Drive, Sunnyvale CA 94086</li>
                 </ul>
               </li>  
             </ul>
@@ -68,30 +68,58 @@
       </nav>
     </nav>
 
-    <!-- ========== DESKTOP CONTENT ========== -->
-    <main> 
-      <!-- ================== D- HERO SECTION ================== -->
-      <div class="hero-spacer">&nbsp;</div>
-      <div id="hero-mod"> 
-        <h1>CASA DEL&nbsp;SOL</h1>
-        <table class="custom-sun-hr" role="presentation" align="center" cellpadding="0" cellspacing="0">
+    <!-- ================== LOCATION SECTION ================== -->
+    <div id="d-location">  
+      <div id="exterior-photos"> 
+        <h3>Exterior</h3> 
+        <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0" width="90%">
           <tr>
-            <td>
-              <hr class="sun-hr">
+            <td class="col">
+              <img src="./assets/img/rentals/49.jpg" alt="" width="100%" />
             </td>
-            <td class="sun-hr-col">
-              <i class="fa fa-sun-o" aria-hidden="true"></i>
+            <td class="col">
+              <img src="./assets/img/rentals/45.jpg" alt="" width="100%" />
             </td>
-            <td>
-              <hr class="sun-hr">
+          </tr>
+          <tr>
+            <td class="col">
+              <img src="./assets/img/rentals/48.jpg" alt="" width="100%" />
+            </td>
+            <td class="col">
+              <img src="./assets/img/rentals/47.jpg" alt="" width="100%" />
             </td>
           </tr>
         </table>
-        <p>Casa Del Sol Apartments is a quiet, 18 unit garden-community located on the Sunnyvale/Mountain View border. Our ideal location is minutes from Downtown Sunnyvale and Mountain&nbsp;View, Caltrain, and many great shops and restaurants along El&nbsp;Camino&nbsp;Real.</p>
-      </div> 
-    </main> 
+      </div>
 
-    <footer id="footer">
+      <div id="interior-photos"> 
+        <h3>Interior</h3>
+        <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0" width="90%">
+          <tr>
+            <td class="col">
+              <img src="./assets/img/rentals/49.jpg" alt="" width="100%" />
+            </td>
+            <td class="col">
+              <img src="./assets/img/rentals/45.jpg" alt="" width="100%" />
+            </td>
+          </tr>
+          <tr>
+            <td class="col">
+              <img src="./assets/img/rentals/48.jpg" alt="" width="100%" />
+            </td>
+            <td class="col">
+              <img src="./assets/img/rentals/47.jpg" alt="" width="100%" />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- ================== END LOCATION SECTION ================== -->
+  
+
+  
+    <!-- ================== FOOTER SECTION ================== -->
+    <footer id="footer" class="d-footer">
       <div id="contact-wrapper">
         <table role="presentation" align="center" cellpadding="0" cellspacing="0">
           <tr>   
@@ -106,11 +134,13 @@
             <td> 
               <a href="https://www.yelp.com/biz/casa-del-sol-apartments-sunnyvale"><img alt="Hear what people are saying about us on Yelp!" src="./assets/img/yelp_light_logo.svg" width="80" height="40" /></a> 
             </td>
-          </tr> 
-        </table>
+          </tr>
+        </table> 
       </div>
-    </footer> 
-  
+    </footer>  
+    <!-- ================== END FOOTER SECTION ================== -->
+
+    <script src="script.js"></script> 
     <script src="mobile_index_script.js"></script>
 </body>
 

@@ -131,6 +131,9 @@ hr.sun-hr.full {
   /* ---------------------------- MOBILE PHOTOS SELECTORS ---------------------------- */
   /* ---------------------------- END MOBILE PHOTOS SELECTORS ---------------------------- */
 }
+#mobile-wrapper #m-hero-mod {
+  padding-top: 66px;
+}
 #mobile-wrapper #m-hero-mod #hero-img {
   width: 100%;
 }

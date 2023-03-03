@@ -21,6 +21,9 @@ p {
 .dark-gray {
   color: #333333;
 }
+#d-body {
+  min-width: 1000px;
+}
 main .custom-sun-hr {
   width: 80%;
 }
