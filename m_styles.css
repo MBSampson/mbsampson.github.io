@@ -425,69 +425,6 @@ main #hero-mod p {
   line-height: 20px;
   font-family: 'Nunito', Arial, sans-serif;
 }
-#d-rentals {
-  max-width: 1420px;
-  min-width: 1000px;
-  margin: 0 auto;
-}
-#d-rentals h1 {
-  font-size: 50px;
-  line-height: 60px;
-  padding: 50px 0;
-  color: #DAA520;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: 800;
-  letter-spacing: 10px;
-  margin-bottom: 10px;
-}
-#d-rentals p {
-  font-size: 14px;
-  line-height: 21px;
-  vertical-align: top;
-}
-#d-rentals .rental-item {
-  margin-bottom: 30px;
-}
-#d-rentals .rental-item .rental-info {
-  background: #fafafa;
-  padding: 15px 25px;
-  width: 50%;
-  vertical-align: middle;
-  text-align: center;
-}
-#d-rentals .rental-item .rental-info td {
-  vertical-align: top;
-}
-#d-rentals .rental-item .rental-info h3 {
-  font-size: 30px;
-  line-height: 42px;
-  margin-bottom: 10px;
-}
-#d-rentals .rental-item .rental-info p {
-  margin: 8px 0 0;
-}
-#d-rentals .rental-item .rental-info .amenities {
-  margin-top: 20px;
-}
-#d-rentals .rental-item .rental-info .amenities .col {
-  width: 50%;
-  padding: 0 5px;
-}
-#d-rentals .rental-item .slider {
-  margin-bottom: -32px;
-}
-#d-rentals .rental-item .slider .slide-arrow {
-  position: relative;
-  cursor: pointer;
-}
-#d-rentals .rental-item .slider .slide-arrow.right {
-  float: right;
-  transform: translate3d(-10px, -44px, 0);
-}
-#d-rentals .rental-item .slider .slide-arrow.left {
-  transform: translate3d(10px, -44px, 0);
-}
 #about-us {
   background-color: #fafafa;
   text-align: center;
