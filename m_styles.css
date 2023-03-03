@@ -120,44 +120,6 @@ hr.sun-hr.full {
 .navbar .dropdown-toggle::after {
   display: none;
 }
-/* ====================== DESKTOP index.html SELECTORS ====================== */
-main {
-  width: 100%;
-  height: calc(100vh);
-  background-color: #fafafa;
-  background-image: url(./assets/img/home_splash2.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-main .hero-spacer {
-  font-size: 490px;
-  line-height: 490px;
-  height: 490px;
-}
-main #hero-mod {
-  background-color: #ffffff;
-  width: 50%;
-  min-width: 360px;
-  box-shadow: 7.5px 7.5px;
-  margin: 0 auto;
-  text-align: center;
-}
-main #hero-mod h1 {
-  padding: 30px 15px 15px;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 44px;
-  line-height: 52px;
-  letter-spacing: 5.5px;
-  word-spacing: 5px;
-}
-main #hero-mod p {
-  font-family: 'Nunito', Arial, sans-serif;
-  font-size: 14px;
-  line-height: 22px;
-  padding: 25px 45px 30px;
-}
 /* ====================== MOBILE index.html SELECTORS ====================== */
 #mobile-wrapper {
   /* ---------------------------- MOBILE HERO SELECTORS ---------------------------- */

@@ -11,9 +11,17 @@ function loadScript(src,callback){
 loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBzO-kFoyPTj9B6TpYNhsMMxb49bi6LPXg&callback=initialize');
 
 function jump(h){
-  var url = location.href;               //Save down the URL without hash.
-  location.href = "#"+h;                 //Go to the target element.
-  history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
+  if(location.href.includes("#")) {
+    var url = location.href.split("#")[0];
+    console.log("splitting");  
+    console.log(url);
+  } else {
+    var url = location.href;
+    console.log(url);
+  }            
+  console.log(url); 
+
+  window.location.href = url+"#"+h;
 }
 
 // Google Map 
@@ -127,10 +135,3 @@ function hideMe(obj) {
 function navToRentals () {
   location.href = "rentals.html"; 
 } 
-
-function getBaseUrl() {
-  var re = new RegExp(/^.*\//);
-  return re.exec(window.location.href);
-}
-
-console.log(getBaseUrl());
