@@ -41,30 +41,25 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
               <!-- msam 2-22-2023: Use nested <a> instead of appending the mobile class to the <ul>. This resolves an bug with <ul> mobile rendering. -->
               <li class="nav-item"> 
-                <a href="" onclick="jump('m-hero-mod')" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">HOME</a> 
+                <a href="#hero-mod" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">HOME</a> 
               </li>
               <li class="nav-item">
-                <a href="location.html" class="desktop nav-link">LOCATION</a>
-                <a href="" onclick="jump('m-location')" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">LOCATION</a>
+                <a href="location.html" class="nav-link">LOCATION</a>
               </li>
               <li class="nav-item">
-                <a href="rentals.html" class="desktop nav-link">RENTALS</a> 
-                <a href="" onclick="jump('m-rentals')" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">RENTALS</a>
+                <a href="rentals.html" class="nav-link">RENTALS</a>  
               </li>
               <li class="nav-item">   
-                <a href="" onclick="jump('m-photos')" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">PHOTOS</a>
-              </li>
-              <li class="nav-item">  
-                <a href="" onclick="jump('footer')" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">CONTACT</a>
-              </li>
-              <li class="nav-item dropdown desktop">
+                <a href="photos.html" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">PHOTOS</a>
+              </li> 
+              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   CONTACT 
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;(650) 965 - 1671</li>
-                  <li>FelixPropertiesCDS@gmail.com</li>
-                  <li>135 Acalanes Drive, Sunnyvale CA 94086</li>
+                  <li><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;FelixPropertiesCDS@gmail.com</li>
+                  <li><i class="fa fa-map-pin" aria-hidden="true"></i>&nbsp;135 Acalanes Drive, Sunnyvale CA 94086</li>
                 </ul>
               </li>  
             </ul>
@@ -103,8 +98,9 @@
             <td>
               <div class="contact">
                 <h3>Contact</h3>
-                <p><i class="fa fa-phone" aria-hidden="true"></i> (650) 965 - 1671</p>
-                <p><i class="fa fa-envelope" aria-hidden="true"></i> FelixPropertiesCDS@gmail.com</p> 
+                <p><i class="fa fa-phone" aria-hidden="true"></i> <a class="unstyle-link" href="tel:6509651671" aria-hidden="true">&nbsp;(650) 965 - 1671</a></p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> <a class="unstyle-link" href="mailto:FelixPropertiesCDS@gmail.com" aria-hidden="true">&nbsp;FelixPropertiesCDS@gmail.com</a></p> 
+                <p><i class="fa fa-map-pin" aria-hidden="true"></i><a class="unstyle-link" href="https://goo.gl/maps/XVCnPj9ukSLPVJNN7" aria-hidden="true">&nbsp;135 Acalanes Drive, Sunnyvale,&nbsp;CA&nbsp;94086</a></p>
               </div> 
             </td>
             <td> 
@@ -114,8 +110,7 @@
         </table>
       </div>
     </footer> 
- 
-    <script src="script.js"></script> 
+  
     <script src="mobile_index_script.js"></script>
 </body>
 
