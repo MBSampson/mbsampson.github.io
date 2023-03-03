@@ -10,20 +10,11 @@ function loadScript(src,callback){
 
 loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBzO-kFoyPTj9B6TpYNhsMMxb49bi6LPXg&callback=initialize');
 
-$(function() {
-  $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});
+function jump(h){
+  var url = location.href;               //Save down the URL without hash.
+  location.href = "#"+h;                 //Go to the target element.
+  history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
+}
 
 // Google Map 
 function initialize() {

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Casa Del Sol: garden-style apartment complex located in Sunnyvale, CA">
+
+  <title>Casa Del Sol Apartments</title>
+  <link rel="icon" type="image/png" href="./assets/img/sun-regular-inverted.png"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/4c12f61d71.js" crossorigin="anonymous"></script>
+
+  <!-- Favicons --> 
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya:400,700|Nunito:400,600" rel="stylesheet"> 
+
+  <!-- Template Main CSS File -->
+  <link href="m_styles.css" rel="stylesheet"> 
+</head>
+
+<body>
+    <!-- ========== NAVBAR MAIN ========== -->
+    <nav class="navbar sticky-top navbar-expand-lg ">
+      <nav class="navbar navbar-expand-lg ">
+        <div class="inner-nav container-fluid"> 
+          <button class="mobile navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="nav-title">
+              <i class="fa fa-sun-o" aria-hidden="true"></i><i class="fa-solid fa-bars"></i><div>Casa del Sol Apartments</div>
+            </div>
+          </button> 
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" data-toggle="collapse" data-target=".navbar-collapse" >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
+              <!-- msam 2-22-2023: Use nested <a> instead of appending the mobile class to the <ul>. This resolves an bug with <ul> mobile rendering. -->
+              <li class="nav-item"> 
+                <a href="" onclick="jump('m-hero-mod')" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">HOME</a> 
+              </li>
+              <li class="nav-item"> 
+                <a href="" onclick="jump('m-location')" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">LOCATION</a>
+              </li>
+              <li class="nav-item"> 
+                <a href="" onclick="jump('m-rentals')" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">RENTALS</a>
+              </li>
+              <li class="nav-item">   
+                <a href="" onclick="jump('m-photos')" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">PHOTOS</a>
+              </li>
+              <li class="nav-item">  
+                <a href="" onclick="jump('footer')" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div> 
+      </nav>
+    </nav> 
+
+
+    <!-- ========== MOBILE CONTENT ========== --> 
+    <div id="mobile-wrapper">
+      <!-- ================== MOBILE - HERO SECTION ================== -->
+      <div id="m-hero-mod"> 
+        <img id="hero-img" src="./assets/img/home_splash2.jpg" />
+        <div id="hero-content"> 
+          <h1>CASA DEL&nbsp;SOL</h1> 
+          <table class="custom-sun-hr" role="presentation" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td>
+                <hr class="sun-hr">
+              </td>
+              <td class="sun-hr-col">
+                <i class="fa fa-sun-o" aria-hidden="true"></i>
+              </td>
+              <td>
+                <hr class="sun-hr">
+              </td>
+            </tr>
+          </table>
+          <p>Casa Del Sol Apartments is a quiet, 18 unit garden-community located on the Sunnyvale/Mountain View border. Our ideal location is minutes from Downtown Sunnyvale and Mountain&nbsp;View, Caltrain, and many great shops and restaurants along El&nbsp;Camino&nbsp;Real.</p>
+        </div> 
+      </div>
+      <!-- ================== END - MOBILE - HOME SECTION ================== -->
+
+      <!-- ================== MOBILE - LOCATION SECTION ================== -->
+      <div id="m-location">
+        <div id="map-wrapper">
+          <h1>Our location</h1> 
+          <div id="map_canvas"></div>
+          <div id="address-mod">
+            <h2>135 Acalanes Drive, Sunnyvale,&nbsp;CA&nbsp;94086</h2> 
+            <a class="direction-btn" href="https://goo.gl/maps/XVCnPj9ukSLPVJNN7">Get Directions</a>
+          </div>
+        </div> 
+      </div>  
+      <!-- ================== END - MOBILE - LOCATION SECTION ================== -->
+
+      <!-- ================== MOBILE - RENTAL SECTION ================== -->
+      <div id="m-rentals">
+        <h1>Rentals</h1>
+        <hr class="sun-hr full">
+        <!-- MOBILE_RENTAL_TEMPLATE_LOCATION msam: Additional rental_index_mobile_template.html code blocks go BELOW this comment. -->
+        
+        <!-- ==================== RENTAL #1 ==================== -->
+        <div class="rental-1">
+          <!-- Rental Info -->
+          <div class="rental-info"> 
+            <h3>3 Bedroom | 2 Bath</h3>
+            <p><strong>Rent:</strong> $4,000</p>
+            <p><strong>Available Date:</strong> Feb. 1st, 2023</p>
+            <p><strong>Deposit:</strong> $3,000</p>
+          </div>
+          
+          <!-- ========== Slideshow ========== -->
+          <div class="slider" id="div1"> <!--match div number to match ad number. Can have only 1 id. Must make second, unique id number for second ad. Otherwise, slideshow will not work.-->
+            <img class="mySlides" alt="" src="./assets/img/rentals/47.jpg" onclick="plusDivs(this, 1)" style="width:100%">
+            <img class="mySlides" alt="" src="./assets/img/rentals/48.jpg" onclick="plusDivs(this, 1)" style="width:100%">
+            <img class="mySlides" alt="" src="./assets/img/rentals/49.jpg" onclick="plusDivs(this, 1)" style="width:100%"> 
+            <!-- Add more image(s) here-->
+  
+            <img src="./assets/img/left_arrow_icon.png" class="slide-arrow left" onclick="plusDivs(this,-1)" width="32" height="32" alt="" />
+            <img src="./assets/img/right_arrow_icon.png" class="slide-arrow right" onclick="plusDivs(this,1)" width="32" height="32" alt="" /> 
+          </div> 
+  
+          <div class="rental-amenities">
+            <ul>
+              <li>
+                <p>1,100 Square Feet</p>
+              </li>
+              <li>
+                <p>2 Assigned Parking Spaces</p> 
+              </li>
+              <li>
+                <p>Large Private Balcony, Pool View</p>   
+              </li>
+              <li>
+                <p>Oversized Bedrooms, Big Closets</p> 
+              </li>
+              <li>
+                <p>Gorgeous Vaulted Ceilings</p> 
+              </li>
+              <li>
+                <p>Stainless Steel Appliances</p> 
+              </li>
+            </ul>   
+          </div>
+        </div>
+        <!-- ==================== END - RENTAL #1 ==================== -->
+        
+
+        <!-- ==================== RENTAL #2 ==================== -->
+        <div class="rental-2"> 
+          <!-- Rental Info -->
+          <div class="rental-info"> 
+            <h3>BEDROOM_NUM Bedroom | BATH_NUM Bath</h3>
+            <p><strong>Rent:</strong> $RENT_NUM</p>
+            <p><strong>Available Date:</strong> DATE_AVAILABLE</p>
+            <p><strong>Deposit:</strong> $DEPOSIT_NUM</p>
+          </div>
+
+          <!-- ========== Slideshow ========== -->
+          <div class="slider" id="div2"> <!-- Update to match your rental's number, for example: if this is the FIRST rental on the page then use id="div1" .... if this is the SECOND rental on the page then use id="div2" -->
+            <img class="mySlides" alt="" src="./assets/img/rentals/45.jpg" onclick="plusDivs(this, 1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+            <img class="mySlides" alt="" src="./assets/img/rentals/49.jpg" onclick="plusDivs(this, 1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+            <img class="mySlides" alt="" src="./assets/img/rentals/48.jpg" onclick="plusDivs(this, 1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+            <img class="mySlides" alt="" src="./assets/img/rentals/47.jpg" onclick="plusDivs(this, 1)" style="width:100%">  <!-- Place img in RENTALS folder... Required dimensions: 1400x1050 -->
+            <!-- Add more image(s) here--> 
+
+            <img src="./assets/img/left_arrow_icon.png" class="slide-arrow left" onclick="plusDivs(this,-1)" width="32" height="32" alt="" />
+            <img src="./assets/img/right_arrow_icon.png" class="slide-arrow right" onclick="plusDivs(this,1)" width="32" height="32" alt="" /> 
+          </div> 
+
+          <div class="rental-amenities">
+            <ul>
+              <li>
+                <p>1,100 Square Feet</p>
+              </li>
+              <li>
+                <p>2 Assigned Parking Spaces</p> 
+              </li>
+              <li>
+                <p>Large Private Balcony, Pool View</p>   
+              </li>
+              <li>
+                <p>Oversized Bedrooms, Big Closets</p> 
+              </li>
+              <li>
+                <p>Gorgeous Vaulted Ceilings</p> 
+              </li>
+              <li>
+                <p>Stainless Steel Appliances</p> 
+              </li>
+            </ul>   
+          </div>
+        </div>
+        <!-- ==================== END RENTAL #2 ==================== -->
+
+        <!-- msam: Additional rental_index_mobile_template.html code blocks go ABOVE this comment. -->
+      </div>
+      <!-- ================== END - MOBILE - RENTAL SECTION ================== -->
+
+      <!-- ================== MOBILE - PHOTOS SECTION ================== -->
+      <div id="m-photos"> 
+        <h1>Photos</h1>  
+        <div class="photo-gallery">
+          <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td>
+                <img src="./assets/img/45.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/45.jpg');" />
+              </td>
+              <td> 
+                <img src="./assets/img/47.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/47.jpg');" />
+              </td>
+            </tr>
+            <tr>
+              <td> 
+                <img src="./assets/img/48.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/48.jpg');" />
+              </td>
+              <td>
+                <img src="./assets/img/49.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/49.jpg');" />
+              </td>
+            </tr> 
+            <tr>
+              <td>
+                <img src="./assets/img/45.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/45.jpg');" />
+              </td>
+              <td> 
+                <img src="./assets/img/47.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/47.jpg');" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="./assets/img/48.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/48.jpg');" />
+              </td>
+              <td>
+                <img src="./assets/img/49.jpg" class="gallery-img" alt="" style="cursor:pointer" 
+                     onclick="showImage('./assets/img/49.jpg');" />
+              </td>
+            </tr> 
+          </table> 
+        </div> 
+        <div id="largeImgPanel" onclick="hideMe(this);">
+          <img id="largeImg" style="width: 100%; margin: 0; padding: 0;">
+        </div>
+      </div>
+      <!-- ================== END - MOBILE - PHOTOS SECTION ================== --> 
+
+    </div>
+    <!-- ========== END MOBILE CONTENT ========== -->
+
+
+    <footer id="footer">
+      <div id="contact-wrapper">
+        <table role="presentation" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td > 
+              <div class="contact">
+                <h3>Contact</h3>
+                <p><i class="fa fa-phone" aria-hidden="true"></i> <a class="unstyle-link" href="tel:6509651671" aria-hidden="true">&nbsp;(650) 965 - 1671</a></p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> <a class="unstyle-link" href="mailto:FelixPropertiesCDS@gmail.com" aria-hidden="true">&nbsp;FelixPropertiesCDS@gmail.com</a></p> 
+                <p><i class="fa fa-map-pin" aria-hidden="true"></i><a class="unstyle-link" href="https://goo.gl/maps/XVCnPj9ukSLPVJNN7" aria-hidden="true">&nbsp;135 Acalanes Drive, Sunnyvale,&nbsp;CA&nbsp;94086</a></p>
+              </div>  
+            </td>
+          </tr>
+        </table>
+      </div>
+    </footer> 
+
+    <script src="script.js"></script>
+</body>
+
+</html>

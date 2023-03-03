@@ -27,10 +27,10 @@ main .custom-sun-hr {
 main .custom-sun-hr .sun-hr-col {
   width: 24px;
 }
-.mobile .custom-sun-hr {
+.custom-sun-hr {
   width: 80%;
 }
-.mobile .custom-sun-hr .sun-hr-col {
+.custom-sun-hr .sun-hr-col {
   width: 24px;
 }
 hr.sun-hr {
@@ -49,9 +49,6 @@ hr.sun-hr.full {
   width: 24px;
   height: 24px;
   text-align: center;
-}
-.mobile {
-  display: none;
 }
 /* ====================== NAVBAR SELECTORS ====================== */
 .navbar {
@@ -550,14 +547,14 @@ footer #contact-wrapper td a.m-unstyle-link {
   text-decoration: none;
   font-weight: 700;
 }
-footer #contact-wrapper .mobile .contact {
+footer #contact-wrapper .contact {
   text-align: center;
 }
-footer #contact-wrapper .mobile .contact p {
+footer #contact-wrapper .contact p {
   font-size: 14px;
   line-height: 21px;
 }
-footer #contact-wrapper .mobile .contact i {
+footer #contact-wrapper .contact i {
   color: #fafafa;
 }
 footer #contact-wrapper .license,
@@ -604,42 +601,21 @@ footer #contact-wrapper .unstyle-link {
   left: 0;
   position: absolute;
 }
-@media only screen and (max-width: 821px) {
-  #mobile-wrapper,
-  #m-location,
-  #m-rentals,
-  .navbar,
-  .slider,
-  .mySlides,
-  footer,
-  html,
-  .rental-amenities,
-  .rental-info,
-  #m-photos {
-    min-width: 360px;
-  }
-  main,
-  .desktop {
-    display: none !important;
-  }
-  div.mobile {
-    display: block !important;
-  }
-  a.mobile {
-    display: inline !important;
-  }
-  td.mobile {
-    display: table-cell !important;
-  }
-  li.mobile {
-    display: list-item !important;
-  }
+#mobile-wrapper,
+#m-location,
+#m-rentals,
+.navbar,
+.slider,
+.mySlides,
+footer,
+html,
+.rental-amenities,
+.rental-info,
+#m-photos {
+  min-width: 360px;
 }
 @media only screen and (max-width: 992px) {
   .navbar li.nav-item a {
     line-height: 56px;
-  }
-  .navbar button.mobile {
-    display: block !important;
   }
 }
