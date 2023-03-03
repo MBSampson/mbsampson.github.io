@@ -31,13 +31,8 @@
     <!-- ========== NAVBAR MAIN ========== -->
     <nav class="navbar sticky-top navbar-expand-lg ">
       <nav class="navbar navbar-expand-lg ">
-        <div class="inner-nav container-fluid"> 
-          <button class="mobile navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="nav-title">
-              <i class="fa fa-sun-o" aria-hidden="true"></i><i class="fa-solid fa-bars"></i><div>Casa del Sol</div>
-            </div>
-          </button> 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent" data-toggle="collapse" data-target=".navbar-collapse" >
+        <div class="inner-nav container-fluid">  
+          <div class="" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
               <!-- msam 2-22-2023: Use nested <a> instead of appending the mobile class to the <ul>. This resolves an bug with <ul> mobile rendering. -->
               <li class="nav-item">
@@ -93,76 +88,22 @@
               </div> 
             </td>
             <td class="showcase-gallery">
-              <table role="presentation" align="center" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td>
-                    <img src="./assets/img/showcase_tile_1_350x680px.jpg" width="275" />
-                  </td>
-                  <td>
-                    <img src="./assets/img/showcase_tile_2_350x680px.jpg" width="275" />
-                  </td>
-                  <td>
-                    <img src="./assets/img/showcase_tile_3_350x680px.jpg" width="275" />
-                  </td>
-                </tr>
-              </table>
+              <!-- ================== GMAP SECTION ================== -->
+              <div>
+                <div id="map-wrapper">
+                  <div id="map_canvas"></div>
+                </div>
+              </div>  
+              <!-- ================== END GMAP SECTION ================== --> 
             </td>
           </tr>
         </table>
+      </div>
+      <div id="address-mod">
+        <h2>135 Acalanes Drive, Sunnyvale,&nbsp;CA&nbsp;94086</h2> 
+        <a class="direction-btn" href="https://goo.gl/maps/XVCnPj9ukSLPVJNN7">Get Directions</a>
       </div>
       <!-- ========== END SHOWCASE SECTION - MODULE #1 ========== -->
-
-      <div id="exterior-photos"> 
-        <h3>Exterior</h3>
-        <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0" width="90%">
-          <tr>
-            <td class="col">
-              <img src="./assets/img/rentals/49.jpg" alt="" width="100%" />
-            </td>
-            <td class="col">
-              <img src="./assets/img/rentals/45.jpg" alt="" width="100%" />
-            </td>
-          </tr>
-          <tr>
-            <td class="col">
-              <img src="./assets/img/rentals/48.jpg" alt="" width="100%" />
-            </td>
-            <td class="col">
-              <img src="./assets/img/rentals/47.jpg" alt="" width="100%" />
-            </td>
-          </tr>
-        </table>
-      </div>
-
-      <div id="interior-photos"> 
-        <h3>Interior</h3>
-        <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0" width="90%">
-          <tr>
-            <td class="col">
-              <img src="./assets/img/rentals/49.jpg" alt="" width="100%" />
-            </td>
-            <td class="col">
-              <img src="./assets/img/rentals/45.jpg" alt="" width="100%" />
-            </td>
-          </tr>
-          <tr>
-            <td class="col">
-              <img src="./assets/img/rentals/48.jpg" alt="" width="100%" />
-            </td>
-            <td class="col">
-              <img src="./assets/img/rentals/47.jpg" alt="" width="100%" />
-            </td>
-          </tr>
-        </table>
-      </div>
-
-      <!-- ================== GMAP SECTION ================== -->
-      <div>
-        <div id="map-wrapper">
-          <div id="map_canvas"></div>
-        </div>
-      </div>  
-      <!-- ================== END GMAP SECTION ================== --> 
     </div>
     <!-- ================== END LOCATION SECTION ================== -->
   

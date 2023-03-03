@@ -67,6 +67,9 @@ hr.sun-hr {
   box-shadow: 0 9px 20px 0 rgb(0 0 0 / 20%), 0 9px 20px 0 rgb(0 0 0 / 20%);
   .inner-nav {
     padding-left: 30px;
+    #navbarSupportedContent {
+      margin: 0 auto;
+    }
   }
   .fa.fa-sun-o {
     transform: translateY(1px);
@@ -107,7 +110,7 @@ hr.sun-hr {
   .dropdown-toggle::after {
     display: none;
   }
-}
+} 
 
 /* ====================== DESKTOP index.html SELECTORS ====================== */
 main {
@@ -150,173 +153,6 @@ main {
   }
 }
 
-/* ====================== MOBILE index.html SELECTORS ====================== */
-#mobile-wrapper {
-
-  /* ---------------------------- MOBILE HERO SELECTORS ---------------------------- */
-  #m-hero-mod {
-    #hero-img {
-      width: 100%;
-    }
-    #hero-content {
-      text-align: center;
-      h1 {
-        padding: 30px 15px 15px;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 40px;
-        line-height: 48px;
-        letter-spacing: 4px;
-        word-spacing: 2px;
-      }
-      p { 
-        font-family: 'Nunito', Arial, sans-serif;
-        font-size: 14px;
-        line-height: 22px;
-        padding: 25px 45px 80px;
-      }
-    }
-  }
-  /* ---------------------------- END MOBILE HERO SELECTORS ---------------------------- */
-
-  /* ---------------------------- MOBILE LOCATION SELECTORS ---------------------------- */
-  #m-location {
-    background-color: rgb(14, 14, 14, 0.1); 
-    background-image: url(./assets/img/bg_nami.png);
-    #map-wrapper {
-      padding: 80px 0;
-      h1 {
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: 800;
-        letter-spacing: 10px;
-        margin-bottom: 30px;
-        color: @tertiary-text-color;
-      }
-      .sun-hr.full {
-        border: 3px solid @tertiary-text-color;
-        opacity: 100%;
-      }
-      #map_canvas{   
-        height: 400px;
-        border-top: 3px solid @tertiary-text-color;
-        border-bottom: 3px solid @tertiary-text-color;
-        #map-content > h1 { 
-          text-align: center;
-          margin: 0; 
-          font-size: 18px;
-          line-height: 28px; 
-          font-weight: 700;
-          font-family: 'Alegreya', Arial, serif;
-          color: @primary-h-color;
-          letter-spacing: 1px;
-        } 
-        #map-content > h4 {
-          text-align: center;
-          padding-top: 8px;
-          margin: 0; 
-          font-size: 12px;
-          line-height: 20px;
-          font-family: 'Nunito', Arial, sans-serif;
-        }
-      }
-    }   
-  } 
-  /* ---------------------------- END MOBILE LOCATION SELECTORS ---------------------------- */
-
-  /* ---------------------------- RENTAL SELECTORS ---------------------------- */
-  #m-rentals {
-    padding: 80px 0;
-    background-color: @mobile-alt-bg;
-    .rental-2, .rental-3, .rental-4, .rental-5, .rental-6 {
-      margin-top: 80px;
-    }
-    h1 {
-      text-transform: uppercase;
-      text-align: center;
-      font-weight: 800;
-      letter-spacing: 10px;
-      margin-bottom: 10px;
-    }
-
-    .rental-info {
-      padding: 20px 25px 20px; 
-      h3 {
-        font-size: 30px;
-        line-height: 42px; 
-        margin-bottom: 10px;
-      }
-      p {
-        margin: 0 0 8px;
-        font-size: 18px;
-        line-height: 24px;
-      }
-    }
-
-    .slider { 
-      .slide-arrow { 
-        position: relative; 
-        cursor: pointer;
-      }
-      .slide-arrow.right {
-        float: right;
-        transform: translate3d(-10px, -44px, 0);
-      }
-      .slide-arrow.left {
-        transform: translate3d(10px, -44px, 0);
-      }
-    }
-
-    .rental-amenities {
-      padding: 0 15px; 
-      p {
-        margin-top: 10px;
-        font-size: 18px;
-        line-height: 24px;
-      }  
-    }
-  }
-  /* ---------------------------- END RENTAL SELECTORS ---------------------------- */
-
-  /* ---------------------------- MOBILE PHOTOS SELECTORS ---------------------------- */
-  #m-photos {
-    padding: 80px 0; 
-    background-color: #040404;
-    background-image: url(./assets/img/bg_nami.png);
-    h1 {
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: 800;
-        letter-spacing: 10px;
-        margin-bottom: 30px;
-        color: @tertiary-text-color;
-    }
-    .photo-gallery { 
-      border-top: 3px solid #DAA520;
-      border-bottom: 3px solid #DAA520;
-      .gallery-img {
-        max-width: 100%; 
-      }
-    }
-    #photo-ss.slider { 
-      margin-bottom: -32px;
-      .slide-arrow { 
-        position: relative; 
-        cursor: pointer;
-      }
-      .slide-arrow.right {
-        float: right;
-        transform: translate3d(-10px, -44px, 0);
-      }
-      .slide-arrow.left {
-        transform: translate3d(10px, -44px, 0);
-      } 
-    } 
-  }
-  /* ---------------------------- END MOBILE PHOTOS SELECTORS ---------------------------- */
-}
-
-
 /* ====================== DESKTOP location.html SELECTORS ====================== */
 #d-body {
   background-color: rgb(4, 4, 4, 0.1);
@@ -341,9 +177,11 @@ main {
   .showcase {
     margin-bottom: 25px;
     .showcase-content {
+      width: 50%;
       min-width: 325px;
       padding: 25px;
       background-color: #ffffff;
+      text-align: center;
       h2 {
         font-family: 'Nunito', Arial, sans-serif;
         text-transform: uppercase;
@@ -404,7 +242,7 @@ main {
   }
   #map-wrapper {
     #map_canvas{   
-      height: 400px; 
+      height: 500px; 
       #map-content > h1 { 
         text-align: center;
         margin: 0; 
@@ -636,17 +474,7 @@ footer {
   } 
 } 
 
-// Tablet-specific
-@media only screen and (max-width: 992px) {
-  .navbar {
-    li.nav-item { 
-      a {
-        line-height: 56px;
-      } 
-    }
-    // msam: Show shortened navbar for tablets and mobile devices
-    button.mobile {
-      display: block !important;
-    } 
-  }
+// Disable navbar resizing behavior 
+.navbar-expand-lg .navbar-nav {
+  flex-direction: row !important;
 }
