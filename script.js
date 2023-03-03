@@ -128,22 +128,4 @@ function navToRentals () {
   location.href = "rentals.html"; 
 } 
 
-
-
-var mq = window.matchMedia( "(min-width: 768px)" );
-
-function scrollToAnchor(aid){
-  var aTag = $(aid);
-  if (mq.matches) {
-    $('body').animate({scrollTop: (aTag.offset().top)-82},'slow');
-  } else {
-    $('body').animate({scrollTop:(aTag.offset().top)-180},'slow');
-  }
-};
- 
-
-$("#locationMenu").on('click touchend', function(e) {
-  e.preventDefault();
-  scrollToAnchor('#m-location');
-  return false;
-}); 
+   
