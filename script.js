@@ -128,4 +128,9 @@ function navToRentals () {
   location.href = "rentals.html"; 
 } 
 
-   
+function getBaseUrl() {
+  var re = new RegExp(/^.*\//);
+  return re.exec(window.location.href);
+}
+
+console.log(getBaseUrl());
