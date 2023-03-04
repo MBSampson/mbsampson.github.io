@@ -101,6 +101,9 @@ hr.sun-hr.full {
 }
 /* ====================== DESKTOP index.html SELECTORS ====================== */
 main {
+  margin: 0 75px;
+}
+main #d-hero {
   width: 100%;
   height: calc(100vh);
   background-color: #fafafa;
@@ -109,12 +112,12 @@ main {
   background-repeat: no-repeat;
   background-position: center;
 }
-main .hero-spacer {
-  font-size: 490px;
-  line-height: 490px;
-  height: 490px;
+main #d-hero .hero-spacer {
+  font-size: 535px;
+  line-height: 535px;
+  height: 535px;
 }
-main #hero-mod {
+main #d-hero #hero-mod {
   background-color: #ffffff;
   width: 50%;
   min-width: 360px;
@@ -122,7 +125,7 @@ main #hero-mod {
   margin: 0 auto;
   text-align: center;
 }
-main #hero-mod h1 {
+main #d-hero #hero-mod h1 {
   padding: 30px 15px 15px;
   text-align: center;
   text-transform: uppercase;
@@ -131,11 +134,20 @@ main #hero-mod h1 {
   letter-spacing: 5.5px;
   word-spacing: 5px;
 }
-main #hero-mod p {
+main #d-hero #hero-mod p {
   font-family: 'Nunito', Arial, sans-serif;
   font-size: 14px;
   line-height: 22px;
   padding: 25px 45px 30px;
+}
+.hero-bg-banner {
+  z-index: -1;
+  background-color: #040404;
+  background-image: url(./assets/img/bg_nami.png);
+  height: 200px;
+  width: 100%;
+  position: relative;
+  margin-top: -200px;
 }
 /* ====================== DESKTOP location.html SELECTORS ====================== */
 #d-body {

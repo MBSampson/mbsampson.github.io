@@ -114,43 +114,54 @@ hr.sun-hr {
 
 /* ====================== DESKTOP index.html SELECTORS ====================== */
 main {
-  width: 100%;
-  height: calc(100vh);
-  background-color: #fafafa;
-  background-image: url(./assets/img/home_splash2.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  .hero-spacer {
-    font-size: 490px;
-    line-height: 490px;
-    height: 490px;
-  }
-  
-  #hero-mod {
-    background-color: #ffffff;
-    width: 50%;
-    min-width: 360px; 
-    box-shadow: 7.5px 7.5px;
-    margin: 0 auto;
-    text-align: center;
-    h1 {
-      padding: 30px 15px 15px;
+  margin: 0 75px; 
+  #d-hero {
+    width: 100%;
+    height: calc(100vh);
+    background-color: #fafafa;
+    background-image: url(./assets/img/home_splash2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    .hero-spacer {
+      font-size: 535px;
+      line-height: 535px;
+      height: 535px;
+    }
+    #hero-mod {
+      background-color: #ffffff;
+      width: 50%;
+      min-width: 360px; 
+      box-shadow: 7.5px 7.5px;
+      margin: 0 auto;
       text-align: center;
-      text-transform: uppercase;
-      font-size: 44px;
-      line-height: 52px;
-      letter-spacing: 5.5px;
-      word-spacing: 5px;
+      h1 {
+        padding: 30px 15px 15px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 44px;
+        line-height: 52px;
+        letter-spacing: 5.5px;
+        word-spacing: 5px;
+      }
+      p { 
+        font-family: 'Nunito', Arial, sans-serif;
+        font-size: 14px;
+        line-height: 22px;
+        padding: 25px 45px 30px;
+      }
     }
-    p { 
-      font-family: 'Nunito', Arial, sans-serif;
-      font-size: 14px;
-      line-height: 22px;
-      padding: 25px 45px 30px;
-    }
-  }
+  }  
+}
+
+.hero-bg-banner {
+  z-index: -1;
+  background-color: rgb(4, 4, 4, 0.1);
+  background-image: url(./assets/img/bg_nami.png);
+  height: 200px;
+  width: 100%;
+  position: relative;
+  margin-top: -200px;
 }
 
 /* ====================== DESKTOP location.html SELECTORS ====================== */
