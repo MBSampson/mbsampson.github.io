@@ -215,18 +215,24 @@ hr.sun-hr.full {
   letter-spacing: 10px;
   margin-bottom: 10px;
 }
-#mobile-wrapper #m-rentals .rental-info {
-  padding: 20px 25px 20px;
-}
-#mobile-wrapper #m-rentals .rental-info h3 {
+#mobile-wrapper #m-rentals .rental-info h3,
+#mobile-wrapper #m-rentals .no-rentals-info h3 {
   font-size: 30px;
   line-height: 42px;
   margin-bottom: 10px;
 }
-#mobile-wrapper #m-rentals .rental-info p {
+#mobile-wrapper #m-rentals .rental-info p,
+#mobile-wrapper #m-rentals .no-rentals-info p {
   margin: 0 0 8px;
   font-size: 18px;
   line-height: 24px;
+}
+#mobile-wrapper #m-rentals .rental-info {
+  padding: 20px 25px;
+}
+#mobile-wrapper #m-rentals .no-rentals-info {
+  padding: 35px 25px;
+  text-align: center;
 }
 #mobile-wrapper #m-rentals .slider .slide-arrow {
   position: relative;
