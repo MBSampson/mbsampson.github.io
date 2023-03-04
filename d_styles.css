@@ -21,9 +21,6 @@ p {
 .dark-gray {
   color: #333333;
 }
-#d-body {
-  min-width: 1000px;
-}
 main .custom-sun-hr {
   width: 80%;
 }
@@ -76,10 +73,16 @@ hr.sun-hr.full {
   padding: 0 15px;
 }
 .navbar .navbar-nav li > a {
+  transition: all 1s ease-in-out;
   color: #936c22;
   font-size: 1.1em;
   font-weight: 600;
   letter-spacing: 1.5px;
+  text-decoration: underline 0.15em rgba(147, 108, 34, 0);
+  transition: text-decoration-color 300ms;
+}
+.navbar .navbar-nav li > a:hover {
+  text-decoration-color: #936c22;
 }
 .navbar .nav-link {
   padding: 0;
@@ -150,6 +153,10 @@ main #d-hero #hero-mod p {
   margin-top: -200px;
 }
 /* ====================== DESKTOP location.html SELECTORS ====================== */
+#d-body,
+#d-body-home {
+  min-width: 1000px;
+}
 #d-body {
   background-color: #040404;
   background-image: url(./assets/img/bg_nami.png);
@@ -435,37 +442,6 @@ footer #contact-wrapper .unstyle-link {
   top: 25vh;
   left: 0;
   position: absolute;
-}
-@media only screen and (max-width: 821px) {
-  #mobile-wrapper,
-  #m-location,
-  #m-rentals,
-  .navbar,
-  .slider,
-  .mySlides,
-  footer,
-  html,
-  .rental-amenities,
-  .rental-info,
-  #m-photos {
-    min-width: 360px;
-  }
-  main,
-  .desktop {
-    display: none !important;
-  }
-  div.mobile {
-    display: block !important;
-  }
-  a.mobile {
-    display: inline !important;
-  }
-  td.mobile {
-    display: table-cell !important;
-  }
-  li.mobile {
-    display: list-item !important;
-  }
 }
 .navbar-expand-lg .navbar-nav {
   flex-direction: row !important;
