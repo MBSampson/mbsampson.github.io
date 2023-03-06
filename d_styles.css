@@ -10,7 +10,9 @@ p {
 }
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5 {
   color: #333333;
   font-family: 'Alegreya', Arial, sans-serif;
 }
@@ -49,7 +51,6 @@ hr.sun-hr.full {
   width: 100%;
   background-color: #fafafa;
   font-family: 'Alegreya', Arial, sans-serif;
-  box-shadow: 0 9px 20px 0 rgba(0, 0, 0, 0.2), 0 9px 20px 0 rgba(0, 0, 0, 0.2);
 }
 .navbar .inner-nav {
   padding-left: 30px;
@@ -70,7 +71,7 @@ hr.sun-hr.full {
   margin: 0 auto;
 }
 .navbar .navbar-nav li {
-  padding: 0 15px;
+  padding: 5px 25px;
 }
 .navbar .navbar-nav li > a {
   transition: all 1s ease-in-out;
@@ -104,7 +105,7 @@ hr.sun-hr.full {
 }
 /* ====================== DESKTOP index.html SELECTORS ====================== */
 main {
-  margin: 0 75px;
+  margin: 0 50px;
 }
 main #d-hero {
   width: 100%;
@@ -147,10 +148,10 @@ main #d-hero #hero-mod p {
   z-index: -1;
   background-color: #040404;
   background-image: url(./assets/img/bg_nami.png);
-  height: 200px;
+  height: 500px;
   width: 100%;
   position: relative;
-  margin-top: -200px;
+  margin-top: -500px;
 }
 /* ====================== DESKTOP location.html SELECTORS ====================== */
 #d-body,
@@ -170,18 +171,17 @@ main #d-hero #hero-mod p {
   font-size: 50px;
   line-height: 60px;
   padding: 50px 0;
-  color: #DAA520;
-  text-transform: uppercase;
+  color: #f6e9c8;
   text-align: center;
   font-weight: 800;
   letter-spacing: 10px;
   margin-bottom: 10px;
 }
 #d-location .showcase {
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 #d-location .showcase .showcase-content {
-  width: 50%;
+  width: 34%;
   min-width: 325px;
   padding: 25px;
   background-color: #ffffff;
@@ -212,44 +212,13 @@ main #d-hero #hero-mod p {
 #d-location .showcase .showcase-content .direction-icons td {
   padding: 10px;
 }
-#d-location #exterior-photos,
-#d-location #interior-photos {
-  margin-bottom: 50px;
+#d-location .showcase-map {
+  width: 66%;
 }
-#d-location #exterior-photos h3,
-#d-location #interior-photos h3 {
-  font-size: 50px;
-  line-height: 60px;
-  padding: 50px 0 25px;
-  color: #DAA520;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: 800;
-  letter-spacing: 10px;
+#d-location .showcase-map #map-wrapper #map_canvas {
+  height: 516px;
 }
-#d-location #exterior-photos .col,
-#d-location #interior-photos .col {
-  padding: 10px;
-}
-#d-location #rental-btn {
-  background-color: #040404;
-  background-image: url(./assets/img/bg_nami.png);
-  color: #DAA520;
-  border: 3px solid #DAA520;
-  text-transform: uppercase;
-  padding: 8px 25px;
-  width: 80%;
-  margin: 0 auto;
-  display: block;
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 2px;
-  line-height: 28px;
-}
-#d-location #map-wrapper #map_canvas {
-  height: 500px;
-}
-#d-location #map-wrapper #map_canvas #map-content > h1 {
+#d-location .showcase-map #map-wrapper #map_canvas #map-content > h1 {
   text-align: center;
   margin: 0;
   font-size: 18px;
@@ -259,7 +228,7 @@ main #d-hero #hero-mod p {
   color: #333333;
   letter-spacing: 1px;
 }
-#d-location #map-wrapper #map_canvas #map-content > h4 {
+#d-location .showcase-map #map-wrapper #map_canvas #map-content > h4 {
   text-align: center;
   padding-top: 8px;
   margin: 0;
@@ -267,82 +236,129 @@ main #d-hero #hero-mod p {
   line-height: 20px;
   font-family: 'Nunito', Arial, sans-serif;
 }
-#d-rentals {
+#d-rentals,
+#d-no-rentals {
   max-width: 1420px;
   min-width: 1000px;
   margin: 0 auto;
 }
-#d-rentals h1 {
+#d-rentals h1.welcome-banner,
+#d-no-rentals h1.welcome-banner {
   font-size: 50px;
   line-height: 60px;
   padding: 50px 0;
-  color: #DAA520;
-  text-transform: uppercase;
+  color: #f6e9c8;
   text-align: center;
   font-weight: 800;
   letter-spacing: 10px;
   margin-bottom: 10px;
 }
-#d-rentals p {
+#d-rentals p,
+#d-no-rentals p {
   font-size: 14px;
   line-height: 21px;
   vertical-align: top;
 }
-#d-rentals .rental-item {
+#d-rentals .rental-item,
+#d-no-rentals .rental-item {
   margin-bottom: 30px;
 }
-#d-rentals .rental-item .rental-info {
+#d-rentals .rental-item .rental-info,
+#d-no-rentals .rental-item .rental-info {
   background: #fafafa;
-  padding: 15px 25px;
+  padding: 15px 20px;
   width: 50%;
-  vertical-align: middle;
+  vertical-align: top;
   text-align: center;
 }
-#d-rentals .rental-item .rental-info td {
+#d-rentals .rental-item .rental-info .rental-details p,
+#d-no-rentals .rental-item .rental-info .rental-details p {
+  font-size: 16px;
+  line-height: 24px;
+}
+#d-rentals .rental-item .rental-info .rental-details .col-div,
+#d-no-rentals .rental-item .rental-info .rental-details .col-div {
+  padding: 0 10px;
+}
+#d-rentals .rental-item .rental-info td,
+#d-no-rentals .rental-item .rental-info td {
   vertical-align: top;
 }
-#d-rentals .rental-item .rental-info h3 {
+#d-rentals .rental-item .rental-info h2,
+#d-no-rentals .rental-item .rental-info h2 {
   font-size: 30px;
-  line-height: 42px;
+  line-height: 40px;
+  margin-bottom: 14px;
+}
+#d-rentals .rental-item .rental-info h3,
+#d-no-rentals .rental-item .rental-info h3 {
+  font-size: 34px;
+  line-height: 46px;
   margin-bottom: 10px;
 }
-#d-rentals .rental-item .rental-info p {
+#d-rentals .rental-item .rental-info p,
+#d-no-rentals .rental-item .rental-info p {
   margin: 8px 0 0;
 }
-#d-rentals .rental-item .rental-info .amenities {
+#d-rentals .rental-item .rental-info .amenities,
+#d-no-rentals .rental-item .rental-info .amenities {
   margin-top: 20px;
 }
-#d-rentals .rental-item .rental-info .amenities .col {
+#d-rentals .rental-item .rental-info .amenities .col,
+#d-no-rentals .rental-item .rental-info .amenities .col {
   width: 50%;
   padding: 0 5px;
 }
-#d-rentals .rental-item .slider {
-  margin-bottom: -32px;
+#d-rentals .rental-item .carousel-control-prev-icon,
+#d-no-rentals .rental-item .carousel-control-prev-icon,
+#d-rentals .rental-item .carousel-control-next-icon,
+#d-no-rentals .rental-item .carousel-control-next-icon {
+  width: 4rem;
+  height: 4rem;
 }
-#d-rentals .rental-item .slider .slide-arrow {
-  position: relative;
-  cursor: pointer;
+#d-no-rentals .rental-item .rental-info {
+  vertical-align: middle;
 }
-#d-rentals .rental-item .slider .slide-arrow.right {
-  float: right;
-  transform: translate3d(-10px, -44px, 0);
+#d-photos h3 {
+  font-size: 50px;
+  line-height: 60px;
+  padding: 50px 0 25px;
+  color: #f6e9c8;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 10px;
 }
-#d-rentals .rental-item .slider .slide-arrow.left {
-  transform: translate3d(10px, -44px, 0);
+#d-photos #exterior-photos,
+#d-photos #interior-photos {
+  margin-bottom: 50px;
+}
+#d-photos #exterior-photos h4,
+#d-photos #interior-photos h4 {
+  font-size: 44px;
+  line-height: 52px;
+  padding: 50px 0 25px;
+  color: #f6e9c8;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 10px;
+}
+#d-photos #exterior-photos .col,
+#d-photos #interior-photos .col {
+  padding: 10px;
 }
 #about-us {
+  width: fit-content;
+  margin: 0 auto;
   background-color: #fafafa;
   text-align: center;
+  padding: 15px 25px;
 }
 #about-us h3 {
   margin-bottom: 20px;
 }
-#about-us .col {
-  width: 50%;
-  padding: 25px;
-  vertical-align: top;
-}
-#about-us .col .application-info .info-item {
+#about-us .application-info .info-item {
   padding: 0 10px 10px;
   vertical-align: top;
 }
@@ -361,17 +377,23 @@ footer {
 footer #contact-wrapper {
   padding: 45px 0;
 }
-footer #contact-wrapper td {
-  vertical-align: top;
-  padding: 0 35px 0;
+footer #contact-wrapper a.yelp-logo {
+  display: block;
+  margin: 0 auto 20px;
+  text-align: center;
 }
-footer #contact-wrapper td h3 {
-  margin-bottom: 10px;
+footer #contact-wrapper h3 {
+  margin-bottom: 20px;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 24px;
   line-height: 32px;
   color: #DAA520;
+  text-align: center;
+}
+footer #contact-wrapper td {
+  vertical-align: top;
+  padding: 0 15px;
 }
 footer #contact-wrapper td p {
   margin-bottom: 8px;
@@ -423,25 +445,6 @@ footer #contact-wrapper .unstyle-link {
   padding: 8px 14px;
   border: 1px solid #DAA520;
   color: #DAA520;
-}
-#largeImgPanel {
-  text-align: center;
-  visibility: hidden;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-#largeImgPanel #largeImg {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  top: 25vh;
-  left: 0;
-  position: absolute;
 }
 .navbar-expand-lg .navbar-nav {
   flex-direction: row !important;

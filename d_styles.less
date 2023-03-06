@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
   color: @primary-h-color;
   font-family: 'Alegreya', Arial, sans-serif;
 }
@@ -61,7 +61,7 @@ hr.sun-hr {
   width: 100%; 
   background-color: rgb(250,250,250);
   font-family: 'Alegreya', Arial, sans-serif;
-  box-shadow: 0 9px 20px 0 rgb(0 0 0 / 20%), 0 9px 20px 0 rgb(0 0 0 / 20%);
+  // box-shadow: 0 9px 20px 0 rgb(0 0 0 / 20%), 0 9px 20px 0 rgb(0 0 0 / 20%);
   .inner-nav {
     padding-left: 30px;
     #navbarSupportedContent {
@@ -80,7 +80,7 @@ hr.sun-hr {
   .navbar-nav {
     margin: 0 auto;
     li {
-      padding: 0 15px;
+      padding: 5px 25px;
       & > a {
         transition: all 1s ease-in-out; 
         color: @nav-color;
@@ -117,7 +117,7 @@ hr.sun-hr {
 
 /* ====================== DESKTOP index.html SELECTORS ====================== */
 main {
-  margin: 0 75px; 
+  margin: 0 50px; 
   #d-hero {
     width: 100%;
     height: calc(100vh);
@@ -161,10 +161,10 @@ main {
   z-index: -1;
   background-color: rgb(4, 4, 4, 0.1);
   background-image: url(./assets/img/bg_nami.png);
-  height: 200px;
+  height: 500px;
   width: 100%;
   position: relative;
-  margin-top: -200px;
+  margin-top: -500px;
 }
 
 /* ====================== DESKTOP location.html SELECTORS ====================== */
@@ -187,17 +187,16 @@ main {
     font-size: 50px;
     line-height: 60px;
     padding: 50px 0;
-    color: @tertiary-text-color;
-    text-transform: uppercase;
+    color: #f6e9c8;  
     text-align: center;
     font-weight: 800;
     letter-spacing: 10px;
     margin-bottom: 10px; 
   }
   .showcase {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     .showcase-content {
-      width: 50%;
+      width: 34%;
       min-width: 325px;
       padding: 25px;
       background-color: #ffffff;
@@ -229,72 +228,43 @@ main {
       }
     }
   }
-  #exterior-photos, #interior-photos {
-    margin-bottom: 50px;
-    h3 {
-      font-size: 50px;
-      line-height: 60px;
-      padding: 50px 0 25px;
-      color: #DAA520;
-      text-transform: uppercase;
-      text-align: center;
-      font-weight: 800;
-      letter-spacing: 10px;
-    }
-    .col {
-      padding: 10px;
-    }
-  }
-  #rental-btn { 
-    background-color: rgb(4, 4, 4, 0.1);
-    background-image: url(./assets/img/bg_nami.png);
-    color: @tertiary-text-color;
-    border: 3px solid @tertiary-text-color;
-    text-transform: uppercase;
-    padding: 8px 25px; 
-    width: 80%;
-    margin: 0 auto;
-    display: block;
-    font-weight: 600;
-    font-size: 18px;
-    letter-spacing: 2px;
-    line-height: 28px;
-  }
-  #map-wrapper {
-    #map_canvas{   
-      height: 500px; 
-      #map-content > h1 { 
-        text-align: center;
-        margin: 0; 
-        font-size: 18px;
-        line-height: 28px; 
-        font-weight: 700;
-        font-family: 'Alegreya', Arial, serif;
-        color: @primary-h-color;
-        letter-spacing: 1px;
-      } 
-      #map-content > h4 {
-        text-align: center;
-        padding-top: 8px;
-        margin: 0; 
-        font-size: 12px;
-        line-height: 20px;
-        font-family: 'Nunito', Arial, sans-serif;
+  .showcase-map {
+    width: 66%;
+    #map-wrapper {
+      #map_canvas{   
+        height: 516px; 
+        #map-content > h1 { 
+          text-align: center;
+          margin: 0; 
+          font-size: 18px;
+          line-height: 28px; 
+          font-weight: 700;
+          font-family: 'Alegreya', Arial, serif;
+          color: @primary-h-color;
+          letter-spacing: 1px;
+        } 
+        #map-content > h4 {
+          text-align: center;
+          padding-top: 8px;
+          margin: 0; 
+          font-size: 12px;
+          line-height: 20px;
+          font-family: 'Nunito', Arial, sans-serif;
+        }
       }
-    }
-  } 
+    } 
+  }
 }
 
-#d-rentals {
+#d-rentals, #d-no-rentals {
   max-width: @d-max-width;
   min-width: @d-min-width;
   margin: 0 auto;
-  h1 {
+  h1.welcome-banner {
     font-size: 50px;
     line-height: 60px;
     padding: 50px 0;
-    color: #DAA520;
-    text-transform: uppercase;
+    color: #f6e9c8; 
     text-align: center;
     font-weight: 800;
     letter-spacing: 10px;
@@ -309,16 +279,30 @@ main {
     margin-bottom: 30px;
     .rental-info {
       background: #fafafa;
-      padding: 15px 25px;
+      padding: 15px 20px;
       width: 50%;
-      vertical-align: middle;
+      vertical-align: top;
       text-align: center;
+      .rental-details {
+        p {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .col-div {
+          padding: 0 10px;
+        }
+      }
       td {
         vertical-align: top;
       }
-      h3 {
+      h2 {
         font-size: 30px;
-        line-height: 42px; 
+        line-height: 40px;
+        margin-bottom: 14px;
+      }
+      h3 {
+        font-size: 34px;
+        line-height: 46px;
         margin-bottom: 10px;
       }
       p {
@@ -332,40 +316,65 @@ main {
         }
       }
     }
-    .slider { 
-      margin-bottom: -32px;
-      .slide-arrow { 
-        position: relative; 
-        cursor: pointer;
-      }
-      .slide-arrow.right {
-        float: right;
-        transform: translate3d(-10px, -44px, 0);
-      }
-      .slide-arrow.left {
-        transform: translate3d(10px, -44px, 0);
-      } 
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+      width: 4rem;
+      height: 4rem;
     } 
   }
 }
 
+#d-no-rentals {
+  .rental-item {
+    .rental-info {
+      vertical-align: middle;
+    }
+  } 
+}
+
+#d-photos {
+  h3 {
+    font-size: 50px;
+    line-height: 60px;
+    padding: 50px 0 25px;
+    color: #f6e9c8;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 10px;
+  }
+  #exterior-photos, #interior-photos {
+    margin-bottom: 50px;
+    h4 {
+      font-size: 44px;
+      line-height: 52px;
+      padding: 50px 0 25px;
+      color: #f6e9c8;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: 10px;
+    }
+    .col {
+      padding: 10px;
+    }
+  } 
+}
+
 #about-us {
+  width: fit-content;
+  margin: 0 auto;
   background-color: #fafafa;
   text-align: center;
+  padding: 15px 25px;
   h3 {
     margin-bottom: 20px; 
-  }
-  .col {
-    width: 50%;
-    padding: 25px;
-    vertical-align: top;
-    .application-info {
-      .info-item {
-        padding: 0 10px 10px;
-        vertical-align: top;
-      }
+  } 
+  .application-info {
+    .info-item {
+      padding: 0 10px 10px;
+      vertical-align: top;
     }
-  }
+  } 
   .appointment-text { 
     padding: 25px 0;
     text-decoration: underline;
@@ -381,17 +390,23 @@ footer {
   background-image: url(./assets/img/bg_nami.png); 
   #contact-wrapper {
     padding: 45px 0;
+    a.yelp-logo { 
+      display: block;
+      margin: 0 auto 20px;
+      text-align: center;
+    }
+    h3 {
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 24px;
+      line-height: 32px;
+      color: @tertiary-text-color;
+      text-align: center;
+    }
     td {
       vertical-align: top;
-      padding: 0 35px 0;
-      h3 {
-        margin-bottom: 10px;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 24px;
-        line-height: 32px;
-        color: @tertiary-text-color;
-      }
+      padding: 0 15px;
       p {
         margin-bottom: 8px;
         font-size: 12px;
@@ -447,26 +462,7 @@ footer {
     border: 1px solid @tertiary-text-color;
     color: @tertiary-text-color;
   }
-}
-
-#largeImgPanel {
-  text-align: center;
-  visibility: hidden;
-  position: fixed;
-  z-index: 100;
-  top: 0; left: 0; 
-  width:100%;
-  height:100%; 
-  background-color: rgba(0, 0, 0, 0.8);
-  #largeImg {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    top: 25vh;
-    left: 0;
-    position: absolute;
-  }
-}
+} 
 
 // Disable navbar resizing behavior 
 .navbar-expand-lg .navbar-nav {
