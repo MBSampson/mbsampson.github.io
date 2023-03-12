@@ -51,6 +51,7 @@ hr.sun-hr.full {
   width: 100%;
   background-color: #fafafa;
   font-family: 'Alegreya', Arial, sans-serif;
+  box-shadow: 0 9px 20px 0 rgba(0, 0, 0, 0.2), 0 9px 20px 0 rgba(0, 0, 0, 0.2);
 }
 .navbar .inner-nav {
   padding-left: 30px;
@@ -93,7 +94,7 @@ hr.sun-hr.full {
 }
 .navbar .dropdown-menu li {
   display: block;
-  padding: 3px 20px;
+  padding: 10px 30px;
   clear: both;
   font-weight: 400;
   line-height: 1.42857143;
@@ -171,7 +172,8 @@ main #d-hero #hero-mod p {
   font-size: 50px;
   line-height: 60px;
   padding: 50px 0;
-  color: #f6e9c8;
+  color: #DAA520;
+  text-transform: uppercase;
   text-align: center;
   font-weight: 800;
   letter-spacing: 10px;
@@ -189,7 +191,6 @@ main #d-hero #hero-mod p {
 }
 #d-location .showcase .showcase-content h2 {
   font-family: 'Nunito', Arial, sans-serif;
-  text-transform: uppercase;
   font-size: 32px;
   line-height: 40px;
   padding-bottom: 12px;
@@ -216,7 +217,7 @@ main #d-hero #hero-mod p {
   width: 66%;
 }
 #d-location .showcase-map #map-wrapper #map_canvas {
-  height: 516px;
+  height: 537px;
 }
 #d-location .showcase-map #map-wrapper #map_canvas #map-content > h1 {
   text-align: center;
@@ -247,8 +248,9 @@ main #d-hero #hero-mod p {
   font-size: 50px;
   line-height: 60px;
   padding: 50px 0;
-  color: #f6e9c8;
+  color: #DAA520;
   text-align: center;
+  text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 10px;
   margin-bottom: 10px;
@@ -286,19 +288,24 @@ main #d-hero #hero-mod p {
 }
 #d-rentals .rental-item .rental-info h2,
 #d-no-rentals .rental-item .rental-info h2 {
-  font-size: 30px;
+  font-size: 38px;
   line-height: 40px;
-  margin-bottom: 14px;
+  margin-bottom: 30px;
 }
 #d-rentals .rental-item .rental-info h3,
 #d-no-rentals .rental-item .rental-info h3 {
-  font-size: 34px;
+  font-size: 32px;
   line-height: 46px;
   margin-bottom: 10px;
 }
 #d-rentals .rental-item .rental-info p,
 #d-no-rentals .rental-item .rental-info p {
   margin: 8px 0 0;
+}
+#d-rentals .rental-item .rental-info .sun-icon,
+#d-no-rentals .rental-item .rental-info .sun-icon {
+  font-size: 36px;
+  margin-top: 12px;
 }
 #d-rentals .rental-item .rental-info .amenities,
 #d-no-rentals .rental-item .rental-info .amenities {
@@ -335,11 +342,10 @@ main #d-hero #hero-mod p {
 }
 #d-photos #exterior-photos h4,
 #d-photos #interior-photos h4 {
-  font-size: 44px;
-  line-height: 52px;
+  font-size: 34px;
+  line-height: 42px;
   padding: 50px 0 25px;
   color: #f6e9c8;
-  text-transform: uppercase;
   text-align: center;
   font-weight: 800;
   letter-spacing: 10px;
@@ -347,6 +353,7 @@ main #d-hero #hero-mod p {
 #d-photos #exterior-photos .col,
 #d-photos #interior-photos .col {
   padding: 10px;
+  width: 50%;
 }
 #about-us {
   width: fit-content;
@@ -354,6 +361,9 @@ main #d-hero #hero-mod p {
   background-color: #fafafa;
   text-align: center;
   padding: 15px 25px;
+}
+#about-us table td {
+  width: 50%;
 }
 #about-us h3 {
   margin-bottom: 20px;
