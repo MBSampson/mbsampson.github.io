@@ -108,6 +108,12 @@ hr.sun-hr {
       line-height: 1.42857143;
       color: #333;
       white-space: nowrap;
+      .unstyle-link {
+        color: @primary-p-color;
+      }
+      a.unstyle-link:hover { 
+        text-decoration-color: @primary-p-color; 
+      }
     }
   }
   .dropdown-toggle::after {
@@ -308,11 +314,7 @@ main {
       }
       p {
         margin: 8px 0 0;
-      }
-      .sun-icon {
-        font-size: 36px;
-        margin-top: 12px;
-      }
+      } 
       .amenities {
         margin-top: 20px;
         .col {
@@ -341,7 +343,7 @@ main {
     font-size: 50px;
     line-height: 60px;
     padding: 50px 0 25px;
-    color: #f6e9c8;
+    color: @tertiary-text-color;
     text-transform: uppercase;
     text-align: center;
     font-weight: 800;
@@ -353,7 +355,7 @@ main {
       font-size: 34px;
       line-height: 42px;
       padding: 50px 0 25px;
-      color: #f6e9c8; 
+      color: @tertiary-text-color;
       text-align: center;
       font-weight: 800;
       letter-spacing: 10px;
@@ -386,7 +388,7 @@ main {
     }
   } 
   .appointment-text { 
-    padding: 25px 0;
+    padding: 50px 0 25px;
     text-decoration: underline;
     font-size: 18px;
     line-height: 24px;
@@ -399,7 +401,7 @@ footer {
   background-color: #040404;
   background-image: url(./assets/img/bg_nami.png); 
   #contact-wrapper {
-    padding: 45px 0;
+    padding: 70px 0 45px;
     a.yelp-logo { 
       display: block;
       margin: 0 auto 20px;
