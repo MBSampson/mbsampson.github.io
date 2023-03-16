@@ -1,0 +1,95 @@
+<!-- msam: 
+    ==================== INSTRUCTIONS ====================
+    1. DUPLICATE this file and replace its values in separate location. This is a template.
+    2. Scrolling from the top to the bottom of this file, locate the comments and replace the values outlined in all capital letters 
+    3. Delete ALL comments after updating all values otherwise they will be readable by people who use the inspector
+    4. Navigate to the index.html file and use the find function CTRL + F and search for this text: MOBILE_RENTAL_TEMPLATE_LOCATION
+    5. Place your code block inbetween the comments I've left in the "rentals.html" code block
+
+    --------- DO NOT USE THIS CODE IN THE m_index.html file. --------- -->
+
+
+<!-- ========== RENTAL #RENTAL_NUM ========== -->
+<div class="rental-item">
+  <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td class="rental-info"> 
+        <h2>Casa Del Sol Apartments</h2>
+        <h3>BEDROOM_NUM Bedroom | BATHROOM_NUM Bath</h3> <!-- Replace BEDROOM_NUM and BATHROOM_NUM with the number of bedrooms and bathrooms in your unit -->
+        <table class="rental-details" role="presentation" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td class="c1">
+              <p><strong>Rent:</strong> $RENT_AMOUNT</p> <!-- Replace RENT_AMOUNT value with the rent price for this unit -->
+            </td>
+            <td class="col-div">
+              <p>|</p>
+            </td>
+            <td class="c2">
+              <p><strong>Available Date:</strong> DATE_AVAILABLE</p> <!-- Replace DATE_AVAILABLE value with the rent price for this unit -->
+            </td>
+            <td class="col-div">
+              <p>|</p>
+            </td>
+            <td class="c3">
+              <p><strong>Deposit:</strong> $DEPOSIT_AMOUNT</p> <!-- Replace DEPOSIT_AMOUNT value with the security deposit value for this unit -->
+            </td>
+          </tr>
+        </table> 
+        <table class="amenities" role="presentation" align="center" cellpadding="0" cellspacing="0">
+          <!-- Amenities are divided into rows of two. To remove amenities entirely start from AMENITY #8 and delete upwards. If you're deleting two amenities then delete the entire ROW:
+               <tr>
+                 <td.... /td>
+                 <td.... /td>
+               </tr> -->
+          <tr>
+            <td class="col"><p>AMENITY1</p></td> <!-- Replace AMENITY1 with the desired amenity text -->
+            <td class="col"><p>AMENITY2</p></td> <!-- Replace AMENITY2 with the desired amenity text -->
+          </tr> 
+          <tr>
+            <td class="col"><p>AMENITY3</p></td> <!-- Replace AMENITY3 with the desired amenity text -->
+            <td class="col"><p>AMENITY4</p></td> <!-- Replace AMENITY4 with the desired amenity text -->
+          </tr>
+          <tr>
+            <td class="col"><p>AMENITY5</p></td> <!-- Replace AMENITY5 with the desired amenity text -->
+            <td class="col"><p>AMENITY6</p></td> <!-- Replace AMENITY6 with the desired amenity text -->
+          </tr>
+          <tr>
+            <td class="col"><p>AMENITY7</p></td> <!-- Replace AMENITY7 with the desired amenity text -->
+            <td class="col"><p>AMENITY8</p></td> <!-- Replace AMENITY8 with the desired amenity text -->
+          </tr> 
+        </table> 
+      </td>
+      <td>
+        <div id="rental-carousel-SS_NUM" class="carousel slide" data-bs-ride="carousel"> <!-- Replace SS_NUM with the rental number. This must be unique: if there are two rental units the first should be "rental-carousel-1" and the second should be "rental-carousel-2" -->
+          <div class="carousel-inner">
+            <div class="carousel-item active"> 
+              <img src="./assets/img/rentals/49.jpg" class="d-block w-100" alt=""> <!-- Replace the image path -./assets/img/rentals/47.jpg- to match the img you want to use. --> 
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/img/rentals/48.jpg" class="d-block w-100" alt=""> <!-- Replace the image path -./assets/img/rentals/47.jpg- to match the img you want to use. --> 
+            </div>
+            <div class="carousel-item"> 
+              <img src="./assets/img/rentals/45.jpg" class="d-block w-100" alt=""> <!-- Replace the image path -./assets/img/rentals/47.jpg- to match the img you want to use. --> 
+            </div>
+            <!-- To add more images, copy: 
+              <div> 
+                <img src="./assets/img/rentals/45.jpg" class="d-block w-100" alt="">
+              </div>
+              ... and update the src="" to match the image you want to use. -->
+
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#rental-carousel-SS_NUM" data-bs-slide="prev"> <!-- Replace SS_NUM with the rental number. This must be unique: if there are two rental units the first should be "#rental-carousel-1" and the second should be "#rental-carousel-2" -->
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#rental-carousel-SS_NUM" data-bs-slide="next"> <!-- Replace SS_NUM with the rental number. This must be unique: if there are two rental units the first should be "#rental-carousel-1" and the second should be "#rental-carousel-2" -->
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </td> 
+    </tr>
+  </table>
+</div> 
+<!-- ========== END RENTAL #RENTAL_NUM ========== --> 
