@@ -3,8 +3,8 @@
 There are two views for the rentals pages: desktop and mobile. I'll detail the instructions for updating each view below:
 
 ## Desktop - No Rentals
-1. Rename the "rentals.html" file to "inactive_rentals.html"
-2. Rename the "norentals.html" file to "rentals.html"
+1. Rename the "rentals.html" file to "inactive_rentals.html"  -- This disables the 'rentals' page
+2. Rename the "norentals.html" file to "rentals.html"         -- This enables the 'no rentals' page
 
 
 ## Desktop - Updating No Rentals to Rentals and adding a new rental

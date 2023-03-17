@@ -270,7 +270,10 @@ hr.sun-hr.full {
   border-top: 3px solid #DAA520;
   border-bottom: 3px solid #DAA520;
 }
-#mobile-wrapper #m-photos .photo-gallery .gallery-img {
+#mobile-wrapper #m-photos .photo-gallery .col {
+  width: 50%;
+}
+#mobile-wrapper #m-photos .photo-gallery .col .gallery-img {
   max-width: 100%;
 }
 #mobile-wrapper #m-photos #photo-ss.slider {

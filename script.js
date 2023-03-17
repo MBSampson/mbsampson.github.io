@@ -20,6 +20,9 @@ function jump(h){
     console.log(url);
   }            
   console.log(url); 
+ 
+  // If the user is on desktop then redirect to the d-view
+  navToDesktop();
 
   window.location.href = url+"#"+h;
 }
@@ -135,3 +138,9 @@ function hideMe(obj) {
 function navToRentals () {
   location.href = "rentals.html"; 
 } 
+
+function navToDesktop() {
+  if (screen.width >= 699) {
+    document.location = "index.html";
+  }  
+}
