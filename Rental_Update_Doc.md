@@ -3,15 +3,19 @@
 There are two views for the rentals pages: desktop and mobile. I'll detail the instructions for updating each view below:
 
 ## Desktop - No Rentals
-1. Rename the "rentals.html" file to "inactive_rentals.html"  -- This disables the 'rentals' page
-2. Rename the "norentals.html" file to "rentals.html"         -- This enables the 'no rentals' page
-
+1. Navigate to local website folder, not on Hostgator
+2. Rename the "rentals.html" file to "inactive_rentals.html"  -- This disables the 'rentals' page
+3. Rename the "norentals.html" file to "rentals.html"         -- This enables the 'no rentals' page
+4. Verify local changes 
+5. Navigate to Hostgator and repeat steps #2 and #3 in public.html folder
 
 ## Desktop - Updating No Rentals to Rentals and adding a new rental
-1. Rename the "rentals.html" file to "norentals.html"         -- This disables the 'no rental' page
-2. Rename the "inactive_rentals.html" file to "rentals.html"  -- This enables the 'rentals' page so that you can begin to add rental listings
-3. Open the "d_rentals_template.html" file and follow the instructions listed there
-
+1. Navigate to local website folder, not on Hostgator
+2. Rename the "rentals.html" file to "norentals.html"         -- This disables the 'no rental' page
+3. Rename the "inactive_rentals.html" file to "rentals.html"  -- This enables the 'rentals' page so that you can begin to add rental listings
+4. Repeat steps #2 and #3 on Hostgator
+5. Open the "d_rentals_template.html" file with Sublime Text and follow the instructions listed there
+6. Navigate to Hostgator and upload rentals.html (overwrite)
 
 ## Mobile - No Rentals
 1. Open the "m_index.html" file
@@ -35,5 +39,4 @@ There are two views for the rentals pages: desktop and mobile. I'll detail the i
 
 
 To make things easier for yourself be sure to leave a good amount of space 
-between the "MOBILE_RENTAL_TEMPLATE_LOCATION" and "END_MOBILE_RENTAL_TEMPLATE_LOCATION" sections. This will increase
-readability and allow you to easily figure out where rentals start and end. 
+between the "MOBILE_RENTAL_TEMPLATE_LOCATION" and "END_MOBILE_RENTAL_TEMPLATE_LOCATION" sections. This will increase readability and allow you to easily figure out where rentals start and end. 

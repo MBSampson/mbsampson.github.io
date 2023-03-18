@@ -223,7 +223,7 @@ main #d-hero #hero-mod p {
   width: 66%;
 }
 #d-location .showcase-map #map-wrapper #map_canvas {
-  height: 537px;
+  height: 600px;
 }
 #d-location .showcase-map #map-wrapper #map_canvas #map-content > h1 {
   text-align: center;
@@ -276,7 +276,6 @@ main #d-hero #hero-mod p {
   background: #fafafa;
   padding: 15px 20px;
   width: 50%;
-  vertical-align: top;
   text-align: center;
 }
 #d-rentals .rental-item .rental-info .rental-details p,
@@ -324,8 +323,15 @@ main #d-hero #hero-mod p {
   width: 4rem;
   height: 4rem;
 }
-#d-no-rentals .rental-item .rental-info {
+#d-no-rentals .rental-item td.rental-info {
   vertical-align: middle;
+}
+#d-no-rentals .rental-item td.rental-info h2 {
+  margin-bottom: 20px;
+}
+#d-no-rentals .rental-item td.rental-info h3 {
+  font-size: 28px;
+  line-height: 40px;
 }
 #d-photos h3 {
   font-size: 50px;
