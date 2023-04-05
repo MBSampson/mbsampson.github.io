@@ -121,7 +121,7 @@ a {
 }
 
 #mobile-main, .mobile {
-  display: none;
+  display: none !important;
 }
 
 .center {
@@ -184,8 +184,7 @@ a {
         padding: 0 40px;
       }
       a {
-        text-transform: uppercase;
-        text-decoration: none;
+        text-transform: uppercase; 
         letter-spacing: 0.4px;
         font-weight: 700;
         font-size: 18px;
@@ -196,7 +195,7 @@ a {
 
   // ==================== Intro Mod Styles ====================
   #intro-mod {
-    margin: 0 auto @module-bot-margin; 
+    margin: 0 2vh @module-bot-margin; 
     .intro-subhead {
       font-family: Georgia, 'Times New Roman', Times, serif;
       font-size: 30px;
@@ -290,9 +289,9 @@ a {
     .c2 {
       width: 55%;
       height: 100%;
-      padding: 5%; 
+      padding: 2% 5% 5%; 
       h2.headline {
-        padding: 30px 20px 15px;
+        padding: 0 20px 15px;
       }
       p { 
         padding: 10px 30px;
@@ -433,7 +432,7 @@ footer {
   }
 
   .mobile {
-    display: block;
+    display: block !important;
   }  
 
   #main {
@@ -454,7 +453,7 @@ footer {
         }  
       }
       .nav {
-        .c2 {
+        .c1, .c2 {
           padding: 0 20px;
         }
         a {
