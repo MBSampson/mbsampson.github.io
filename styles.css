@@ -148,7 +148,7 @@ a {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 30px;
   line-height: 42px;
-  padding-bottom: 10vh;
+  padding: 0 5vh 10vh;
 }
 #main #intro-mod #intro-content {
   padding: 5vh 2vh;
@@ -404,7 +404,7 @@ footer #inner-wrapper .social td {
   #main #operation-mod-m p {
     font-size: 18px;
     line-height: 26px;
-    padding: 0 20px 40px;
+    padding: 0 25px 40px;
   }
   #main #operation-mod-m .operation-container h4.gc-primary-em {
     line-height: 100px;
