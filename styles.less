@@ -1,0 +1,676 @@
+// Custom font faces
+@font-face {
+  font-family: 'Ghibli Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Ghibli Regular'), url('Eyad Al-Samman - Ghibli.woff') format('woff');
+}
+  
+@font-face {
+  font-family: 'Ghibli Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Ghibli Bold'), url('Eyad Al-Samman - Ghibli-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Zoltana-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./Zoltana-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: 'Fontin-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./Fontin_Sans_r_45b.otf'); 
+}
+
+@font-face {
+  font-family: 'Saint-Carell-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./SaintCarell_reg.otf'); 
+}
+
+
+// Colors
+@doc-bg-color: #171717;
+@gc-golden-light: #f7e77c;
+@gc-golden-dark: #996e12;
+@gc-ivory: #fffff0;
+@gc-footer-bg: #18191c; 
+@ghibli-island-blue: #1a5197;
+@ghibli-island-teal: #0faebd;
+@ghibli-mountain-blue: #204979;
+@golden-company-brown: #130e03;
+@golden-company-gray: #0c0902;
+
+// General spacing and widths
+@max-width: 1400px;
+@module-bot-margin: 15vh;
+
+// MQ module widths for padded mods
+@xl-mod-width: 1200px;
+@lg-mod-width: 1000px;
+@md-mod-width: 790px;
+@sm-mod-width: 685px;
+
+// Custom fonts
+@ghibli-reg: 'Ghibli Regular', Arial, sans-serif;
+@ghibli-bold: 'Ghibli Bold', Arial, sans-serif;
+@zoltana-reg: 'Zoltana-Regular', Arial, sans-serif;
+@fontin-reg: 'Fontin-Regular', Arial, sans-serif;
+@saint-reg: 'Saint-Carell-Regular', Arial, sans-serif;
+
+// ========== GENERAL STYLES ==========
+body, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+body {
+  background-color: @doc-bg-color; 
+}
+
+h1 {
+  font-family: @zoltana-reg;
+  color: @gc-ivory;
+}
+
+h2 {
+  font-family: @saint-reg;
+  color: @gc-ivory;
+}
+
+h3 {
+  font-family: @ghibli-bold;
+  color: @gc-ivory;
+}
+
+h4 {
+  font-family: @saint-reg;
+  color: @gc-ivory;
+}
+
+p {
+  font-family: @ghibli-reg;
+  color: @gc-ivory;
+  letter-spacing: 0.2px;
+}
+
+a {
+  color: @gc-ivory;
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+#mobile-main, .mobile {
+  display: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.golden-gradient-brown-wrapper { 
+  background: linear-gradient(to right, @gc-golden-light, @gc-golden-dark);
+  padding: 2px;
+  .golden-gradient-brown-content {
+    background: @golden-company-brown;
+  }
+}
+
+.golden-gradient-black-wrapper { 
+  background: linear-gradient(to right, @gc-golden-dark, @gc-golden-light);
+  padding: 2px;
+  .golden-gradient-black-content {
+    background: #000;
+  }
+}
+
+.gc-primary-em {
+  text-shadow: #fc0 1px 0 10px;
+  display: block;
+  font-size: 3rem;
+  line-height: 3.6rem;
+}
+.gc-secondary-em {
+  text-shadow: #fc0 1px 0 1px;
+  color: @gc-golden-light;
+}
+.gc-tertiary-em {
+  text-shadow: #fc0 1px 0 5px; 
+} 
+// ========== END GENERAL STYLES ==========
+
+
+// ==================== DESKTOP STYLES ====================
+#main {
+  margin: 0 auto;
+
+  // ==================== Hero Styles ====================
+  #hero {
+    padding: 4vh 0 0;
+    margin: 0 auto @module-bot-margin; 
+    .title {
+      .c2 {
+        padding: 10px 25px; 
+        .name {
+          text-shadow: none;
+          font-size: 3.8rem;
+          letter-spacing: 1px;
+        }
+      }
+    }
+    .nav { 
+      padding: 1vh 0 4vh;
+      .c2 {
+        padding: 0 40px;
+      }
+      a {
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.4px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+  } 
+
+  // ==================== Intro Mod Styles ====================
+  #intro-mod {
+    margin: 0 auto @module-bot-margin; 
+    .intro-subhead {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 30px;
+      line-height: 42px;
+      padding-bottom: 10vh;
+    }
+    #intro-content { 
+      padding: 5vh 2vh;
+      h2 {
+        padding: 5px 30px 20px;
+      }
+      p {
+        padding: 10px 40px;
+        font-size: 20px;
+        line-height: 30px;
+      }  
+    }
+  }
+  // ==================== END Intro Mod Styles ====================
+
+  // ==================== Operation Mod Styles ====================
+  #operation-mod {
+    margin: 0 auto @module-bot-margin; 
+    h2 {
+      font-size: 4.2rem;
+      text-align: center; 
+    }
+    h2.main-headline {
+      margin: 10vh 0 5vh;
+    }
+    h2.headline {
+      margin-bottom: 20px;
+    }
+    h3 {
+      padding: 40px 0 20px;
+    } 
+    h3.headline-role {
+      padding: 10px 30px 0;
+      text-align: left;
+      margin-bottom: 10px; 
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      text-decoration: underline;
+    }
+    .c1 {
+      width: 45%; 
+      #operation-container { 
+        .tile {
+          h4 {
+            line-height: 148px; 
+            cursor: pointer;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            &:hover { 
+              font-size: 3.3rem;
+              -webkit-transition: all 0.3s ease-in-out;
+              -moz-transition: all 0.3s ease-in-out;
+              -o-transition: all 0.3s ease-in-out;
+              -ms-transition: all 0.3s ease-in-out;
+              transition: all 0.3s ease-in-out; 
+            }
+          }
+        } 
+        .tile-1 {
+          background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/operation_tiles/ghibli_city_bg_tile.png'); 
+          background-size: 100%;  
+        }
+        .tile-2 {
+          background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/operation_tiles/ghibli_nest_renew_1_to_1_ar_tile.png'); 
+          background-size: 100%;  
+          margin: 12px 0; 
+        }
+        .tile-3 {
+          background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/operation_tiles/ghibli_mountainside_town_2_to_1_ar_tile.png'); 
+          background-size: 100%; 
+          margin: 12px 0; 
+        }
+        .tile-4 {
+          background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/operation_tiles/ghibli_cds_1_to_1_ar_tile.png'); 
+          background-size: 100%; 
+          margin: 12px 0; 
+        }
+        .tile-5 {
+          background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/operation_tiles/ghibli_cafe_1_to_1_ar_tile.png'); 
+          background-size: 100%; 
+        }
+      } 
+    } 
+    .c2 {
+      width: 55%;
+      height: 100%;
+      padding: 5%; 
+      h2.headline {
+        padding: 30px 20px 15px;
+      }
+      p { 
+        padding: 10px 30px;
+        font-size: 20px;
+        line-height: 30px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      #experience-cover, #experience-1 {
+        transition: all 1s ease;
+      }
+    }
+  }
+  // ==================== END Operation Mod Styles ====================
+
+  // ==================== Portfolio Mod Styles ====================
+  #portfolio-mod {
+    text-align: center;   
+    background-color: #151006;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 1) ), url('./assets/ghibli_mailclerk_banner_faded.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 10vh 0;
+    #portfolio-container {
+      h2 {
+        font-family: @saint-reg;
+        color: @gc-ivory; 
+        font-size: 3.2rem;
+        margin-bottom: 20px;
+      }
+      p.subhead {
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 40px;
+        padding: 0 50px;
+        font-family: Georgia, Arial, sans-serif;
+      }
+      img {
+        margin: 0 auto;
+      }
+      #gallery-container { 
+        .tile { 
+          padding: 0 25px;
+          text-align: left;
+          .tile-item-bg { 
+            .tile-container {
+              margin: 4px;
+              min-width: 300px;
+              max-width: 400px;
+              min-height: 600px;
+            }
+          }
+          div {
+            margin: 0 auto 45px;
+            background-color: @golden-company-brown; 
+            box-shadow: 0.1rem 0.2rem #f7e77c, -0.1rem -0.2rem #996e12;
+            p {
+              padding: 15px 20px 7px;
+              font-family: Georgia, Arial, sans-serif; 
+            } 
+            .medium {
+              font-size: 14px;
+              line-height: 20px;
+              color: #454a48;
+            }
+            .title {
+              font-family: @saint-reg;
+              font-size: 24px;
+              line-height: 30px;
+            }
+            a {
+              padding: 15px 20px 21px;
+              text-align: left;
+              width: 100%;
+              display: block;
+              font-family: Georgia, Arial, sans-serif;  
+              text-decoration: underline;
+              letter-spacing: 0.2px;
+              font-size: 18px;
+              line-height: 30px;  
+            }
+          }
+        } 
+      }
+    }
+  }
+  // ==================== END Journey Mod Styles ====================
+
+}
+ 
+footer { 
+  background-color: @golden-company-gray;
+  border-top: 1px solid @gc-golden-light;
+  #inner-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10vh 0 6vh;
+    h1 {
+      font-family: 'Saint-Carell-Regular', Arial, sans-serif;
+      font-size: 40px;
+      line-height: 52px; 
+      padding-bottom: 30px;
+    }
+    h2 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 20px;
+      line-height: 30px;  
+      padding: 0 80px 40px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 20px;
+      font-family: Georgia, Arial, sans-serif;
+    }
+    .title {
+      margin-bottom: 15px;
+    }
+    .logo {
+      margin: 0 auto 20px; 
+      border-radius: 25px;
+    } 
+    .social {
+      font-size: 24px;
+      color: @gc-ivory;
+      margin-bottom: 15px;
+      td {
+        padding: 15px 25px; 
+      }
+    }
+  }
+}
+
+// ==================== MEDIA QUERIES ====================
+// Mobile - all views below 749px - uses seperate view for mobile users
+@media only screen and (max-width: 749px) {
+  #desktop-main, .desktop {
+    display: none !important;
+  }
+
+  .mobile {
+    display: block;
+  } 
+
+  #mobile-main {
+    display: block;
+    min-width: 400px;
+  }
+  #main {
+    min-width: 400px;
+    #hero { 
+      h2 {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .title {
+        .c2 {
+          padding: 25px 10px;
+          h2.name {
+            font-size: 2.3rem;
+            line-height: 3.3rem;
+          }
+        }  
+      }
+      .nav {
+        .c2 {
+          padding: 0 20px;
+        }
+        a {
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+   
+  footer {
+    min-width: 360px;
+    #inner-wrapper {
+      width: 100%;
+      h2 {
+        padding: 0 20px 40px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .social td {
+        padding: 10px;
+      }
+    }
+  }
+} 
+
+
+// Small devices - Tablet-specific
+@media only screen and (min-width: 750px) and (max-width: 991px) {
+  #desktop-main { 
+    #intro-mod {
+      width: @sm-mod-width;
+      #intro-content {
+        .c1 {
+          padding: 30px;
+        }
+        .c1.stacked, .c2.stacked {
+          display: block;  
+        } 
+        .c2.stacked { 
+          width: 100%; 
+        }
+      }
+    }
+
+    // ==================== Operation Module Styles ====================
+    #operation-mod { 
+      margin-bottom: 20px; 
+      .c1 { 
+        #operation-container { 
+          .tile {
+            h4 {
+              line-height: 168px; 
+              font-size: 38px; 
+              &:hover { 
+                font-size: 2.6rem;
+              }
+            }
+            &.tile-1 { 
+              background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_city_bg.png');
+              background-size: 100%;
+            }
+            &.tile-2 {
+              background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_nest_renew_1_to_1_ar.png');
+              background-size: 100%;
+            }
+            &.tile-3 {
+              background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_mountainside_town_2_to_1_ar.png');
+              background-size: 100%;
+            }
+            &.tile-4 {
+              background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_cds_1_to_1_ar.png');
+              background-size: 100%; 
+            }
+            &.tile-5 {
+              background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_cafe_1_to_1_ar.png');
+              background-size: 100%;
+            }
+          }  
+        } 
+      }   
+      .c2 {
+        h4.headline {  
+          font-size: 2.2rem;
+          line-height: 3rem; 
+        }
+        p {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+    }
+    // ==================== END Operation Module Styles ====================
+  }
+}
+
+
+// Medium devices 
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #desktop-main {
+    
+    #intro-mod {
+      width: @md-mod-width;
+      #intro-content {
+        .c1 {
+          padding: 30px;
+        }
+        .c1.stacked, .c2.stacked {
+          display: block;  
+        } 
+        .c2.stacked { 
+          width: 100%; 
+        }
+      }
+    }
+
+    // ==================== Operation Module Styles ====================
+    #operation-mod { 
+      .c1 { 
+        #operation-container { 
+          .tile {
+            h4 {
+              line-height: 170px; 
+              font-size: 38px; 
+              &:hover { 
+                font-size: 3rem;
+              }
+            }
+            &.tile-1 { 
+              background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_city_bg.png');
+              background-size: 100%;
+            }
+            &.tile-2 {
+              background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_nest_renew_1_to_1_ar.png');
+              background-size: 100%;
+            }
+            &.tile-3 {
+              background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_mountainside_town_2_to_1_ar.png');
+              background-size: 100%;
+            }
+            &.tile-4 {
+              background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_cds_1_to_1_ar.png');
+              background-size: 100%;
+            }
+            &.tile-5 {
+              background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_cafe_1_to_1_ar.png');
+              background-size: 100%;
+            }
+          }  
+        } 
+      }   
+    }
+    // ==================== END Operation Module Styles ====================
+  }
+}
+
+
+// Large devices
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  #desktop-main {
+  
+    #intro-mod {
+      width: @lg-mod-width;
+      #intro-content {
+        .c1 {
+          h2 { 
+            font-size: 38px;
+            line-height: 46px;
+          }
+          p {
+            padding: 10px 25px;
+            font-size: 18px;
+            line-height: 26px;
+          }
+        } 
+      }
+    }
+
+    // ==================== Operation Module Styles ====================
+    #operation-mod {  
+      .c1 { 
+        padding-right: 5px;
+        #operation-container { 
+          .tile {
+            h4 {
+              line-height: 123px;  
+            } 
+          }  
+        } 
+      } 
+      .c2 { 
+        padding-left: 5px; 
+        h2.headline {  
+          font-size: 38px;
+          line-height: 46px; 
+        }
+        p { 
+          padding: 10px 25px;
+          font-size: 18px;
+          line-height: 26px;
+        }  
+      }
+    }
+    // ==================== END Operation Module Styles ====================
+  }
+}
+
+
+// XLarge devices
+@media only screen and (min-width: 1400px) {
+  #desktop-main {
+    #intro-mod {
+      width: @xl-mod-width;
+    }
+  } 
+} 

@@ -1,0 +1,534 @@
+@font-face {
+  font-family: 'Ghibli Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Ghibli Regular'), url('Eyad Al-Samman - Ghibli.woff') format('woff');
+}
+@font-face {
+  font-family: 'Ghibli Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Ghibli Bold'), url('Eyad Al-Samman - Ghibli-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Zoltana-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./Zoltana-Regular.ttf');
+}
+@font-face {
+  font-family: 'Fontin-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./Fontin_Sans_r_45b.otf');
+}
+@font-face {
+  font-family: 'Saint-Carell-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./SaintCarell_reg.otf');
+}
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+img {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+body {
+  background-color: #171717;
+}
+h1 {
+  font-family: 'Zoltana-Regular', Arial, sans-serif;
+  color: #fffff0;
+}
+h2 {
+  font-family: 'Saint-Carell-Regular', Arial, sans-serif;
+  color: #fffff0;
+}
+h3 {
+  font-family: 'Ghibli Bold', Arial, sans-serif;
+  color: #fffff0;
+}
+h4 {
+  font-family: 'Saint-Carell-Regular', Arial, sans-serif;
+  color: #fffff0;
+}
+p {
+  font-family: 'Ghibli Regular', Arial, sans-serif;
+  color: #fffff0;
+  letter-spacing: 0.2px;
+}
+a {
+  color: #fffff0;
+  text-decoration: underline;
+}
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+#mobile-main,
+.mobile {
+  display: none;
+}
+.center {
+  text-align: center;
+}
+.golden-gradient-brown-wrapper {
+  background: linear-gradient(to right, #f7e77c, #996e12);
+  padding: 2px;
+}
+.golden-gradient-brown-wrapper .golden-gradient-brown-content {
+  background: #130e03;
+}
+.golden-gradient-black-wrapper {
+  background: linear-gradient(to right, #996e12, #f7e77c);
+  padding: 2px;
+}
+.golden-gradient-black-wrapper .golden-gradient-black-content {
+  background: #000;
+}
+.gc-primary-em {
+  text-shadow: #fc0 1px 0 10px;
+  display: block;
+  font-size: 3rem;
+  line-height: 3.6rem;
+}
+.gc-secondary-em {
+  text-shadow: #fc0 1px 0 1px;
+  color: #f7e77c;
+}
+.gc-tertiary-em {
+  text-shadow: #fc0 1px 0 5px;
+}
+#main {
+  margin: 0 auto;
+}
+#main #hero {
+  padding: 4vh 0 0;
+  margin: 0 auto 15vh;
+}
+#main #hero .title .c2 {
+  padding: 10px 25px;
+}
+#main #hero .title .c2 .name {
+  text-shadow: none;
+  font-size: 3.8rem;
+  letter-spacing: 1px;
+}
+#main #hero .nav {
+  padding: 1vh 0 4vh;
+}
+#main #hero .nav .c2 {
+  padding: 0 40px;
+}
+#main #hero .nav a {
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+#main #intro-mod {
+  margin: 0 auto 15vh;
+}
+#main #intro-mod .intro-subhead {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+  line-height: 42px;
+  padding-bottom: 10vh;
+}
+#main #intro-mod #intro-content {
+  padding: 5vh 2vh;
+}
+#main #intro-mod #intro-content h2 {
+  padding: 5px 30px 20px;
+}
+#main #intro-mod #intro-content p {
+  padding: 10px 40px;
+  font-size: 20px;
+  line-height: 30px;
+}
+#main #operation-mod {
+  margin: 0 auto 15vh;
+}
+#main #operation-mod h2 {
+  font-size: 4.2rem;
+  text-align: center;
+}
+#main #operation-mod h2.main-headline {
+  margin: 10vh 0 5vh;
+}
+#main #operation-mod h2.headline {
+  margin-bottom: 20px;
+}
+#main #operation-mod h3 {
+  padding: 40px 0 20px;
+}
+#main #operation-mod h3.headline-role {
+  padding: 10px 30px 0;
+  text-align: left;
+  margin-bottom: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: underline;
+}
+#main #operation-mod .c1 {
+  width: 45%;
+}
+#main #operation-mod .c1 #operation-container .tile h4 {
+  line-height: 148px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#main #operation-mod .c1 #operation-container .tile h4:hover {
+  font-size: 3.3rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#main #operation-mod .c1 #operation-container .tile-1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_city_bg_tile.png');
+  background-size: 100%;
+}
+#main #operation-mod .c1 #operation-container .tile-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_nest_renew_1_to_1_ar_tile.png');
+  background-size: 100%;
+  margin: 12px 0;
+}
+#main #operation-mod .c1 #operation-container .tile-3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_mountainside_town_2_to_1_ar_tile.png');
+  background-size: 100%;
+  margin: 12px 0;
+}
+#main #operation-mod .c1 #operation-container .tile-4 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_cds_1_to_1_ar_tile.png');
+  background-size: 100%;
+  margin: 12px 0;
+}
+#main #operation-mod .c1 #operation-container .tile-5 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_cafe_1_to_1_ar_tile.png');
+  background-size: 100%;
+}
+#main #operation-mod .c2 {
+  width: 55%;
+  height: 100%;
+  padding: 5%;
+}
+#main #operation-mod .c2 h2.headline {
+  padding: 30px 20px 15px;
+}
+#main #operation-mod .c2 p {
+  padding: 10px 30px;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#main #operation-mod .c2 #experience-cover,
+#main #operation-mod .c2 #experience-1 {
+  transition: all 1s ease;
+}
+#main #portfolio-mod {
+  text-align: center;
+  background-color: #151006;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.01), #000000), url('./assets/ghibli_mailclerk_banner_faded.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 10vh 0;
+}
+#main #portfolio-mod #portfolio-container h2 {
+  font-family: 'Saint-Carell-Regular', Arial, sans-serif;
+  color: #fffff0;
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+}
+#main #portfolio-mod #portfolio-container p.subhead {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 40px;
+  padding: 0 50px;
+  font-family: Georgia, Arial, sans-serif;
+}
+#main #portfolio-mod #portfolio-container img {
+  margin: 0 auto;
+}
+#main #portfolio-mod #portfolio-container #gallery-container .tile {
+  padding: 0 25px;
+  text-align: left;
+}
+#main #portfolio-mod #portfolio-container #gallery-container .tile .tile-item-bg .tile-container {
+  margin: 4px;
+  min-width: 300px;
+  max-width: 400px;
+  min-height: 600px;
+}
+#main #portfolio-mod #portfolio-container #gallery-container .tile div {
+  margin: 0 auto 45px;
+  background-color: #130e03;
+  box-shadow: 0.1rem 0.2rem #f7e77c, -0.1rem -0.2rem #996e12;
+}
+#main #portfolio-mod #portfolio-container #gallery-container .tile div p {
+  padding: 15px 20px 7px;
+  font-family: Georgia, Arial, sans-serif;
+}
+#main #portfolio-mod #portfolio-container #gallery-container .tile div .medium {
+  font-size: 14px;
+  line-height: 20px;
+  color: #454a48;
+}
+#main #portfolio-mod #portfolio-container #gallery-container .tile div .title {
+  font-family: 'Saint-Carell-Regular', Arial, sans-serif;
+  font-size: 24px;
+  line-height: 30px;
+}
+#main #portfolio-mod #portfolio-container #gallery-container .tile div a {
+  padding: 15px 20px 21px;
+  text-align: left;
+  width: 100%;
+  display: block;
+  font-family: Georgia, Arial, sans-serif;
+  text-decoration: underline;
+  letter-spacing: 0.2px;
+  font-size: 18px;
+  line-height: 30px;
+}
+footer {
+  background-color: #0c0902;
+  border-top: 1px solid #f7e77c;
+}
+footer #inner-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10vh 0 6vh;
+}
+footer #inner-wrapper h1 {
+  font-family: 'Saint-Carell-Regular', Arial, sans-serif;
+  font-size: 40px;
+  line-height: 52px;
+  padding-bottom: 30px;
+}
+footer #inner-wrapper h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 0 80px 40px;
+}
+footer #inner-wrapper p {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: Georgia, Arial, sans-serif;
+}
+footer #inner-wrapper .title {
+  margin-bottom: 15px;
+}
+footer #inner-wrapper .logo {
+  margin: 0 auto 20px;
+  border-radius: 25px;
+}
+footer #inner-wrapper .social {
+  font-size: 24px;
+  color: #fffff0;
+  margin-bottom: 15px;
+}
+footer #inner-wrapper .social td {
+  padding: 15px 25px;
+}
+@media only screen and (max-width: 749px) {
+  #desktop-main,
+  .desktop {
+    display: none !important;
+  }
+  .mobile {
+    display: block;
+  }
+  #mobile-main {
+    display: block;
+    min-width: 400px;
+  }
+  #main {
+    min-width: 400px;
+  }
+  #main #hero h2 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  #main #hero .title .c2 {
+    padding: 25px 10px;
+  }
+  #main #hero .title .c2 h2.name {
+    font-size: 2.3rem;
+    line-height: 3.3rem;
+  }
+  #main #hero .nav .c2 {
+    padding: 0 20px;
+  }
+  #main #hero .nav a {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  footer {
+    min-width: 360px;
+  }
+  footer #inner-wrapper {
+    width: 100%;
+  }
+  footer #inner-wrapper h2 {
+    padding: 0 20px 40px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  footer #inner-wrapper .social td {
+    padding: 10px;
+  }
+}
+@media only screen and (min-width: 750px) and (max-width: 991px) {
+  #desktop-main #intro-mod {
+    width: 685px;
+  }
+  #desktop-main #intro-mod #intro-content .c1 {
+    padding: 30px;
+  }
+  #desktop-main #intro-mod #intro-content .c1.stacked,
+  #desktop-main #intro-mod #intro-content .c2.stacked {
+    display: block;
+  }
+  #desktop-main #intro-mod #intro-content .c2.stacked {
+    width: 100%;
+  }
+  #desktop-main #operation-mod {
+    margin-bottom: 20px;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile h4 {
+    line-height: 168px;
+    font-size: 38px;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile h4:hover {
+    font-size: 2.6rem;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile.tile-1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_city_bg.png');
+    background-size: 100%;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile.tile-2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_nest_renew_1_to_1_ar.png');
+    background-size: 100%;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile.tile-3 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_mountainside_town_2_to_1_ar.png');
+    background-size: 100%;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile.tile-4 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_cds_1_to_1_ar.png');
+    background-size: 100%;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile.tile-5 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_cafe_1_to_1_ar.png');
+    background-size: 100%;
+  }
+  #desktop-main #operation-mod .c2 h4.headline {
+    font-size: 2.2rem;
+    line-height: 3rem;
+  }
+  #desktop-main #operation-mod .c2 p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #desktop-main #intro-mod {
+    width: 790px;
+  }
+  #desktop-main #intro-mod #intro-content .c1 {
+    padding: 30px;
+  }
+  #desktop-main #intro-mod #intro-content .c1.stacked,
+  #desktop-main #intro-mod #intro-content .c2.stacked {
+    display: block;
+  }
+  #desktop-main #intro-mod #intro-content .c2.stacked {
+    width: 100%;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile h4 {
+    line-height: 170px;
+    font-size: 38px;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile h4:hover {
+    font-size: 3rem;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile.tile-1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_city_bg.png');
+    background-size: 100%;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile.tile-2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_nest_renew_1_to_1_ar.png');
+    background-size: 100%;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile.tile-3 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_mountainside_town_2_to_1_ar.png');
+    background-size: 100%;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile.tile-4 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_cds_1_to_1_ar.png');
+    background-size: 100%;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile.tile-5 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/operation_tiles/ghibli_cafe_1_to_1_ar.png');
+    background-size: 100%;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  #desktop-main #intro-mod {
+    width: 1000px;
+  }
+  #desktop-main #intro-mod #intro-content .c1 h2 {
+    font-size: 38px;
+    line-height: 46px;
+  }
+  #desktop-main #intro-mod #intro-content .c1 p {
+    padding: 10px 25px;
+    font-size: 18px;
+    line-height: 26px;
+  }
+  #desktop-main #operation-mod .c1 {
+    padding-right: 5px;
+  }
+  #desktop-main #operation-mod .c1 #operation-container .tile h4 {
+    line-height: 123px;
+  }
+  #desktop-main #operation-mod .c2 {
+    padding-left: 5px;
+  }
+  #desktop-main #operation-mod .c2 h2.headline {
+    font-size: 38px;
+    line-height: 46px;
+  }
+  #desktop-main #operation-mod .c2 p {
+    padding: 10px 25px;
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #desktop-main #intro-mod {
+    width: 1200px;
+  }
+}

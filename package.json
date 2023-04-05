@@ -1,22 +1,11 @@
 {
-  "name": "mbsampson.github.io",
+  "name": "personal_web",
   "version": "1.0.0",
-  "description": "Personal webspace",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MBSampson/mbsampson.github.io.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MBSampson/mbsampson.github.io/issues"
-  },
-  "homepage": "https://github.com/MBSampson/mbsampson.github.io#readme",
-  "dependencies": {
-    "handlebars": "^4.7.7"
-  }
+  "license": "ISC"
 }
