@@ -434,14 +434,11 @@ footer {
 
   .mobile {
     display: block;
-  } 
+  }  
 
-  #mobile-main {
-    display: block;
-    min-width: 400px;
-  }
   #main {
     min-width: 400px;
+    // Hero Styles
     #hero { 
       h2 {
         font-size: 16px;
@@ -466,12 +463,78 @@ footer {
         }
       }
     }
+    // Intro Styles
+    #intro-mod {
+      .intro-subhead {
+        font-size: 26px;
+        line-height: 38px;
+        padding: 0 20px 10vh;
+      }
+      #intro-content {
+        padding: 20px 10px;
+        h2 {
+          padding: 15px 30px 20px;
+        }
+        p {
+          font-size: 18px;
+          line-height: 26px;
+        }
+      }
+    }
+
+    // Operation Styles
+    #operation-mod-m { 
+      .main-headline {
+        font-size: 3rem;
+        line-height: 3.6rem;
+        padding-bottom: 20px;
+      } 
+      p {
+        font-size: 18px;
+        line-height: 26px;
+        padding: 0 20px 40px;
+      }
+      .operation-container {
+        h4.gc-primary-em {
+          line-height: 100px
+        }
+        p {
+          padding: 20px 20px 40px;
+        }
+        .tile-1 {
+          background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/operation_tiles/ghibli_city_bg_tile.png'); 
+          background-size: 100%;  
+        }
+        .tile-2 {
+          background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/operation_tiles/ghibli_nest_renew_1_to_1_ar_tile.png'); 
+          background-size: 100%;  
+          margin: 12px 0; 
+        }
+        .tile-3 {
+          background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/operation_tiles/ghibli_mountainside_town_2_to_1_ar_tile.png'); 
+          background-size: 100%; 
+          margin: 12px 0; 
+        }
+        .tile-4 {
+          background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/operation_tiles/ghibli_cds_1_to_1_ar_tile.png'); 
+          background-size: 100%; 
+          margin: 12px 0; 
+        }
+        .tile-5 {
+          background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/operation_tiles/ghibli_cafe_1_to_1_ar_tile.png'); 
+          background-size: 100%; 
+        }
+      }
+    }
   }
    
   footer {
     min-width: 360px;
     #inner-wrapper {
       width: 100%;
+      h1 {
+        padding: 0 20px 20px;
+      }
       h2 {
         padding: 0 20px 40px;
         font-size: 16px;
