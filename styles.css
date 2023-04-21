@@ -367,6 +367,10 @@ footer #inner-wrapper .social td {
     min-width: 360px;
   }
   #main #hero h2 {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  #main #hero h2 .gc-tertiary-em {
     font-size: 16px;
     line-height: 24px;
   }
