@@ -1,0 +1,79 @@
+@bb-blue-dark: #03032E;
+@bb-blue-light: #6767A1;
+@warm-yellow: #fec14b;
+@light-gray-bg: #fcfcfc;
+@light-gray-bg-v2: #fbfcfb;
+
+body {
+  background-color: #fff;
+  font-family: 'Rubik', sans-serif;
+}
+
+.white-divider {
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('./assets/climbing/white_bg_857x542.png'); 
+  background-size: 100%; 
+  background-position: top;
+  height: 150px; 
+  margin: 50px 0;
+}
+
+#web-wrapper {
+  #masthead {
+    text-align: center;
+    margin: 0 auto;
+  }
+   
+  sbs-mod {
+    .col {
+      padding: 25px;
+    }
+  }
+  #mod-1, #mod-2, #mod-3 {
+    margin: 0 5%;
+    .m3-sbs-img {
+      width: 450px;
+      height: 450px;
+    }
+  }
+  .mind-sbs, .motivation-sbs {
+    background-color: @light-gray-bg;
+    border-radius: 25px;
+    overflow: hidden;
+  } 
+
+  .quote-container {
+    padding-top: 4.3vmax;
+    padding-bottom: 4.3vmax;
+    width: 100%;
+    text-align: center;
+    background-color: #e5e5f4;
+    h2 {
+      font-size: 28px;
+      line-height: 36px;
+      font-weight: normal;
+    }
+    .source {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  #growth-mod {
+    background-color: @light-gray-bg-v2;
+    background-image: url("./assets/climbing/bb_bonsai_img_1344x700.png");
+    background-position: right;
+    background-size: 50%;
+    background-repeat: no-repeat;
+  }
+
+  #about-mod {
+    .self-portrait {
+      margin: 0 auto;
+      width: 450px; 
+      border-radius: 25px;
+      display: block;
+    }
+  }
+
+}

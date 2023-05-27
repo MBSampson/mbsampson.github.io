@@ -1,0 +1,65 @@
+body {
+  background-color: #fff;
+  font-family: 'Rubik', sans-serif;
+}
+.white-divider {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('./assets/climbing/white_bg_857x542.png');
+  background-size: 100%;
+  background-position: top;
+  height: 150px;
+  margin: 50px 0;
+}
+#web-wrapper #masthead {
+  text-align: center;
+  margin: 0 auto;
+}
+#web-wrapper sbs-mod .col {
+  padding: 25px;
+}
+#web-wrapper #mod-1,
+#web-wrapper #mod-2,
+#web-wrapper #mod-3 {
+  margin: 0 5%;
+}
+#web-wrapper #mod-1 .m3-sbs-img,
+#web-wrapper #mod-2 .m3-sbs-img,
+#web-wrapper #mod-3 .m3-sbs-img {
+  width: 450px;
+  height: 450px;
+}
+#web-wrapper .mind-sbs,
+#web-wrapper .motivation-sbs {
+  background-color: #fcfcfc;
+  border-radius: 25px;
+  overflow: hidden;
+}
+#web-wrapper .quote-container {
+  padding-top: 4.3vmax;
+  padding-bottom: 4.3vmax;
+  width: 100%;
+  text-align: center;
+  background-color: #e5e5f4;
+}
+#web-wrapper .quote-container h2 {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: normal;
+}
+#web-wrapper .quote-container .source {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+}
+#web-wrapper #growth-mod {
+  background-color: #fbfcfb;
+  background-image: url("./assets/climbing/bb_bonsai_img_1344x700.png");
+  background-position: right;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+#web-wrapper #about-mod .self-portrait {
+  margin: 0 auto;
+  width: 450px;
+  border-radius: 25px;
+  display: block;
+}
