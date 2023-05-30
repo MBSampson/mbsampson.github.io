@@ -2,18 +2,54 @@ body {
   background-color: #fff;
   font-family: 'Rubik', sans-serif;
 }
+img {
+  display: block;
+}
+.link {
+  color: #6767F0;
+  text-decoration: none;
+}
 .white-divider {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('./assets/climbing/white_bg_857x542.png');
   background-size: 100%;
+  background-position: bottom;
+  height: 50px;
+  margin: 0 0 50px;
+}
+.white-divider.v2 {
   background-position: top;
-  height: 150px;
-  margin: 50px 0;
 }
 #web-wrapper #masthead {
-  text-align: center;
+  margin-bottom: 10vh;
+}
+#web-wrapper #masthead img {
+  margin: 0 auto 25px;
+}
+#web-wrapper #main-splash img {
   margin: 0 auto;
 }
-#web-wrapper sbs-mod .col {
+#web-wrapper #intro-mod {
+  text-align: center;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 300;
+  margin: 20vh 25vw 10vh;
+}
+#web-wrapper #intro-mod .em {
+  color: #6767A1;
+}
+#web-wrapper #intro-mod .em-2 {
+  color: #6767F0;
+}
+#web-wrapper #intro-mod .description {
+  font-size: 20px;
+  line-height: 30px;
+  padding: 5vh 0 2vh;
+}
+#web-wrapper .sbs-mod {
+  margin-bottom: 10vh;
+}
+#web-wrapper .sbs-mod .col {
   padding: 25px;
 }
 #web-wrapper #mod-1,
@@ -29,13 +65,14 @@ body {
 }
 #web-wrapper .mind-sbs,
 #web-wrapper .motivation-sbs {
-  background-color: #fcfcfc;
+  background-color: #f0f0fa;
   border-radius: 25px;
   overflow: hidden;
 }
 #web-wrapper .quote-container {
   padding-top: 4.3vmax;
   padding-bottom: 4.3vmax;
+  margin-bottom: 10vh;
   width: 100%;
   text-align: center;
   background-color: #e5e5f4;
@@ -50,12 +87,22 @@ body {
   font-size: 16px;
   line-height: 24px;
 }
-#web-wrapper #growth-mod {
+#web-wrapper #contact-mod {
   background-color: #fbfcfb;
   background-image: url("./assets/climbing/bb_bonsai_img_1344x700.png");
   background-position: right;
   background-size: 50%;
   background-repeat: no-repeat;
+}
+#web-wrapper #contact-mod #contact-form {
+  height: 600px;
+  width: 500px;
+  margin: 0 auto;
+}
+#web-wrapper #contact-mod #contact-form .field-element {
+  padding: 0.4rem;
+  margin: 20px 0;
+  width: 100%;
 }
 #web-wrapper #about-mod .self-portrait {
   margin: 0 auto;

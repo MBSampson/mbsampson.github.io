@@ -3,27 +3,70 @@
 @warm-yellow: #fec14b;
 @light-gray-bg: #fcfcfc;
 @light-gray-bg-v2: #fbfcfb;
+@light-purple-bg: #f0f0fa;
+@medium-purple: #6767F0;
 
 body {
   background-color: #fff;
   font-family: 'Rubik', sans-serif;
 }
 
+img {
+  display: block;
+}
+
+.link {
+  color: @medium-purple;
+  text-decoration: none;
+}
+
 .white-divider {
   background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('./assets/climbing/white_bg_857x542.png'); 
   background-size: 100%; 
-  background-position: top;
-  height: 150px; 
-  margin: 50px 0;
-}
+  background-position: bottom;
+  height: 50px; 
+  margin: 0 0 50px;
+  &.v2 {
+    background-position: top;
+  }
+} 
 
-#web-wrapper {
+#web-wrapper { 
+
   #masthead {
-    text-align: center;
-    margin: 0 auto;
+    margin-bottom: 10vh;
+    img {
+      margin: 0 auto 25px;
+    }
   }
    
-  sbs-mod {
+  #main-splash {
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  #intro-mod {
+    text-align: center;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 300; 
+    margin: 20vh 25vw 10vh; 
+    .em {
+      color: @bb-blue-light;
+    }
+    .em-2 {
+      color: @medium-purple;
+    }
+    .description {
+      font-size: 20px;
+      line-height: 30px;
+      padding: 5vh 0 2vh;
+    }
+  }
+
+  .sbs-mod {
+    margin-bottom: 10vh;
     .col {
       padding: 25px;
     }
@@ -36,7 +79,7 @@ body {
     }
   }
   .mind-sbs, .motivation-sbs {
-    background-color: @light-gray-bg;
+    background-color: @light-purple-bg;
     border-radius: 25px;
     overflow: hidden;
   } 
@@ -44,6 +87,7 @@ body {
   .quote-container {
     padding-top: 4.3vmax;
     padding-bottom: 4.3vmax;
+    margin-bottom: 10vh;
     width: 100%;
     text-align: center;
     background-color: #e5e5f4;
@@ -59,12 +103,22 @@ body {
     }
   }
 
-  #growth-mod {
+  #contact-mod {
     background-color: @light-gray-bg-v2;
     background-image: url("./assets/climbing/bb_bonsai_img_1344x700.png");
     background-position: right;
     background-size: 50%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
+    #contact-form {
+      .field-element {
+        padding: 0.4rem;
+        margin: 20px 0;
+        width: 100%;
+      }
+      height: 600px;
+      width: 500px;
+      margin: 0 auto;
+    }
   }
 
   #about-mod {
