@@ -2,461 +2,1887 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Matthew Sampson - Web Developer">
-
-  <title>Matt Sampson - Web Dev</title> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://kit.fontawesome.com/4c12f61d71.js" crossorigin="anonymous"></script>
-
-  <!-- Favicons --> 
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> 
-  <!-- Fonts -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matthew Sampson - TPM & AI Builder</title>
+  <meta name="description"
+    content="Technical Program Manager and AI enthusiast building intelligent systems and shipping products that matter." />
+  <meta property="og:title" content="Matthew Sampson - TPM & AI Builder" />
+  <meta property="og:description" content="Building the future of products, one intelligent system at a time." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Alegreya:400,700|Nunito:400,600" rel="stylesheet"> 
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* - RESET & BASE - */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      cursor: none;
+    }
 
-  <!-- Template Main CSS File -->
-  <link href="styles.css" rel="stylesheet"> 
+    :root {
+      --bg: #0E0C0B;
+      --bg2: #161310;
+      --bg3: #1F1B17;
+      --bg4: #2A2420;
+      --gold: #C9A961;
+      --gold-dim: #8A6F3A;
+      --blue: #4A7FB5;
+      --blue-dim: #2D5280;
+      --blush: #C4907A;
+      --sand: #D9C7A7;
+      --text: #EDE6D6;
+      --text2: #B8AE9C;
+      --text3: #7A736A;
+      --border: rgba(201, 169, 97, 0.15);
+      --r: 8px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      overflow-x: hidden
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      cursor: none;
+      min-width: 360px;
+    }
+
+    ::selection {
+      background: rgba(201, 169, 97, 0.3);
+      color: var(--text)
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    /* -- CUSTOM CURSOR -------------------------------- */
+    #cursor {
+      position: fixed;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width .2s, height .2s, opacity .2s;
+    }
+
+    #cursor-ring {
+      position: fixed;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 169, 97, 0.5);
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: width .3s, height .3s, border-color .3s;
+    }
+
+    body:has(a:hover) #cursor,
+    body:has(button:hover) #cursor {
+      width: 20px;
+      height: 20px
+    }
+
+    body:has(a:hover) #cursor-ring,
+    body:has(button:hover) #cursor-ring {
+      width: 52px;
+      height: 52px;
+      border-color: rgba(201, 169, 97, 0.8)
+    }
+
+    /* -- PARTICLE CANVAS ------------------------------ */
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* - NOISE OVERLAY - */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.035;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* -- NAV ------------------------------------------ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background .4s, backdrop-filter .4s;
+    }
+
+    nav.scrolled::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(14, 12, 11, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: -1;
+    }
+
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text2);
+      transition: color .25s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width .3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold)
+    }
+
+    .nav-links a:hover::after {
+      width: 100%
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 4px
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 1.5px;
+      background: var(--text);
+      transition: .3s
+    }
+
+    /* - HERO -- */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 8rem 2rem 10rem;
+      gap: 2.5rem;
+      text-align: center;
+    }
+
+    .hero-bg-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 169, 97, 0.07) 0%, transparent 70%);
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-bg-glow-blue {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(74, 127, 181, 0.06) 0%, transparent 70%);
+      left: -50px;
+      bottom: 10%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+
+
+    .hero-portrait {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .portrait-wrap {
+      position: relative;
+      width: 320px;
+      height: 320px;
+    }
+
+    .portrait-glow {
+      position: absolute;
+      inset: -20px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 169, 97, 0.18) 0%, rgba(74, 127, 181, 0.08) 50%, transparent 70%);
+      animation: breathe 4s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.8
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 1
+      }
+    }
+
+    .portrait-ring {
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 169, 97, 0.25);
+      animation: spin-slow 20s linear infinite;
+    }
+
+    .portrait-ring::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      top: calc(50% - 4px);
+      right: -4px;
+      box-shadow: 0 0 12px rgba(201, 169, 97, 0.8);
+    }
+
+    @keyframes spin-slow {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    .portrait-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
+      filter: brightness(1.02) contrast(1.02);
+    }
+
+    .portrait-brush-accent {
+      position: absolute;
+      bottom: -40px;
+      right: -60px;
+      width: 200px;
+      height: 120px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      max-width: 640px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 7vw, 6.5rem);
+      font-weight: 600;
+      line-height: 1.0;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--gold);
+      display: block;
+    }
+
+    .hero-tagline {
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      color: var(--text2);
+      line-height: 1.75;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-tagline strong {
+      color: var(--text);
+      font-weight: 500
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: transparent;
+      transition: background .25s, color .25s;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold);
+      color: var(--bg)
+    }
+
+    .btn-secondary {
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--border);
+      color: var(--text2);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: transparent;
+      transition: border-color .25s, color .25s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text2);
+      color: var(--text)
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, transparent, var(--gold));
+      animation: scroll-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scroll-pulse {
+
+      0%,
+      100% {
+        opacity: 0.4;
+        transform: scaleY(0.8)
+      }
+
+      50% {
+        opacity: 1;
+        transform: scaleY(1)
+      }
+    }
+
+    .scroll-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text3)
+    }
+
+    /* -- SECTION SHARED ------------------------------- */
+    section {
+      padding: 7rem 6rem;
+      position: relative
+    }
+
+    .section-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--gold)
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text2);
+      max-width: 540px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* Brushstroke divider SVG */
+    .brush-divider {
+      width: 100%;
+      height: 80px;
+      display: block;
+      overflow: visible;
+      margin: 0;
+    }
+
+    /* -- WORK ----------------------------------------- */
+    #work {
+      background: var(--bg2)
+    }
+
+    .work-header {
+      margin-bottom: 4rem
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .3s, transform .3s;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201, 169, 97, 0.04) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .project-card:hover {
+      border-color: rgba(201, 169, 97, 0.4);
+      transform: translateY(-4px)
+    }
+
+    .project-card:hover::before {
+      opacity: 1
+    }
+
+    .project-card-brush {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 140px;
+      height: 80px;
+      opacity: 0.06;
+    }
+
+    .project-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tag-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold)
+    }
+
+    .tag-dot.wip {
+      background: var(--blush)
+    }
+
+    .project-tag.wip {
+      color: var(--blush)
+    }
+
+    .project-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text2);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .project-tech {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem
+    }
+
+    .tech-chip {
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border: 1px solid var(--bg4);
+      color: var(--text3);
+      letter-spacing: 0.05em;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: gap .2s;
+    }
+
+    .project-link:hover {
+      gap: 0.75rem
+    }
+
+    .project-link svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none
+    }
+
+    /* -- ABOUT ---------------------------------------- */
+    #about {
+      background: var(--bg)
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
+      align-items: start;
+      margin-top: 4rem;
+    }
+
+    .about-portrait-col {
+      position: relative
+    }
+
+    .about-portrait-frame {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .about-portrait-frame::before {
+      content: '';
+      position: absolute;
+      inset: -16px;
+      border: 1px solid var(--border);
+    }
+
+    .about-portrait-frame img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 50%;
+      filter: grayscale(15%) contrast(1.05);
+    }
+
+    .about-brush-bg {
+      position: absolute;
+      top: -30px;
+      left: -40px;
+      width: 200px;
+      height: 160px;
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .about-content {
+      position: relative
+    }
+
+    .about-bio {
+      font-size: 1.05rem;
+      color: var(--text2);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .about-bio strong {
+      color: var(--text);
+      font-weight: 500
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .skill-group-title {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border: 1px solid var(--bg4);
+      color: var(--text2);
+      margin: 3px 3px 3px 0;
+      transition: border-color .2s, color .2s;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--gold-dim);
+      color: var(--text)
+    }
+
+    .resume-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(201, 169, 97, 0.3);
+      padding-bottom: 2px;
+      transition: border-color .2s;
+    }
+
+    .resume-link:hover {
+      border-color: var(--gold)
+    }
+
+    .resume-link svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none
+    }
+
+    /* -- WRITING -------------------------------------- */
+    #writing {
+      background: var(--bg2)
+    }
+
+    .writing-header {
+      margin-bottom: 4rem;
+      padding-bottom: 1rem
+    }
+
+    /* Let the subtitle fill the full header width - overrides global max-width:540px */
+    .writing-header .section-subtitle {
+      max-width: 100%
+    }
+
+    /* Posts laid out side-by-side in a 2-col grid, matching projects-grid */
+    .posts-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .post-item {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      background: var(--bg3);
+      display: flex;
+      flex-direction: column;
+      transition: border-color .3s, transform .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .post-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201, 169, 97, 0.04) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .post-item:hover {
+      border-color: rgba(201, 169, 97, 0.4);
+      transform: translateY(-4px)
+    }
+
+    .post-item:hover::before {
+      opacity: 1
+    }
+
+    .post-date {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--text3);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      transition: color .2s;
+    }
+
+    .post-item:hover .post-title {
+      color: var(--gold)
+    }
+
+    .post-dek {
+      font-size: 0.875rem;
+      color: var(--text2);
+      line-height: 1.6;
+      font-weight: 300;
+      flex: 1;
+    }
+
+    .post-arrow {
+      color: var(--text3);
+      transition: color .2s, transform .2s;
+      align-self: flex-end;
+      margin-top: 1.5rem;
+    }
+
+    .post-item:hover .post-arrow {
+      color: var(--gold);
+      transform: translateX(4px)
+    }
+
+    /* -- CONTACT -------------------------------------- */
+    #contact {
+      background: var(--bg);
+      text-align: center
+    }
+
+    .contact-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1
+    }
+
+    .contact-brush-top {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 200px;
+      opacity: 0.07;
+    }
+
+    .contact-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-title em {
+      font-style: italic;
+      color: var(--gold)
+    }
+
+    .contact-sub {
+      font-size: 1rem;
+      color: var(--text2);
+      margin-bottom: 3rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(201, 169, 97, 0.4);
+      padding-bottom: 4px;
+      margin-bottom: 3.5rem;
+      transition: border-color .2s;
+    }
+
+    .contact-email:hover {
+      border-color: var(--gold)
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .social-link a {
+      width: 75px;
+    }
+
+    .social-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text3);
+      transition: color .25s;
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      transition: stroke .25s
+    }
+
+    .social-link:hover {
+      color: var(--gold)
+    }
+
+    .social-link:hover svg {
+      stroke: var(--gold)
+    }
+
+    /* -- FOOTER --------------------------------------- */
+    footer {
+      padding: 2rem 6rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg);
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      color: var(--text3);
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--text3);
+      letter-spacing: 0.05em
+    }
+
+    /* -- SCROLL ANIMATIONS ---------------------------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-32px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(32px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .stagger-1 {
+      transition-delay: .1s
+    }
+
+    .stagger-2 {
+      transition-delay: .2s
+    }
+
+    .stagger-3 {
+      transition-delay: .3s
+    }
+
+    .stagger-4 {
+      transition-delay: .4s
+    }
+
+    .stagger-5 {
+      transition-delay: .5s
+    }
+
+    /* Mobile breathing animation */
+    @keyframes mobile-breathe {
+
+      0%,
+      100% {
+        box-shadow: 0 0 30px rgba(201, 169, 97, 0.1), 0 0 60px rgba(74, 127, 181, 0.05)
+      }
+
+      50% {
+        box-shadow: 0 0 60px rgba(201, 169, 97, 0.2), 0 0 100px rgba(74, 127, 181, 0.1)
+      }
+    }
+
+    /* -- RESPONSIVE ----------------------------------- */
+    @media(max-width:900px) {
+      nav {
+        padding: 1.25rem 2rem
+      }
+
+      /* Full-screen overlay that sits above everything including the nav bar */
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(14, 12, 11, 0.93);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        z-index: 200;
+      }
+
+      .nav-links.open {
+        display: flex
+      }
+
+      .nav-links a {
+        font-size: 1.1rem
+      }
+
+      .nav-toggle {
+        display: flex
+      }
+
+      /* Hero already center-stacked - just tighten padding and portrait size */
+      #hero {
+        padding: 6rem 2rem 4rem;
+        gap: 2rem;
+        min-height: auto
+      }
+
+      .portrait-wrap {
+        width: 240px;
+        height: 240px
+      }
+
+      section {
+        padding: 5rem 2rem
+      }
+
+      .projects-grid,
+      .posts-list {
+        grid-template-columns: 1fr
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem
+      }
+
+      .about-portrait-col {
+        display: none
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+        text-align: center
+      }
+
+      body {
+        cursor: auto
+      }
+
+      #cursor,
+      #cursor-ring {
+        display: none
+      }
+
+      .hero-scroll {
+        display: none
+      }
+
+      .portrait-wrap {
+        animation: mobile-breathe 4s ease-in-out infinite
+      }
+    }
+
+    @media(max-width:600px) {
+      .hero-name {
+        font-size: 2.8rem
+      }
+
+      .section-title {
+        font-size: 2rem
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div id="main">
-    <!-- ==================== Hero Mod  ==================== --> 
-    <div id="hero">
-      <h2 class="center">Climber&nbsp;&nbsp;|&nbsp;&nbsp;<span class="gc-tertiary-em">Web Developer</span>&nbsp;&nbsp;|&nbsp;&nbsp;Coach</h2>
-      <table class="title" role="presentation" align="center" cellpadding="0" cellspacing="0">
-        <tr>
-          <td class="c1">
-            <img src="./assets/golden_arrow_right.png" height="10" /> 
-          </td>
-          <td class="c2">
-            <h2 class="name gc-primary-em center">Matthew Sampson</h2> 
-          </td>
-          <td class="c3">
-            <img src="./assets/golden_arrow_left.png" height="10" />
-          </td>
-        </tr>
-      </table> 
-      <table class="nav" role="presentation" align="center" cellpadding="0" cellspacing="0">
-        <tr>
-          <td class="c1 center">
-            <a href="#intro-mod" class="gc-primary-em">what i offer</a> 
-          </td>
-          <td class="c2 center">
-            <a href="#operation-mod" class="gc-primary-em desktop">client history</a> 
-            <a href="#operation-mod-m" class="gc-primary-em mobile">client history</a> 
-          </td>
-          <td class="c3 center">
-            <a href="#portfolio-mod" class="gc-primary-em desktop">code samples</a>
-          </td>
-        </tr>
-      </table>
-      <img src="./assets/ghibli_workshop_v1_wide.png" width="100%" />
-    </div>  
-    <!-- ==================== Masthead  ==================== --> 
 
-    <!-- ==================== Intro Module ==================== -->
-    <div id="intro-mod">
-      <h2 class="center intro-subhead">
-        Hi, my name is <span class="gc-secondary-em">Matthew&nbsp;Sampson</span> and I am an experienced US-based <span class="gc-secondary-em">email&nbsp;developer</span> with a track record of serving 
-        pixel-perfect emails to millions of&nbsp;users.
-      </h2>
-      <div class="golden-gradient-brown-wrapper">
-        <div id="intro-content" class="golden-gradient-brown-content"> 
-          <h2 class="gc-primary-em center">
-            What i offer
-          </h2>
-          <p>
-            As an email developer and collaborative team player, I bring a unique blend of technical expertise, 
-            exceptional template documentation skills, and seamless communication that delivers consistent 
-            results for&nbsp;clients.
-            <br /><br />
-            I specialize in creating dynamic and responsive emails using API datasets and 
-            troubleshooting issues using email testing platforms, such as Litmus, making me a valuable asset to 
-            any email marketing team. My adaptability and proficiency in managing multiple projects simultaneously 
-            in fast-paced environments allow me to meet deadlines and achieve results&nbsp;efficiently. 
-            <br /><br />
-            If you're looking for a team-centric contributor with an emphasis on communication and documentation, reach out to&nbsp;me!
-          </p>  
+  <!-- Custom cursor (desktop only) -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- -- NAV ------------------------------------- -->
+  <nav id="nav">
+    <div class="nav-name">MS</div>
+    <div class="nav-links" id="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- -- HERO ------------------------------------ -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-bg-glow"></div>
+    <div class="hero-bg-glow-blue"></div>
+
+
+
+    <div class="hero-portrait reveal stagger-1">
+      <div class="portrait-wrap">
+        <div class="portrait-glow"></div>
+        <div class="portrait-ring"></div>
+        <img src="imgs/avatar.png" alt="Matthew Sampson" class="portrait-img" />
+        <!-- Small brushstroke accent beside portrait -->
+        <svg class="portrait-brush-accent" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A7FB5" />
+              <stop offset="100%" stop-color="#C9A961" />
+            </linearGradient>
+          </defs>
+          <path d="M10,80 C40,30 80,10 130,25 C160,35 175,65 195,50" stroke="url(#accentGrad)" stroke-width="3.5"
+            fill="none" stroke-linecap="round" />
+          <path d="M20,95 C55,55 100,35 150,48 C175,56 185,80 200,68" stroke="url(#accentGrad)" stroke-width="2"
+            fill="none" stroke-linecap="round" opacity="0.6" />
+          <path d="M130,10 C140,20 145,35 155,30 C165,25 170,15 185,20" stroke="#C9A961" stroke-width="2" fill="none"
+            stroke-linecap="round" opacity="0.7" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="hero-text">
+      <div class="hero-eyebrow reveal">Technical Program Manager</div>
+      <h1 class="hero-name reveal stagger-2">
+        Matthew<br /><em>Sampson.</em>
+      </h1>
+      <p class="hero-tagline reveal stagger-3">
+        Building the future of products,<br />
+        <strong>one intelligent system at a time.</strong>
+      </p>
+      <div class="hero-cta reveal stagger-4">
+        <a href="#work" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span class="scroll-label">Scroll</span>
+    </div>
+  </section>
+
+  <!-- Brushstroke section divider -->
+  <svg class="brush-divider" viewBox="0 0 1400 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+    style="display:block;background:var(--bg)">
+    <defs>
+      <linearGradient id="divGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#4A7FB5" stop-opacity="0.6" />
+        <stop offset="50%" stop-color="#7B5EA7" stop-opacity="0.4" />
+        <stop offset="100%" stop-color="#C9A961" stop-opacity="0.6" />
+      </linearGradient>
+    </defs>
+    <path d="M0,40 C200,10 400,65 600,35 C800,5 1000,60 1200,30 C1300,15 1350,45 1400,40 L1400,80 L0,80 Z"
+      fill="var(--bg2)" />
+    <path d="M0,50 C150,25 350,70 550,42 C750,14 950,65 1150,38 C1280,22 1350,50 1400,45" stroke="url(#divGrad1)"
+      stroke-width="1.5" fill="none" opacity="0.5" />
+  </svg>
+
+  <!-- -- WORK ------------------------------------- -->
+  <section id="work">
+    <div class="work-header">
+      <div class="section-eyebrow reveal">Selected Work</div>
+      <h2 class="section-title reveal stagger-1">Projects &amp;<br /><em
+          style="font-style:italic;color:var(--gold)">Explorations</em></h2>
+      <p class="section-subtitle reveal stagger-2">A small collection of things I've built, shipped, and explored -
+        from
+        automation tooling to technical deep-dives.</p>
+    </div>
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <a href="https://github.com/MBSampson/PD2_Map_Reveal" target="_blank" rel="noopener"
+        class="project-card reveal stagger-1">
+        <svg class="project-card-brush" viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cardBrush1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A7FB5" />
+              <stop offset="100%" stop-color="#C9A961" />
+            </linearGradient>
+          </defs>
+          <path d="M10,60 C40,20 90,5 135,25" stroke="url(#cardBrush1)" stroke-width="4" fill="none"
+            stroke-linecap="round" />
+          <path d="M30,72 C65,35 110,18 138,42" stroke="url(#cardBrush1)" stroke-width="2.5" fill="none"
+            stroke-linecap="round" opacity="0.6" />
+        </svg>
+        <div class="project-tag"><span class="tag-dot"></span>Technical Exploration</div>
+        <h3 class="project-name">PD2 Map Reveal</h3>
+        <p class="project-desc">A runtime memory inspection tool for Project Diablo 2. Reads live game state through
+          process memory - reverse engineering game data structures to surface the full map in real time.</p>
+        <div class="project-tech">
+          <span class="tech-chip">Memory Inspection</span>
+          <span class="tech-chip">Reverse Engineering</span>
+          <span class="tech-chip">Systems Programming</span>
+        </div>
+        <span class="project-link">View on GitHub <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg></span>
+      </a>
+
+      <!-- Project 2 -->
+      <div class="project-card reveal stagger-2">
+        <svg class="project-card-brush" viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cardBrush2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#C9A961" />
+              <stop offset="100%" stop-color="#C4907A" />
+            </linearGradient>
+          </defs>
+          <path d="M5,55 C45,15 95,8 138,30" stroke="url(#cardBrush2)" stroke-width="4" fill="none"
+            stroke-linecap="round" />
+          <path d="M15,68 C58,28 105,20 138,48" stroke="url(#cardBrush2)" stroke-width="2.5" fill="none"
+            stroke-linecap="round" opacity="0.5" />
+        </svg>
+        <div class="project-tag wip"><span class="tag-dot wip"></span>In Progress</div>
+        <h3 class="project-name">Screenshot Annotator</h3>
+        <p class="project-desc">A browser-based tool for capturing, annotating, and sharing screenshots with context.
+          Built to solve the friction between engineers and stakeholders during bug triage and design review.</p>
+        <div class="project-tech">
+          <span class="tech-chip">Browser Extension</span>
+          <span class="tech-chip">Canvas API</span>
+          <span class="tech-chip">Annotation UX</span>
+        </div>
+        <span class="project-link" style="color:var(--blush)">Coming Soon</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Brushstroke divider 2 -->
+  <svg class="brush-divider" viewBox="0 0 1400 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+    style="display:block;background:var(--bg2)">
+    <path d="M0,30 C250,65 500,10 700,45 C900,80 1150,15 1400,50 L1400,80 L0,80 Z" fill="var(--bg)" />
+    <path d="M0,40 C200,15 450,70 700,35 C950,0 1200,60 1400,30" stroke="url(#divGrad1)" stroke-width="1.5" fill="none"
+      opacity="0.4" />
+  </svg>
+
+  <!-- -- ABOUT ------------------------------------ -->
+  <section id="about">
+    <div class="section-eyebrow reveal">About Me</div>
+    <h2 class="section-title reveal stagger-1">The Person<br /><em style="font-style:italic;color:var(--gold)">Behind
+        the Work</em></h2>
+    <div class="about-grid">
+      <div class="about-portrait-col reveal-left">
+        <svg class="about-brush-bg" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="aboutBrush" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A7FB5" />
+              <stop offset="100%" stop-color="#C9A961" />
+            </linearGradient>
+          </defs>
+          <path d="M10,120 C50,40 120,10 190,50" stroke="url(#aboutBrush)" stroke-width="5" fill="none"
+            stroke-linecap="round" />
+          <path d="M20,140 C70,60 140,30 195,75" stroke="url(#aboutBrush)" stroke-width="3" fill="none"
+            stroke-linecap="round" opacity="0.5" />
+        </svg>
+        <div class="about-portrait-frame">
+          <img src="imgs/av5.png" alt="Matthew Sampson" />
         </div>
       </div>
-    </div>  
-    <!-- ==================== END Intro Module ==================== -->
-
-    <!-- ==================== Operation Module - Desktop ==================== -->
-    <div id="operation-mod" class="desktop">
-      <h2 class="main-headline gc-tertiary-em">Client History</h2>
-      <table class="" role="presentation" align="center" cellpadding="0" cellspacing="0" height="100%" width="100%">
-        <tr>
-          <td class="c1" valign="top">
-            <div id="operation-container">
-              <div class="tile tile-1" onclick="showExperience(0)">
-                <h4 class="gc-primary-em center">Google Store</h4>
-              </div> 
-              <div class="tile tile-2" onclick="showExperience(1)">
-                <h4 class="gc-primary-em center">Nest Renew</h4>
-              </div>
-              <div class="tile tile-3" onclick="showExperience(2)">
-                <h4 class="gc-primary-em center">Tci</h4>
-              </div>
-              <div class="tile tile-4" onclick="showExperience(3)">
-                <h4 class="gc-primary-em center">Casa Del Sol</h4>
-              </div> 
-              <div class="tile tile-5" onclick="showExperience(4)">
-                <h4 class="gc-primary-em center">Starbucks</h4> 
-              </div>     
-            </div>
-          </td>
-          <td class="c2" valign="top"> 
-            <div id="experience-cover">
-              <h2 class="headline gc-primary-em center">Web Developer</h2> 
-              <p class="center">
-                As a front-end/email developer with more than five years of experience, I have a passion for crafting engaging and 
-                visually stunning websites and emails. With a strong background in HTML, CSS, JavaScript, and email marketing 
-                platforms, I have the ability to seamlessly integrate design and functionality to deliver high-quality, 
-                responsive websites and emails. I have a proven track record of collaborating effectively with cross-functional 
-                teams to deliver projects on time and to exceed client expectations. My expertise in both front-end development 
-                and email marketing allows me to bridge the gap between design and technical implementation, resulting in 
-                cohesive and effective digital&nbsp;experiences.   
-                <br /><br />
-                <span class="gc-tertiary-em">
-                  To learn more about the clients that I've served, click on the banners to the&nbsp;left.
-                </span>
-              </p>   
-            </div>
-            <div id="experience-1" class="hidden">
-              <h2 class="headline gc-primary-em center">Google Store</h2>
-              <h3 class="headline-role">Email Developer I/II / QA Analyst</h3>
-              <p>
-                Upon commencing my employment with Hawkeye, I was fortunate enough to exclusively handle Google emails. However, as my 
-                responsibilities grew over time, I gradually took on the task of overseeing Hawkeye's campaign partials for the 
-                Google Store&nbsp;wing. 
-                <br /><br />
-                During my tenure, my duties entailed analyzing campaign-specific Figma/Sketch files to create reusable Handlebars 
-                and Jinja partials, developing and testing pixel-perfect emails on mobile devices and email testing platforms like 
-                Litmus, and performing code reviews for my Hawkeye&nbsp;colleagues.
-                <br /><br />
-                In the latter stages of my employment, I collaborated solely with Google Store engineers to generate US + rest-of-world AMP emails that 
-                incorporated various engaging features for users. Our combined efforts resulted in the successful deployment of
-                interactive emails, which reached a vast audience of millions across the&nbsp;globe.
-                <br /><br />
-                As a QA analyst, I was responsible for drafting detailed checklists for new HTML emails, landing pages, and plaintext, which involved 
-                analyzing HTML/CSS using developer tools to ensure pixel-perfection across multiple email client platforms, and logging bugs through 
-                Workfront with concise wording and descriptive screenshots to detail any issues found during&nbsp;testing.
-                <br /><br /> 
-                <span class="gc-tertiary-em">
-                  HTML5, CSS/LESS/SCSS, Freemarker, Jinja, Handlebars.js, YAML, JSON, Litmus, Figma, Sketch, Google AMP, Workfront, 
-                  Jira, A11y Accessibility Compliance, Chrome Developer Tools, Quality Assurance, Google API,&nbsp;Git
-                </span>
-              </p>  
-            </div>
-            <div id="experience-2" class="hidden">
-              <h2 class="headline gc-primary-em center">Nest Renew</h2>
-              <h3 class="headline-role">Email Developer II</h3>
-              <p>
-                Utilizing the knowledge and skills I gained while working on Google Store emails and partials, my manager entrusted 
-                me with the responsibility of assisting the Nest Renew client in creating a reusable set of accessible modules and templates for 
-                their forthcoming eco-friendly email campaign&nbsp;updates.
-                <br /><br />
-                Being the sole developer of this project, I developed reusable email partials utilizing a combination of Handlebars.js 
-                and the client's Connect Composer snippet platform. Subsequently, over the following few months, I produced and 
-                dispatched several emails to recipients in the United States and&nbsp;Spain.
-                <br /><br />
-                Over time, I trained additional Hawkeye developers to work on the campaign and produced detailed documentation 
-                concerning the frequently used partials and&nbsp;snippets.
-                <br /><br />
-                <span class="gc-tertiary-em">
-                  HTML5, CSS/LESS/SCSS, Freemarker, Jinja, Handlebars.js, YAML, JSON, Litmus, Figma, Sketch, Google AMP, Workfront, 
-                  Jira, A11y Accessibility Compliance, Chrome Developer Tools, Google API,&nbsp;Git
-                </span>
-              </p> 
-            </div> 
-            <div id="experience-3" class="hidden">
-              <h2 class="headline gc-primary-em center">Tci</h2>
-              <h3 class="headline-role">Intern Developer</h3>
-              <p> 
-                As a budding intern I primarily worked on TCI's primary web presence -- specifically the curriculum pages. 
-                <br /><br />
-                During my internship I implemented web accessibility compliance WCAG 2.0 to existing Rails views using core front-end technologies, 
-                created modular components with JS libraries, such as React and jQuery, ensured code quality and longevity through unit tests 
-                using RSpec and FactoryGirl, and set up CSV generation using Rails helpers, Sidekiq workers, and application PostgreSQL DB data.
-                <br /><br />
-                For larger tasks such as implementing new web pages, I pair programmed with the primary database manager to pull in CSV / website data
-                to properly populate curriculum pages. 
-                <br /><br />
-                <span class="gc-tertiary-em">
-                  Ruby on Rails, React, jQuery, Javascript, PostgreSQL, MongoDB, HTML5, CSS/LESS, JSON,&nbsp;Git
-                </span>
-              </p> 
-            </div>
-            <div id="experience-4" class="hidden">
-              <h2 class="headline gc-primary-em center">Casa Del Sol</h2> 
-              <h3 class="headline-role">Lead Creative Designer / Web Developer</h3>
-              <p> 
-                I worked as the lead creative designer and web developer for the redesign of the Casa&nbsp;Del&nbsp;Sol website. Using JavaScript, 
-                CSS/LESS, and Bootstrap, I implemented mobile responsive functionality and conducted quality assurance tests across 
-                various mobile devices and browser platforms to ensure a consistent user experience. Additionally, I facilitated weekly 
-                meetings to discuss feature requests, creative designs, and client feedback.
-                <br /><br />
-                To see the live website visit the Casa Del Sol web presence located&nbsp;<a class="gc-secondary-em" href="https://www.casadelsolsunnyvale.com/">here</a>.
-                <br /><br />
-                <span class="gc-tertiary-em"> 
-                  HTML5, CSS/LESS, Javascript, Google API, Web Design, Freelance, Client-facing Interaction, Change Request Documentation,&nbsp;Git 
-                </span>
-              </p> 
-            </div>
-            <div id="experience-5" class="hidden">
-              <h2 class="headline gc-primary-em center">Starbucks</h2>
-              <h3 class="headline-role">Barista</h3>
-              <p>
-                Working at Starbucks was a transformative experience that changed my life forever. As an introverted individual who struggled 
-                with basic social skills, I often envied those who had a natural ability to shine in social settings. However, my desire for 
-                change drove me to apply for a job at my local Starbucks. Over the next five and a half years, I underwent a remarkable 
-                transformation, becoming the person I always aspired to be.
-                <br /><br />
-                At Starbucks, I learned invaluable skills that have stayed with me to this day. I honed my ability to connect with others, 
-                worked effectively in a fast-paced environment, and leveraged my team to provide unparalleled customer service. Through 
-                these experiences, I emerged as a confident, capable, and empathetic person, a far cry from the shy individual I used to be. 
-                The skills and qualities I acquired at Starbucks have served me well in both my personal and professional life, making it an 
-                experience I will always cherish.
-                <br /><br />
-                <span class="gc-tertiary-em">
-                  Team Work, Customer Service, Fast-paced Environment, Multitasking, Team&nbsp;Management
-                </span>
-              </p> 
-            </div> 
-          </td>
-        </tr>
-      </table>
-    </div>
-    <!-- ==================== END Operation Module - Desktop ==================== -->
-
-    <!-- ==================== Operation Module - Mobile ==================== -->
-    <div id="operation-mod-m" class="mobile">
-      <h2 class="main-headline gc-tertiary-em center">Client History</h2>
-      <p>
-        As a front-end/email developer with over five years of experience, I have a passion for crafting engaging and 
-        visually stunning websites and emails. With a strong background in HTML, CSS, JavaScript, and email marketing 
-        platforms, I have the ability to seamlessly integrate design and functionality to deliver high-quality, 
-        responsive websites and emails.
-        <br /><br />
-        I have a proven track record of collaborating effectively with cross-functional 
-        teams to deliver projects on time and to exceed client expectations. My expertise in both front-end development 
-        and email marketing allows me to bridge the gap between design and technical implementation, resulting in 
-        cohesive and effective digital&nbsp;experiences. 
-      </p> 
-      <div class="operation-container">
-        <div class="tile tile-1">
-          <h4 class="gc-primary-em center">Google Store</h4>
-        </div> 
-        <p>
-          Upon commencing my employment with Hawkeye, I was fortunate enough to exclusively handle Google emails. However, as my 
-          responsibilities grew over time, I gradually took on the task of overseeing Hawkeye's campaign partials for the 
-          Google Store&nbsp;wing. 
-          <br /><br />
-          During my tenure, my duties entailed analyzing campaign-specific Figma/Sketch files to create reusable Handlebars 
-          and Jinja partials, developing and testing pixel-perfect emails on mobile devices and email testing platforms like 
-          Litmus, and performing code reviews for my Hawkeye&nbsp;colleagues.
-          <br /><br />
-          In the latter stages of my employment, I collaborated solely with Google Store engineers to generate US + rest-of-world AMP emails that 
-          incorporated various engaging features for users. Our combined efforts resulted in the successful deployment of
-          interactive emails, which reached a vast audience of millions across the&nbsp;globe.
-          <br /><br />
-          As a QA analyst, I was responsible for drafting detailed checklists for new HTML emails, landing pages, and plaintext, which involved 
-          analyzing HTML/CSS using developer tools to ensure pixel-perfection across multiple email client platforms, and logging bugs through 
-          Workfront with concise wording and descriptive screenshots to detail any issues found during&nbsp;testing.
-          <br /><br />
-          <span class="gc-tertiary-em">
-            HTML5, CSS/LESS/SCSS, Freemarker, Jinja, Handlebars.js, YAML, JSON, Litmus, Figma, Sketch, Google AMP, Workfront, 
-            Jira, A11y Accessibility Compliance, Chrome Developer Tools, Google API,&nbsp;Git
-          </span>
-        </p>  
-        <div class="tile tile-2">
-          <h4 class="gc-primary-em center">Nest Renew</h4>
-        </div>
-        <p>
-          Utilizing the knowledge and skills I gained while working on Google Store emails and partials, my manager entrusted 
-          me with the responsibility of assisting the Nest Renew client in creating a reusable set of accessible modules and templates for 
-          their forthcoming eco-friendly email campaign&nbsp;updates.
-          <br /><br />
-          Being the sole developer of this project, I developed reusable email partials utilizing a combination of Handlebars.js 
-          and the client's Connect Composer snippet platform. Subsequently, over the following few months, I produced and 
-          dispatched several emails to recipients in the United States and&nbsp;Spain.
-          <br /><br />
-          Over time, I trained additional Hawkeye developers to work on the campaign and produced detailed documentation 
-          concerning the frequently used partials and&nbsp;snippets.
-          <br /><br />
-          <span class="gc-tertiary-em">
-            HTML5, CSS/LESS/SCSS, Freemarker, Jinja, Handlebars.js, YAML, JSON, Litmus, Figma, Sketch, Google AMP, Workfront, 
-            Jira, A11y Accessibility Compliance, Chrome Developer Tools, Google API,&nbsp;Git
-          </span>
-        </p> 
-        <div class="tile tile-3">
-          <h4 class="gc-primary-em center">Tci</h4>
-        </div>
-        <p> 
-          As a budding intern I primarily worked on TCI's primary web presence -- specifically the curriculum pages.  
-          <br /><br />
-          During my internship I implemented web accessibility compliance WCAG 2.0 to existing Rails views using core front-end technologies, 
-          created modular components with JS libraries, such as React and jQuery, ensured code quality and longevity through unit tests 
-          using RSpec and FactoryGirl, and set up CSV generation using Rails helpers, Sidekiq workers, and application PostgreSQL DB data.
-          <br /><br />
-          For larger tasks such as implementing new web pages, I pair programmed with the primary database manager to pull in CSV / website data
-          to properly populate curriculum&nbsp;pages. 
-          <br /><br />
-          <span class="gc-tertiary-em">
-            Ruby on Rails, React, jQuery, Javascript, PostgreSQL, MongoDB, HTML5, CSS/LESS, JSON,&nbsp;Git
-          </span>
-        </p> 
-        <div class="tile tile-4">
-          <h4 class="gc-primary-em center">Casa Del Sol</h4>
-        </div> 
-        <p> 
-          I worked as the lead creative designer and web developer for the redesign of the Casa&nbsp;Del&nbsp;Sol website. Using JavaScript, 
-          CSS/LESS, and Bootstrap, I implemented mobile responsive functionality and conducted quality assurance tests across 
-          various mobile devices and browser platforms to ensure a consistent user experience. Additionally, I facilitated weekly 
-          meetings to discuss feature requests, creative designs, and client&nbsp;feedback.
-          <br /><br />
-          To see the live website visit the Casa Del Sol web presence located&nbsp;<a class="gc-secondary-em" href="https://www.casadelsolsunnyvale.com/">here</a>.
-          <br /><br />
-          <span class="gc-tertiary-em">
-            HTML5, CSS/LESS, Javascript, Google API, Web Design, Freelance, Client-facing Interaction, Change Request Documentation,&nbsp;Git 
-          </span>
-        </p> 
-        <div class="tile tile-5">
-          <h4 class="gc-primary-em center">Starbucks</h4> 
-        </div>  
-        <p>
-          Working at Starbucks was a transformative experience that changed my life forever. As an introverted individual who struggled 
-          with basic social skills, I often envied those who had a natural ability to shine in social settings. However, my desire for 
-          change drove me to apply for a job at my local Starbucks. Over the next five and a half years, I underwent a remarkable 
-          transformation, becoming the person I always aspired to be.
-          <br /><br />
-          At Starbucks, I learned invaluable skills that have stayed with me to this day. I honed my ability to connect with others, 
-          worked effectively in a fast-paced environment, and leveraged my team to provide unparalleled customer service. Through 
-          these experiences, I emerged as a confident, capable, and empathetic person, a far cry from the shy individual I used to be. 
-          The skills and qualities I acquired at Starbucks have served me well in both my personal and professional life, making it an 
-          experience I will always&nbsp;cherish.
-          <br /><br />
-          <span class="gc-tertiary-em">
-            Team Work, Customer Service, Fast-paced Environment, Multitasking, Team&nbsp;Management
-          </span>   
+      <div class="about-content">
+        <p class="about-bio reveal stagger-1">
+          I'm <strong>Matthew Sampson</strong>, an Email Marketing Manager with a clear trajectory toward Technical
+          Program Management. My background sits at an unusual intersection: <strong>front-end email
+            development</strong>, <strong>cross-functional project delivery</strong>, and a genuine, hands-on enthusiasm
+          for what AI is making possible.
         </p>
+        <p class="about-bio reveal stagger-2">
+          I think of AI not as a buzzword to put on a resume, but as a <strong>craft to build with</strong> - and that
+          distinction changes everything about how I approach problems, spec features, and lead teams.
+        </p>
+        <div class="skills-grid reveal stagger-3">
+          <div>
+            <div class="skill-group-title">Program Management</div>
+            <span class="skill-tag">TPM / PMO</span>
+            <span class="skill-tag">Agile · Scrum</span>
+            <span class="skill-tag">Roadmapping</span>
+            <span class="skill-tag">Stakeholder Mgmt</span>
+            <span class="skill-tag">Risk Mitigation</span>
+          </div>
+          <div>
+            <div class="skill-group-title">AI &amp; Technical</div>
+            <span class="skill-tag">LLM Tooling</span>
+            <span class="skill-tag">Prompt Engineering</span>
+            <span class="skill-tag">Claude · GPT-4</span>
+            <span class="skill-tag">HTML · CSS</span>
+            <span class="skill-tag">Email Dev</span>
+          </div>
+        </div>
+        <a href="#" class="resume-link reveal stagger-4">
+          Download Resume
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </a>
       </div>
     </div>
-    <!-- ==================== END - Operation Module - Mobile ==================== -->
+  </section>
 
+  <!-- Brushstroke divider 3 -->
+  <svg class="brush-divider" viewBox="0 0 1400 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+    style="display:block;background:var(--bg)">
+    <path d="M0,25 C300,70 600,8 900,55 C1100,80 1250,20 1400,45 L1400,80 L0,80 Z" fill="var(--bg2)" />
+    <path d="M0,35 C250,5 550,72 850,38 C1100,10 1280,65 1400,35" stroke="url(#divGrad1)" stroke-width="1.5" fill="none"
+      opacity="0.4" />
+  </svg>
 
-    <!-- ==================== Portfolio Module ==================== -->
-    <div id="portfolio-mod" class="desktop">
-      <div id="portfolio-container"> 
-        <h2 class="gc-tertiary-em">Code Samples</h2>
-        <p class="subhead">Check out my recent <span class="gc-tertiary-em">JSFiddle</span> and <span class="gc-tertiary-em">GitHub</span> projects!</p>
-        <div id="gallery-container">
-          <table role="presentation" align="center" cellpadding="0" cellspacing="0">
-            <tr>
-              <td class="tile">
-                <div class="tile-item-bg">
-                  <div class="tile-container">
-                    <img src="./assets/mail_tiles/ghibli_turtle_wow_letter.png" width="100%" alt="" />
-                    <p class="medium">@JSFiddle</p>
-                    <p class="title">Turtle Wow</p> 
-                    <p class="description">Example of a fixed-width email that triggers when a poster receives comments on their original forum&nbsp;post.</p>
-                    <a href="https://jsfiddle.net/msam_emaildev/a7kzo5rm/334/" class="gc-tertiary-em">Preview code &#8614;</a>
-                  </div>
-                </div>
-              </td>
-              <td class="tile">
-                <div class="tile-item-bg">
-                  <div class="tile-container">
-                    <img src="./assets/mail_tiles/l2_halle_laice_letter.png" width="100%" alt="" />
-                    <p class="medium">@AMP Playground</p>
-                    <p class="title">Halle Laice</p> 
-                    <p class="description">A newsletter titled "Call to Arms" has been released to inform users about Halle Laice's character classes and their respective&nbsp;weapons.</p>
-                    <a href="https://playground.amp.dev/?runtime=amp4email#share=PCFkb2N0eXBlIGh0bWw+CjxodG1sIOKaoTRlbWFpbCBkYXRhLWNzcy1zdHJpY3Q+CjxoZWFkPgogIDxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KICA8c2NyaXB0IGFzeW5jIHNyYz0iaHR0cHM6Ly9jZG4uYW1wcHJvamVjdC5vcmcvdjAuanMiPjwvc2NyaXB0PgogIDxzY3JpcHQgYXN5bmMgY3VzdG9tLWVsZW1lbnQ9ImFtcC1jYXJvdXNlbCIgc3JjPSJodHRwczovL2Nkbi5hbXBwcm9qZWN0Lm9yZy92MC9hbXAtY2Fyb3VzZWwtMC4xLmpzIj48L3NjcmlwdD4KICA8c3R5bGUgYW1wNGVtYWlsLWJvaWxlcnBsYXRlPmJvZHl7dmlzaWJpbGl0eTpoaWRkZW59PC9zdHlsZT4gCiAgPHNjcmlwdCBhc3luYyBjdXN0b20tZWxlbWVudD0iYW1wLWJpbmQiIHNyYz0iaHR0cHM6Ly9jZG4uYW1wcHJvamVjdC5vcmcvdjAvYW1wLWJpbmQtMC4xLmpzIj48L3NjcmlwdD4KICA8c3R5bGUgYW1wLWN1c3RvbT4KICAgIGJvZHkgewogICAgICBjb2xvcjogI2VmZDNhNjsKICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzA0MDQwNDsKICAgICAgZm9udC1mYW1pbHk6IEhlbHZldGljYSwgQXJpYWwsIHNhbnMtc2VyaWY7CiAgICB9CiAgICBoMSwgaDIsIGgzLCBoNCwgaDUsIGg2LCBwIHsKICAgICAgcGFkZGluZzogMDsKICAgICAgbWFyZ2luOiAwOwogICAgfQogICAgaDEgewogICAgICBmb250LXNpemU6IDMycHg7CiAgICAgIGxpbmUtaGVpZ2h0OiA0MnB4OwogICAgfQogICAgcCB7CiAgICAgIGZvbnQtc2l6ZTogMTZweDsKICAgICAgbGluZS1oZWlnaHQ6IDI0cHg7CiAgICB9IAogICAgLnVwcGVyY2FzZSB7CiAgICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7CiAgICB9CiAgICAuYWx0LWZvbnQgewogICAgICBmb250LWZhbWlseTogR2VvcmdpYSwgQXJpYWwsIHNhbnMtc2VyaWY7CiAgICB9CiAgICAuY2VudGVyIHsKICAgICAgdGV4dC1hbGlnbjogY2VudGVyOwogICAgfQogICAgLmhpZGRlbiB7CiAgICAgIHZpc2liaWxpdHk6IGhpZGRlbjsKICAgIH0KICAgIC52aXNpYmxlIHsKICAgICAgdmlzaWJpbGl0eTogdmlzaWJsZTsKICAgIH0KICAgICNlbWFpbC1jb250YWluZXIgewogICAgICB3aWR0aDogNzIwcHg7CiAgICAgIG1hcmdpbjogMjVweCBhdXRvOwogICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDQwNDA0OwogICAgfQogICAgI2hlcm8tbW9kIGgxIHsKICAgICAgcGFkZGluZzogNDBweCAyNXB4IDA7CiAgICB9CiAgICAjaGVyby1tb2QgcC5jb3B5IHsKICAgICAgcGFkZGluZzogNDBweCAyNXB4OwogICAgfQogICAgI2hlcm8tbW9kIC5iYW5uZXItZGl2aWRlciB7CiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjsKICAgICAgbWFyZ2luOiAwIGF1dG87CiAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7CiAgICB9CiAgICAjaGVyby1tb2QgLmJhbm5lci1pbWcgewogICAgICBwYWRkaW5nLWJvdHRvbTogMjVweDsKICAgIH0KICAgICNtb2QtMiAuY29sIGJ1dHRvbiB7IAogICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwOwogICAgICBjdXJzb3I6IHBvaW50ZXI7CiAgICB9CiAgICAjbW9kLTIgLmNvbC1idG4gewogICAgICB3aWR0aDogMjM2cHg7CiAgICB9CiAgICAjbW9kLTIgLmNvbCBidXR0b24gYW1wLWltZyB7CiAgICAgIG1hcmdpbjogMTBweDsKICAgICAgYm9yZGVyLXJhZGl1czogNXB4OwogICAgfQogICAgI21vZC0yICNtZW51YnRuIHsKICAgICAgY3Vyc29yOiBwb2ludGVyOwogICAgfQogICAgI21vZC0yIGgyLmhlYWRsaW5lIHsKICAgICAgcGFkZGluZzogNjBweCA1MHB4IDI1cHg7CiAgICB9CiAgICAjbW9kLTIgcC5zdWJoZWFkIHsKICAgICAgcGFkZGluZzogMCA1MHB4IDQwcHg7CiAgICB9CiAgICAjbW9kLTIgLnByb2ZpbGUgaDMuY29weSwgI21vZC0yIC5wcm9maWxlIHAuY29weSB7IAogICAgICBwYWRkaW5nOiAwIDhweCA4cHg7CiAgICB9CiAgICAjbW9kLTIgLnByb2ZpbGUtaW5mbyB7CiAgICAgIHBhZGRpbmc6IDAgMjBweDsKICAgIH0KICAgICNtb2QtMiAucHJvZmlsZS1pbmZvIGgzLmNvcHkgewogICAgICBwYWRkaW5nLWJvdHRvbTogOHB4OwogICAgfQogICAgI21vZC0yIC5hcm1vcnkgewogICAgICBwYWRkaW5nOiAyMHB4IDA7CiAgICB9CiAgICAjbW9kLTIgLmFybW9yeSAuYXJtb3J5LWNhcm91c2VsIHsKICAgICAgd2lkdGg6IDMwMHB4OwogICAgfQogICAgI21vZC0yIC5hcm1vcnkgcC5jb3B5IHsKICAgICAgcGFkZGluZzogMCAxNXB4OwogICAgfQogICAgI21vZC0zIGgyLmNvcHkgewogICAgICBwYWRkaW5nOiAwIDUwcHggMjVweDsKICAgICAgZm9udC1zaXplOiAyMHg7CiAgICAgIGxpbmUtaGVpZ2h0OiAzMHB4OwogICAgfQogICAgI21vZC0zIHAuY29weSB7CiAgICAgIHBhZGRpbmc6IDAgNTBweCA0MHB4OyAKICAgIH0KICAgIGZvb3RlciAuc29jaWFsLWNvbnRhaW5lciAuY29sIHsKICAgICAgcGFkZGluZzogMjVweCAxOHB4IDUwcHg7CiAgICB9CiAgICBmb290ZXIgLmJhbm5lci1kaXZpZGVyIHsKICAgICAgdGV4dC1hbGlnbjogY2VudGVyOwogICAgICBtYXJnaW46IDAgYXV0bzsKICAgICAgYm9yZGVyLXJhZGl1czogMTBweDsKICAgIH0KICAgIGZvb3RlciBwLmNvcHkgewogICAgICBwYWRkaW5nOiAwIDQwcHggMjBweDsKICAgICAgZm9udC1zaXplOiAxMnB4OwogICAgICBsaW5lLWhlaWdodDogMjFweDsKICAgIH0KICAgIGZvb3RlciAuYWNjb3VudC1saW5rcyAuY29sIHsKICAgICAgcGFkZGluZzogMTVweDsKICAgIH0KICAgIGZvb3RlciAuYWNjb3VudC1saW5rcyBhIHsgIAogICAgICBmb250LXNpemU6IDE0cHg7CiAgICAgIGxpbmUtaGVpZ2h0OiAyMXB4OwogICAgICBjb2xvcjogI2VmZDNhNjsKICAgICAgZm9udC13ZWlnaHQ6IDYwMDsKICAgIH0KICA8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5PgogIAogIDxkaXYgaWQ9ImVtYWlsLWNvbnRhaW5lciI+CiAgICA8IS0tID09PT09PT09PT09PT09PT09PT09IE1BU1RIRUFEID09PT09PT09PT09PT09PT09PT09IC0tPgogIAk8ZGl2IGlkPSJtYXN0aGVhZCI+CiAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vc2VhcmNoP3E9SGFsbGVzTGFpY2UiPiA8IS0tIG1zYW0gLSBNb25kYXksIEFwcmlsIDMsIDIwMjM6IER1bW15IFVSTCAtLT4KICAgICAgCTxhbXAtaW1nIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTFXNm83b1ctMlBtQUE2RTRRNzdmLUlLS08wQnEyb3NTSSIgYWx0PSJIYWxsZXMgTGFpY2UgbG9nbyIgd2lkdGg9IjcyMCIgaGVpZ2h0PSIzNjAiIC8+CiAgICAgIDwvYT4gCiAgICA8L2Rpdj4gIAogICAgPCEtLSA9PT09PT09PT09PT09PT09PT09PSBFTkQgLSBNQVNUSEVBRCA9PT09PT09PT09PT09PT09PT09PSAtLT4KICAgIAogICAgCiAgICA8IS0tID09PT09PT09PT09PT09PT09PT09IEhFUk8gTU9EVUxFID09PT09PT09PT09PT09PT09PT09IC0tPgogICAgPGRpdiBpZD0iaGVyby1tb2QiPgogICAgICA8aDEgY2xhc3M9ImNvcHkgY2VudGVyIGFsdC1mb250IHVwcGVyY2FzZSI+CiAgICAgICAgQXR0ZW50aW9uIGFsbCBhZHZlbnR1cmVycyEKICAgICAgPC9oMT4KICAgICAgPHAgY2xhc3M9ImNvcHkiPiAKCQlIYWxsZXMgTGFpY2UsIG91ciBjaGVyaXNoZWQgaG9tZWxhbmQsIGlzIHVuZGVyIGF0dGFjayEgT3VyIGZvZXMgc2VlayB0byByYXZhZ2UgYW5kIAogICAgICAgIGFubmloaWxhdGUgZXZlcnl0aGluZyB3ZSBjaGVyaXNoIGFuZCBob2xkIGRlYXIuIEFzIHZhbGlhbnQgcHJvdGVjdG9ycyBvZiB0aGlzIGxhbmQsIAogICAgICAgIHdlIG11c3QgcmlzZSB1cCB3aXRoIGZpZXJjZSBkZXRlcm1pbmF0aW9uIGFuZCBzaGllbGQgaXQgd2l0aCBldmVyeSBvdW5jZSBvZiAKICAgICAgICBvdXImbmJzcDtzdHJlbmd0aCEKICAgICAgPC9wPgogICAgICA8cCBjbGFzcz0iY2VudGVyIj4gPCEtLSBtc2FtIC0gTW9uZGF5LCBBcHJpbCAzLCAyMDIzOiB3cmFwIGFtcC1pbWcgaW4gPHA+IHRvIHByZXZlbnQgaXNzdWVzIHdpdGggZGlzcGxheSBvZiBmb2xsd2luZyA8cD4gLS0+CiAgICAgIAk8YW1wLWltZyBjbGFzcz0iYmFubmVyLWRpdmlkZXIiIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTFNdUZ4LWR3NFJUazQ0Qi1EdTFUSDA3YWs3VlJqNFUxLSIgYWx0PSIiIHdpZHRoPSI3MjAiIGhlaWdodD0iMzYwIiAvPiAgCiAgICAgIDwvcD4gCiAgICAgIDxwIGNsYXNzPSJjb3B5Ij4KCQlPdXIgZW5lbWllcyB3aWxsIHN0b3AgYXQgbm90aGluZyB0byBzZWl6ZSBvdXIga2luZ2RvbSwgYnV0IHdlIHNoYWxsIG5vdCBsZXQgdGhlbSAKICAgICAgICBzdWNjZWVkLiBXZSB3aWxsIHN0YW5kIHRvZ2V0aGVyLCB1bml0ZWQgaW4gb3VyIGNhdXNlLCBhbmQgcmVwZWwgdGhlaXIgYWR2YW5jZXMgCiAgICAgICAgd2l0aCB1bnlpZWxkaW5nIGZvcmNlLiBUaGUgZmF0ZSBvZiBvdXIgaG9tZWxhbmQgaGFuZ3MgaW4gdGhlIGJhbGFuY2UsIGFuZCB3ZSBzaGFsbCAKICAgICAgICBub3QgZmFsdGVyIG9yJm5ic3A7ZmFpbCEKICAgICAgICA8YnIgLz48YnIgLz4KICAgICAgICBTbyBzaGFycGVuIHlvdXIgYmxhZGVzLCBnYXRoZXIgeW91ciBzcGVsbHMsIGFuZCBwcmVwYXJlIGZvciB0aGUgZmlnaHQgb2YgeW91ciBsaXZlcy4gCiAgICAgICAgVGhlIGZhdGUgb2YgSGFsbGVzIExhaWNlIHJlc3RzIGluIG91ciBoYW5kcywgYW5kIHdlIHdpbGwgbm90IGxldCBpdCBmYWxsIHRvIHJ1aW4uIAogICAgICAgIExldCB1cyByYWxseSB0byBkZWZlbmQgb3VyIGhvbWVsYW5kIGFuZCBzaG93IG91ciBlbmVtaWVzIHRoZSBtaWdodCBvZiBvdXImbmJzcDtwZW9wbGUhCiAgICAgIDwvcD4gIAogICAgICA8cCBjbGFzcz0iY2VudGVyIj4KICAgICAgICA8YW1wLWltZyBjbGFzcz0iYmFubmVyLWRpdmlkZXIiIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTFDa2xxbldaSk55dmd5Nl8zZllNczd1OTlUZHJIajVOOCIgYWx0PSIiIHdpZHRoPSI3MjAiIGhlaWdodD0iMTgwIiAvPiAKICAgICAgPC9wPiAKICAgIDwvZGl2PgogICAgPCEtLSA9PT09PT09PT09PT09PT09PT09PSBFTkQgLSBIRVJPIE1PRFVMRSA9PT09PT09PT09PT09PT09PT09PSAtLT4gCiAgICAgCiAgICAKICAgIDwhLS0gPT09PT09PT09PT09PT09PT09PT0gTU9EIDIgPT09PT09PT09PT09PT09PT09PT0gLS0+CiAgICA8ZGl2IGlkPSJtb2QtMiI+CiAgICAgIDxoMiBjbGFzcz0iY29weSBoZWFkbGluZSBjZW50ZXIgYWx0LWZvbnQiPgogICAgICAgIEJhbm5lcnMgdW5pdGVkLi4uIAogICAgICA8L2gyPgogICAgICA8cCBjbGFzcz0iY29weSBzdWJoZWFkIGNlbnRlciI+CiAgICAgICAgU3RhbHdhcnQgZGVmZW5kZXJzIGhhdmUgYW5zd2VyZWQgdGhlIGNhbGwgdG8gYXJtcyBhbmQgY291cmFnZW91c2x5IHN0ZXAgZm9yd2FyZCB0byAKICAgICAgICBkZWZlbmQgd2hhdCB0aGV5IGJlbGlldmUmbmJzcDtpbi4gTGVhcm4gbW9yZSBhYm91dCB0aG9zZSB3aG8gYXJlIGFuc3dlcmluZyAKICAgICAgICB0aGUmbmJzcDtjYWxsLgogICAgICA8L3A+CiAgICAgIDx0YWJsZSBjbGFzcz0iIiByb2xlPSJwcmVzZW50YXRpb24iIGFsaWduPSJjZW50ZXIiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCIgYm9yZGVyPSIwIiB3aWR0aD0iMTAwJSI+CiAgICAgICAgPHRyPgogICAgICAgICAgPHRkIGNsYXNzPSJjb2wgYzEgY29sLWJ0biIgW2hpZGRlbl09InByb2ZpbGVidG4xIiB2YWxpZ249InRvcCI+CgkJCTxidXR0b24gb249InRhcDpBTVAuc2V0U3RhdGUoeyBwcm9maWxlU2VsZWN0OiB0cnVlLAogICAgICAgICAgICAgICAgICAgICAgICAJCQkJICAgcHJvZmlsZTE6IGZhbHNlLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHByb2ZpbGUyOiB0cnVlLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcm9maWxlMzogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgCQkJCSAgIHByb2ZpbGVidG4yOiB0cnVlLAogICAgICAgICAgICAgICAgICAgICAgICAJCQkJICAgcHJvZmlsZWJ0bjM6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgIAkJCQkgICBtZW51YnRuOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcm9maWxlMUFybW9yeTogZmFsc2UgfSkiID4gCiAgICAgICAgCQk8YW1wLWltZyBzcmM9Imh0dHBzOi8vZHJpdmUuZ29vZ2xlLmNvbS91Yz9leHBvcnQ9dmlldyZpZD0xaWpSOGNVeFFKSlQ0T0JGWW82OEV0S1poMUg4UEJMLVkiIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBhbHQ9IiIgLz4KICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICA8L3RkPgogICAgICAgICAgPHRkIGNsYXNzPSJjb2wgYzIgY29sLWJ0biIgW2hpZGRlbl09InByb2ZpbGVidG4yIiB2YWxpZ249InRvcCI+CgkJCTxidXR0b24gb249InRhcDpBTVAuc2V0U3RhdGUoeyBwcm9maWxlU2VsZWN0OiB0cnVlLAogICAgICAgICAgICAgICAgICAgICAgICAJCQkJICAgcHJvZmlsZTE6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJvZmlsZTI6IGZhbHNlLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcm9maWxlMzogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgCQkJCSAgIHByb2ZpbGVidG4xOiB0cnVlLAogICAgICAgICAgICAgICAgICAgICAgICAJCQkJICAgcHJvZmlsZWJ0bjM6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgIAkJCQkgICBtZW51YnRuOiBmYWxzZSwgCiAgICAgICAgICAgICAgICAgICAgICAgIAkJCQkgICBwcm9maWxlMkFybW9yeTogZmFsc2UgfSkiID4gIAogICAgICAgIAkJPGFtcC1pbWcgc3JjPSJodHRwczovL2RyaXZlLmdvb2dsZS5jb20vdWM/ZXhwb3J0PXZpZXcmaWQ9MVE4RFRVbVFFcjFuOFoxaDJveVRHMDlfSjlocW5lamNfIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgYWx0PSIiIC8+CiAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgPC90ZD4KICAgICAgICAgIDx0ZCBjbGFzcz0iY29sIGMzIGNvbC1idG4iIFtoaWRkZW5dPSJwcm9maWxlYnRuMyIgdmFsaWduPSJ0b3AiPgoJCQk8YnV0dG9uIG9uPSJ0YXA6QU1QLnNldFN0YXRlKHsgcHJvZmlsZVNlbGVjdDogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgCQkJCSAgIHByb2ZpbGUxOiB0cnVlLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHByb2ZpbGUyOiB0cnVlLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcm9maWxlMzogZmFsc2UsCiAgICAgICAgICAgICAgICAgICAgICAgIAkJCQkgICBwcm9maWxlYnRuMTogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgCQkJCSAgIHByb2ZpbGVidG4yOiB0cnVlLAogICAgICAgICAgICAgICAgICAgICAgICAJCQkJICAgbWVudWJ0bjogZmFsc2UsIAogICAgICAgICAgICAgICAgICAgICAgICAJCQkJICAgcHJvZmlsZTNBcm1vcnk6IGZhbHNlIH0pIiA+CiAgICAgICAgCQk8YW1wLWltZyBzcmM9Imh0dHBzOi8vZHJpdmUuZ29vZ2xlLmNvbS91Yz9leHBvcnQ9dmlldyZpZD0xY1BCeG1nZ1EwXzF0NGUwWGJaREFfREVpQk1Za1dBcWciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBhbHQ9IiIgLz4KICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICA8L3RkPgogICAgICAgICAgCiAgICAgICAgICA8IS0tLSA9PT09PT09PT09PT09PT09PT09PSBQcm9maWxlIEluZm8gPT09PT09PT09PT09PT09PT09PT0gLS0+CiAgICAgICAgICA8dGQgaWQ9InByb2ZpbGUxIiBjbGFzcz0iY29sIGMxIHByb2ZpbGUtaW5mbyIgaGlkZGVuIFtoaWRkZW5dPSJwcm9maWxlMSIgdmFsaWduPSJ0b3AiPgogICAgICAgICAgICA8aDMgY2xhc3M9ImNvcHkiPgogICAgICAgICAgICAgIENpcmNsZSBvZiB0aGUgVmVyZGFudCBXYXRjaGVycwogICAgICAgICAgICA8L2gzPgogICAgICAgICAgICA8cCBjbGFzcz0iY29weSI+IAogICAgICAgICAgICAgIFRoZSBDaXJjbGUgb2YgdGhlIFZlcmRhbnQgV2F0Y2hlcnMgaXMgYSBwcm91ZCBhbmQgYW5jaWVudCB3YXJyaW9yIGVsdmVuIAogICAgICAgICAgICAgIGNsYW4gdGhhdCBoYXMgc3Rvb2QgZ3VhcmQgb3ZlciB0aGUgZm9yZXN0IGZvciBjb3VudGxlc3MgZ2VuZXJhdGlvbnMuIAogICAgICAgICAgICAgIFRoZWlyIG1lbWJlcnMgYXJlIHNraWxsZWQgYXJjaGVycywgdHJhY2tlcnMsIGFuZCBmaWVyY2UgZmlnaHRlcnMsIGFsbCAKICAgICAgICAgICAgICBkZXZvdGVkIHRvIHByb3RlY3RpbmcgdGhlIG5hdHVyYWwgd29ybGQgZnJvbSBhbnkgdGhyZWF0IHRoYXQgbWF5Jm5ic3A7YXJpc2UuCiAgICAgICAgICAgICAgPGJyIC8+PGJyIC8+CiAgICAgICAgICAgICAgPGVtPlZlcmRhbnQgV2F0Y2hlcnMgZXhjZWwgaW4gcmFuZ2VkIGFuZCBuYXR1cmUgY29tYmF0IGFuZCBvZnRlbiB1c2Ugd29vZGVuIGJvd3Mgb3IgJm5ic3A7c3RhdmVzLjwvZW0+CiAgICAgICAgICAgIDwvcD4KICAgICAgICAgIDwvdGQ+CiAgICAgICAgICA8dGQgaWQ9InByb2ZpbGUyIiBjbGFzcz0iY29sIGMyIHByb2ZpbGUtaW5mbyIgaGlkZGVuIFtoaWRkZW5dPSJwcm9maWxlMiIgdmFsaWduPSJ0b3AiPgogICAgICAgICAgICA8aDMgY2xhc3M9ImNvcHkiPgogICAgICAgICAgICAgIE9yZGVyIG9mIHRoZSBTYWNyZWQgT2F0aAogICAgICAgICAgICA8L2gzPgogICAgICAgICAgICA8cCBjbGFzcz0iY29weSI+CiAgICAgICAgICAgICAgVGhlIE9yZGVyIG9mIHRoZSBTYWNyZWQgT2F0aCBpcyBhIGxlZ2VuZGFyeSB3YXJyaW9yIG9yZGVyLCBrbm93biB0aHJvdWdob3V0IAogICAgICAgICAgICAgIHRoZSBsYW5kIGZvciB0aGVpciB1bndhdmVyaW5nIGRldm90aW9uIHRvIGp1c3RpY2UgYW5kIGhvbm9yLiBUaGVzZSBub2JsZSAKICAgICAgICAgICAgICB3YXJyaW9ycyBhcmUgcmVub3duZWQgZm9yIHRoZWlyIGZlYXJsZXNzbmVzcyBpbiBiYXR0bGUsIHRoZWlyIHNraWxsIHdpdGggCiAgICAgICAgICAgICAgd2VhcG9ucywgYW5kIHRoZWlyIHN0ZWFkZmFzdCBhZGhlcmVuY2UgdG8gdGhlIHNhY3JlZCBvYXRocyB0aGV5IGhhdmUgc3dvcm4gCiAgICAgICAgICAgICAgdG8mbmJzcDt1cGhvbGQuCiAgICAgICAgICAgICAgPGJyIC8+PGJyIC8+CiAgICAgICAgICAgICAgPGVtPktuaWdodHMgb2YgdGhlIFNhY3JlZCBPYXRoIGV4Y2VsIGluIG1lbGVlIGNvbWJhdCBhbmQgdXNlIGhvbHkgaW5jYW50YXRpb25zIHRvIHByb3RlY3QgdGhlaXImbmJzcDthbGxpZXMuPC9lbT4KICAgICAgICAgICAgPC9wPgogICAgICAgICAgPC90ZD4KICAgICAgICAgIDx0ZCBpZD0icHJvZmlsZTMiIGNsYXNzPSJjb2wgYzMgcHJvZmlsZS1pbmZvIiBoaWRkZW4gW2hpZGRlbl09InByb2ZpbGUzIiB2YWxpZ249InRvcCI+CiAgICAgICAgICAgIDxoMyBjbGFzcz0iY29weSI+CiAgICAgICAgICAgICAgQ29uc29ydGl1bSBvZiB0aGUgQXJ0aWZpY2VycwogICAgICAgICAgICA8L2gzPgogICAgICAgICAgICA8cCBjbGFzcz0iY29weSI+CiAgICAgICAgICAgICAgVGhlIENvbnNvcnRpdW0gb2YgdGhlIEFydGlmaWNlcnMgaXMgYSB1bmlxdWUgd2FycmlvciBjbGFuLCBjb25zaXN0aW5nIG9mIAogICAgICAgICAgICAgIHNraWxsZWQgdGlua2VyZXJzIGFuZCBjcmFmdHNtZW4gd2hvIGhhdmUgaG9uZWQgdGhlaXIgdGFsZW50cyBmb3IgZW5naW5lZXJpbmcgCiAgICAgICAgICAgICAgZGVhZGx5IHdhciBtYWNoaW5lcy4gVGhlaXIgd2VhcG9ucyBhcmUgYSB0ZXN0YW1lbnQgdG8gdGhlaXIgaW5nZW51aXR5IGFuZCAKICAgICAgICAgICAgICBleHBlcnRpc2UsIGFuZCB0aGVpciB3YXJyaW9ycyBhcmUgcmV2ZXJlZCBmb3IgdGhlaXIgYWJpbGl0eSB0byB0dXJuIHRoZSB0aWRlIAogICAgICAgICAgICAgIG9mIGJhdHRsZSB3aXRoIHRoZWlyIHBvd2VyZnVsJm5ic3A7aW52ZW50aW9ucy4KICAgICAgICAgICAgICA8YnIgLz48YnIgLz4KICAgICAgICAgICAgICA8ZW0+VGhlIGFsbGllcyBvZiB0aGUgQ29uc29ydGl1bSBhcmUgYXNzaXN0ZWQgYnkgZW5naW5lZXJzIHdobyBlbXBsb3kgCiAgICAgICAgICAgICAgICBzdGVhbS1wb3dlcmVkIHRvb2xzIGFuZCBnYWRnZXRzLiBBbHRob3VnaCB0aGVzZSBlbmdpbmVlcnMgYXJlIHJlbGF0aXZlbHkgCiAgICAgICAgICAgICAgICBkZWxpY2F0ZSwgdGhlaXIgaW50ZWxsaWdlbmNlIG1vcmUgdGhhbiBjb21wZW5zYXRlcyBmb3IgdGhlaXIgCiAgICAgICAgICAgICAgICBwaHlzaWNhbCZuYnNwO3Nob3J0Y29taW5ncy48L2VtPgogICAgICAgICAgICA8L3A+IAogICAgICAgICAgPC90ZD4KICAgICAgICAgIDx0ZCBpZD0ibWVudWJ0biIgY2xhc3M9ImNvbCBjNCIgaGlkZGVuIFtoaWRkZW5dPSJtZW51YnRuIiB2YWxpZ249InRvcCI+CiAgICAgICAgICAgIDxkaXYgb249InRhcDpBTVAuc2V0U3RhdGUoeyBwcm9maWxlU2VsZWN0OiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgCQkJCSAgIHByb2ZpbGUxOiB0cnVlLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHByb2ZpbGUyOiB0cnVlLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcm9maWxlMzogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgCQkJCSAgIHByb2ZpbGVidG4xOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgCQkJCQkgICAgIHByb2ZpbGVidG4yOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgCQkJCSAgIHByb2ZpbGVidG4zOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgCQkJCSAgIG1lbnVidG46IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJvZmlsZTFBcm1vcnk6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgIAkJCQkJICAgICBwcm9maWxlMkFybW9yeTogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcm9maWxlM0FybW9yeTogdHJ1ZSB9KSIgPgogICAgICAgICAgICAgIDxhbXAtaW1nIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTFoN1VsbS1rS3lfQm5JdGFyN1FPTmZQbkRHbXktQ3hZayIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBhbHQ9IiIgLz4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8L3RkPiAgIAogICAgICAgICAgPCEtLS0gPT09PT09PT09PT09PT09PT09PT0gRU5EIC0gUHJvZmlsZSBJbmZvID09PT09PT09PT09PT09PT09PT09IC0tPgogICAgICAgIDwvdHI+CiAgICAgIDwvdGFibGU+CiAgICAgCiAgICAgIAogICAgICA8ZGl2IGNsYXNzPSJhcm1vcnkiPgogICAgICAgIDwhLS0tID09PT09PT09PT09PT09PT09PT09IFByb2ZpbGUgMSAtIEFybW9yeSBTQlMgPT09PT09PT09PT09PT09PT09PT0gLS0+CiAgICAgICAgPHRhYmxlIGNsYXNzPSJwcm9maWxlMS1hcm1vcnkgYXJtb3J5IiByb2xlPSJwcmVzZW50YXRpb24iIGFsaWduPSJjZW50ZXIiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCIgYm9yZGVyPSIwIiB3aWR0aD0iMTAwJSIgaGlkZGVuIFtoaWRkZW5dPSJwcm9maWxlMUFybW9yeSI+CiAgICAgICAgICA8dHI+CiAgICAgICAgICAgIDx0ZCB2YWxpZ249InRvcCI+CiAgICAgICAgICAgICAgPHAgY2xhc3M9ImNvcHkiPgogICAgICAgICAgICAgICAgVGhlIENpcmNsZSBvZiB0aGUgVmVyZGFudCBXYXRjaGVycyBhcmUgaGlnaGx5IHNraWxsZWQgZmlnaHRlcnMgd2hvIAogICAgICAgICAgICAgICAgYXJlIHRyYWluZWQgcmlnb3JvdXNseSB0byB1c2Ugd2VhcG9ucyBzdWl0ZWQgdG8gdGhlaXIgbmF0dXJlLWluc3BpcmVkIAogICAgICAgICAgICAgICAgY29tYmF0IHN0eWxlLiBUaGV5IHV0aWxpemUgZGFnZ2VycywgbmF0dXJlLWF0dHVuZWQgc3RhdmVzLCBhbmQgYm93cyAKICAgICAgICAgICAgICAgIGFuZCBhcnJvd3MgdG8gc3RyaWtlIHRoZWlyIGVuZW1pZXMgd2l0aCBkZWFkbHkgcHJlY2lzaW9uLiBUaGVpciBkZWVwIAogICAgICAgICAgICAgICAgY29ubmVjdGlvbiB0byBuYXR1cmUgZW5oYW5jZXMgdGhlaXIgcHJvZmljaWVuY3kgd2l0aCB0aGVzZSB3ZWFwb25zLCAKICAgICAgICAgICAgICAgIG1ha2luZyB0aGVtIGEgZm9ybWlkYWJsZSBmb3JjZSBvbiB0aGUmbmJzcDtiYXR0bGVmaWVsZC4KICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgIDwvdGQ+CiAgICAgICAgICAgIDx0ZCB2YWxpZ249InRvcCI+CiAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iYXJtb3J5LWNhcm91c2VsIj4KICAgICAgICAgICAgICAgIDxhbXAtY2Fyb3VzZWwKICAgICAgICAgICAgICAgICAgd2lkdGg9IjMwMCIKICAgICAgICAgICAgICAgICAgaGVpZ2h0PSIzMDAiCiAgICAgICAgICAgICAgICAgIGxheW91dD0icmVzcG9uc2l2ZSIKICAgICAgICAgICAgICAgICAgdHlwZT0ic2xpZGVzIgogICAgICAgICAgICAgICAgICByb2xlPSJyZWdpb24iCiAgICAgICAgICAgICAgICAgIGFyaWEtbGFiZWw9IkJhc2ljIGNhcm91c2VsIgogICAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgICA8YW1wLWltZwogICAgICAgICAgICAgICAgICAgIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTE4dElUVG0tSFdIdXNNaEZfSjFEaHNPX0J6Z3BqYmhlOSIKICAgICAgICAgICAgICAgICAgICB3aWR0aD0iMzAwIgogICAgICAgICAgICAgICAgICAgIGhlaWdodD0iMzAwIiAKICAgICAgICAgICAgICAgICAgICBhbHQ9IiIgCiAgICAgICAgICAgICAgICAgID48L2FtcC1pbWc+CiAgICAgICAgICAgICAgICAgIDxhbXAtaW1nCiAgICAgICAgICAgICAgICAgICAgc3JjPSJodHRwczovL2RyaXZlLmdvb2dsZS5jb20vdWM/ZXhwb3J0PXZpZXcmaWQ9MVRwM3dHYm1NbU1hbFdpYnJWY3N6TS1XY1BjZnBJQ0JGIgogICAgICAgICAgICAgICAgICAgIHdpZHRoPSIzMDAiCiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0PSIzMDAiCiAgICAgICAgICAgICAgICAgICAgYWx0PSIiIAogICAgICAgICAgICAgICAgICA+PC9hbXAtaW1nPgogICAgICAgICAgICAgICAgICA8YW1wLWltZwogICAgICAgICAgICAgICAgICAgIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTFJS29rWmdLV200Ui1IVnNiYk1UemhOOExhUlVYN3FodyIKICAgICAgICAgICAgICAgICAgICB3aWR0aD0iMzAwIgogICAgICAgICAgICAgICAgICAgIGhlaWdodD0iMzAwIgogICAgICAgICAgICAgICAgICAgIGFsdD0iIiAKICAgICAgICAgICAgICAgICAgPjwvYW1wLWltZz4KICAgICAgICAgICAgICA8L2FtcC1jYXJvdXNlbD4KICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPC90ZD4KICAgICAgICAgIDwvdHI+CiAgICAgICAgPC90YWJsZT4KICAgICAgICA8IS0tLSA9PT09PT09PT09PT09PT09PT09PSBFTkQgLSBQcm9maWxlIDEgLSBBcm1vcnkgU0JTID09PT09PT09PT09PT09PT09PT09IC0tPgogICAgICAgIAogICAgICAgIAogICAgICAgIDwhLS0tID09PT09PT09PT09PT09PT09PT09IFByb2ZpbGUgMiAtIEFybW9yeSBTQlMgPT09PT09PT09PT09PT09PT09PT0gLS0+CiAgICAgICAgPHRhYmxlIGNsYXNzPSJwcm9maWxlMi1hcm1vcnkgYXJtb3J5IiByb2xlPSJwcmVzZW50YXRpb24iIGFsaWduPSJjZW50ZXIiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCIgYm9yZGVyPSIwIiB3aWR0aD0iMTAwJSIgaGlkZGVuIFtoaWRkZW5dPSJwcm9maWxlMkFybW9yeSI+CiAgICAgICAgICA8dHI+CiAgICAgICAgICAgIDx0ZCB2YWxpZ249InRvcCI+CiAgICAgICAgICAgICAgPHAgY2xhc3M9ImNvcHkiPgogICAgICAgICAgICAgICAgVGhlIEtuaWdodHMgb2YgdGhlIFNhY3JlZCBPYXRoIHBvc3Nlc3MgZXhjZXB0aW9uYWwgY29tYmF0IHNraWxscywgaG9uZWQgdGhyb3VnaCAKICAgICAgICAgICAgICAgIHJpZ29yb3VzIHRyYWluaW5nLiBUaGV5IG1ha2UgdXNlIG9mIGFuIGFycmF5IG9mIHdlYXBvbnMgdGhhdCBzZXJ2ZSB0byB0aGVpciAKICAgICAgICAgICAgICAgIGFkdmFudGFnZS4gT25lIHN1Y2ggd2VhcG9uIGlzIHRoZSBheGUsIHdoaWNoIHRoZXkgYXJlIGFibGUgdG8gZHVhbC13aWVsZCwgCiAgICAgICAgICAgICAgICBkZWxpdmVyaW5nIGRldmFzdGF0aW5nIGJsb3dzIHdpdGggYm90aCBoYW5kcy4gVGhlaXIgcHJvZmljaWVuY3kgaW4gc3dvcmQgYW5kIAogICAgICAgICAgICAgICAgc2hpZWxkIGZpZ2h0aW5nIGFsbG93cyB0aGVtIHRvIGJvdGggYXR0YWNrIGFuZCBkZWZlbmQgd2l0aCBlYXNlLiBBZGRpdGlvbmFsbHksIAogICAgICAgICAgICAgICAgdGhleSBleGNlbCBpbiB3aWVsZGluZyB0aGUgbWFjZSwgd2hpY2ggZW5hYmxlcyB0aGVtIHRvIGRlYWwgc2lnbmlmaWNhbnQgZGFtYWdlIAogICAgICAgICAgICAgICAgdG8gdGhlaXIgb3Bwb25lbnRzLiBBcyBhIHJlc3VsdCBvZiB0aGVpciBtYXN0ZXJ5IG9mIHRoZXNlIHdlYXBvbnMsIHRoZSBLbmlnaHRzIAogICAgICAgICAgICAgICAgb2YgdGhlIFNhY3JlZCBPYXRoIGFyZSBhIGhpZ2hseSBmb3JtaWRhYmxlIGZvcmNlIG9uIHRoZSZuYnNwO2JhdHRsZWZpZWxkLgogICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgPC90ZD4KICAgICAgICAgICAgPHRkIHZhbGlnbj0idG9wIj4KICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJhcm1vcnktY2Fyb3VzZWwiPgogICAgICAgICAgICAgICAgPGFtcC1jYXJvdXNlbAogICAgICAgICAgICAgICAgICB3aWR0aD0iMzAwIgogICAgICAgICAgICAgICAgICBoZWlnaHQ9IjMwMCIKICAgICAgICAgICAgICAgICAgbGF5b3V0PSJyZXNwb25zaXZlIgogICAgICAgICAgICAgICAgICB0eXBlPSJzbGlkZXMiCiAgICAgICAgICAgICAgICAgIHJvbGU9InJlZ2lvbiIKICAgICAgICAgICAgICAgICAgYXJpYS1sYWJlbD0iQmFzaWMgY2Fyb3VzZWwiCiAgICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICAgIDxhbXAtaW1nCiAgICAgICAgICAgICAgICAgICAgc3JjPSJodHRwczovL2RyaXZlLmdvb2dsZS5jb20vdWM/ZXhwb3J0PXZpZXcmaWQ9MU5hRVJHX2hQTC04UXgwRDVmN1pRUkl0NmtUSkFOM1NmIgogICAgICAgICAgICAgICAgICAgIHdpZHRoPSIzMDAiCiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0PSIzMDAiCiAgICAgICAgICAgICAgICAgICAgYWx0PSIiIAogICAgICAgICAgICAgICAgICA+PC9hbXAtaW1nPgogICAgICAgICAgICAgICAgICA8YW1wLWltZwogICAgICAgICAgICAgICAgICAgIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTFKcU5LQkFPUGNzNWxIcUc3Nl9DMm13OVQ5OWJNR3BGOSIKICAgICAgICAgICAgICAgICAgICB3aWR0aD0iMzAwIgogICAgICAgICAgICAgICAgICAgIGhlaWdodD0iMzAwIgogICAgICAgICAgICAgICAgICAgIGFsdD0iIiAKICAgICAgICAgICAgICAgICAgPjwvYW1wLWltZz4KICAgICAgICAgICAgICAgICAgPGFtcC1pbWcKICAgICAgICAgICAgICAgICAgICBzcmM9Imh0dHBzOi8vZHJpdmUuZ29vZ2xlLmNvbS91Yz9leHBvcnQ9dmlldyZpZD0xdzZwZS1kVkpydGZxOE5jYXBocUc3bjNBMmFfZTIwRHUiCiAgICAgICAgICAgICAgICAgICAgd2lkdGg9IjMwMCIKICAgICAgICAgICAgICAgICAgICBoZWlnaHQ9IjMwMCIKICAgICAgICAgICAgICAgICAgICBhbHQ9IiIgCiAgICAgICAgICAgICAgICAgID48L2FtcC1pbWc+CiAgICAgICAgICAgICAgPC9hbXAtY2Fyb3VzZWw+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvdGQ+CiAgICAgICAgICA8L3RyPgogICAgICAgIDwvdGFibGU+CiAgICAgICAgPCEtLS0gPT09PT09PT09PT09PT09PT09PT0gRU5EIC0gUHJvZmlsZSAyIC0gQXJtb3J5IFNCUyA9PT09PT09PT09PT09PT09PT09PSAtLT4KICAgICAgICAKICAgICAgICA8IS0tLSA9PT09PT09PT09PT09PT09PT09PSBQcm9maWxlIDMgLSBBcm1vcnkgU0JTID09PT09PT09PT09PT09PT09PT09IC0tPgogICAgICAgIDx0YWJsZSBjbGFzcz0icHJvZmlsZTMtYXJtb3J5IGFybW9yeSIgcm9sZT0icHJlc2VudGF0aW9uIiBhbGlnbj0iY2VudGVyIiBjZWxscGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiIGJvcmRlcj0iMCIgd2lkdGg9IjEwMCUiIGhpZGRlbiBbaGlkZGVuXT0icHJvZmlsZTNBcm1vcnkiPgogICAgICAgICAgPHRyPgogICAgICAgICAgICA8dGQgdmFsaWduPSJ0b3AiPgogICAgICAgICAgICAgIDxwIGNsYXNzPSJjb3B5Ij4KICAgICAgICAgICAgICAgIFRoZSBUaW5rZXJlcnMsIG1lbWJlcnMgb2YgdGhlIENvbnNvcnRpdW0gb2YgdGhlIEFydGlmaWNlcnMsIHBvc3Nlc3MgZXhjZXB0aW9uYWwgdGVjaG5pY2FsIGV4cGVydGlzZSBhbmQgYSB1bmlxdWUgY29tYmF0IHN0eWxlLiBUaGV5IGVtcGxveSBhIHJhbmdlIG9mIHNwZWNpYWxpemVkIHRvb2xzIGFuZCBkZXZpY2VzIHRvIGdhaW4gYW4gYWR2YW50YWdlIGluIGJhdHRsZSwgc3VjaCBhcyB0aGUgZXhwbG9zaXZlIGJvbWIgYW5kIHdyZW5jaCBmb3IgbWF4aW11bSBkYW1hZ2UgYW5kIGRpc2FybWFtZW50IHJlc3BlY3RpdmVseS4gRnVydGhlcm1vcmUsIHRoZXkgZXhjZWwgYXQgY3JhZnRpbmcgYW5kIGNvbnRyb2xsaW5nIG1lY2hhbmljYWwgZ29sZW1zLCB3aGljaCBjYW4gYmUgZXF1aXBwZWQgd2l0aCBkZWFkbHkgd2VhcG9ucywgbWFraW5nIHRoZW0gYSBmb3JtaWRhYmxlIGZvcmNlIG9uIHRoZSBiYXR0bGVmaWVsZC4gVGhhbmtzIHRvIHRoZWlyIHVucGFyYWxsZWxlZCB0ZWNobmljYWwgcHJvd2VzcyBhbmQgbWFzdGVyeSBvZiB0aGVzZSB1bmlxdWUgd2VhcG9ucywgdGhlIFRpbmtlcmVycyBoYXZlIGVhcm5lZCBhIHdlbGwtZGVzZXJ2ZWQgcmVwdXRhdGlvbiBhcyBhIGZvcmNlIHRvIGJlIHJlY2tvbmVkJm5ic3A7d2l0aC4KICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgIDwvdGQ+CiAgICAgICAgICAgIDx0ZCB2YWxpZ249InRvcCI+CiAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iYXJtb3J5LWNhcm91c2VsIj4KICAgICAgICAgICAgICAgIDxhbXAtY2Fyb3VzZWwKICAgICAgICAgICAgICAgICAgd2lkdGg9IjMwMCIKICAgICAgICAgICAgICAgICAgaGVpZ2h0PSIzMDAiCiAgICAgICAgICAgICAgICAgIGxheW91dD0icmVzcG9uc2l2ZSIKICAgICAgICAgICAgICAgICAgdHlwZT0ic2xpZGVzIgogICAgICAgICAgICAgICAgICByb2xlPSJyZWdpb24iCiAgICAgICAgICAgICAgICAgIGFyaWEtbGFiZWw9IkJhc2ljIGNhcm91c2VsIgogICAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgICA8YW1wLWltZwogICAgICAgICAgICAgICAgICAgIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTFWcUFDQzZ0R1N4RVVRMkpsWnIyY3YzV2Q4Tnh5MkF4YSIKICAgICAgICAgICAgICAgICAgICB3aWR0aD0iMzAwIgogICAgICAgICAgICAgICAgICAgIGhlaWdodD0iMzAwIgogICAgICAgICAgICAgICAgICAgIGFsdD0iIgogICAgICAgICAgICAgICAgICA+PC9hbXAtaW1nPgogICAgICAgICAgICAgICAgICA8YW1wLWltZwogICAgICAgICAgICAgICAgICAgIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTFyLTF3Mm1ZVUxUTUpYbzFrcG1TdTUtck90VUtGcUluSyIKICAgICAgICAgICAgICAgICAgICB3aWR0aD0iMzAwIgogICAgICAgICAgICAgICAgICAgIGhlaWdodD0iMzAwIgogICAgICAgICAgICAgICAgICAgIGFsdD0iIgogICAgICAgICAgICAgICAgICA+PC9hbXAtaW1nPgogICAgICAgICAgICAgICAgICA8YW1wLWltZwogICAgICAgICAgICAgICAgICAgIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTFTd2hpUHBNcXY3LUpKeHdWWjlURWlDQVpDVEZmZHQtZyIKICAgICAgICAgICAgICAgICAgICB3aWR0aD0iMzAwIgogICAgICAgICAgICAgICAgICAgIGhlaWdodD0iMzAwIgogICAgICAgICAgICAgICAgICAgIGFsdD0iIgogICAgICAgICAgICAgICAgICA+PC9hbXAtaW1nPgogICAgICAgICAgICAgIDwvYW1wLWNhcm91c2VsPgogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L3RkPgogICAgICAgICAgPC90cj4KICAgICAgICA8L3RhYmxlPgogICAgICAgIDwhLS0tID09PT09PT09PT09PT09PT09PT09IEVORCAtIFByb2ZpbGUgMyAtIEFybW9yeSBTQlMgPT09PT09PT09PT09PT09PT09PT0gLS0+CiAgICAgIDwvZGl2PgogICAgICAgIAogICAgPC9kaXY+CiAgICA8IS0tID09PT09PT09PT09PT09PT09PT09IEVORCAtIE1PRCAyID09PT09PT09PT09PT09PT09PT09IC0tPgogICAgCiAgICA8IS0tID09PT09PT09PT09PT09PT09PT09IE1PRCAzID09PT09PT09PT09PT09PT09PT09IC0tPgogICAgPGRpdiBpZD0ibW9kLTMiPgogICAgICAgPGgyIGNsYXNzPSJjb3B5IGNlbnRlciI+CiAgICAgICAgIFJlYWR5IHRvIGpvaW4gdGhlIGNhdXNlPwogICAgICAgPC9oMj4KICAgICAgIDxwIGNsYXNzPSJjb3B5IGNlbnRlciI+IAogICAgICAgICBUaGUgdGltZSBoYXMgY29tZSB0byBkZWZlbmQgb3VyIHJlYWxtIGZyb20gdGhlIGZvcmNlcyBvZiBldmlsLiBXZSBuZWVkIGJyYXZlIAogICAgICAgICBhbmQgZGVkaWNhdGVkIHdhcnJpb3JzIHRvIGpvaW4gdXMgaW4gdGhpcyBmaWdodCwgYW5kIHdlIGJlbGlldmUgdGhhdCB5b3UgaGF2ZSAKICAgICAgICAgd2hhdCBpdCB0YWtlcyB0byBiZSBvbmUgb2YmbmJzcDt0aGVtLgogICAgICA8L3A+CiAgICA8L2Rpdj4KICAgIDwhLS0gPT09PT09PT09PT09PT09PT09PT0gRU5EIC0gTU9EIDMgPT09PT09PT09PT09PT09PT09PT0gLS0+CiAgICAKICAgIAogICAgPCEtLSA9PT09PT09PT09PT09PT09PT09PSBGb290ZXIgPT09PT09PT09PT09PT09PT09PT0gLS0+CiAgICA8Zm9vdGVyPgogICAgICA8IS0tID09PT09PT09PT09PT09PT09PT09IFNvY2lhbCBJY29ucyA9PT09PT09PT09PT09PT09PT09PSAtLT4KICAgICAgPHRhYmxlIGNsYXNzPSJzb2NpYWwtY29udGFpbmVyIiByb2xlPSJwcmVzZW50YXRpb24iIGFsaWduPSJjZW50ZXIiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCIgYm9yZGVyPSIwIj4KICAgICAgICA8dHI+CiAgICAgICAgICA8dGQgY2xhc3M9ImNvbCI+CiAgICAgICAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20iPgogICAgICAgICAgICAgIDxhbXAtaW1nIGNsYXNzPSJzb2NpYWwtaWNvbiIgc3JjPSJodHRwczovL2RyaXZlLmdvb2dsZS5jb20vdWM/ZXhwb3J0PXZpZXcmaWQ9MUlNMjZsVGNxZ21kWFZacHRVa2I5ejQxek9oaDFrZlRoIiBhbHQ9Ikluc3RhZ3JhbSIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiAvPiAgCiAgICAgICAgICAgIDwvYT4KICAgICAgICAgIDwvdGQ+CiAgICAgICAgICA8dGQgY2xhc3M9ImNvbCI+CiAgICAgICAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20iPgogICAgICAgICAgICAgIDxhbXAtaW1nIGNsYXNzPSJzb2NpYWwtaWNvbiIgc3JjPSJodHRwczovL2RyaXZlLmdvb2dsZS5jb20vdWM/ZXhwb3J0PXZpZXcmaWQ9MXpTdGR2ZW1wY3piTTY0clJ1VC1waWJtSHJqWXBGeVp2IiBhbHQ9IllvdVR1YmUiIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgLz4gIAogICAgICAgICAgICA8L2E+CiAgICAgICAgICA8L3RkPgogICAgICAgICAgPHRkIGNsYXNzPSJjb2wiPgogICAgICAgICAgICA8YSBocmVmPSJodHRwczovL3d3dy5nb29nbGUuY29tIj4gCiAgICAgICAgICAgICAgPGFtcC1pbWcgY2xhc3M9InNvY2lhbC1pY29uIiBzcmM9Imh0dHBzOi8vZHJpdmUuZ29vZ2xlLmNvbS91Yz9leHBvcnQ9dmlldyZpZD0xY01lZmRjTmhia0FMOE5zbkx5bGJ2M2FPUGRUUUZUQ1kiIGFsdD0iVHdpdHRlciIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiAvPiAgCiAgICAgICAgICAgIDwvYT4KICAgICAgICAgIDwvdGQ+CiAgICAgICAgICA8dGQgY2xhc3M9ImNvbCI+CiAgICAgICAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20iPiAKICAgICAgICAgICAgICA8YW1wLWltZyBjbGFzcz0ic29jaWFsLWljb24iIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTE0bFhRaU5jTXNrckFyTTYzd3pwRFh3LXg3VGZYUFNydiIgYWx0PSJGYWNlYm9vayIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiAvPiAgCiAgICAgICAgICAgIDwvYT4KICAgICAgICAgIDwvdGQ+CiAgICAgICAgPC90cj4KICAgICAgPC90YWJsZT4KICAgICAgPCEtLSA9PT09PT09PT09PT09PT09PT09PSBFTkQgLSBTb2NpYWwgSWNvbnMgPT09PT09PT09PT09PT09PT09PT0gLS0+CiAgICAgIDxwIGNsYXNzPSJjb3B5IGNlbnRlciBhZGRyZXNzIj4KICAgICAgICBIYWwmenduajtsZSBMYSZ6d25qO2ljZSBHYSZ6d25qO21pbmcgQyZ6d25qO28uPGJyIC8+CiAgICAgICAgNzgmenduajs5MCBSaWRnJnp3bmo7ZXZpZXcgQXZlbiZ6d25qO3VlPGJyIC8+CiAgICAgICAgU3VpdCZ6d25qO2UgMiZ6d25qOzAwPGJyIC8+CiAgICAgICAgU3ByaW4menduajtnZmllbCZ6d25qO2QsIEMmenduajtBIDkwMiZ6d25qOzEwPGJyIC8+CiAgICAgIDwvcD4KICAgICAgPHAgY2xhc3M9ImNvcHkgY2VudGVyIG9wdG91dCI+CiAgICAgICAgVG8gdW5zdWJzY3JpYmUgZnJvbSBvdXIgZW1haWxzIGFuZCBzdG9wIHJlY2VpdmluZyBmdXR1cmUgbWVzc2FnZXMsIHBsZWFzZSBjbGljayBvbiB0aGUgInVuc3Vic2NyaWJlIiBsaW5rIGxvY2F0ZWQgYXQgdGhlIGJvdHRvbSBvZiB0aGlzIGVtYWlsLiBZb3Ugd2lsbCBiZSB0YWtlbiB0byBhIHBhZ2Ugd2hlcmUgeW91IGNhbiBjb25maXJtIHlvdXIgZW1haWwgYWRkcmVzcyBhbmQgdW5zdWJzY3JpYmUgZnJvbSBvdXIgbWFpbGluZyZuYnNwO2xpc3QuPGJyIC8+PGJyIC8+V2UncmUgc29ycnkgdG8gc2VlIHlvdSBnbyBhbmQgd291bGQgYXBwcmVjaWF0ZSBhbnkgZmVlZGJhY2sgeW91IGhhdmUgb24gd2h5IHlvdSd2ZSBjaG9zZW4gdG8gb3B0LW91dC4gUGxlYXNlIGZlZWwgZnJlZSB0byByZXBseSB0byB0aGlzIGVtYWlsIGFuZCBsZXQgdXMga25vdyBob3cgd2UgY2FuJm5ic3A7aW1wcm92ZS48YnIgLz48YnIgLz5UaGFuayB5b3UgZm9yIHlvdXIgdGltZSBhbmQgZm9yIGJlaW5nIGEgcGFydCBvZiBvdXImbmJzcDtjb21tdW5pdHkuCiAgICAgIDwvcD4KICAgICAgPHRhYmxlIGNsYXNzPSJhY2NvdW50LWxpbmtzIiByb2xlPSJwcmVzZW50YXRpb24iIGFsaWduPSJjZW50ZXIiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCIgYm9yZGVyPSIwIj4KICAgICAgICA8dHI+CiAgICAgICAgICA8dGQgY2xhc3M9ImNvbCI+CiAgICAgICAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20iPgogICAgICAgICAgICAgIE1hbmFnZSBQcmVmZXJlbmNlcwogICAgICAgICAgICA8L2E+CiAgICAgICAgICA8L3RkPgogICAgICAgICAgPHRkIGNsYXNzPSJjb2wiPgogICAgICAgICAgICA8YSBocmVmPSJodHRwczovL3d3dy5nb29nbGUuY29tIj4KICAgICAgICAgICAgICBVbnN1YnNjcmliZQogICAgICAgICAgICA8L2E+CiAgICAgICAgICA8L3RkPiAKICAgICAgICA8L3RyPgogICAgICA8L3RhYmxlPgogICAgICA8cCBjbGFzcz0iY2VudGVyIj4KICAgICAgICA8YW1wLWltZyBjbGFzcz0iYmFubmVyLWRpdmlkZXIiIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTFoeFhJMGtvYVdhNVlGZWtZekZuS2VBTGNWQk5SYy14YSIgYWx0PSIiIHdpZHRoPSI3MjAiIGhlaWdodD0iMTgwIiAvPiAKICAgICAgPC9wPgogICAgPC9mb290ZXI+CiAgICA8IS0tID09PT09PT09PT09PT09PT09PT09IEVORCAtIEZvb3RlciA9PT09PT09PT09PT09PT09PT09PSAtLT4KICAgIAogIDwvZGl2PiAKPC9ib2R5Pgo8L2h0bWw+IAo=" class="gc-tertiary-em">Preview code &#8614;</a>
-                  </div>
-                </div>
-              </td>
-            </tr> 
-            <tr>
-              <td class="tile">
-                <div class="tile-item-bg">
-                  <div class="tile-container">
-                    <img src="./assets/mail_tiles/ghibli_cds_letter.png" width="100%" alt="" />
-                    <p class="medium">@GitHub</p>
-                    <p class="title">Casa del Sol</p> 
-                    <p class="description">A web presence for a Sunnyvale apartment complex named Casa del Sol. Built back in 2017 and refreshed in&nbsp;2023.</p>
-                    <a href="https://github.com/MBSampson/Casa-Del-Sol-Web-Presence" class="gc-tertiary-em">Preview code &#8614;</a> 
-                  </div>
-                </div> 
-              </td>
-              <td class="tile">
-                <div class="tile-item-bg">
-                  <div class="tile-container">
-                    <img src="./assets/mail_tiles/ghibli_mail_letter_square_v3.png" width="100%" alt="" />
-                    <p class="medium">@AMP Playground</p>
-                    <p class="title">Historia Newsletter</p> 
-                    <p class="description">A newsletter in AMP format has been sent out to inform users about the availability of new mail letter templates in the Historia\&nbsp;store.</p>
-                    <a href="https://playground.amp.dev/?runtime=amp4email#share=PCFkb2N0eXBlIGh0bWw+CjxodG1sIOKaoTRlbWFpbCBkYXRhLWNzcy1zdHJpY3Q+CjxoZWFkPgogIDxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KICA8c2NyaXB0IGFzeW5jIHNyYz0iaHR0cHM6Ly9jZG4uYW1wcHJvamVjdC5vcmcvdjAuanMiPjwvc2NyaXB0PgogIDxzY3JpcHQgYXN5bmMgY3VzdG9tLWVsZW1lbnQ9ImFtcC1jYXJvdXNlbCIgc3JjPSJodHRwczovL2Nkbi5hbXBwcm9qZWN0Lm9yZy92MC9hbXAtY2Fyb3VzZWwtMC4xLmpzIj48L3NjcmlwdD4KICA8c3R5bGUgYW1wNGVtYWlsLWJvaWxlcnBsYXRlPmJvZHl7dmlzaWJpbGl0eTpoaWRkZW59PC9zdHlsZT4KICA8c3R5bGUgYW1wLWN1c3RvbT4KICAgIGJvZHkgewogICAgICB3aWR0aDogMTAwJTsKICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzAwMDsKICAgIH0KICAgICNlbWFpbC1jb250YWluZXIgewogICAgICB3aWR0aDogNzIwcHg7CiAgICAgIG1hcmdpbjogMjVweCBhdXRvOyAKICAgICAgZm9udC1mYW1pbHk6IEdlb3JnaWEsIEFyaWFsLCBzYW5zLXNlcmlmOwogICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDYwNjA1OwogIAkgIGJvcmRlcjogM3B4IHNvbGlkICNmY2Y2Y2Y7IAogICAgICBjb2xvcjogI2ZjZjZjZjsKICAgIH0KICAgIC5jZW50ZXIgewogICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7CiAgICB9CiAgICAubHVuYXIteWVsbG93IHsKICAgICAgY29sb3I6ICNmYWU0YjI7CiAgICB9CiAgICBoMSwgaDIsIGgzLCBoNCwgaDUsIGg2ICxwIHsKICAgICAgbWFyZ2luOiAwOwogICAgICBwYWRkaW5nOiAwOwogICAgfQogICAgaDEgewogICAgICBmb250LXNpemU6IDM2cHg7CiAgICAgIGxpbmUtaGVpZ2h0OiA0OHB4OwogICAgfQogICAgaDIgewogICAgICBmb250LXNpemU6IDMwcHg7CiAgICAgIGxpbmUtaGVpZ2h0OiA0MHB4OwogICAgfQogICAgI21hc3RoZWFkIHsKICAgICAgd2lkdGg6IDgwJTsKICAgICAgbWFyZ2luOiAyNXB4IGF1dG87CiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjsKICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNmY2Y2Y2Y7CiAgICB9CiAgICAjbW9kLTEgewogICAgICBwYWRkaW5nOiAyMHB4OwogICAgfSAKICAgICNtb2QtMSBoMiB7CiAgICAgIHBhZGRpbmc6IDAgMTAwcHggMjVweDsKICAgIH0KICAgICNtb2QtMSBwIHsKICAgICAgcGFkZGluZy1ib3R0b206IDI1cHg7CiAgICB9CiAgICAjbW9kLTEgLnNicyAuYzEgewogICAgICBwYWRkaW5nOiAwIDEwcHggMCAwOwogICAgfQogICAgI21vZC0xIC5zYnMgLmMyIHsKICAgICAgd2lkdGg6IDMyMHB4OwogICAgfQogICAgI21vZC0xIC5jYXJvdXNlbC1wcmV2aWV3IHsKICAgICAgdGV4dC1hbGlnbjogY2VudGVyOwogICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDYwNjA1OwogICAgfQogICAgI21vZC0xIC5jYXJvdXNlbC1wcmV2aWV3IGJ1dHRvbiB7CiAgICAgIGJhY2tncm91bmQtY29sb3I6ICMwNjA2MDU7CiAgICAgIG1hcmdpbjogNXB4IDJweDsKICAgIH0KICAgICNtb2QtMSAuY2Fyb3VzZWwtcHJldmlldyBidXR0b24gYW1wLWltZyB7CiAgICAgIG1hcmdpbjogNXB4IDAgMnB4OwogICAgfQogICAgI21vZC0zIHAgewogICAgICBwYWRkaW5nOiAyNXB4IDUwcHggMDsKICAgIH0KICAgICNmb290ZXIgewogICAgICBwYWRkaW5nOiAyNXB4OwogICAgfQogICAgI2Zvb3RlciAucHJlZnMgYSB7CiAgICAgIGNvbG9yOiAjZmNmNmNmOwogICAgfQogICAgI2Zvb3RlciAucHJlZnMgdGQgewogICAgICBwYWRkaW5nOiAyNXB4IDEwcHg7CiAgICB9CiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4gCiAgPGRpdiBpZD0iZW1haWwtY29udGFpbmVyIj4KICAgIDxkaXYgaWQ9Im1hc3RoZWFkIj4KICAgICAgPGgxPgogICAgICAgIEhpc3RvcmlhIE1haWwgRXhwcmVzcwogICAgICA8L2gxPiAKICAgIDwvZGl2PgogICAgPGRpdiBpZD0ibW9kLTEiPgogICAgICA8aDIgY2xhc3M9ImNlbnRlciBsdW5hci15ZWxsb3ciPgogICAgICAgIE5ldyBNYWlsIExldHRlciBUZW1wbGF0ZXMgQXZhaWxhYmxlIE5vdyEKICAgICAgPC9oMj4KICAgICAgPHA+CiAgICAgICAgRGVhciBWYWx1ZWQgQ3VzdG9tZXJzLAogICAgICAgIDxiciAvPjxiciAvPgogICAgICAgIFdlIGFyZSBleGNpdGVkIHRvIGFubm91bmNlIHRoYXQgSGlzdG9yaWEgTWFpbCBDb21wYW55IGhhcyBqdXN0IHJlbGVhc2VkIAogICAgICAgIG5ldyBtYWlsIGxldHRlciB0ZW1wbGF0ZXMgZm9yIHlvdXIgY29udmVuaWVuY2UuIE91ciB0ZWFtIGhhcyBiZWVuIHdvcmtpbmcgCiAgICAgICAgaGFyZCB0byBjcmVhdGUgZGVzaWducyB0aGF0IGNhdGVyIHRvIHlvdXIgZGl2ZXJzZSBuZWVkcyBhbmQmbmJzcDtwcmVmZXJlbmNlcy4KICAgICAgPC9wPgogICAgICA8dGFibGUgY2xhc3M9InNicyIgcm9sZT0icHJlc2VudGF0aW9uIiBhbGlnbj0iY2VudGVyIiBjZWxscGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiIHdpZHRoPSIxMDAlIj4KICAgICAgICA8dHI+CiAgICAgICAgICA8dGQgY2xhc3M9ImMxIiB2YWxpZ249InRvcCI+IAogICAgICAgICAgICA8cD4KICAgICAgICAgICAgICBXaXRoIG91ciBuZXcgdGVtcGxhdGVzLCB5b3UgY2FuIHNhdmUgdGltZSBhbmQgZWZmb3J0IGluIGNyZWF0aW5nIHByb2Zlc3Npb25hbC1sb29raW5nIAogICAgICAgICAgICAgIGxldHRlcnMuIENob29zZSBmcm9tIGEgcmFuZ2Ugb2Ygb3B0aW9ucyB0aGF0IHN1aXQgeW91ciBwdXJwb3NlLCB3aGV0aGVyIGl0IGJlIAogICAgICAgICAgICAgIGZvciBwZXJzb25hbCBvciBidXNpbmVzcyZuYnNwO3VzZS4KICAgICAgICAgICAgICA8YnIgLz48YnIgLz4KICAgICAgICAgICAgICBUbyBhY2Nlc3MgdGhlIG5ldyB0ZW1wbGF0ZXMsIHNpbXBseSBsb2cgaW4gdG8geW91ciBhY2NvdW50IGFuZCBnbyB0byB0aGUgCiAgICAgICAgICAgICAgIkxldHRlciZuYnNwO1RlbXBsYXRlcyIgc2VjdGlvbi4gWW91IGNhbiBjdXN0b21pemUgdGhlIHRlbXBsYXRlcyB0byB5b3VyIAogICAgICAgICAgICAgIGxpa2luZyBhbmQgc3RhcnQgY29tcG9zaW5nIHlvdXIgbWVzc2FnZSByaWdodCZuYnNwO2F3YXkuCiAgICAgICAgICAgICAgPGJyIC8+PGJyIC8+CiAgICAgICAgICAgICAgVGhhbmsgeW91IGZvciBjaG9vc2luZyBIaXN0b3JpYSBNYWlsIENvbXBhbnkgYXMgeW91ciB0cnVzdGVkIG1haWxpbmcgc2VydmljZSBwcm92aWRlci4KCQkJICA8YnIgLz48YnIgLz4KCQkJICBCZXN0IHJlZ2FyZHMsCiAgICAgICAgICAgICAgPGJyIC8+PGJyIC8+CgkJCSAgSHlsYW4gUmFpbnMsCiAgICAgICAgICAgICAgPGJyIC8+PGJyIC8+CgkJCSAgSGlzdG9yaWEgTWFpbCBDb21wYW55CiAgICAgICAgICAgIDwvcD4KICAgICAgICAgIDwvdGQ+CiAgICAgICAgICA8dGQgY2xhc3M9ImMyIiB2YWxpZ249InRvcCI+CiAgICAgICAgICAgIDxhbXAtY2Fyb3VzZWwKICAgICAgICAgICAgICBpZD0iY2Fyb3VzZWwtd2l0aC1wcmV2aWV3IgogICAgICAgICAgICAgIHdpZHRoPSIzMjAiCiAgICAgICAgICAgICAgaGVpZ2h0PSIzMjAiCiAgICAgICAgICAgICAgbGF5b3V0PSJyZXNwb25zaXZlIgogICAgICAgICAgICAgIHR5cGU9InNsaWRlcyIKICAgICAgICAgICAgICByb2xlPSJyZWdpb24iCiAgICAgICAgICAgICAgYXJpYS1sYWJlbD0iQ2Fyb3VzZWwgb2YgbWFpbCB0ZW1wbGF0ZXMiCiAgICAgICAgICAgID4gCiAgICAgICAgICAgICAgPGFtcC1pbWcKICAgICAgICAgICAgICAgIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTFjT2NyYkJULWdHTnl6dnRfQlpCZ0tad0xQdzktWXBMeiIKICAgICAgICAgICAgICAgIHdpZHRoPSIzMjAiCiAgICAgICAgICAgICAgCWhlaWdodD0iMzIwIgogICAgICAgICAgICAgICAgbGF5b3V0PSJyZXNwb25zaXZlIgogICAgICAgICAgICAgICAgYWx0PSJhcHBsZXMiCiAgICAgICAgICAgICAgPjwvYW1wLWltZz4KICAgICAgICAgICAgICA8YW1wLWltZwogICAgICAgICAgICAgICAgc3JjPSJodHRwczovL2RyaXZlLmdvb2dsZS5jb20vdWM/ZXhwb3J0PXZpZXcmaWQ9MW1lR050QmFkZjkxS2hENFhYN2VkYmgxbEZvdkJWVjR3IgogICAgICAgICAgICAgICAgd2lkdGg9IjMyMCIKICAgICAgICAgICAgICAJaGVpZ2h0PSIzMjAiCiAgICAgICAgICAgICAgICBsYXlvdXQ9InJlc3BvbnNpdmUiCiAgICAgICAgICAgICAgICBhbHQ9ImxlbW9ucyIKICAgICAgICAgICAgICA+PC9hbXAtaW1nPgogICAgICAgICAgICAgIDxhbXAtaW1nCiAgICAgICAgICAgICAgICBzcmM9Imh0dHBzOi8vZHJpdmUuZ29vZ2xlLmNvbS91Yz9leHBvcnQ9dmlldyZpZD0xSDQ3ZC02WXJaakxUclAzTEYxQ3FDOVNmOHF6bnBrWi0iCiAgICAgICAgICAgICAgICB3aWR0aD0iMzIwIgogICAgICAgICAgICAgIAloZWlnaHQ9IjMyMCIKICAgICAgICAgICAgICAgIGxheW91dD0icmVzcG9uc2l2ZSIKICAgICAgICAgICAgICAgIGFsdD0iYmx1ZWJlcnJpZXMiCiAgICAgICAgICAgICAgPjwvYW1wLWltZz4KICAgICAgICAgICAgICA8YW1wLWltZwogICAgICAgICAgICAgICAgc3JjPSJodHRwczovL2RyaXZlLmdvb2dsZS5jb20vdWM/ZXhwb3J0PXZpZXcmaWQ9MTIyREY3ZGtwekI3QVFsdEswajhmRGpia0tLUXlyRkVZIgogICAgICAgICAgICAgICAgd2lkdGg9IjMyMCIKICAgICAgICAgICAgICAJaGVpZ2h0PSIzMjAiCiAgICAgICAgICAgICAgICBsYXlvdXQ9InJlc3BvbnNpdmUiCiAgICAgICAgICAgICAgICBhbHQ9ImJsdWViZXJyaWVzIgogICAgICAgICAgICAgID48L2FtcC1pbWc+CiAgICAgICAgICAgICAgPGFtcC1pbWcKICAgICAgICAgICAgICAgIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTFseXhJTm8tQVRwZkFuZV9HeXpYUi1NWXczZmpOVmUyaiIKICAgICAgICAgICAgICAgIHdpZHRoPSIzMjAiCiAgICAgICAgICAgICAgCWhlaWdodD0iMzIwIgogICAgICAgICAgICAgICAgbGF5b3V0PSJyZXNwb25zaXZlIgogICAgICAgICAgICAgICAgYWx0PSJibHVlYmVycmllcyIKICAgICAgICAgICAgICA+PC9hbXAtaW1nPgogICAgICAgICAgICA8L2FtcC1jYXJvdXNlbD4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iY2Fyb3VzZWwtcHJldmlldyI+CiAgICAgICAgICAgICAgPGJ1dHRvbiBvbj0idGFwOmNhcm91c2VsLXdpdGgtcHJldmlldy5nb1RvU2xpZGUoaW5kZXg9MCkiPgogICAgICAgICAgICAgICAgPGFtcC1pbWcKICAgICAgICAgICAgICAgICAgc3JjPSJodHRwczovL2RyaXZlLmdvb2dsZS5jb20vdWM/ZXhwb3J0PXZpZXcmaWQ9MWNPY3JiQlQtZ0dOeXp2dF9CWkJnS1p3TFB3OS1ZcEx6IgogICAgICAgICAgICAgICAgICB3aWR0aD0iNDAiCiAgICAgICAgICAgICAgICAgIGhlaWdodD0iNDAiCiAgICAgICAgICAgICAgICAgIGFsdD0iYXBwbGVzIgogICAgICAgICAgICAgICAgPjwvYW1wLWltZz4KICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgICA8YnV0dG9uIG9uPSJ0YXA6Y2Fyb3VzZWwtd2l0aC1wcmV2aWV3LmdvVG9TbGlkZShpbmRleD0xKSI+CiAgICAgICAgICAgICAgICA8YW1wLWltZwogICAgICAgICAgICAgICAgICBzcmM9Imh0dHBzOi8vZHJpdmUuZ29vZ2xlLmNvbS91Yz9leHBvcnQ9dmlldyZpZD0xbWVHTnRCYWRmOTFLaEQ0WFg3ZWRiaDFsRm92QlZWNHciCiAgICAgICAgICAgICAgICAgIHdpZHRoPSI0MCIKICAgICAgICAgICAgICAgICAgaGVpZ2h0PSI0MCIKICAgICAgICAgICAgICAgICAgYWx0PSJsZW1vbnMiCiAgICAgICAgICAgICAgICA+PC9hbXAtaW1nPgogICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICAgIDxidXR0b24gb249InRhcDpjYXJvdXNlbC13aXRoLXByZXZpZXcuZ29Ub1NsaWRlKGluZGV4PTIpIj4KICAgICAgICAgICAgICAgIDxhbXAtaW1nCiAgICAgICAgICAgICAgICAgIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTFINDdkLTZZclpqTFRyUDNMRjFDcUM5U2Y4cXpucGtaLSIKICAgICAgICAgICAgICAgICAgd2lkdGg9IjQwIgogICAgICAgICAgICAgICAgICBoZWlnaHQ9IjQwIgogICAgICAgICAgICAgICAgICBhbHQ9ImJsdWViZXJyaWVzIgogICAgICAgICAgICAgICAgPjwvYW1wLWltZz4KICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgICA8YnV0dG9uIG9uPSJ0YXA6Y2Fyb3VzZWwtd2l0aC1wcmV2aWV3LmdvVG9TbGlkZShpbmRleD0zKSI+CiAgICAgICAgICAgICAgICA8YW1wLWltZwogICAgICAgICAgICAgICAgICBzcmM9Imh0dHBzOi8vZHJpdmUuZ29vZ2xlLmNvbS91Yz9leHBvcnQ9dmlldyZpZD0xMjJERjdka3B6QjdBUWx0SzBqOGZEamJrS0tReXJGRVkiCiAgICAgICAgICAgICAgICAgIHdpZHRoPSI0MCIKICAgICAgICAgICAgICAgICAgaGVpZ2h0PSI0MCIKICAgICAgICAgICAgICAgICAgYWx0PSJibHVlYmVycmllcyIKICAgICAgICAgICAgICAgID48L2FtcC1pbWc+CiAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgICAgPGJ1dHRvbiBvbj0idGFwOmNhcm91c2VsLXdpdGgtcHJldmlldy5nb1RvU2xpZGUoaW5kZXg9NCkiPgogICAgICAgICAgICAgICAgPGFtcC1pbWcKICAgICAgICAgICAgICAgICAgc3JjPSJodHRwczovL2RyaXZlLmdvb2dsZS5jb20vdWM/ZXhwb3J0PXZpZXcmaWQ9MWx5eElOby1BVHBmQW5lX0d5elhSLU1ZdzNmak5WZTJqIgogICAgICAgICAgICAgICAgICB3aWR0aD0iNDAiCiAgICAgICAgICAgICAgICAgIGhlaWdodD0iNDAiCiAgICAgICAgICAgICAgICAgIGFsdD0iYmx1ZWJlcnJpZXMiCiAgICAgICAgICAgICAgICA+PC9hbXAtaW1nPgogICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICA8L2Rpdj4gCiAgICAgICAgICA8L3RkPgogICAgICAgIDwvdHI+CiAgICAgIDwvdGFibGU+CiAgICA8L2Rpdj4gCiAgICA8ZGl2IGlkPSJtb2QtMiI+CiAgICAgIDxhbXAtaW1nIHNyYz0iaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD12aWV3JmlkPTF5OHNRdXdBanBsUDlzMnh0eDZiTVN5TzFQbkcyR3IwMCIgd2lkdGg9IjcyMHB4IiBoZWlnaHQ9IjE4MHB4IiAvPgogICAgPC9kaXY+CiAgICA8ZGl2IGlkPSJtb2QtMyI+CiAgICAgIDxwIGNsYXNzPSJjZW50ZXIiPgogICAgICAgIFdlIGhvcGUgdGhhdCB0aGVzZSBuZXcgdGVtcGxhdGVzIHdpbGwgbWFrZSB5b3VyIGV4cGVyaWVuY2Ugd2l0aCBIaXN0b3JpYSBNYWlsIAogICAgICAgIENvbXBhbnkgZXZlbiBiZXR0ZXIuIElmIHlvdSBoYXZlIGFueSBmZWVkYmFjayBvciBzdWdnZXN0aW9ucywgcGxlYXNlIGRvbid0IAogICAgICAgIGhlc2l0YXRlIHRvIHJlYWNoIG91dCB0byBvdXIgc3VwcG9ydCZuYnNwO3RlYW0uCiAgICAgIDwvcD4gCiAgICA8L2Rpdj4KICAgIDxkaXYgaWQ9ImZvb3RlciIgY2xhc3M9ImNlbnRlciI+CiAgICAgIDxwPgogICAgICAgIFRoaXMgZW1haWwgd2FzIHNlbnQgdG8geW91IGJlY2F1c2UgeW91IHN1YnNjcmliZWQgdG8gZW1haWwgdXBkYXRlcy4KICAgICAgPC9wPgogICAgICA8dGFibGUgY2xhc3M9InByZWZzIiByb2xlPSJwcmVzZW50YXRpb24iIGFsaWduPSJjZW50ZXIiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCI+CiAgICAgICAgPHRyPgogICAgICAgICAgPHRkPgoJCQk8YSBocmVmPSJodHRwczovL3d3dy5nb29nbGUuY29tIj5NYW5hZ2UgUHJlZmVyZW5jZXM8L2E+CiAgICAgICAgICA8L3RkPgogICAgICAgICAgPHRkPgogICAgICAgICAgICA8YSBocmVmPSJodHRwczovL3d3dy5nb29nbGUuY29tIj5VbnN1YnNjcmliZTwvYT4KICAgICAgICAgIDwvdGQ+CiAgICAgICAgICA8dGQ+CiAgICAgICAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20iPkhpc3RvcmlhIFRlbXBsYXRlczwvYT4KICAgICAgICAgIDwvdGQ+CiAgICAgICAgPC90cj4KICAgICAgPC90YWJsZT4KICAgIDwvZGl2PgogIDwvZGl2PiAgCjwvYm9keT4KPC9odG1sPgogCg==" class="gc-tertiary-em">Preview code &#8614;</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </table>
+  <!-- -- WRITING ----------------------------------- -->
+  <section id="writing">
+    <div class="writing-header">
+      <div class="section-eyebrow reveal">Writing</div>
+      <h2 class="section-title reveal stagger-1">Thinking<br /><em style="font-style:italic;color:var(--gold)">Out
+          Loud</em></h2>
+      <p class="section-subtitle reveal stagger-2">Notes on product management, AI in practice, and the things I'm
+        figuring out as I go.</p>
+    </div>
+    <div class="posts-list">
+      <article class="post-item reveal stagger-1">
+        <div>
+          <div class="post-date">May 2025</div>
+          <h3 class="post-title">On Managing Programs You Didn't Choose</h3>
+          <p class="post-dek">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua - what happens when the roadmap lands on your desk half-formed.</p>
         </div>
-      </div> 
+      </article>
+      <article class="post-item reveal stagger-2">
+        <div>
+          <div class="post-date">March 2025</div>
+          <h3 class="post-title">What I Actually Use AI For at Work</h3>
+          <p class="post-dek">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis
+            nostrud exercitation - a honest accounting of where the tools help and where they don't.</p>
+        </div>
+      </article>
+      <article class="post-item reveal stagger-3">
+        <div>
+          <div class="post-date">January 2025</div>
+          <h3 class="post-title">The Case for Keeping Your Hands in the Code</h3>
+          <p class="post-dek">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in
+            reprehenderit in voluptate - why TPMs who can read a diff are different from those who can't.</p>
+        </div>
+      </article>
     </div>
-    <!-- ==================== END Portfolio Module ==================== -->
- 
-    
+  </section>
 
-  </div> 
+  <!-- Brushstroke divider 4 -->
+  <svg class="brush-divider" viewBox="0 0 1400 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+    style="display:block;background:var(--bg2)">
+    <path d="M0,45 C350,5 650,75 950,30 C1150,0 1300,60 1400,40 L1400,80 L0,80 Z" fill="var(--bg)" />
+    <path d="M0,55 C300,20 600,80 900,40 C1150,8 1300,68 1400,45" stroke="url(#divGrad1)" stroke-width="1.5" fill="none"
+      opacity="0.35" />
+  </svg>
 
+  <!-- -- CONTACT ----------------------------------- -->
+  <section id="contact">
+    <svg class="contact-brush-top" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="contactBrush" x1="0%" y1="50%" x2="100%" y2="50%">
+          <stop offset="0%" stop-color="#4A7FB5" />
+          <stop offset="50%" stop-color="#7B5EA7" />
+          <stop offset="100%" stop-color="#C9A961" />
+        </linearGradient>
+      </defs>
+      <path d="M10,150 C100,50 200,10 300,60 C380,100 420,160 490,120" stroke="url(#contactBrush)" stroke-width="5"
+        fill="none" stroke-linecap="round" />
+      <path d="M30,170 C130,70 230,30 320,80 C400,120 440,175 500,140" stroke="url(#contactBrush)" stroke-width="3"
+        fill="none" stroke-linecap="round" opacity="0.5" />
+      <path d="M250,5 C265,30 275,60 290,50 C305,40 310,15 330,25" stroke="#C9A961" stroke-width="2.5" fill="none"
+        stroke-linecap="round" opacity="0.7" />
+    </svg>
+    <div class="contact-inner">
+      <div class="section-eyebrow reveal" style="justify-content:center">Contact</div>
+      <h2 class="contact-title reveal stagger-1">Let's Build<br /><em>Something.</em></h2>
+      <p class="contact-sub reveal stagger-2">Whether you're looking for a TPM who brings both technical depth and AI
+        intuition to the table - or you just want to talk about what's next, I'd like to hear from you.</p>
+      <a href="mailto:hello@matthewsampson.dev" class="contact-email reveal stagger-3">hello@matthewsampson.dev</a>
+      <div class="social-links reveal stagger-4">
+        <a href="#" class="social-link" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+          </svg>
+          GitHub
+        </a>
+        <a href="#" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+          </svg>
+          Instagram
+        </a>
+        <a href="#" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- -- FOOTER ----------------------------------- -->
   <footer>
-    <div id="inner-wrapper"> 
-      <h1 class="gc-tertiary-em center">Thank you for visiting</h1>
-      <h2 class="center"> 
-        If you are in need of an email developer who possesses a passion for problem-solving, 
-        a meticulous attention to detail, and maintains high standards for documentation, 
-        then I encourage you to reach out to&nbsp;me!
-      </h2> 
-      <img src="./assets/ghibli_nighttime_mail_truck.png" class="logo" width="125" alt="" />  
-      <p class="title center">
-        Matthew B. Sampson<br />
-        Web Developer<br />
-      </p>
-      <table class="social" role="presentation" align="center" cellpadding="0" cellspacing="0"> 
-        <tr>
-          <td>
-            <img src="./assets/golden_arrow_right.png" height="10" alt="" /> 
-          </td>
-          <td>
-            <i class="fa-brands fa-linkedin"></i>
-          </td>
-          <td>
-            <i class="fa-brands fa-github"></i>
-          </td>
-          <td>
-            <i class="fa-brands fa-square-instagram"></i>
-          </td>
-          <td>
-            <img src="./assets/golden_arrow_left.png" height="10" alt="" />
-          </td>
-        </tr>
-      </table>
-      <p class="center">
-        San Jose, CA<br />
-        mbsampson89@gmail.com<br />
-        (408) 761 - 6118
-      </p>
-    </div>
+    <div class="footer-name">Matthew Sampson</div>
+    <div class="footer-copy">© 2025 · Crafted using Agentic Coding</div>
   </footer>
-  
-  <script src="script.js"></script>
+
+  <!-- -- SCRIPTS ---------------------------------- -->
+  <script>
+    // -- Cursor (desktop only) --------------------------
+    const isMobile = window.matchMedia('(max-width:900px)').matches;
+    if (!isMobile) {
+      const cur = document.getElementById('cursor');
+      const ring = document.getElementById('cursor-ring');
+      let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+      let rx = mx, ry = my;
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY });
+      function animCursor() {
+        cur.style.left = mx + 'px'; cur.style.top = my + 'px';
+        rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+        ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+        requestAnimationFrame(animCursor);
+      }
+      animCursor();
+    }
+
+    // -- Nav scroll ------------------------------------
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // -- Mobile nav toggle -----------------------------
+    const toggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      // Lock body scroll while overlay is open so page doesn't scroll behind it
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // -- Scroll reveal ---------------------------------
+    const revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+
+  </script>
+
+  <script>
+    /* Wind Streak Particle System
+       Two layers: static ambient dots + dynamic wind streaks.
+       Desktop: cursor proximity boosts streaks and spawns new ones.
+       Mobile: auto-drift only, no cursor interaction.
+       Respects prefers-reduced-motion. */
+    (function () {
+
+      var canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var hero = document.getElementById('hero');
+
+      var isTouch = !window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+      var W, H, t = 0;
+      var mouse = { x: -999, y: -999 };
+      var dots = [];
+      var streaks = [];
+      var animId;
+
+      /* Color palette - stored as RGB triplet strings for use inside rgba() */
+      var GOLD = '201,169,97';
+      var BLUE = '74,127,181';
+      var SAND = '217,199,167';
+      var BLUSH = '196,144,122';
+      var DOT_COLS = [GOLD, GOLD, SAND, BLUE, BLUSH];
+      var STK_COLS = [GOLD, GOLD, GOLD, GOLD, BLUE, SAND, BLUSH];
+
+      function rnd(a, b) { return a + Math.random() * (b - a); }
+      function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+      /* Set canvas buffer dimensions to match hero CSS dimensions 1:1.
+         Using hero.offsetWidth/Height directly avoids the BoundingClientRect
+         timing issues and keeps coordinate space identical to layout pixels. */
+      function resize() {
+        W = canvas.width = hero.offsetWidth;
+        H = canvas.height = hero.offsetHeight;
+      }
+
+      /* ----- STATIC DOT --------------------------------------------------
+         Breathes in place via a tiny sin/cos offset.
+         No drift, no physics - purely atmospheric. */
+      function Dot() {
+        this.x = rnd(0, W);
+        this.y = rnd(0, H);
+        this.r = rnd(0.6, 2.0);
+        this.col = DOT_COLS[Math.floor(Math.random() * DOT_COLS.length)];
+        this.a = rnd(0.1, 0.45);
+        this.ph = rnd(0, Math.PI * 2);
+        this.amp = rnd(0.08, 0.22);
+        this.dx = 0;
+        this.dy = 0;
+      }
+
+      Dot.prototype.update = function () {
+        /* Sub-pixel breathing - amplitude stays below 1px */
+        this.dx = Math.sin(t * 0.4 + this.ph) * this.amp;
+        this.dy = Math.cos(t * 0.3 + this.ph * 1.3) * this.amp;
+      };
+
+      Dot.prototype.draw = function () {
+        ctx.beginPath();
+        ctx.arc(this.x + this.dx, this.y + this.dy, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + this.col + ',' + this.a + ')';
+        ctx.fill();
+      };
+
+      /* ----- WIND STREAK --------------------------------------------------
+         Travels left to right across the hero canvas.
+         Shape is produced by summing three sine waves (c1/c2/c3) at each x.
+         Thickness tapers from zero at both ends, peaking at ~45% of the length.
+         About 18% of streaks fork into a second branch near the tail. */
+      function Streak(mode) {
+        this.reset(mode || 'init');
+      }
+
+      Streak.prototype.reset = function (mode) {
+        /* On init, scatter across the full width. On respawn, enter from left. */
+        this.x = (mode === 'init') ? rnd(-W * 0.3, W * 1.15) : rnd(-W * 0.18, -12);
+        this.y = rnd(H * 0.04, H * 0.96);
+        this.spd = rnd(0.4, 2.1);
+        this.col = STK_COLS[Math.floor(Math.random() * STK_COLS.length)];
+        this.base = rnd(0.2, 0.55);    /* base opacity before envelope */
+        this.thick = rnd(1.5, 4.0);     /* max line width in px */
+
+        /* Primary curl - large, slow wave */
+        this.c1amp = rnd(8, 55);
+        this.c1freq = rnd(0.005, 0.016);
+        this.c1ph = rnd(0, Math.PI * 2);
+
+        /* Secondary curl - medium ripple on top of primary */
+        this.c2amp = rnd(2, 18);
+        this.c2freq = rnd(0.018, 0.048);
+        this.c2ph = rnd(0, Math.PI * 2);
+
+        /* Tertiary wobble - fine micro-noise feel */
+        this.c3amp = rnd(0.5, 4);
+        this.c3freq = rnd(0.06, 0.14);
+        this.c3ph = rnd(0, Math.PI * 2);
+
+        this.len = rnd(80, 340);
+        this.segs = Math.max(10, Math.floor(this.len / 12));
+        this.fadeIn = rnd(0.08, 0.2);   /* fraction of life used to fade in */
+        this.fadeOut = rnd(0.15, 0.3);   /* fraction of life used to fade out */
+        this.age = 0;
+        /* Life must be long enough for the streak to cross the full screen.
+           At speed 0.4 on a 1900px screen, that's ~5000 frames.
+           We add a random buffer so streaks don't all die at the same x. */
+        this.life = Math.ceil((W + 400 + this.len) / this.spd) + rnd(0, 200);
+        this.dead = false;
+
+        /* Fork: ~18% chance of a second branch departing near the tail */
+        this.fork = Math.random() < 0.18;
+        this.forkAt = rnd(0.55, 0.8);    /* normalized position along streak */
+        this.forkAng = rnd(0.15, 0.5) * (Math.random() < 0.5 ? 1 : -1);
+        this.forkLen = rnd(0.2, 0.45);    /* fork length as fraction of streak */
+
+        this.near = false;
+      };
+
+      /* Combined y-displacement at canvas x-position px from all three waves */
+      Streak.prototype.yAt = function (px) {
+        return this.c1amp * Math.sin(px * this.c1freq + this.c1ph)
+          + this.c2amp * Math.sin(px * this.c2freq + this.c2ph)
+          + this.c3amp * Math.sin(px * this.c3freq + this.c3ph);
+      };
+
+      /* Thickness multiplier: ramps up from 0 to 1 by frac=0.45, then back to 0 */
+      Streak.prototype.thickAt = function (frac) {
+        var peak = 0.45;
+        return frac < peak ? frac / peak : 1 - (frac - peak) / (1 - peak);
+      };
+
+      Streak.prototype.update = function () {
+        this.age++;
+
+        /* Check if this streak is near the cursor (desktop only) */
+        if (!isTouch) {
+          var mdx = (this.x + this.len * 0.5) - mouse.x;
+          var mdy = this.y - mouse.y;
+          this.near = (mdx * mdx + mdy * mdy) < 18000;
+        }
+
+        /* Streaks near the cursor move 2.2x faster */
+        this.x += this.near ? this.spd * 2.2 : this.spd;
+
+        /* Mark dead when fully off the right edge or life expired */
+        if (this.x > W + 380 || this.age > this.life) {
+          this.dead = true;
+        }
+      };
+
+      Streak.prototype.draw = function () {
+        var prog = this.age / this.life;
+
+        /* Fade envelope: linear ramp in, flat sustain, linear ramp out */
+        var env;
+        if (prog < this.fadeIn) {
+          env = prog / this.fadeIn;
+        } else if (prog > 1 - this.fadeOut) {
+          env = (1 - prog) / this.fadeOut;
+        } else {
+          env = 1;
+        }
+
+        var alpha = clamp(this.base * env * (this.near ? 1.8 : 1), 0, 1);
+        if (alpha < 0.004) return; /* skip invisible streaks */
+
+        var segW = this.len / this.segs;
+        var boost = this.near ? 1.3 : 1;
+
+        ctx.save();
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+
+        /* Main streak body - drawn one segment at a time so thickness can taper */
+        for (var i = 0; i < this.segs; i++) {
+          var frac0 = i / this.segs;
+          var frac1 = (i + 1) / this.segs;
+          var px0 = this.x + i * segW;
+          var py0 = this.y + this.yAt(px0);
+          var px1 = this.x + (i + 1) * segW;
+          var py1 = this.y + this.yAt(px1);
+          var tf = this.thickAt((frac0 + frac1) * 0.5);
+
+          ctx.beginPath();
+          ctx.moveTo(px0, py0);
+          ctx.lineTo(px1, py1);
+          ctx.strokeStyle = 'rgba(' + this.col + ',' + (alpha * tf) + ')';
+          ctx.lineWidth = this.thick * tf * boost;
+          ctx.stroke();
+        }
+
+        /* Fork branch - departs from the streak at forkAt, diverges by forkAng */
+        if (this.fork) {
+          var forkStartSeg = Math.floor(this.forkAt * this.segs);
+          var forkSegs = Math.floor(this.forkLen * this.segs);
+
+          for (var j = 0; j < forkSegs; j++) {
+            var fi0 = forkStartSeg + j;
+            var fi1 = fi0 + 1;
+            var fp0x = this.x + fi0 * segW;
+            var fp0y = this.y + this.yAt(fp0x)
+              + Math.sin(this.forkAng * (j / forkSegs) * Math.PI) * (j + 1) * 6;
+            var fp1x = this.x + fi1 * segW;
+            var fp1y = this.y + this.yAt(fp1x)
+              + Math.sin(this.forkAng * ((j + 1) / forkSegs) * Math.PI) * (j + 2) * 6;
+            var fA = alpha * (1 - j / forkSegs) * 0.42;
+            var frac = fi0 / this.segs;
+
+            ctx.beginPath();
+            ctx.moveTo(fp0x, fp0y);
+            ctx.lineTo(fp1x, fp1y);
+            ctx.strokeStyle = 'rgba(' + this.col + ',' + fA + ')';
+            ctx.lineWidth = this.thick * this.thickAt(frac) * 0.55 * boost;
+            ctx.stroke();
+          }
+        }
+
+        /* Leading tip glow - only when cursor is near (desktop only) */
+        if (this.near) {
+          var tipX = this.x + this.len;
+          var tipY = this.y + this.yAt(tipX);
+          ctx.beginPath();
+          ctx.arc(tipX, tipY, this.thick * 1.4, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(' + this.col + ',' + (alpha * 0.55) + ')';
+          ctx.fill();
+        }
+
+        ctx.restore();
+      };
+
+      /* ----- RENDER LOOP -------------------------------------------------- */
+      function loop() {
+        ctx.clearRect(0, 0, W, H);
+        t += 0.007;
+
+        /* Update and draw all ambient dots */
+        for (var d = 0; d < dots.length; d++) {
+          dots[d].update();
+          dots[d].draw();
+        }
+
+        /* Update and draw all streaks; recycle dead ones immediately */
+        for (var s = 0; s < streaks.length; s++) {
+          streaks[s].update();
+          streaks[s].draw();
+          if (streaks[s].dead) {
+            streaks[s].reset('mid');
+          }
+        }
+
+        animId = requestAnimationFrame(loop);
+      }
+
+      function init() {
+        resize();
+
+        /* Create 80 static ambient dots scattered across the hero */
+        dots = [];
+        for (var d = 0; d < 80; d++) { dots.push(new Dot()); }
+
+        /* Create 26 wind streaks pre-scattered for an immediate visible field */
+        streaks = [];
+        for (var s = 0; s < 26; s++) { streaks.push(new Streak('init')); }
+
+        loop();
+      }
+
+      /* ----- CURSOR BURST (desktop only) ---------------------------------- */
+      var burstCD = 0;
+      if (!isTouch) {
+        hero.addEventListener('mousemove', function (e) {
+          var rect = canvas.getBoundingClientRect();
+          mouse.x = e.clientX - rect.left;
+          mouse.y = e.clientY - rect.top;
+
+          /* Throttle spawning: one burst per 10 frames, cap at 42 total */
+          burstCD--;
+          if (burstCD > 0) return;
+          burstCD = 10;
+          if (streaks.length >= 42) return;
+
+          var s = new Streak('mid');
+          s.x = mouse.x - rnd(8, 90);
+          s.y = mouse.y + rnd(-50, 50);
+          s.spd = rnd(1.2, 2.8);
+          s.base = rnd(0.4, 0.65);
+          s.len = rnd(40, 160);
+          streaks.push(s);
+        });
+
+        hero.addEventListener('mouseleave', function () {
+          mouse.x = -999;
+          mouse.y = -999;
+        });
+      }
+
+      /* ----- LIFECYCLE ---------------------------------------------------- */
+
+      /* Reposition dots on window resize so they stay within bounds */
+      window.addEventListener('resize', function () {
+        resize();
+        for (var d = 0; d < dots.length; d++) {
+          dots[d].x = rnd(0, W);
+          dots[d].y = rnd(0, H);
+        }
+      });
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          cancelAnimationFrame(animId);
+        } else {
+          loop();
+        }
+      });
+
+      var heroIO = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          loop();
+        } else {
+          cancelAnimationFrame(animId);
+        }
+      }, { threshold: 0.01 });
+      heroIO.observe(hero);
+
+      init();
+
+    })();
+  </script>
+
 </body>
 
 </html>
