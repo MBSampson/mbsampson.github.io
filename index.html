@@ -367,6 +367,12 @@
       background: var(--gold);
     }
 
+    @media (max-width: 500px) {
+      .hero-eyebrow::before {
+        display: none;
+      }
+    }
+
     .hero-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(3.5rem, 7vw, 6.5rem);
@@ -791,10 +797,10 @@
       max-width: 100%
     }
 
-    /* Posts laid out side-by-side in a 2-col grid, matching projects-grid */
+    /* Posts stacked vertically as expandable cards */
     .posts-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 1.5rem;
     }
 
@@ -804,9 +810,10 @@
       background: var(--bg3);
       display: flex;
       flex-direction: column;
-      transition: border-color .3s, transform .3s;
+      transition: border-color .3s;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
 
     .post-item::before {
@@ -820,7 +827,6 @@
 
     .post-item:hover {
       border-color: rgba(201, 169, 97, 0.4);
-      transform: translateY(-4px)
     }
 
     .post-item:hover::before {
@@ -848,24 +854,73 @@
       color: var(--gold)
     }
 
+    /* Truncated to ~2 lines when collapsed, full text when expanded */
     .post-dek {
       font-size: 0.875rem;
       color: var(--text2);
       line-height: 1.6;
       font-weight: 300;
-      flex: 1;
+      /* 2 lines = 2 * 0.875rem * 1.6 = 2.8rem */
+      max-height: 2.85rem;
+      overflow: hidden;
+      position: relative;
+      transition: max-height 0.4s ease;
     }
 
-    .post-arrow {
+    .post-dek strong {
+      color: var(--sand);
+      font-weight: 500;
+    }
+
+    /* Gradient fade with "..." at the truncation edge */
+    .post-dek::after {
+      content: '...';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding-left: 2rem;
+      background: linear-gradient(to right, transparent, var(--bg3) 50%);
       color: var(--text3);
-      transition: color .2s, transform .2s;
-      align-self: flex-end;
-      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
     }
 
-    .post-item:hover .post-arrow {
+    .post-item.expanded .post-dek {
+      max-height: 40rem;
+      overflow: visible;
+    }
+
+    .post-item.expanded .post-dek::after {
+      display: none;
+    }
+
+    /* "Read more / Read less" toggle with animated chevron */
+    .post-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text3);
+      transition: color .2s;
+    }
+
+    .post-item:hover .post-toggle {
       color: var(--gold);
-      transform: translateX(4px)
+    }
+
+    .post-toggle svg {
+      width: 12px;
+      height: 12px;
+      stroke: currentColor;
+      fill: none;
+      transition: transform .3s ease;
+    }
+
+    .post-item.expanded .post-toggle svg {
+      transform: rotate(180deg);
     }
 
     /* -- CONTACT -------------------------------------- */
@@ -1292,7 +1347,8 @@
       </a>
 
       <!-- Project 2 -->
-      <div class="project-card reveal stagger-2">
+      <a href="https://github.com/MBSampson/reframe_screenshot_annotator" target="_blank" rel="noopener"
+        class="project-card reveal stagger-2">
         <svg class="project-card-brush" viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="cardBrush2" x1="100%" y1="0%" x2="0%" y2="100%">
@@ -1305,7 +1361,7 @@
           <path d="M15,68 C58,28 105,20 138,48" stroke="url(#cardBrush2)" stroke-width="2.5" fill="none"
             stroke-linecap="round" opacity="0.5" />
         </svg>
-        <div class="project-tag wip"><span class="tag-dot wip"></span>In Progress</div>
+        <div class="project-tag"><span class="tag-dot"></span>Project Management Tool</div>
         <h3 class="project-name">Screenshot Annotator</h3>
         <p class="project-desc">A browser-based tool for capturing, annotating, and sharing screenshots with context.
           Built to solve the friction between engineers and stakeholders during bug triage and design review.</p>
@@ -1314,8 +1370,10 @@
           <span class="tech-chip">Canvas API</span>
           <span class="tech-chip">Annotation UX</span>
         </div>
-        <span class="project-link" style="color:var(--blush)">Coming Soon</span>
-      </div>
+        <span class="project-link">View on GitHub <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg></span>
+      </a>
 
     </div>
   </section>
@@ -1378,9 +1436,11 @@
             <span class="skill-tag">Claude · GPT-4</span>
             <span class="skill-tag">HTML · CSS</span>
             <span class="skill-tag">Email Dev</span>
+            <span class="skill-tag">Agentic Development</span>
+            <span class="skill-tag">Chrome Extension Dev</span>
           </div>
         </div>
-        <a href="#" class="resume-link reveal stagger-4">
+        <a href="docs/Matthew_Sampson_Resume.pdf" download="Matthew_Sampson_Resume.pdf" class="resume-link reveal stagger-4">
           Download Resume
           <svg viewBox="0 0 24 24" stroke-width="1.5">
             <path d="M12 5v14M5 12l7 7 7-7" />
@@ -1409,27 +1469,101 @@
     </div>
     <div class="posts-list">
       <article class="post-item reveal stagger-1">
-        <div>
-          <div class="post-date">May 2025</div>
-          <h3 class="post-title">On Managing Programs You Didn't Choose</h3>
-          <p class="post-dek">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua - what happens when the roadmap lands on your desk half-formed.</p>
+        <div class="post-date">May 2026</div>
+        <h3 class="post-title">Building Reframe: What a Chrome Extension Taught Me About Shipping Real Software</h3>
+        <p class="post-dek">When I decided to build Reframe — a screenshot and annotation editor for Chrome — I wasn't
+          trying to fill a gap on my resume. I was genuinely frustrated that every screenshot tool I used treated
+          annotation as an afterthought: a few boxes you could draw before the app shuttled you somewhere else. I wanted
+          something that <strong>treated the editor as the product</strong>. So I built it. What followed was one of the more instructive
+          engineering experiences I've had, and I want to share what I actually learned.<br /><br />Reframe is a Chrome
+          Manifest V3 extension written entirely in <strong>vanilla JavaScript, HTML, and CSS — no
+          frameworks, no build step, no external
+          dependencies</strong>. The architecture splits across two surfaces: a lightweight capture interface that injects an
+          overlay into any active browser tab (via the Chrome Scripting API), and a full annotation editor that opens in
+          a new tab and renders everything through the HTML5 Canvas 2D API. Getting the capture pipeline right was the
+          first serious engineering challenge. Chrome's captureVisibleTab captures at the device's pixel density, so
+          region selections made in CSS pixels need to be converted using devicePixelRatio before the crop rect is
+          handed off to the editor — otherwise you get blurry or misaligned crops on high-DPI displays. That's the kind
+          of detail that <strong>sounds small until it breaks in production</strong>.<br /><br />The editor itself is where I spent most
+          of my time.
+          A professional layer system — with Z-order control, per-element visibility, locking, and a settings modal for
+          every element type — turned out to be <strong>significantly harder to architect than drawing the shapes themselves</strong>.
+          Each element (rectangle, ellipse, line, arrow, text) carries its own attribute schema, and the Canvas Frame is
+          a first-class entity that defines the export boundary and stays pinned at the bottom of the Z-order. I wrote a
+          <strong>full Software Requirements Specification before touching the editor code</strong>, and the discipline of having a
+          single source of truth paid off every time I needed to make a decision mid-build. I also designed a
+          monetization architecture (ExtensionPay + Stripe, zero fixed infrastructure cost at launch) and mapped out a
+          free/paid feature split, brand positioning, and a full marketing website design system — because <strong>shipping
+          software means thinking past the code</strong>.<br /><br />The meta-learning from this project is something I'll carry
+          into any
+          team environment: <strong>the value of constraint</strong>. No frameworks forced me to understand exactly what the browser
+          gives you for free and where you have to build. No build step meant every decision was visible and reversible.
+          Writing specs before code meant I spent far less time backtracking. And setting a clear scope — undo/redo
+          explicitly deferred to v1.1, collaboration explicitly out of scope — meant <strong>I actually finished things instead
+          of endlessly expanding them</strong>. Reframe is currently in active development at Milestone 8 of 12. The annotation
+          engine is complete; icon/sticker support and PNG export are next. If you want to see the codebase, the SRS, or
+          the implementation plan, I'm happy to walk through any of it.</p>
+        <div class="post-toggle">
+          <span class="post-toggle-label">Read more</span>
+          <svg viewBox="0 0 24 24" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
         </div>
       </article>
       <article class="post-item reveal stagger-2">
-        <div>
-          <div class="post-date">March 2025</div>
-          <h3 class="post-title">What I Actually Use AI For at Work</h3>
-          <p class="post-dek">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis
-            nostrud exercitation - a honest accounting of where the tools help and where they don't.</p>
+        <div class="post-date">December 2025</div>
+        <h3 class="post-title">How I Use AI as a Daily Tool, Not a Shortcut</h3>
+        <p class="post-dek">For a lot of professionals, AI is still a novelty — something you open when you're stuck on
+          a phrasing problem or need a quick summary. That's not how I use it. Over the past few years, I've integrated
+          AI deeply into the way I work, build, and think, and the distinction I keep coming back to is <strong>the difference
+          between using AI as a crutch and using it as a collaborator</strong>. The former offloads thinking. The latter extends
+          it. I've made a deliberate effort to stay on the right side of that line.<br /><br />
+          My AI usage is <strong>systematic rather than situational</strong>. I maintain a personal knowledge wiki — structured in
+          markdown, organized across entities, concepts, sources, and synthesis folders — updated through a Claude Code
+          integration. Every session generates a log and surfaces new wiki files, so <strong>knowledge from one conversation
+          doesn't disappear into the void</strong>. I built this system myself: configured the MCP filesystem server, wrote the
+          schema files, developed the workflows. I treat my personal knowledge infrastructure with the same rigor I'd
+          apply to a production tool.<br /><br />
+          I also use AI extensively in my creative work, which connects more directly to professional skills than it
+          might appear. I've used Claude to develop a <strong>54-chapter novel</strong>, maintaining character consistency, voice
+          guidelines, and plot architecture across hundreds of pages of output. Managing a project at that scale
+          requires the same discipline I bring to production work: <strong>clear documentation, structured prompting, and
+          knowing when to push back on what the tool returns</strong>. The craft principles I've developed through that work —
+          about restraint, precision, and knowing when less is more — translate directly into how I write briefs, specs,
+          and client-facing copy.<br /><br />
+          What I bring to a team isn't just familiarity with AI tools — <strong>it's a methodology</strong>. I know how to scope what AI
+          can and can't do on a given task, write prompts that produce precise output rather than plausible noise, and
+          evaluate what comes back without losing authorship of the work. As AI becomes a standard part of how technical
+          and creative work gets done, that methodology is going to matter more than tool knowledge alone. It's
+          something I've been building deliberately, and <strong>it shows in what I ship</strong>.</p>
+        <div class="post-toggle">
+          <span class="post-toggle-label">Read more</span>
+          <svg viewBox="0 0 24 24" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
         </div>
       </article>
       <article class="post-item reveal stagger-3">
-        <div>
-          <div class="post-date">January 2025</div>
-          <h3 class="post-title">The Case for Keeping Your Hands in the Code</h3>
-          <p class="post-dek">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in
-            reprehenderit in voluptate - why TPMs who can read a diff are different from those who can't.</p>
+        <div class="post-date">September 2025</div>
+        <h3 class="post-title">My Favorite Part of the Morning Has No Alarm</h3>
+        <p class="post-dek">I don't have a complicated morning routine. No cold plunge, no gratitude journal, no
+          five-step protocol. What I do have is <strong>a conversation</strong>. Most mornings I open up AI voice chat and just... talk.
+          About whatever's been sitting in the back of my head — a finance question I've been putting off, something I'm
+          trying to build, how training has been going, a game I've been thinking too hard about. It sounds simple
+          because it is. But there's something about <strong>saying a thing out loud</strong>, to something that actually responds, that
+          makes it real in a way that thinking alone doesn't.<br /><br />
+          The topics bounce around and that's kind of the point. One morning it's budgeting, the next it's a project
+          decision, the next it's whether I'm overtraining or under-eating. None of it is precious. I'm not looking for
+          the AI to solve anything — I'm using the conversation to <strong>figure out what I actually think</strong> before the day gets
+          loud enough to drown it out. It's become a ritual without me really planning for it to be one.<br /><br />
+          The thing I keep coming back to is <strong>how much it compounds</strong>. Ideas that used to just float around and never
+          resolve now have somewhere to land. I walk away from most of these conversations with at least one thing
+          clearer than it was before. <strong>For a ten-minute habit, that's a pretty good return.</strong></p>
+        <div class="post-toggle">
+          <span class="post-toggle-label">Read more</span>
+          <svg viewBox="0 0 24 24" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
         </div>
       </article>
     </div>
@@ -1465,16 +1599,16 @@
       <h2 class="contact-title reveal stagger-1">Let's Build<br /><em>Something.</em></h2>
       <p class="contact-sub reveal stagger-2">Whether you're looking for a TPM who brings both technical depth and AI
         intuition to the table - or you just want to talk about what's next, I'd like to hear from you.</p>
-      <a href="mailto:hello@matthewsampson.dev" class="contact-email reveal stagger-3">hello@matthewsampson.dev</a>
+      <a href="mailto:mbsampson89@gmail.com" class="contact-email reveal stagger-3">mbsampson89@gmail.com</a>
       <div class="social-links reveal stagger-4">
-        <a href="#" class="social-link" aria-label="GitHub">
+        <a href="https://github.com/MBSampson" class="social-link" aria-label="GitHub">
           <svg viewBox="0 0 24 24" stroke-width="1.5">
             <path
               d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
           </svg>
           GitHub
         </a>
-        <a href="#" class="social-link" aria-label="Instagram">
+        <a href="https://www.instagram.com/boulder_boss/" class="social-link" aria-label="Instagram">
           <svg viewBox="0 0 24 24" stroke-width="1.5">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
@@ -1482,7 +1616,7 @@
           </svg>
           Instagram
         </a>
-        <a href="#" class="social-link" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/matthewbarrysampson/" class="social-link" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" stroke-width="1.5">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
             <rect x="2" y="9" width="4" height="12" />
@@ -1533,6 +1667,33 @@
       // Lock body scroll while overlay is open so page doesn't scroll behind it
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
+
+    // -- Resume download (fetch as blob for reliable filename) --
+    const resumeLink = document.querySelector('.resume-link');
+    if (resumeLink) {
+      resumeLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        const url = this.getAttribute('href');
+        const filename = url.split('/').pop();
+        fetch(url)
+          .then(res => res.blob())
+          .then(blob => {
+            const blobUrl = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = blobUrl;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(blobUrl);
+          })
+          .catch(() => {
+            // Fallback: open the PDF directly if fetch fails
+            window.open(url, '_blank');
+          });
+      });
+    }
+
     navLinks.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         navLinks.classList.remove('open');
@@ -1548,6 +1709,19 @@
       });
     }, { threshold: 0.12 });
     revealEls.forEach(el => io.observe(el));
+
+    // -- Post expand/collapse --------------------------
+    document.querySelectorAll('.post-item').forEach(function (post) {
+      post.addEventListener('click', function () {
+        const wasExpanded = this.classList.contains('expanded');
+        this.classList.toggle('expanded');
+        // Update the toggle label text
+        const label = this.querySelector('.post-toggle-label');
+        if (label) {
+          label.textContent = wasExpanded ? 'Read more' : 'Read less';
+        }
+      });
+    });
 
   </script>
 
